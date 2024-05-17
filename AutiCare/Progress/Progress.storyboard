@@ -281,7 +281,9 @@
                             <outlet property="delegate" destination="L6D-QN-oNP" id="ZVr-pc-WoN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="0Lv-RM-7de"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="0Lv-RM-7de">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="uJq-yu-yLu"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rsz-yG-4W8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
