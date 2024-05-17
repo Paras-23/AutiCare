@@ -8,6 +8,8 @@
 import UIKit
 
 class AssesmentTableViewController: UITableViewController {
+    
+    var questions : [Question]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,24 @@ class AssesmentTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "segueToQuestionTableViewController", sender: nil)
+        performSegue(withIdentifier: "segueToQuestionTableViewController", sender: indexPath)
+    }
+     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        switch sender as? IndexPath {
+        case IndexPath(row: 0, section: 1) : questions = socialQuestions
+        case IndexPath(row: 1, section: 1) : questions = emotionalQuestions
+        case IndexPath(row: 2, section: 1) : questions = speechQuestions
+        case IndexPath(row: 3, section: 1) : questions = behaviourQuestions
+        case IndexPath(row: 4, section: 1) : questions = sensoryQuestions
+        case IndexPath(row: 5, section: 1) : questions = cognitiveQuestions
+        default : break
+        }
+        
+        if let questionsControl = segue.destination as? QuestionsTableViewController {
+            questionsControl.questions = questions ?? []
+        }
     }
     /*
     // Override to support conditional editing of the table view.

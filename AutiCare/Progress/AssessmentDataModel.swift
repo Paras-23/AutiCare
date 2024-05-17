@@ -48,8 +48,12 @@ let answerOptions: [Answer] = [.rarely, .sometimes, .frequently, .mostly, .alway
 
 // Define sample questions for each category
 let socialQuestions : [Question] = [Question(text: "Has poor eye contact")]
-
-//let emotionalQuestions = [
+let emotionalQuestions : [Question] = [Question(text: "Has poor eye contact")]
+let speechQuestions : [Question] = [Question(text: "Has poor eye contact")]
+let behaviourQuestions : [Question] = [Question(text: "Has poor eye contact")]
+let sensoryQuestions : [Question] = [Question(text: "Has poor eye contact")]
+let cognitiveQuestions : [Question] = [Question(text: "Has poor eye contact")]
+//let  = [
 //    Question(category: "Emotional", description: "Does your child easily get upset or angry?", answers: answerOptions),
 //    // Add more questions for the Emotional category
 //]
