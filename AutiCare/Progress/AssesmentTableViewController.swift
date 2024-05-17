@@ -28,18 +28,18 @@ class AssesmentTableViewController: UITableViewController {
      
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        switch sender as? IndexPath {
-        case IndexPath(row: 0, section: 1) : questions = socialQuestions
-        case IndexPath(row: 1, section: 1) : questions = emotionalQuestions
-        case IndexPath(row: 2, section: 1) : questions = speechQuestions
-        case IndexPath(row: 3, section: 1) : questions = behaviourQuestions
-        case IndexPath(row: 4, section: 1) : questions = sensoryQuestions
-        case IndexPath(row: 5, section: 1) : questions = cognitiveQuestions
+        switch sender as! IndexPath {
+        case IndexPath(row: 0, section: 0) : questions = socialQuestions
+        case IndexPath(row: 1, section: 0) : questions = emotionalQuestions
+        case IndexPath(row: 2, section: 0) : questions = speechQuestions
+        case IndexPath(row: 3, section: 0) : questions = behaviourQuestions
+        case IndexPath(row: 4, section: 0) : questions = sensoryQuestions
+        case IndexPath(row: 5, section: 0) : questions = cognitiveQuestions
         default : break
         }
         
         if let questionsControl = segue.destination as? QuestionsTableViewController {
-            questionsControl.questions = questions ?? []
+            questionsControl.questions = questions!
         }
     }
     /*
