@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct GamesImages {
+    var nameID : String
+}
