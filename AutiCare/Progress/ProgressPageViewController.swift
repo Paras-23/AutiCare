@@ -8,6 +8,12 @@
 import UIKit
 
 class ProgressPageViewController: UIViewController {
+    
+    required init?(coder : NSCoder) {
+        super.init(coder: coder)
+        self.tabBarItem.title = "Progress"
+        self.tabBarItem.image = UIImage(systemName: "chart.line.uptrend.xyaxis.circle")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

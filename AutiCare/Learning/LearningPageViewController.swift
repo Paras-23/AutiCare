@@ -8,6 +8,12 @@
 import UIKit
 
 class LearningPageViewController: UIViewController {
+    
+    required init?(coder : NSCoder) {
+        super.init(coder: coder)
+        self.tabBarItem.title = "Learning"
+        self.tabBarItem.image = UIImage(systemName: "brain.head.profile")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,6 +8,12 @@
 import UIKit
 
 class ProfilePageViewController: UIViewController {
+    
+    required init?(coder : NSCoder) {
+        super.init(coder: coder)
+        self.tabBarItem.title = "Profile"
+        self.tabBarItem.image = UIImage(systemName: "person.crop.circle")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
