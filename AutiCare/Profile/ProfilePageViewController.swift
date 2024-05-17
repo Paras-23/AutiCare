@@ -7,29 +7,58 @@
 
 import UIKit
 
-class ProfilePageViewController: UIViewController {
+extension UIImageView {
+    public func maskCircle(anyImage: UIImage) {
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.gray.cgColor
+        self.contentMode = UIView.ContentMode.scaleAspectFill
+        self.layer.cornerRadius = self.frame.width/2.0
+        self.layer.masksToBounds = false
+        self.clipsToBounds = true
+        self.image = anyImage
+    }
+}
+class ProfilePageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = "\(profile[indexPath.row])"
+        cell.contentConfiguration = content
+        return cell
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return profile.count
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+        
+    // imageView outlet
+    
+    @IBOutlet weak var circularImageView: UIImageView!
+    //tableView Outlet
+    
+    @IBOutlet weak var profileTableView: UITableView!
     required init?(coder : NSCoder) {
         super.init(coder: coder)
         self.tabBarItem.title = "Profile"
-        self.tabBarItem.image = UIImage(systemName: "person.crop.circle")
-    }
-
+        self.tabBarItem.image = UIImage(systemName: "person.crop.circle")    }
+    
+    var profile :[String] = ["User Info","Permission","Share","Settings","About Us","Log Out"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let profile = UIImage(named: "1")!
+        circularImageView.maskCircle(anyImage: profile)
+        profileTableView.delegate = self
+        profileTableView.dataSource = self
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
