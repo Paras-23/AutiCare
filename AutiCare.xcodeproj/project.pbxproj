@@ -119,9 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				05262EA02BF7129800C2774C /* Progress.storyboard */,
-				C4AE965C2BF7270500BEE963 /* AssesmentTableViewController.swift */,
 				05262EA32BF712BE00C2774C /* ProgressPageViewController.swift */,
 				C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */,
+				C4AE965C2BF7270500BEE963 /* AssesmentTableViewController.swift */,
 				C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */,
 				05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */,
 			);

@@ -31,19 +31,6 @@ struct Question {
     var selectedAnswer : Int = 0
 }
 
-struct Questionnaire{
-    let questions: [Question]
-    
-    func calculateTotalScore(userAnswers: [Answer]) -> Int {
-        var totalScore = 0
-        for (index, answer) in userAnswers.enumerated() {
-            let question = questions[index]
-            totalScore += answer.rawValue
-        }
-        return totalScore
-    }
-}
-
 let answerOptions: [Answer] = [.rarely, .sometimes, .frequently, .mostly, .always]
 
 // Define sample questions for each category
@@ -72,6 +59,7 @@ let speechQuestions : [Question] = [Question(text: "Acquired speech and lost it"
                                     Question(text: "Uses jargon or meaningless words"),
                                     Question(text: "Uses pronoun reversals"),
                                     Question(text: "Unable to grasp pragmatics of communication (real meaning)")]
+
 let behaviourQuestions : [Question] = [Question(text: "Engages in stereotyped and repetitive motor mannerisms"),
                                         Question(text: "Shows attachment to inanimate objects"),
                                         Question(text: "Shows hyperactivity/restlessness"),
@@ -79,12 +67,14 @@ let behaviourQuestions : [Question] = [Question(text: "Engages in stereotyped an
                                         Question(text: "Throws temper tantrums"),
                                         Question(text: "Engages in self-injurious behavior"),
                                         Question(text: "Insists on sameness")]
+
 let sensoryQuestions : [Question] = [Question(text: "Unusually sensitive to sensory stimuli"),
                                      Question(text: "Stares into space for long periods of time"),
                                      Question(text: "Has difficulty in tracking objects"),
                                      Question(text: "Has unusual vision"),
                                      Question(text: "Insensitive to pain"),
                                      Question(text: "Responds to objects/people unusually by smelling, touching or tasting")]
+
 let cognitiveQuestions : [Question] = [Question(text: "Inconsistent attention and concentrationt"),
                                        Question(text: "Shows delay in responding"),
                                        Question(text: "Has unusual memory of some kind"),
@@ -117,3 +107,15 @@ let cognitiveQuestions : [Question] = [Question(text: "Inconsistent attention an
 //let questionnaire = Questionnaire(questions: socialQuestions + emotionalQuestions + speechQuestions + behaviourQuestions + sensoryQuestions + cognitiveQuestions)
 
 
+//struct Questionnaire{
+//    let questions: [Question]
+//    
+//    func calculateTotalScore(userAnswers: [Answer]) -> Int {
+//        var totalScore = 0
+//        for (index, answer) in userAnswers.enumerated() {
+////            let question = questions[index]
+//            totalScore += answer.rawValue
+//        }
+//        return totalScore
+//    }
+//}
