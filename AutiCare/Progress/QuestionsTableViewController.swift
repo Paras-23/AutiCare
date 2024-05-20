@@ -14,12 +14,14 @@ class QuestionsTableViewController: UITableViewController , QuestionTableViewCel
         }
     }
     
+    var categoryWiseQuestion : CategoryWiseQuestion?
     
-    var questions : [Question] = []{
+    var questions : [Question] = [] {
         didSet {
             updateDoneButtonState()
         }
     }
+    
     
     var total : Int = 0
     
@@ -28,6 +30,7 @@ class QuestionsTableViewController: UITableViewController , QuestionTableViewCel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        questions = categoryWiseQuestion!.questions
         updateDoneButtonState()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -54,8 +57,13 @@ class QuestionsTableViewController: UITableViewController , QuestionTableViewCel
         cell.delegate = self
         // Configure the cell...
         cell.questionLabel.text = questions[indexPath.row].text
-        cell.answer = questions[indexPath.row].selectedAnswer
+        for button in cell.buttonsPressed {
+            button.backgroundColor = cell.defaultBackgroundConfiguration().backgroundColor
+        }
         
+        if questions[indexPath.row].selectedAnswer != 0 {
+            cell.viewWithTag(questions[indexPath.row].selectedAnswer)?.backgroundColor = .systemBlue
+        }
         
         return cell
     }
@@ -95,7 +103,7 @@ class QuestionsTableViewController: UITableViewController , QuestionTableViewCel
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -127,8 +135,6 @@ class QuestionsTableViewController: UITableViewController , QuestionTableViewCel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        for ques in questions {
-            print(ques.selectedAnswer)
-        }
+        total = questions.reduce(0){ $0 + $1.selectedAnswer}
     }
 }

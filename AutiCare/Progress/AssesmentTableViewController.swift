@@ -9,11 +9,14 @@ import UIKit
 
 class AssesmentTableViewController: UITableViewController {
     
-    var questions : [Question]?
+    
+    
+    var categoryWiseQuestions = CategoryWiseQuestions()
 
+    var isCompletedCategory : [Bool] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        isCompletedCategory = Array(repeating: false, count: categoryWiseQuestions.AllQuestions.count)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -25,7 +28,7 @@ class AssesmentTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "segueToQuestionTableViewController", sender: indexPath)
     }
-     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
@@ -33,29 +36,9 @@ class AssesmentTableViewController: UITableViewController {
             return
         }
         
-        switch sender as! IndexPath {
-        case IndexPath(row: 0, section: 0) : 
-            questions = socialQuestions
-            questionsControl.navigationItem.title = "Social Relationship and Reciprocity"
-        case IndexPath(row: 1, section: 0) :
-            questions = emotionalQuestions
-            questionsControl.navigationItem.title = "Emotional Responsiveness"
-        case IndexPath(row: 2, section: 0) :
-            questions = speechQuestions
-            questionsControl.navigationItem.title = "Speech Language and Communication"
-        case IndexPath(row: 3, section: 0) :
-            questions = behaviourQuestions
-            questionsControl.navigationItem.title = "Behaviour Patterns"
-        case IndexPath(row: 4, section: 0) :
-            questions = sensoryQuestions
-            questionsControl.navigationItem.title = "Sensory Aspects"
-        case IndexPath(row: 5, section: 0) :
-            questions = cognitiveQuestions
-            questionsControl.navigationItem.title = "Cognitive Components"
-        default : break
-        }
-        
-        questionsControl.questions = questions!
+        let indexPath = sender as! IndexPath
+        questionsControl.categoryWiseQuestion = categoryWiseQuestions.AllQuestions[indexPath.row]
+        questionsControl.navigationItem.title = categoryWiseQuestions.AllQuestions[indexPath.row].questionsCategory.description
     }
     /*
     // Override to support conditional editing of the table view.
@@ -73,7 +56,7 @@ class AssesmentTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -105,7 +88,20 @@ class AssesmentTableViewController: UITableViewController {
     @IBAction func unwindToAssesmentTableViewController (segue: UIStoryboardSegue) {
         let sourceViewController = segue.source as! QuestionsTableViewController
         
+        let total = sourceViewController.total
+        let updatedSelectedAnswerQuestions = sourceViewController.questions
+        var index = 0
+        let selectedCategory = sourceViewController.categoryWiseQuestion
+        for category in categoryWiseQuestions.AllQuestions {
+            if selectedCategory?.questionsCategory == category.questionsCategory{
+                break
+            }
+            index += 1
+        }
+        let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0))
+        cell?.backgroundColor = .systemBlue
         
-        // Use data from the view controller which initiated the unwind segue
+        categoryWiseQuestions.AllQuestions[index].score = total
+        categoryWiseQuestions.AllQuestions[index].questions = updatedSelectedAnswerQuestions
     }
 }

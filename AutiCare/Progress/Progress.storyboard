@@ -297,21 +297,6 @@
             </objects>
             <point key="canvasLocation" x="2637" y="-2"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="k8T-px-Pqa">
-            <objects>
-                <viewController id="Kgw-ne-scQ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="md0-A4-OsP">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ske-16-lbQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qfY-Vc-KQd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3398" y="-2"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qna-hL-cuQ">
             <objects>

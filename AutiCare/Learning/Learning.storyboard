@@ -94,79 +94,13 @@
             </objects>
             <point key="canvasLocation" x="138.1679389312977" y="-2.1126760563380285"/>
         </scene>
-        <!--Learning-->
-        <scene sceneID="SOT-VB-dlK">
-            <objects>
-                <viewController id="nsl-BN-1PH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jzD-zl-dbq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xca-ww-0g1">
-                                <rect key="frame" x="0.0" y="119" width="393" height="699"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="r63-uN-jpS">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="iUP-00-fJn">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Z27-K9-Db7">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZSs-y3-UAv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KOy-0g-hs7">
-                                <rect key="frame" x="20" y="69" width="353" height="41"/>
-                                <segments>
-                                    <segment title="Games"/>
-                                    <segment title="Sessions"/>
-                                    <segment title="Worksheets"/>
-                                </segments>
-                            </segmentedControl>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="915-26-LA8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="915-26-LA8" firstAttribute="trailing" secondItem="Xca-ww-0g1" secondAttribute="trailing" id="AmG-RG-v9X"/>
-                            <constraint firstItem="KOy-0g-hs7" firstAttribute="leading" secondItem="915-26-LA8" secondAttribute="leading" constant="20" id="E4G-Go-ZzC"/>
-                            <constraint firstItem="Xca-ww-0g1" firstAttribute="top" secondItem="KOy-0g-hs7" secondAttribute="bottom" constant="10" id="KLH-Hu-dEW"/>
-                            <constraint firstItem="915-26-LA8" firstAttribute="bottom" secondItem="Xca-ww-0g1" secondAttribute="bottom" id="QeP-Bp-y0J"/>
-                            <constraint firstItem="915-26-LA8" firstAttribute="trailing" secondItem="KOy-0g-hs7" secondAttribute="trailing" constant="20" id="lOX-Q1-IIJ"/>
-                            <constraint firstItem="Xca-ww-0g1" firstAttribute="top" secondItem="915-26-LA8" secondAttribute="top" constant="60" id="mwU-WT-b3R"/>
-                            <constraint firstItem="Xca-ww-0g1" firstAttribute="leading" secondItem="jzD-zl-dbq" secondAttribute="leading" id="rEI-hn-lvg"/>
-                            <constraint firstItem="KOy-0g-hs7" firstAttribute="top" secondItem="915-26-LA8" secondAttribute="top" constant="10" id="vHZ-WU-e9R"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Learning" largeTitleDisplayMode="always" id="ktZ-oX-Hix"/>
-                    <connections>
-                        <outlet property="collectionView" destination="Xca-ww-0g1" id="5Nm-6F-IPP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="67H-yn-lhg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1946" y="633"/>
-        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

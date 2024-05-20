@@ -17,17 +17,10 @@ class QuestionTableViewCell: UITableViewCell {
     var delegate : QuestionTableViewCellDelegate?
     
     @IBOutlet var buttonsPressed: [UIButton]!
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        for button in buttonsPressed {
-            button.backgroundColor = defaultBackgroundConfiguration().backgroundColor
-        }
-        
-        if answer != 0 {
-            self.viewWithTag(answer)?.backgroundColor = .systemBlue
-        }
+
         // Initialization code
     }
 
