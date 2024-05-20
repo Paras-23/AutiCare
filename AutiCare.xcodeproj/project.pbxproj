@@ -23,6 +23,11 @@
 		05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */; };
 		05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */; };
 		05262EB12BF713C200C2774C /* LearningDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EB02BF713C200C2774C /* LearningDataModel.swift */; };
+		440CA9CE2BFB09AE00FDFA89 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */; };
+		440CA9CF2BFB09AE00FDFA89 /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */; };
+		440CA9D22BFB22F900FDFA89 /* chatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CA9D02BFB22F900FDFA89 /* chatTableViewCell.swift */; };
+		440CA9D32BFB22F900FDFA89 /* chatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440CA9D12BFB22F900FDFA89 /* chatTableViewCell.xib */; };
+		440CA9D52BFB232000FDFA89 /* chatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CA9D42BFB232000FDFA89 /* chatViewController.swift */; };
 		C4AE96592BF71EDC00BEE963 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */; };
 		C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */; };
 		C4AE965D2BF7270500BEE963 /* AssesmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE965C2BF7270500BEE963 /* AssesmentTableViewController.swift */; };
@@ -47,6 +52,11 @@
 		05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentDataModel.swift; sourceTree = "<group>"; };
 		05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataModel.swift; sourceTree = "<group>"; };
 		05262EB02BF713C200C2774C /* LearningDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningDataModel.swift; sourceTree = "<group>"; };
+		440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
+		440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
+		440CA9D02BFB22F900FDFA89 /* chatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatTableViewCell.swift; sourceTree = "<group>"; };
+		440CA9D12BFB22F900FDFA89 /* chatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = chatTableViewCell.xib; sourceTree = "<group>"; };
+		440CA9D42BFB232000FDFA89 /* chatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatViewController.swift; sourceTree = "<group>"; };
 		C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		C4AE965C2BF7270500BEE963 /* AssesmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentTableViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +109,11 @@
 			isa = PBXGroup;
 			children = (
 				05262E8A2BF7112C00C2774C /* Main.storyboard */,
+				440CA9D42BFB232000FDFA89 /* chatViewController.swift */,
+				440CA9D02BFB22F900FDFA89 /* chatTableViewCell.swift */,
+				440CA9D12BFB22F900FDFA89 /* chatTableViewCell.xib */,
+				440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */,
+				440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */,
 				05262E882BF7112C00C2774C /* ViewController.swift */,
 				05262EAA2BF7136A00C2774C /* ExploreDataModel.swift */,
 			);
@@ -197,11 +212,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				05262EA62BF712CD00C2774C /* Profile.storyboard in Resources */,
+				440CA9D32BFB22F900FDFA89 /* chatTableViewCell.xib in Resources */,
 				05262E8E2BF7112D00C2774C /* Assets.xcassets in Resources */,
 				05262E912BF7112D00C2774C /* Base in Resources */,
 				05262EA12BF7129800C2774C /* Progress.storyboard in Resources */,
 				05262E9B2BF7124300C2774C /* Learning.storyboard in Resources */,
 				05262E8C2BF7112C00C2774C /* Base in Resources */,
+				440CA9CF2BFB09AE00FDFA89 /* PostsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,9 +231,12 @@
 			files = (
 				C4AE96592BF71EDC00BEE963 /* QuestionTableViewCell.swift in Sources */,
 				05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */,
+				440CA9D52BFB232000FDFA89 /* chatViewController.swift in Sources */,
 				05262E892BF7112C00C2774C /* ViewController.swift in Sources */,
 				05262EA92BF712EE00C2774C /* ProfilePageViewController.swift in Sources */,
 				05262E852BF7112C00C2774C /* AppDelegate.swift in Sources */,
+				440CA9D22BFB22F900FDFA89 /* chatTableViewCell.swift in Sources */,
+				440CA9CE2BFB09AE00FDFA89 /* PostsTableViewCell.swift in Sources */,
 				05262E9F2BF7127D00C2774C /* LearningPageViewController.swift in Sources */,
 				05262E872BF7112C00C2774C /* SceneDelegate.swift in Sources */,
 				C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */,
