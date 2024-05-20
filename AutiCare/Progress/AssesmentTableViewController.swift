@@ -36,22 +36,22 @@ class AssesmentTableViewController: UITableViewController {
         switch sender as! IndexPath {
         case IndexPath(row: 0, section: 0) : 
             questions = socialQuestions
-            questionsControl.navigationItem.title = "SOCIAL RELATIONSHIP AND RECIPROCITY"
+            questionsControl.navigationItem.title = "Social Relationship and Reciprocity"
         case IndexPath(row: 1, section: 0) :
             questions = emotionalQuestions
-            questionsControl.navigationItem.title = "EMOTIONALRESPONSIVENESS"
+            questionsControl.navigationItem.title = "Emotional Responsiveness"
         case IndexPath(row: 2, section: 0) :
             questions = speechQuestions
-            questionsControl.navigationItem.title = "SPEECH-LANGUAGE AND COMMUNICATION"
+            questionsControl.navigationItem.title = "Speech Language and Communication"
         case IndexPath(row: 3, section: 0) :
             questions = behaviourQuestions
-            questionsControl.navigationItem.title = "BEHAVIOUR PATTERNS"
+            questionsControl.navigationItem.title = "Behaviour Patterns"
         case IndexPath(row: 4, section: 0) :
             questions = sensoryQuestions
-            questionsControl.navigationItem.title = "SENSORY ASPECTS"
+            questionsControl.navigationItem.title = "Sensory Aspects"
         case IndexPath(row: 5, section: 0) :
             questions = cognitiveQuestions
-            questionsControl.navigationItem.title = "COGNITIVE COMPONENT"
+            questionsControl.navigationItem.title = "Cognitive Components"
         default : break
         }
         
