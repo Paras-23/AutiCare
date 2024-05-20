@@ -7,17 +7,27 @@
 
 import UIKit
 
+protocol QuestionTableViewCellDelegate {
+    func didSelectButton(cell: QuestionTableViewCell , answer : Int)
+}
 class QuestionTableViewCell: UITableViewCell {
     
-    
     @IBOutlet var questionLabel: UILabel!
-    
+    var answer : Int = 0
+    var delegate : QuestionTableViewCellDelegate?
     
     @IBOutlet var buttonsPressed: [UIButton]!
-    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        for button in buttonsPressed {
+            button.backgroundColor = defaultBackgroundConfiguration().backgroundColor
+        }
+        
+        if answer != 0 {
+            self.viewWithTag(answer)?.backgroundColor = .systemBlue
+        }
         // Initialization code
     }
 
@@ -29,21 +39,12 @@ class QuestionTableViewCell: UITableViewCell {
 
     
     @IBAction func buttonsPressed(_ sender: UIButton) {
-        buttonsPressed[0].backgroundColor = defaultBackgroundConfiguration().backgroundColor
-        buttonsPressed[1].backgroundColor = defaultBackgroundConfiguration().backgroundColor
-        buttonsPressed[2].backgroundColor = defaultBackgroundConfiguration().backgroundColor
-        buttonsPressed[3].backgroundColor = defaultBackgroundConfiguration().backgroundColor
-        buttonsPressed[4].backgroundColor = defaultBackgroundConfiguration().backgroundColor
-        
-        switch sender {
-        case buttonsPressed[0] : buttonsPressed[0].backgroundColor = .systemBlue
-        case buttonsPressed[1] : buttonsPressed[1].backgroundColor = .systemBlue
-        case buttonsPressed[2] : buttonsPressed[2].backgroundColor = .systemBlue
-        case buttonsPressed[3] : buttonsPressed[3].backgroundColor = .systemBlue
-        case buttonsPressed[4] : buttonsPressed[4].backgroundColor = .systemBlue
-        default :
-            break
+        for button in buttonsPressed {
+            button.backgroundColor = defaultBackgroundConfiguration().backgroundColor
         }
+        delegate?.didSelectButton(cell: self, answer: sender.tag)
+        sender.backgroundColor = .systemBlue
+        
     }
     
 }

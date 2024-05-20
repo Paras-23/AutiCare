@@ -7,15 +7,31 @@
 
 import UIKit
 
-class QuestionsTableViewController: UITableViewController {
+class QuestionsTableViewController: UITableViewController , QuestionTableViewCellDelegate {
+    func didSelectButton(cell: QuestionTableViewCell, answer: Int) {
+        if let indexPath = tableView.indexPath(for: cell) {
+            questions[indexPath.row].selectedAnswer = answer
+        }
+    }
     
-    var questions : [Question] = []
+    
+    var questions : [Question] = []{
+        didSet {
+            updateDoneButtonState()
+        }
+    }
+    
+    var total : Int = 0
+    
+    @IBOutlet var doneButton: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateDoneButtonState()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
@@ -34,13 +50,35 @@ class QuestionsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Question", for: indexPath) as! QuestionTableViewCell
-
+        
+        cell.delegate = self
         // Configure the cell...
         cell.questionLabel.text = questions[indexPath.row].text
+        cell.answer = questions[indexPath.row].selectedAnswer
+        
         
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("select")
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func updateDoneButtonState(){
+        for ans in questions {
+            if ans.selectedAnswer != 0 {
+                continue
+            }
+            else {
+                doneButton.isEnabled = false
+                return
+            }
+        }
+        doneButton.isEnabled = true
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -85,5 +123,12 @@ class QuestionsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        for ques in questions {
+            print(ques.selectedAnswer)
+        }
+    }
 }

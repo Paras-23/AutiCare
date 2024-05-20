@@ -28,19 +28,34 @@ class AssesmentTableViewController: UITableViewController {
      
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
+        
+        guard let questionsControl = segue.destination as? QuestionsTableViewController else {
+            return
+        }
+        
         switch sender as! IndexPath {
-        case IndexPath(row: 0, section: 0) : questions = socialQuestions
-        case IndexPath(row: 1, section: 0) : questions = emotionalQuestions
-        case IndexPath(row: 2, section: 0) : questions = speechQuestions
-        case IndexPath(row: 3, section: 0) : questions = behaviourQuestions
-        case IndexPath(row: 4, section: 0) : questions = sensoryQuestions
-        case IndexPath(row: 5, section: 0) : questions = cognitiveQuestions
+        case IndexPath(row: 0, section: 0) : 
+            questions = socialQuestions
+            questionsControl.navigationItem.title = "SOCIAL RELATIONSHIP AND RECIPROCITY"
+        case IndexPath(row: 1, section: 0) :
+            questions = emotionalQuestions
+            questionsControl.navigationItem.title = "EMOTIONALRESPONSIVENESS"
+        case IndexPath(row: 2, section: 0) :
+            questions = speechQuestions
+            questionsControl.navigationItem.title = "SPEECH-LANGUAGE AND COMMUNICATION"
+        case IndexPath(row: 3, section: 0) :
+            questions = behaviourQuestions
+            questionsControl.navigationItem.title = "BEHAVIOUR PATTERNS"
+        case IndexPath(row: 4, section: 0) :
+            questions = sensoryQuestions
+            questionsControl.navigationItem.title = "SENSORY ASPECTS"
+        case IndexPath(row: 5, section: 0) :
+            questions = cognitiveQuestions
+            questionsControl.navigationItem.title = "COGNITIVE COMPONENT"
         default : break
         }
         
-        if let questionsControl = segue.destination as? QuestionsTableViewController {
-            questionsControl.questions = questions!
-        }
+        questionsControl.questions = questions!
     }
     /*
     // Override to support conditional editing of the table view.
@@ -86,5 +101,11 @@ class AssesmentTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func unwindToAssesmentTableViewController (segue: UIStoryboardSegue) {
+        let sourceViewController = segue.source as! QuestionsTableViewController
+        
+        
+        // Use data from the view controller which initiated the unwind segue
+    }
 }

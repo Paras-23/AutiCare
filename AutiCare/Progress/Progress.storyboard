@@ -194,61 +194,61 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="3km-PS-oTM">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3km-PS-oTM">
+                                            <rect key="frame" x="10" y="10" width="373" height="280"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbt-5l-Xmd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbt-5l-Xmd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="373" height="65"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="dWr-pT-ZOL">
-                                                    <rect key="frame" x="0.0" y="100" width="393" height="200"/>
+                                                    <rect key="frame" x="0.0" y="80" width="373" height="200"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTC-vh-7Bm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="393" height="37.666666666666664"/>
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTC-vh-7Bm">
+                                                            <rect key="frame" x="0.0" y="0.0" width="373" height="37.666666666666664"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="gray" title="Button" cornerStyle="capsule"/>
+                                                            <buttonConfiguration key="configuration" style="gray" title="Rarely" cornerStyle="capsule"/>
                                                             <connections>
-                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="IIc-is-hmu"/>
+                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="fhD-5T-P69"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgU-52-x90">
-                                                            <rect key="frame" x="0.0" y="40.666666666666657" width="393" height="37.666666666666657"/>
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgU-52-x90">
+                                                            <rect key="frame" x="0.0" y="40.666666666666657" width="373" height="37.666666666666657"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="gray" title="Button" cornerStyle="capsule"/>
+                                                            <buttonConfiguration key="configuration" style="gray" title="Sometimes" cornerStyle="capsule"/>
                                                             <connections>
-                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="SI8-fZ-YSd"/>
+                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="nb7-0C-A1A"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifX-qd-Chn">
-                                                            <rect key="frame" x="0.0" y="81.333333333333343" width="393" height="37.333333333333343"/>
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifX-qd-Chn">
+                                                            <rect key="frame" x="0.0" y="81.333333333333343" width="373" height="37.333333333333343"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="gray" title="Button" cornerStyle="capsule"/>
+                                                            <buttonConfiguration key="configuration" style="gray" title="Frequently" cornerStyle="capsule"/>
                                                             <connections>
-                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="7ZS-S3-ByY"/>
+                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="W7U-oU-zRS"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsu-tt-cIC">
-                                                            <rect key="frame" x="0.0" y="121.66666666666667" width="393" height="37.666666666666671"/>
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsu-tt-cIC">
+                                                            <rect key="frame" x="0.0" y="121.66666666666667" width="373" height="37.666666666666671"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="gray" title="Button" cornerStyle="capsule"/>
+                                                            <buttonConfiguration key="configuration" style="gray" title="Mostly" cornerStyle="capsule"/>
                                                             <connections>
-                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="cpc-QF-0vW"/>
+                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="u0V-9w-40s"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxy-xN-kGG">
-                                                            <rect key="frame" x="0.0" y="162.33333333333331" width="393" height="37.666666666666657"/>
+                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxy-xN-kGG">
+                                                            <rect key="frame" x="0.0" y="162.33333333333334" width="373" height="37.666666666666657"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="gray" title="Button" cornerStyle="capsule"/>
+                                                            <buttonConfiguration key="configuration" style="gray" title="Always" cornerStyle="capsule"/>
                                                             <connections>
-                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="ZbQ-Bw-fTl"/>
+                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="dP8-Xj-qZD"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -260,19 +260,19 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="3km-PS-oTM" secondAttribute="bottom" id="1Sf-ad-chA"/>
-                                        <constraint firstItem="3km-PS-oTM" firstAttribute="top" secondItem="BBJ-eD-hyt" secondAttribute="top" id="BFK-jR-gHb"/>
-                                        <constraint firstAttribute="trailing" secondItem="3km-PS-oTM" secondAttribute="trailing" id="VDc-IG-VGd"/>
-                                        <constraint firstItem="3km-PS-oTM" firstAttribute="leading" secondItem="BBJ-eD-hyt" secondAttribute="leading" id="akT-nv-r8p"/>
+                                        <constraint firstItem="3km-PS-oTM" firstAttribute="leading" secondItem="BBJ-eD-hyt" secondAttribute="leading" constant="10" id="Bne-9Q-fez"/>
+                                        <constraint firstItem="3km-PS-oTM" firstAttribute="top" secondItem="BBJ-eD-hyt" secondAttribute="top" constant="10" id="Kos-F4-pWO"/>
+                                        <constraint firstAttribute="bottom" secondItem="3km-PS-oTM" secondAttribute="bottom" constant="10" id="Y2D-fV-cyy"/>
+                                        <constraint firstAttribute="trailing" secondItem="3km-PS-oTM" secondAttribute="trailing" constant="10" id="ynf-L2-A33"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="questionLabel" destination="vbt-5l-Xmd" id="fii-Ut-TCf"/>
-                                    <outletCollection property="buttonsPressed" destination="VTC-vh-7Bm" collectionClass="NSMutableArray" id="xHN-Ax-VMJ"/>
-                                    <outletCollection property="buttonsPressed" destination="LgU-52-x90" collectionClass="NSMutableArray" id="u8i-Jg-E4Y"/>
-                                    <outletCollection property="buttonsPressed" destination="ifX-qd-Chn" collectionClass="NSMutableArray" id="Q2R-XA-MP9"/>
-                                    <outletCollection property="buttonsPressed" destination="Dsu-tt-cIC" collectionClass="NSMutableArray" id="Ltq-rr-gUI"/>
-                                    <outletCollection property="buttonsPressed" destination="Bxy-xN-kGG" collectionClass="NSMutableArray" id="2JW-xH-Vs8"/>
+                                    <outletCollection property="buttonsPressed" destination="VTC-vh-7Bm" collectionClass="NSMutableArray" id="ivA-Gq-FzX"/>
+                                    <outletCollection property="buttonsPressed" destination="LgU-52-x90" collectionClass="NSMutableArray" id="Cld-C8-mj7"/>
+                                    <outletCollection property="buttonsPressed" destination="ifX-qd-Chn" collectionClass="NSMutableArray" id="pZg-7T-UPv"/>
+                                    <outletCollection property="buttonsPressed" destination="Dsu-tt-cIC" collectionClass="NSMutableArray" id="gy8-D4-okP"/>
+                                    <outletCollection property="buttonsPressed" destination="Bxy-xN-kGG" collectionClass="NSMutableArray" id="WCw-u1-zWH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -282,10 +282,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="0Lv-RM-7de">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="uJq-yu-yLu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="uJq-yu-yLu">
+                            <connections>
+                                <segue destination="z9e-KF-mA6" kind="unwind" identifier="segueToAssesmentTabelViewController" unwindAction="unwindToAssesmentTableViewControllerWithSegue:" id="4Fu-9Z-p4s"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="uJq-yu-yLu" id="TFl-Ut-GTP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rsz-yG-4W8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="z9e-KF-mA6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2637" y="-2"/>
         </scene>
