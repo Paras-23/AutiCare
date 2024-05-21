@@ -30,7 +30,7 @@
 		440CA9D52BFB232000FDFA89 /* chatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CA9D42BFB232000FDFA89 /* chatViewController.swift */; };
 		C4AE96592BF71EDC00BEE963 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */; };
 		C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */; };
-		C4AE965D2BF7270500BEE963 /* AssesmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE965C2BF7270500BEE963 /* AssesmentTableViewController.swift */; };
+		C4AE965D2BF7270500BEE963 /* AssessmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE965C2BF7270500BEE963 /* AssessmentTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +59,7 @@
 		440CA9D42BFB232000FDFA89 /* chatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatViewController.swift; sourceTree = "<group>"; };
 		C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
-		C4AE965C2BF7270500BEE963 /* AssesmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentTableViewController.swift; sourceTree = "<group>"; };
+		C4AE965C2BF7270500BEE963 /* AssessmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +136,7 @@
 				05262EA02BF7129800C2774C /* Progress.storyboard */,
 				05262EA32BF712BE00C2774C /* ProgressPageViewController.swift */,
 				C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */,
-				C4AE965C2BF7270500BEE963 /* AssesmentTableViewController.swift */,
+				C4AE965C2BF7270500BEE963 /* AssessmentTableViewController.swift */,
 				C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */,
 				05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */,
 			);
@@ -241,7 +241,7 @@
 				05262E872BF7112C00C2774C /* SceneDelegate.swift in Sources */,
 				C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */,
 				05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */,
-				C4AE965D2BF7270500BEE963 /* AssesmentTableViewController.swift in Sources */,
+				C4AE965D2BF7270500BEE963 /* AssessmentTableViewController.swift in Sources */,
 				05262EAB2BF7136A00C2774C /* ExploreDataModel.swift in Sources */,
 				05262EA42BF712BE00C2774C /* ProgressPageViewController.swift in Sources */,
 				05262EB12BF713C200C2774C /* LearningDataModel.swift in Sources */,
@@ -404,6 +404,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,6 +433,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

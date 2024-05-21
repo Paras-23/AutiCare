@@ -110,7 +110,7 @@ class AssessmentTableViewController: UITableViewController {
     }
     */
     
-    @IBAction func unwindToAssesmentTableViewController (segue: UIStoryboardSegue) {
+    @IBAction func unwindToAssessmentTableViewController (segue: UIStoryboardSegue) {
         let sourceViewController = segue.source as! QuestionsTableViewController
         
         let total = sourceViewController.total
