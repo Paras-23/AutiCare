@@ -7,16 +7,22 @@
 
 import UIKit
 
-class AssesmentTableViewController: UITableViewController {
-    
-    
+class AssessmentTableViewController: UITableViewController {
     
     var categoryWiseQuestions = CategoryWiseQuestions()
-
-    var isCompletedCategory : [Bool] = []
+    var autismScore : Int = 0
+    
+    @IBOutlet var submitButtonPressed: UIButton!
+    
+    var isCompletedCategory : [Bool] = []{
+        didSet{
+            updateSubmitButtonState()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         isCompletedCategory = Array(repeating: false, count: categoryWiseQuestions.AllQuestions.count)
+        updateSubmitButtonState()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -32,13 +38,32 @@ class AssesmentTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        guard let questionsControl = segue.destination as? QuestionsTableViewController else {
-            return
+        if segue.identifier == "segueToQuestionTableViewController" {
+            guard let questionsControl = segue.destination as? QuestionsTableViewController else {
+                return
+            }
+            
+            let indexPath = sender as! IndexPath
+            questionsControl.categoryWiseQuestion = categoryWiseQuestions.AllQuestions[indexPath.row]
+            questionsControl.navigationItem.title = categoryWiseQuestions.AllQuestions[indexPath.row].questionsCategory.description
+        }
+        else if segue.identifier == "unwindToProgressPageViewController"{
+            autismScore = categoryWiseQuestions.AllQuestions.reduce(0){$0 + $1.score}
         }
         
-        let indexPath = sender as! IndexPath
-        questionsControl.categoryWiseQuestion = categoryWiseQuestions.AllQuestions[indexPath.row]
-        questionsControl.navigationItem.title = categoryWiseQuestions.AllQuestions[indexPath.row].questionsCategory.description
+    }
+    
+    func updateSubmitButtonState(){
+        for category in isCompletedCategory {
+            if category == true {
+                continue
+            }
+            else {
+                submitButtonPressed.isEnabled = false
+                return
+            }
+        }
+        submitButtonPressed.isEnabled = true
     }
     /*
     // Override to support conditional editing of the table view.
@@ -101,7 +126,10 @@ class AssesmentTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0))
         cell?.backgroundColor = .systemBlue
         
+        isCompletedCategory[index] = true
+        
         categoryWiseQuestions.AllQuestions[index].score = total
         categoryWiseQuestions.AllQuestions[index].questions = updatedSelectedAnswerQuestions
     }
+    
 }
