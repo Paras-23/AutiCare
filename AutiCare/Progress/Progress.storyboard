@@ -31,14 +31,17 @@
                                         <color key="tintColor" red="0.3058823645" green="0.67058825489999996" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Take Assessment"/>
+                                        <connections>
+                                            <segue destination="9bY-yP-InI" kind="show" id="TcV-Qh-fB9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="jSD-7r-cXy">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jSD-7r-cXy">
                                 <rect key="frame" x="10" y="165" width="373" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autism Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNK-Oc-pOc">
-                                        <rect key="frame" x="0.0" y="0.0" width="173" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="193" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -339,7 +342,7 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="0Lv-RM-7de">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="uJq-yu-yLu">
                             <connections>
-                                <segue destination="z9e-KF-mA6" kind="unwind" identifier="segueToAssesmentTabelViewController" unwindAction="unwindToAssesmentTableViewControllerWithSegue:" id="4Fu-9Z-p4s"/>
+                                <segue destination="z9e-KF-mA6" kind="unwind" identifier="segueToAssessmentTabelViewController" unwindAction="unwindToAssessmentTableViewControllerWithSegue:" id="4Fu-9Z-p4s"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -371,6 +374,9 @@
             <point key="canvasLocation" x="138.1679389312977" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bRA-5w-izR"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Assesment" width="318" height="320"/>
         <systemColor name="systemBackgroundColor">
