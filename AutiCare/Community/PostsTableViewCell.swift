@@ -7,29 +7,22 @@
 
 import UIKit
 
-class PostsTableViewCell: UITableViewCell {
+class PostsTableViewCell: UICollectionViewCell {
 
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var postImageView: UIImageView!
     @IBOutlet var usernameLabel: UILabel!
    
 
-    static let identifier = "PostsTableViewCell"
     
-    static func nib() -> UINib {
-        return UINib(nibName: "PostsTableViewCell", bundle: nil)
-    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+   
     
     func configure(with model: AuticarePosts){
         
