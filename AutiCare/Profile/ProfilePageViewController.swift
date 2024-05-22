@@ -37,7 +37,7 @@ class ProfilePageViewController: UIViewController,UITableViewDelegate,UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-        
+
     // imageView outlet
     
     @IBOutlet weak var circularImageView: UIImageView!
@@ -60,5 +60,8 @@ class ProfilePageViewController: UIViewController,UITableViewDelegate,UITableVie
         
         
     }
-    
+    @IBAction func unwindToProfilePageViewController(segue: UIStoryboardSegue) {
+        
+        // Use data from the view controller which initiated the unwind segue
+    }
 }
