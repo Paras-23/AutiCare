@@ -90,8 +90,8 @@ let sensoryQuestions : [Question] = [Question(text: "Unusually sensitive to sens
                                      Question(text: "Has unusual vision"),
                                      Question(text: "Insensitive to pain"),
                                      Question(text: "Responds to objects/people unusually by smelling, touching or tasting")]
+
 let cognitiveQuestions : [Question] = [Question(text: "Inconsistent attention and concentrationt"),
                                        Question(text: "Shows delay in responding"),
                                        Question(text: "Has unusual memory of some kind"),
                                        Question(text: "Has 'savant' ability")]
-

@@ -7,47 +7,47 @@
 
 import UIKit
 
-class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
    
-    
-    @IBOutlet var table : UITableView!
-
-        
-    var models = [AuticarePosts]()
-        
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            table.register(PostsTableViewCell.nib(), forCellReuseIdentifier: PostsTableViewCell.identifier)
-            
-            table.delegate = self
-            table.dataSource = self
-            
-            models.append(AuticarePosts( numebrOfLikes: 200, username: "Madhav Verma", UserImageName: "head", postImageName: "post_1"))
-            models.append(AuticarePosts(numebrOfLikes: 120, username: "Paras singhal", UserImageName: "head", postImageName: "post_2"))
-            models.append(AuticarePosts(numebrOfLikes: 687, username: "Sudhanshu kumar", UserImageName: "head", postImageName: "post_3"))
-            
-        }
-    
-        func numberOfSections(in tableView: UITableView) -> Int {
-            return 1
-        }
-        
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return models.count
-        }
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: PostsTableViewCell.identifier, for: indexPath) as! PostsTableViewCell
-            cell.configure(with: models[indexPath.row])
-            
-            return cell
-        }
-        
-        
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
-        }
+//    
+//    @IBOutlet var table : UITableView!
+//
+//        
+//    var models = [AuticarePosts]()
+//        
+//        override func viewDidLoad() {
+//            super.viewDidLoad()
+//            
+////            table.register(, forCellReuseIdentifier: "PostsTableViewCell")ta
+//            
+//            table.delegate = self
+//            table.dataSource = self
+//            
+//            models.append(AuticarePosts( numebrOfLikes: 200, username: "Madhav Verma", UserImageName: "head", postImageName: "post_1"))
+//            models.append(AuticarePosts(numebrOfLikes: 120, username: "Paras singhal", UserImageName: "head", postImageName: "post_2"))
+//            models.append(AuticarePosts(numebrOfLikes: 687, username: "Sudhanshu kumar", UserImageName: "head", postImageName: "post_3"))
+//            
+//        }
+//    
+//        func numberOfSections(in tableView: UITableView) -> Int {
+//            return 1
+//        }
+//        
+//        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//            return models.count
+//        }
+//        
+//        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "PostsTableViewCell", for: indexPath) as! PostsTableViewCell
+//            cell.configure(with: models[indexPath.row])
+//            
+//            return cell
+//        }
+//        
+//        
+//        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//            
+//        }
         
     }
     
