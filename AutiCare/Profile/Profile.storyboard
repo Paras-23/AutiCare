@@ -51,7 +51,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="5e8-yb-slJ" kind="show" id="WRa-8j-0Oy"/>
+                                            <segue destination="5e8-yb-slJ" kind="show" identifier="userInfoSegue" id="WRa-8j-0Oy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -177,8 +177,38 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="huW-p3-vde">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="ecb-st-ysM">
                                         <rect key="frame" x="0.0" y="167.99999618530273" width="393" height="56.333332061767578"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ecb-st-ysM" id="vvl-FD-ZgN">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="56.333332061767578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWo-pr-hn7">
+                                                    <rect key="frame" x="28.000000000000007" y="0.0" width="74.666666666666686" height="56.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IZw-eM-M8h">
+                                                    <rect key="frame" x="158.33333333333331" y="11" width="214.66666666666666" height="34.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nWo-pr-hn7" firstAttribute="top" secondItem="vvl-FD-ZgN" secondAttribute="top" id="4TH-md-2uA"/>
+                                                <constraint firstItem="IZw-eM-M8h" firstAttribute="top" secondItem="vvl-FD-ZgN" secondAttribute="topMargin" id="6qS-Cy-7n0"/>
+                                                <constraint firstItem="nWo-pr-hn7" firstAttribute="leading" secondItem="vvl-FD-ZgN" secondAttribute="leading" constant="28" id="CUm-pF-WXa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="IZw-eM-M8h" secondAttribute="bottom" id="l0y-kM-JOo"/>
+                                                <constraint firstAttribute="bottom" secondItem="nWo-pr-hn7" secondAttribute="bottom" id="lj2-e4-v6Y"/>
+                                                <constraint firstItem="IZw-eM-M8h" firstAttribute="leading" secondItem="nWo-pr-hn7" secondAttribute="trailing" constant="55.666666666666629" id="oi9-KS-6Fl"/>
+                                                <constraint firstAttribute="trailing" secondItem="IZw-eM-M8h" secondAttribute="trailing" constant="20" id="qhm-qo-tEW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="huW-p3-vde">
+                                        <rect key="frame" x="0.0" y="224.33332824707031" width="393" height="56.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="huW-p3-vde" id="xDF-zk-88L">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="56.333332061767578"/>
@@ -208,7 +238,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="tH6-oT-LLp">
-                                        <rect key="frame" x="0.0" y="224.33332824707031" width="393" height="52.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="280.66666030883789" width="393" height="52.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tH6-oT-LLp" id="MLM-g6-9Se">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="52.333332061767578"/>
@@ -262,7 +292,7 @@
                             <tableViewSection headerTitle="Child Profile" id="Fhn-In-fz2">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Imt-eY-e4b">
-                                        <rect key="frame" x="0.0" y="332.66665840148926" width="393" height="56.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="388.99999046325684" width="393" height="56.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Imt-eY-e4b" id="OHa-2j-9cg">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="56.333332061767578"/>
@@ -292,7 +322,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="x0D-Jp-aOp">
-                                        <rect key="frame" x="0.0" y="388.99999046325684" width="393" height="56.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="445.33332252502441" width="393" height="56.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x0D-Jp-aOp" id="7c4-I2-Wxc">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="56.666667938232422"/>
@@ -305,7 +335,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <datePicker contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="MAL-kT-nsg">
-                                                    <rect key="frame" x="248" y="11" width="125" height="35"/>
+                                                    <rect key="frame" x="248.33333333333334" y="11" width="124.66666666666666" height="34.666666666666664"/>
                                                     <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
                                                         <!--1970-01-01 11:00:00 +0000-->
                                                     </date>
@@ -326,7 +356,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="n81-zm-iez">
-                                        <rect key="frame" x="0.0" y="445.66665840148926" width="393" height="52.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="501.99999046325684" width="393" height="52.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n81-zm-iez" id="l5i-2I-SY4">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="52.333332061767578"/>
@@ -339,7 +369,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c1z-QF-VCL">
-                                                    <rect key="frame" x="335" y="11" width="33" height="30.333333333333329"/>
+                                                    <rect key="frame" x="335" y="10.999999999999998" width="33" height="30.333333333333329"/>
                                                     <menu key="menu" title="Select Gender" id="3p3-SR-zTF">
                                                         <children>
                                                             <command title="Male" id="hZs-Z4-VdL">

@@ -49,7 +49,7 @@ class ProfilePageViewController: UIViewController,UITableViewDelegate,UITableVie
         self.tabBarItem.title = "Profile"
         self.tabBarItem.image = UIImage(systemName: "person.crop.circle")    }
     
-    var profile :[String] = ["User Info","Permission","Share","Settings","About Us","Log Out"]
+    var profile :[String] = ["User Info","Notifications","Share","Settings","About Us","Log Out"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
