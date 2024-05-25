@@ -13,6 +13,7 @@ class PostsTableViewCell: UICollectionViewCell {
     @IBOutlet var postImageView: UIImageView!
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var captionLabel: UILabel!
+    @IBOutlet var infoButton: UIButton!
     
 
     
@@ -28,10 +29,14 @@ class PostsTableViewCell: UICollectionViewCell {
     func configure(with model: AuticarePosts){
         
         self.usernameLabel.text = model.username
-        self.userImageView.image = UIImage(named: model.userImageName)
+        userImageView.maskCircle(anyImage: UIImage(named: model.userImageName)!)
         self.postImageView.image = UIImage(named: model.postImageName)
         self.captionLabel.text = model.postCaption
     }
     
+    @IBOutlet var options: UICommand!
+    
+    @IBAction func infoButtonTapped(_ sender: UIButton) {
+    }
 }
 

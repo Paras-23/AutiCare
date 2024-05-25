@@ -9,8 +9,8 @@ import UIKit
 
 extension UIImageView {
     public func maskCircle(anyImage: UIImage) {
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.gray.cgColor
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.black.cgColor
         self.contentMode = UIView.ContentMode.scaleAspectFill
         self.layer.cornerRadius = self.frame.width/2.0
         self.layer.masksToBounds = false

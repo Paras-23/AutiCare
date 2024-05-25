@@ -29,7 +29,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        models.append(AuticarePosts( numberOfLikes: 200, username: "Madhav Verma", userImageName: "head", postImageName: "post_1", postCaption: "mkvnrdknvjd fjvnj jknj d dnfjvndfjivnburidbvjdnvj fjknvjrdnkv djkfnvjkd vkjdnjbndkmf vkmdfnjkvdlfm vdfnbdjnksdlmvnsjknafjgewfbskmd cjshevfhnjkfv sd njrnvjbsjk vkrj ggjr vjsbvhbdrjv jdrbguhgerbjfk d"))
+        models.append(AuticarePosts( numberOfLikes: 200, username: "Madhav Verma", userImageName: "head", postImageName: "post_1", postCaption: "mkvnrdknvjd fjvnj jknj d dnfjvndfjivnburidbvjdnvj fjknvjrdnkv djve sj vjrnvjkskd k vmfd jvndsjnjks v sdjkbvjs vjkndjksnvk sklvnksdnvks dvkcdknkjkfnvjkd vkjdnjbndkmf vkmdfnjkvdlfm vdfnbdjnksdlmvnsjknafjgewfbskmd cjshevfhnjkfv sd njrnvjbsjk vkrj ggjr vjsbvhbdrjv jdrbguhgerbjfk d"))
         models.append(AuticarePosts(numberOfLikes: 120, username: "Paras singhal", userImageName: "head", postImageName: "post_2", postCaption: "nfjesnjcvngsdnfjvd hbvfjskd vhjsbcjksd mvdfiv"))
         models.append(AuticarePosts(numberOfLikes: 687, username: "Sudhanshu kumar", userImageName: "head", postImageName: "post_3", postCaption: "nsejknvjkernjkfnvjdkfv jr dvjk rjv jke vkrnjinverm vmknerjkv emvokwenkfkw rvkmer bke kjbneklrggknjksnkgndsjknvmlsnjkfnksndjkfsan cknfoekmvklsnojvnsklvmsknvkrelkvnjkdsnvlkgrdnvkjnrsklvmlsknksnklbd kld"))
         
@@ -51,6 +51,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.8))
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count : 1)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 10, trailing: 8)
         
         let section = NSCollectionLayoutSection(group: group)
         
