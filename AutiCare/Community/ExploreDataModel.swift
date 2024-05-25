@@ -54,4 +54,12 @@ enum mediaType {
 }
 
 
+struct AuticarePosts {
+    var numberOfLikes : Int
+    var username : String
+    var userImageName : String
+    var postImageName : String
+    var postCaption : String
+}
+
 //blocks.jpg, animal.mp4, image.png
