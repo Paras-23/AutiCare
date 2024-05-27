@@ -12,7 +12,7 @@
         <!--Learning-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="FirstLearningPageViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="LearningPageViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,6 +50,7 @@
                     <navigationItem key="navigationItem" title="Learning" id="zoS-8p-V94"/>
                     <connections>
                         <outlet property="collectionView" destination="EZk-dA-mi2" id="oH2-kU-TDG"/>
+                        <segue destination="1Q8-au-O5t" kind="show" identifier="memoryCardSegue" id="0uH-x8-IWq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -88,6 +89,105 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bEm-lu-Gg4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.1679389312977" y="-2.1126760563380285"/>
+        </scene>
+        <!--Memory Card View Controller-->
+        <scene sceneID="c0e-o8-Qge">
+            <objects>
+                <viewController id="1Q8-au-O5t" customClass="MemoryCardViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9fe-GU-jMz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory Cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIR-eB-Yha">
+                                <rect key="frame" x="124.33333333333333" y="113" width="144.33333333333337" height="26.333333333333343"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GC9-wC-093">
+                                <rect key="frame" x="10" y="176" width="373" height="500"/>
+                                <color key="backgroundColor" red="0.59215686274509804" green="0.50196078431372548" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="373" id="z3K-gg-cfH"/>
+                                    <constraint firstAttribute="height" constant="500" id="zAh-ts-cLT"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1pS-0i-zUe">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FruitCell" id="SYa-yU-yUY" customClass="CardCollectionViewCell" customModule="AutiCare" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Aki-zc-vUU">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bp8-Yc-Qyx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bp8-Yc-Qyx" firstAttribute="leading" secondItem="Aki-zc-vUU" secondAttribute="leading" id="1ql-fX-UJR"/>
+                                                <constraint firstAttribute="trailing" secondItem="bp8-Yc-Qyx" secondAttribute="trailing" id="CUM-Vn-rIN"/>
+                                                <constraint firstItem="bp8-Yc-Qyx" firstAttribute="top" secondItem="Aki-zc-vUU" secondAttribute="top" id="JYd-hP-UIp"/>
+                                                <constraint firstAttribute="bottom" secondItem="bp8-Yc-Qyx" secondAttribute="bottom" id="nCL-g9-eQi"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.83137254900000002" green="0.7843137255" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="bp8-Yc-Qyx" id="Ex8-wE-blc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU WON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBm-kc-lOF">
+                                <rect key="frame" x="134.33333333333334" y="705.66666666666663" width="124.66666666666666" height="32.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ja9-ZU-leN"/>
+                        <color key="backgroundColor" red="0.59215686274509804" green="0.50196078431372548" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Ja9-ZU-leN" firstAttribute="bottom" secondItem="QBm-kc-lOF" secondAttribute="bottom" constant="80" id="EZ2-cj-C6H"/>
+                            <constraint firstItem="GC9-wC-093" firstAttribute="centerX" secondItem="9fe-GU-jMz" secondAttribute="centerX" id="Ewa-5j-eXl"/>
+                            <constraint firstItem="GC9-wC-093" firstAttribute="centerY" secondItem="9fe-GU-jMz" secondAttribute="centerY" id="VaW-i0-L78"/>
+                            <constraint firstItem="EIR-eB-Yha" firstAttribute="top" secondItem="Ja9-ZU-leN" secondAttribute="top" constant="10" id="cu6-gZ-j2L"/>
+                            <constraint firstItem="EIR-eB-Yha" firstAttribute="centerX" secondItem="9fe-GU-jMz" secondAttribute="centerX" id="sWv-EG-5Vi"/>
+                            <constraint firstItem="QBm-kc-lOF" firstAttribute="centerX" secondItem="9fe-GU-jMz" secondAttribute="centerX" id="vih-mT-z5s"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="2Yp-Kj-hMg">
+                        <barButtonItem key="leftBarButtonItem" title="Exit" style="plain" id="WQX-bC-cc5">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vQE-Po-Mhg">
+                                <rect key="frame" x="16" y="3" width="87" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.59215686274509804" green="0.50196078431372548" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Exit" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                    <color key="baseBackgroundColor" red="1" green="0.2901960784" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="GK0-SV-RSE" kind="unwind" unwindAction="unwindToLearningPageViewController:" id="yDU-Nm-y2p"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="GC9-wC-093" id="wue-fC-rJ7"/>
+                        <outlet property="gameOverLabel" destination="QBm-kc-lOF" id="whX-CR-plM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U3P-bN-fNR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="GK0-SV-RSE" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-66" y="-1370"/>
         </scene>
     </scenes>
     <resources>

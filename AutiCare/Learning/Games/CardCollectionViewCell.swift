@@ -9,4 +9,6 @@ import UIKit
 
 class CardCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var imageView: UIImageView!
+    
 }

@@ -19,7 +19,7 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
         switch indexPath.row {
         case 0: performSegue(withIdentifier: "memoryCardSegue", sender: nil)
             self.tabBarController?.tabBar.isHidden = true
-            self.navigationController?.navigationBar.isHidden = true
+//            self.navigationController?.navigationBar.isHidden = true
         case 1: print("Cell called \(indexPath.row)")
         default: return
         }
@@ -194,7 +194,6 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
     }
     
     @IBAction func unwindToLearningPageViewController(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source
-        // Use data from the view controller which initiated the unwind segue
+        self.tabBarController?.tabBar.isHidden = false
     }
 }

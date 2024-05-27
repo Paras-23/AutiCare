@@ -34,16 +34,23 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="9dm-0D-61V">
                                         <rect key="frame" x="353" y="0.0" width="40" height="40"/>
-                                        <menu key="menu" id="kiI-BU-9Ou">
+                                        <menu key="menu" title="menu" id="kiI-BU-9Ou">
                                             <children>
-                                                <command title="Item 1" id="ZaA-pa-6lV"/>
-                                                <command title="Item 2" id="cLt-Bg-HvR"/>
+                                                <command title="Item 1" id="ZaA-pa-6lV">
+                                                    <connections>
+                                                        <action selector="infoButtonTapped:" destination="-2" id="MMg-8E-Uuq"/>
+                                                    </connections>
+                                                </command>
+                                                <command title="Item 2" id="cLt-Bg-HvR">
+                                                    <connections>
+                                                        <action selector="infoButtonTapped:" destination="-2" id="Y4Z-nj-m7r"/>
+                                                    </connections>
+                                                </command>
                                             </children>
                                         </menu>
                                         <state key="normal" title="Button" image="info.circle" catalog="system"/>
                                         <connections>
-                                            <action selector="infoButtonTapped:" destination="XlZ-2x-znQ" eventType="touchUpInside" id="hA5-T6-hHN"/>
-                                            <action selector="infoButtonTapped:" destination="-2" eventType="touchUpInside" id="m1G-8z-4ye"/>
+                                            <action selector="infoButtonTapped:" destination="XlZ-2x-znQ" eventType="touchUpInside" id="GRg-a4-tpx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -67,24 +74,24 @@
                                         <rect key="frame" x="0.0" y="0.0" width="147.33333333333334" height="35.666666666666664"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W6P-kd-uXb">
-                                                <rect key="frame" x="0.0" y="0.0" width="147.33333333333334" height="23.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="147.33333333333334" height="28.333333333333332"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fx0-Gd-a2b">
-                                                        <rect key="frame" x="0.0" y="1.3333333333333712" width="49" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="49" height="28.333333333333332"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RND-DB-G2n">
-                                                        <rect key="frame" x="49" y="0.0" width="49.333333333333343" height="23.666666666666668"/>
+                                                        <rect key="frame" x="49" y="0.0" width="49.333333333333343" height="28.333333333333332"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="message" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vra-xy-M4a">
-                                                        <rect key="frame" x="98.333333333333329" y="0.0" width="48.999999999999986" height="23.666666666666668"/>
+                                                        <rect key="frame" x="98.333333333333329" y="0.0" width="48.999999999999986" height="28.333333333333332"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up.circle" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
@@ -96,22 +103,22 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DJx-6N-JoR">
-                                                <rect key="frame" x="0.0" y="23.666666666666686" width="147.33333333333334" height="12"/>
+                                                <rect key="frame" x="0.0" y="28.333333333333368" width="147.33333333333334" height="7.3333333333333321"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPh-NM-RPK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="49" height="12"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="49" height="7.333333333333333"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucT-EN-vxd">
-                                                        <rect key="frame" x="49" y="0.0" width="49.333333333333343" height="12"/>
+                                                        <rect key="frame" x="49" y="0.0" width="49.333333333333343" height="7.333333333333333"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pV-OH-CBo">
-                                                        <rect key="frame" x="98.333333333333329" y="0.0" width="48.999999999999986" height="12"/>
+                                                        <rect key="frame" x="98.333333333333329" y="0.0" width="48.999999999999986" height="7.333333333333333"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -162,7 +169,6 @@
             <size key="customSize" width="587" height="445"/>
             <connections>
                 <outlet property="captionLabel" destination="IwS-kA-cfq" id="eDf-Oy-o8J"/>
-                <outlet property="options" destination="cLt-Bg-HvR" id="0uc-aj-4ch"/>
                 <outlet property="postImageView" destination="b03-6V-7zJ" id="TEc-J4-Mqk"/>
                 <outlet property="userImageView" destination="J81-jU-u1Z" id="YJz-zt-nS8"/>
                 <outlet property="usernameLabel" destination="arZ-jP-seq" id="6k0-Ii-H5k"/>

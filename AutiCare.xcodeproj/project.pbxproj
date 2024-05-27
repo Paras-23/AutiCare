@@ -22,9 +22,11 @@
 		05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */; };
 		05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */; };
 		05262EB12BF713C200C2774C /* LearningDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EB02BF713C200C2774C /* LearningDataModel.swift */; };
+		05E49F722C0494AB00699D09 /* MemoryCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */; };
+		05E49F752C04954300699D09 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E49F742C04954300699D09 /* CardCollectionViewCell.swift */; };
 		440CA9CE2BFB09AE00FDFA89 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */; };
 		440CA9CF2BFB09AE00FDFA89 /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */; };
-		C45DB4962C042E5600CD37F8 /* FirstLearningPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DB4952C042E5600CD37F8 /* FirstLearningPageViewController.swift */; };
+		C45DB4962C042E5600CD37F8 /* LearningPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */; };
 		C45DB4982C042ED800CD37F8 /* Games.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45DB4972C042ED800CD37F8 /* Games.xib */; };
 		C45DB49A2C042EE700CD37F8 /* Sessions.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45DB4992C042EE700CD37F8 /* Sessions.xib */; };
 		C45DB49C2C04302500CD37F8 /* Worksheets.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45DB49B2C04302500CD37F8 /* Worksheets.xib */; };
@@ -58,9 +60,11 @@
 		05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentDataModel.swift; sourceTree = "<group>"; };
 		05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataModel.swift; sourceTree = "<group>"; };
 		05262EB02BF713C200C2774C /* LearningDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningDataModel.swift; sourceTree = "<group>"; };
+		05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCardViewController.swift; sourceTree = "<group>"; };
+		05E49F742C04954300699D09 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
-		C45DB4952C042E5600CD37F8 /* FirstLearningPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLearningPageViewController.swift; sourceTree = "<group>"; };
+		C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningPageViewController.swift; sourceTree = "<group>"; };
 		C45DB4972C042ED800CD37F8 /* Games.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Games.xib; sourceTree = "<group>"; };
 		C45DB4992C042EE700CD37F8 /* Sessions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Sessions.xib; sourceTree = "<group>"; };
 		C45DB49B2C04302500CD37F8 /* Worksheets.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Worksheets.xib; sourceTree = "<group>"; };
@@ -135,7 +139,7 @@
 		05262E9D2BF7125E00C2774C /* Learning */ = {
 			isa = PBXGroup;
 			children = (
-				C45DB4952C042E5600CD37F8 /* FirstLearningPageViewController.swift */,
+				C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */,
 				C45DB4A92C0451C400CD37F8 /* Learning.storyboard */,
 				C45DB4AB2C04527E00CD37F8 /* SectionViewController.swift */,
 				C45DB4972C042ED800CD37F8 /* Games.xib */,
@@ -146,6 +150,7 @@
 				C45DB4A12C04336500CD37F8 /* WorksheetsCollectionViewCell.swift */,
 				C45DB4A52C0446F900CD37F8 /* HeaderCollectionReusableView.swift */,
 				05262EB02BF713C200C2774C /* LearningDataModel.swift */,
+				05E49F732C0494B500699D09 /* Games */,
 			);
 			path = Learning;
 			sourceTree = "<group>";
@@ -172,6 +177,15 @@
 				05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		05E49F732C0494B500699D09 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */,
+				05E49F742C04954300699D09 /* CardCollectionViewCell.swift */,
+			);
+			path = Games;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +270,7 @@
 				05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */,
 				05262E892BF7112C00C2774C /* ViewController.swift in Sources */,
 				05262EA92BF712EE00C2774C /* ProfilePageViewController.swift in Sources */,
-				C45DB4962C042E5600CD37F8 /* FirstLearningPageViewController.swift in Sources */,
+				C45DB4962C042E5600CD37F8 /* LearningPageViewController.swift in Sources */,
 				C45DB4A02C0432BB00CD37F8 /* SessionsCollectionViewCell.swift in Sources */,
 				05262E852BF7112C00C2774C /* AppDelegate.swift in Sources */,
 				C45DB4A62C0446F900CD37F8 /* HeaderCollectionReusableView.swift in Sources */,
@@ -266,6 +280,7 @@
 				05262E872BF7112C00C2774C /* SceneDelegate.swift in Sources */,
 				C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */,
 				05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */,
+				05E49F752C04954300699D09 /* CardCollectionViewCell.swift in Sources */,
 				C4AE965D2BF7270500BEE963 /* AssessmentTableViewController.swift in Sources */,
 				05262EAB2BF7136A00C2774C /* ExploreDataModel.swift in Sources */,
 				05162E202BFDA55D00DC5951 /* CommunityPageViewController.swift in Sources */,
@@ -273,6 +288,7 @@
 				C45DB49E2C0431FA00CD37F8 /* GamesCollectionViewCell.swift in Sources */,
 				05262EB12BF713C200C2774C /* LearningDataModel.swift in Sources */,
 				C45DB4A22C04336500CD37F8 /* WorksheetsCollectionViewCell.swift in Sources */,
+				05E49F722C0494AB00699D09 /* MemoryCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
