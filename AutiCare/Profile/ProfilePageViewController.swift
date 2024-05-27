@@ -24,6 +24,10 @@ class ProfilePageViewController: UIViewController,UITableViewDelegate,UITableVie
         
         var content = cell.defaultContentConfiguration()
         content.text = "\(profile[indexPath.row])"
+        if content.text == "Log Out" {
+            cell.accessoryType = .none
+            cell.tintColor = .red
+        }
         cell.contentConfiguration = content
         return cell
     }
@@ -35,6 +39,11 @@ class ProfilePageViewController: UIViewController,UITableViewDelegate,UITableVie
         1
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0: performSegue(withIdentifier: "userinfoSegue", sender: nil)
+        case 1: performSegue(withIdentifier: "shareSegue", sender: nil)
+        default: print("Nothing")
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 

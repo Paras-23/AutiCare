@@ -50,9 +50,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="5e8-yb-slJ" kind="show" identifier="userInfoSegue" id="WRa-8j-0Oy"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -85,6 +82,8 @@
                     <connections>
                         <outlet property="circularImageView" destination="QTm-wK-wYP" id="QDs-be-eFj"/>
                         <outlet property="profileTableView" destination="BYK-9E-kX7" id="8NK-aJ-f37"/>
+                        <segue destination="5e8-yb-slJ" kind="show" identifier="userinfoSegue" id="sRN-Wh-Zf9"/>
+                        <segue destination="Daz-Hp-W5g" kind="show" identifier="shareSegue" id="FiK-Xc-r0r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -101,6 +100,7 @@
                         <viewLayoutGuide key="safeArea" id="iI1-z2-4R0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fw3-ol-ddo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzo-wL-FJ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,7 +191,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IZw-eM-M8h">
-                                                    <rect key="frame" x="158.33333333333331" y="11" width="214.66666666666666" height="34.333333333333329"/>
+                                                    <rect key="frame" x="158.33333333333337" y="11" width="214.66666666666663" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
