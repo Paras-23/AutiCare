@@ -7,12 +7,22 @@
 
 import UIKit
 
-class FirstLearningPageViewController: UIViewController,UICollectionViewDataSource {
+class LearningPageViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
     
     required init?(coder : NSCoder) {
         super.init(coder: coder)
         self.tabBarItem.title = "Learning"
         self.tabBarItem.image = UIImage(systemName: "brain")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0: performSegue(withIdentifier: "memoryCardSegue", sender: nil)
+            self.tabBarController?.tabBar.isHidden = true
+            self.navigationController?.navigationBar.isHidden = true
+        case 1: print("Cell called \(indexPath.row)")
+        default: return
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -67,7 +77,6 @@ class FirstLearningPageViewController: UIViewController,UICollectionViewDataSour
     }
     
     
-    
     @IBOutlet var collectionView: UICollectionView!
     
     
@@ -88,6 +97,7 @@ class FirstLearningPageViewController: UIViewController,UICollectionViewDataSour
         collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
         
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
@@ -181,5 +191,10 @@ class FirstLearningPageViewController: UIViewController,UICollectionViewDataSour
        let viewController = storyboard.instantiateViewController(withIdentifier: "SectionViewController") as! SectionViewController
         navigationController?.pushViewController(viewController, animated: true)
         
+    }
+    
+    @IBAction func unwindToLearningPageViewController(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
     }
 }
