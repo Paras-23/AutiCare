@@ -28,7 +28,6 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     private func setupHeader() {
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        //secondLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(headerLabel)
         addSubview(button)
         NSLayoutConstraint.activate([

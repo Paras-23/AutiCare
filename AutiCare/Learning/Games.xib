@@ -10,27 +10,36 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Fwj-7h-qEZ" customClass="GamesCollectionViewCell" customModule="AutiCare" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="350"/>
+            <rect key="frame" x="0.0" y="0.0" width="350" height="330"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UPP-rJ-Sll">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="350"/>
+                <rect key="frame" x="0.0" y="0.0" width="350" height="330"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-cP-bTZ">
-                        <rect key="frame" x="5" y="5" width="390" height="340"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hga-X6-x72">
+                        <rect key="frame" x="5" y="304" width="340" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-cP-bTZ">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="294"/>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="tYN-cP-bTZ" secondAttribute="trailing" constant="5" id="3X7-Ua-pGQ"/>
-                    <constraint firstItem="tYN-cP-bTZ" firstAttribute="top" secondItem="UPP-rJ-Sll" secondAttribute="top" constant="5" id="Ip6-IL-yGU"/>
-                    <constraint firstItem="tYN-cP-bTZ" firstAttribute="leading" secondItem="UPP-rJ-Sll" secondAttribute="leading" constant="5" id="YFz-bw-Y0W"/>
-                    <constraint firstAttribute="bottom" secondItem="tYN-cP-bTZ" secondAttribute="bottom" constant="5" id="wa9-NG-X3Z"/>
+                    <constraint firstAttribute="trailing" secondItem="hga-X6-x72" secondAttribute="trailing" constant="5" id="Do2-Wo-LbZ"/>
+                    <constraint firstItem="tYN-cP-bTZ" firstAttribute="top" secondItem="UPP-rJ-Sll" secondAttribute="top" id="Ds5-EI-Ayj"/>
+                    <constraint firstAttribute="bottom" secondItem="hga-X6-x72" secondAttribute="bottom" constant="5" id="HZH-Oc-4Po"/>
+                    <constraint firstAttribute="trailing" secondItem="tYN-cP-bTZ" secondAttribute="trailing" id="ao7-eA-Ifx"/>
+                    <constraint firstAttribute="bottom" secondItem="tYN-cP-bTZ" secondAttribute="bottom" constant="36" id="oJt-ae-BT7"/>
+                    <constraint firstItem="hga-X6-x72" firstAttribute="leading" secondItem="UPP-rJ-Sll" secondAttribute="leading" constant="5" id="ref-7B-gdB"/>
+                    <constraint firstItem="tYN-cP-bTZ" firstAttribute="leading" secondItem="UPP-rJ-Sll" secondAttribute="leading" id="tyB-Ng-9Je"/>
                 </constraints>
             </collectionViewCellContentView>
             <connections>
                 <outlet property="imageView" destination="tYN-cP-bTZ" id="UXV-Se-rX4"/>
             </connections>
-            <point key="canvasLocation" x="177" y="-59"/>
+            <point key="canvasLocation" x="175.57251908396947" y="-59.154929577464792"/>
         </collectionViewCell>
     </objects>
 </document>

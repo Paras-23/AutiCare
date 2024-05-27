@@ -143,8 +143,8 @@
 				C45DB4992C042EE700CD37F8 /* Sessions.xib */,
 				C45DB49F2C0432BB00CD37F8 /* SessionsCollectionViewCell.swift */,
 				C45DB49B2C04302500CD37F8 /* Worksheets.xib */,
-				C45DB4A52C0446F900CD37F8 /* HeaderCollectionReusableView.swift */,
 				C45DB4A12C04336500CD37F8 /* WorksheetsCollectionViewCell.swift */,
+				C45DB4A52C0446F900CD37F8 /* HeaderCollectionReusableView.swift */,
 				05262EB02BF713C200C2774C /* LearningDataModel.swift */,
 			);
 			path = Learning;

@@ -18,8 +18,8 @@ struct Worksheets{
 }
 
 class DataModel{
-    static var games:[Games] = [Games(imageName: "Designer-4"),Games(imageName: "Designer-5"),Games(imageName: "Designer-6")]
-    static var sessions:[Sessions] = [Sessions(imageName: "Designer-4"),Sessions(imageName: "Designer-4"),Sessions(imageName: "Designer-4")]
-    static var worksheets:[Worksheets] = [Worksheets(imageName: "Designer-4"),Worksheets(imageName: "Designer-4"),Worksheets(imageName: "Designer-4")]
+    static var games:[Games] = [Games(imageName: "Designer-20"),Games(imageName: "Designer-12"),Games(imageName: "Designer-15")]
+    static var sessions:[Sessions] = [Sessions(imageName: "Designer-2"),Sessions(imageName: "Designer-4"),Sessions(imageName: "Designer-14")]
+    static var worksheets:[Worksheets] = [Worksheets(imageName: "Designer-10"),Worksheets(imageName: "Designer-5"),Worksheets(imageName: "Designer-8")]
     static var sectionHeader:[String] = ["Games","Sessions","Worksheets"]
 }

@@ -425,6 +425,7 @@
                         <outletCollection property="profileTextfieldsInfo" destination="Gsv-7b-dB5" collectionClass="NSMutableArray" id="Q4D-JE-Jk5"/>
                         <outletCollection property="profileTextfieldsInfo" destination="RV4-ky-Pe0" collectionClass="NSMutableArray" id="ASS-aB-Fvr"/>
                         <outletCollection property="profileTextfieldsInfo" destination="TbF-Aw-sC9" collectionClass="NSMutableArray" id="s11-f7-AJd"/>
+                        <outletCollection property="profileTextfieldsInfo" destination="IZw-eM-M8h" collectionClass="NSMutableArray" id="b7h-CB-PMO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIQ-sg-NEP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

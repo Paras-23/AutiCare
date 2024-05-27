@@ -19,7 +19,6 @@ class FirstLearningPageViewController: UIViewController,UICollectionViewDataSour
         3
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section{
         case 0 :
@@ -38,23 +37,23 @@ class FirstLearningPageViewController: UIViewController,UICollectionViewDataSour
         case 0 :
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Games", for: indexPath) as! GamesCollectionViewCell
             cell.updateGames(with: DataModel.games[indexPath.item])
-            cell.layer.cornerRadius = 10
-            cell.layer.borderWidth = 2
-            cell.layer.borderColor = UIColor.black.cgColor
+            cell.layer.cornerRadius = 35
+            cell.layer.borderWidth = 2.5
+            cell.layer.borderColor = UIColor.systemMint.cgColor
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Sessions", for: indexPath) as! SessionsCollectionViewCell
             cell.updateSessions(with: DataModel.sessions[indexPath.item])
-            cell.layer.cornerRadius = 10
-            cell.layer.borderWidth = 2
-            cell.layer.borderColor = UIColor.black.cgColor
+            cell.layer.cornerRadius = 35
+            cell.layer.borderWidth = 2.5
+            cell.layer.borderColor = UIColor.systemMint.cgColor
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Worksheets", for: indexPath) as! WorksheetsCollectionViewCell
             cell.updateWorksheets(with: DataModel.worksheets[indexPath.item])
-            cell.layer.cornerRadius = 10
-            cell.layer.borderWidth = 2
-            cell.layer.borderColor = UIColor.black.cgColor
+            cell.layer.cornerRadius = 35
+            cell.layer.borderWidth = 2.5
+            cell.layer.borderColor = UIColor.systemMint.cgColor
             return cell
             
         default:
@@ -105,9 +104,11 @@ class FirstLearningPageViewController: UIViewController,UICollectionViewDataSour
                 
             case 1:
                 headerView.headerLabel.text = DataModel.sectionHeader[indexPath.section]
+                headerView.headerLabel.font = UIFont.boldSystemFont(ofSize: 20)
                 headerView.button.setTitle("See All", for: .normal)
             case 2:
                 headerView.headerLabel.text = DataModel.sectionHeader[indexPath.section]
+                headerView.headerLabel.font = UIFont.boldSystemFont(ofSize: 20)
                 headerView.button.setTitle("See All", for: .normal)
             default:
                 headerView.headerLabel.text = "Default Header"
