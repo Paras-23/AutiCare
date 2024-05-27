@@ -14,17 +14,17 @@ enum QuestionCategory {
     var description : String {
         switch self {
         case .social :
-            return "SOCIAL RELATIONSHIP AND RECIPROCITY"
+            return "Social Relationship and Responsiveness"
         case .emotional :
-            return "EMOTIONALRESPONSIVENESS"
+            return "Emotional Responsiveness"
         case .speech :
-            return "SPEECH-LANGUAGE AND COMMUNICATION"
+            return "Speech language and Communication"
         case .behaviour :
-            return "BEHAVIOUR PATTERNS"
+            return "Behaviour Patterns"
         case .sensory :
-            return "SENSORY ASPECTS"
+            return "Sensory Aspects"
         case .cognitive :
-            return "COGNITIVE COMPONENT"
+            return "Cognitive Components"
         }
     }
     
@@ -50,48 +50,48 @@ struct CategoryWiseQuestion {
     var score : Int = 0
 }
 
-let socialQuestions: [Question] = [Question(text: "Has poor eye contact"),
-                                   Question(text: "Lacks social smile"),
-                                   Question(text: "Remains aloof"),
-                                   Question(text: "Does not reach out to others"),
-                                   Question(text: "Unable to relate to people"),
-                                   Question(text: "Unable to respond to social/environmental cues"),
-                                   Question(text: "Engages in solitary and repetitive play activities"),
-                                   Question(text: "Unable to take turns in social interaction"),
-                                   Question(text: "Does not maintain peer relationships")]
+let socialQuestions: [Question] = [Question(text: "Your child has poor eye contact"),
+                                   Question(text: "Your child lacks social smile"),
+                                   Question(text: "Your child remains aloof"),
+                                   Question(text: "Your child does not reach out to others"),
+                                   Question(text: "Your child unable to relate to people"),
+                                   Question(text: "Your child is unable to respond to social/environmental cues"),
+                                   Question(text: "Your child engages in solitary and repetitive play activities"),
+                                   Question(text: "Your child is unable to take turns in social interaction"),
+                                   Question(text: "Your child does not maintain peer relationships")]
 
-let emotionalQuestions : [Question] = [Question(text: "Shows inappropriate emotional response"),
-                                       Question(text: "Shows exaggerated emotions"),
-                                       Question(text: "Engages in self-stimulating emotions"),
-                                       Question(text: "Lacks fear of danger"),
-                                       Question(text: "Excited or agitated for no apparent reason")]
+let emotionalQuestions : [Question] = [Question(text: "Your child shows inappropriate emotional response"),
+                                       Question(text: "Your child shows exaggerated emotions"),
+                                       Question(text: "Your child engages in self-stimulating emotions"),
+                                       Question(text: "Your child lacks fear of danger"),
+                                       Question(text: "Your child gets excited or agitated for no apparent reason")]
 
-let speechQuestions : [Question] = [Question(text: "Acquired speech and lost it"),
-                                    Question(text: "Has difficulty in using non-verbal language or gestures to communicate"),
-                                    Question(text: "Engages in stereotyped and repetitive use of language"),
-                                    Question(text: "Engages in echolalic speech"),
-                                    Question(text: "Produces infantile squeals/unusual noises"),
-                                    Question(text: "Unable to initiate or sustain conversation with others"),
-                                    Question(text: "Uses jargon or meaningless words"),
-                                    Question(text: "Uses pronoun reversals"),
-                                    Question(text: "Unable to grasp pragmatics of communication (real meaning)")]
+let speechQuestions : [Question] = [Question(text: "Your child acquired speech and lost it"),
+                                    Question(text: "Your child has difficulty in using non-verbal language or gestures to communicate"),
+                                    Question(text: "Your child engages in stereotyped and repetitive use of language"),
+                                    Question(text: "Your child engages in echolalic speech"),
+                                    Question(text: "Your child produces infantile squeals/unusual noises"),
+                                    Question(text: "Your child is unable to initiate or sustain conversation with others"),
+                                    Question(text: "Your child uses jargon or meaningless words"),
+                                    Question(text: "Your child uses pronoun reversals"),
+                                    Question(text: "Your child is unable to grasp pragmatics of communication (real meaning)")]
 
-let behaviourQuestions : [Question] = [Question(text: "Engages in stereotyped and repetitive motor mannerisms"),
-                                        Question(text: "Shows attachment to inanimate objects"),
-                                        Question(text: "Shows hyperactivity/restlessness"),
-                                        Question(text: "Exhibits aggressive behavior"),
-                                        Question(text: "Throws temper tantrums"),
-                                        Question(text: "Engages in self-injurious behavior"),
-                                        Question(text: "Insists on sameness")]
+let behaviourQuestions : [Question] = [Question(text: "Your child engages in stereotyped and repetitive motor mannerisms"),
+                                        Question(text: "Your child shows attachment to inanimate objects"),
+                                        Question(text: "Your child shows hyperactivity/restlessness"),
+                                        Question(text: "Your child exhibits aggressive behavior"),
+                                        Question(text: "Your child throws temper tantrums"),
+                                        Question(text: "Your child engages in self-injurious behavior"),
+                                        Question(text: "Your child insists on sameness")]
 
-let sensoryQuestions : [Question] = [Question(text: "Unusually sensitive to sensory stimuli"),
-                                     Question(text: "Stares into space for long periods of time"),
-                                     Question(text: "Has difficulty in tracking objects"),
-                                     Question(text: "Has unusual vision"),
-                                     Question(text: "Insensitive to pain"),
-                                     Question(text: "Responds to objects/people unusually by smelling, touching or tasting")]
+let sensoryQuestions : [Question] = [Question(text: "Your child unusually sensitive to sensory stimuli"),
+                                     Question(text: "Your child stares into space for long periods of time"),
+                                     Question(text: "Your child has difficulty in tracking objects"),
+                                     Question(text: "Your child has unusual vision"),
+                                     Question(text: "Your child is insensitive to pain"),
+                                     Question(text: "Your child responds to objects/people unusually by smelling, touching or tasting")]
 
-let cognitiveQuestions : [Question] = [Question(text: "Inconsistent attention and concentrationt"),
-                                       Question(text: "Shows delay in responding"),
-                                       Question(text: "Has unusual memory of some kind"),
-                                       Question(text: "Has 'savant' ability")]
+let cognitiveQuestions : [Question] = [Question(text: "Your child is inconsistent attention and concentrationt"),
+                                       Question(text: "Your child shows delay in responding"),
+                                       Question(text: "Your child has unusual memory of some kind"),
+                                       Question(text: "Your child has 'savant' ability")]

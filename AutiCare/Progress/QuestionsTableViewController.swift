@@ -62,7 +62,7 @@ class QuestionsTableViewController: UITableViewController , QuestionTableViewCel
         }
         
         if questions[indexPath.row].selectedAnswer != 0 {
-            cell.viewWithTag(questions[indexPath.row].selectedAnswer)?.backgroundColor = .systemBlue
+            cell.viewWithTag(questions[indexPath.row].selectedAnswer)?.backgroundColor = .systemMint
         }
         
         return cell
@@ -87,6 +87,9 @@ class QuestionsTableViewController: UITableViewController , QuestionTableViewCel
         doneButton.isEnabled = true
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        300
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

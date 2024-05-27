@@ -257,51 +257,63 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbt-5l-Xmd">
                                                     <rect key="frame" x="0.0" y="0.0" width="373" height="65"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="dWr-pT-ZOL">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="dWr-pT-ZOL">
                                                     <rect key="frame" x="0.0" y="80" width="373" height="200"/>
                                                     <subviews>
-                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTC-vh-7Bm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="373" height="37.666666666666664"/>
-                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="gray" title="Rarely"/>
-                                                            <connections>
-                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="fhD-5T-P69"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgU-52-x90">
-                                                            <rect key="frame" x="0.0" y="40.666666666666657" width="373" height="37.666666666666657"/>
-                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="gray" title="Sometimes"/>
-                                                            <connections>
-                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="nb7-0C-A1A"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifX-qd-Chn">
-                                                            <rect key="frame" x="0.0" y="81.333333333333343" width="373" height="37.333333333333343"/>
-                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="gray" title="Frequently"/>
-                                                            <connections>
-                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="W7U-oU-zRS"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsu-tt-cIC">
-                                                            <rect key="frame" x="0.0" y="121.66666666666667" width="373" height="37.666666666666671"/>
-                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="gray" title="Mostly"/>
-                                                            <connections>
-                                                                <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="u0V-9w-40s"/>
-                                                            </connections>
-                                                        </button>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tn3-pr-Nal">
+                                                            <rect key="frame" x="0.0" y="0.0" width="373" height="62.666666666666664"/>
+                                                            <subviews>
+                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTC-vh-7Bm">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="181.66666666666666" height="62.666666666666664"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="gray" title="Rarely"/>
+                                                                    <connections>
+                                                                        <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="fhD-5T-P69"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgU-52-x90">
+                                                                    <rect key="frame" x="191.66666666666663" y="0.0" width="181.33333333333337" height="62.666666666666664"/>
+                                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="gray" title="Sometimes"/>
+                                                                    <connections>
+                                                                        <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="nb7-0C-A1A"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wmO-bm-ew7">
+                                                            <rect key="frame" x="0.0" y="68.666666666666657" width="373" height="62.666666666666657"/>
+                                                            <subviews>
+                                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifX-qd-Chn">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="181.66666666666666" height="62.666666666666664"/>
+                                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="gray" title="Frequently"/>
+                                                                    <connections>
+                                                                        <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="W7U-oU-zRS"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsu-tt-cIC">
+                                                                    <rect key="frame" x="191.66666666666663" y="0.0" width="181.33333333333337" height="62.666666666666664"/>
+                                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="gray" title="Mostly"/>
+                                                                    <connections>
+                                                                        <action selector="buttonsPressed:" destination="fFX-Wl-O24" eventType="touchUpInside" id="u0V-9w-40s"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
                                                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxy-xN-kGG">
-                                                            <rect key="frame" x="0.0" y="162.33333333333334" width="373" height="37.666666666666657"/>
+                                                            <rect key="frame" x="0.0" y="137.33333333333334" width="373" height="62.666666666666657"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="gray" title="Always"/>
