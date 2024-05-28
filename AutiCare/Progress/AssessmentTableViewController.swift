@@ -32,7 +32,10 @@ class AssessmentTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "segueToQuestionTableViewController", sender: indexPath)
+        switch indexPath.row {
+        case 6: break
+        default: performSegue(withIdentifier: "segueToQuestionTableViewController", sender: indexPath)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

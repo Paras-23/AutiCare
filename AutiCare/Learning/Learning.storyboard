@@ -67,6 +67,7 @@
                         <viewLayoutGuide key="safeArea" id="HJw-AS-Lxi"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YF1-ck-23R"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wta-YT-Ake" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

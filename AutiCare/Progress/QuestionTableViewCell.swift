@@ -36,7 +36,7 @@ class QuestionTableViewCell: UITableViewCell {
             button.backgroundColor = defaultBackgroundConfiguration().backgroundColor
         }
         delegate?.didSelectButton(cell: self, answer: sender.tag)
-        sender.backgroundColor = .systemBlue
+        sender.backgroundColor = .systemMint
         
     }
     
