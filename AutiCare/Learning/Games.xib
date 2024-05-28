@@ -17,8 +17,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hga-X6-x72">
-                        <rect key="frame" x="5" y="304" width="340" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="5" y="301" width="340" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -37,6 +37,7 @@
                 </constraints>
             </collectionViewCellContentView>
             <connections>
+                <outlet property="gameTitle" destination="hga-X6-x72" id="MT7-v3-b2H"/>
                 <outlet property="imageView" destination="tYN-cP-bTZ" id="UXV-Se-rX4"/>
             </connections>
             <point key="canvasLocation" x="175.57251908396947" y="-59.154929577464792"/>

@@ -50,6 +50,14 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
             cell.layer.cornerRadius = 35
             cell.layer.borderWidth = 2.5
             cell.layer.borderColor = UIColor.systemMint.cgColor
+            
+            switch indexPath.row {
+            case 0:
+                cell.gameTitle.text = "Memory Cards"
+            default:
+                break
+            }
+            
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Sessions", for: indexPath) as! SessionsCollectionViewCell

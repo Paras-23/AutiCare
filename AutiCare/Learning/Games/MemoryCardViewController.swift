@@ -11,6 +11,7 @@ class MemoryCardViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var gameOverLabel: UILabel!
+    @IBOutlet var monkeyImage: UIImageView!
     
     let fruitImages = [UIImage(named: "apple"), UIImage(named: "orange"), UIImage(named: "grapes"),
                        UIImage(named: "watermelon"), UIImage(named: "strawberry"), UIImage(named: "cherry"),
@@ -23,6 +24,8 @@ class MemoryCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gameOverLabel.isHidden = true
+        monkeyImage.isHidden = true
+        
         collectionView.dataSource = self
         collectionView.delegate = self
 
@@ -82,8 +85,12 @@ extension MemoryCardViewController: UICollectionViewDataSource, UICollectionView
                 if shuffledFruits[firstIndexPath.item] == shuffledFruits[indexPath.item] {
                     // Matched
                     if self.isGameOver() == true {
-                        self.gameOverLabel.isHidden = false
-                        self.gameOverLabel.text = "YOU WON"
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            self.gameOverLabel.isHidden = false
+                            self.monkeyImage.isHidden = false
+                            self.gameOverLabel.text = "YOU WON"
+                            collectionView.layer.opacity = 50
+                        }
                     }
                 } else {
                     // Not matched

@@ -10,6 +10,7 @@ import UIKit
 class GamesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var gameTitle: UILabel!
     
     func updateGames(with games:Games){
         imageView.image = UIImage(named: games.imageName)

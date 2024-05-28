@@ -145,20 +145,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU WON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBm-kc-lOF">
-                                <rect key="frame" x="134.33333333333334" y="705.66666666666663" width="124.66666666666666" height="32.333333333333371"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU WON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBm-kc-lOF">
+                                <rect key="frame" x="114.33333333333333" y="696" width="164.33333333333337" height="42"/>
+                                <color key="backgroundColor" red="1" green="0.2901960784" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" systemColor="labelColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="NBg-ag-gGd">
+                                <rect key="frame" x="18" y="209" width="357" height="434"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ja9-ZU-leN"/>
                         <color key="backgroundColor" red="0.59215686274509804" green="0.50196078431372548" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="NBg-ag-gGd" firstAttribute="top" secondItem="EIR-eB-Yha" secondAttribute="bottom" constant="69.670000000000002" id="6NQ-mc-dFe"/>
                             <constraint firstItem="Ja9-ZU-leN" firstAttribute="bottom" secondItem="QBm-kc-lOF" secondAttribute="bottom" constant="80" id="EZ2-cj-C6H"/>
                             <constraint firstItem="GC9-wC-093" firstAttribute="centerX" secondItem="9fe-GU-jMz" secondAttribute="centerX" id="Ewa-5j-eXl"/>
+                            <constraint firstItem="NBg-ag-gGd" firstAttribute="leading" secondItem="Ja9-ZU-leN" secondAttribute="leading" constant="18" id="JwF-vm-zgt"/>
                             <constraint firstItem="GC9-wC-093" firstAttribute="centerY" secondItem="9fe-GU-jMz" secondAttribute="centerY" id="VaW-i0-L78"/>
                             <constraint firstItem="EIR-eB-Yha" firstAttribute="top" secondItem="Ja9-ZU-leN" secondAttribute="top" constant="10" id="cu6-gZ-j2L"/>
+                            <constraint firstItem="Ja9-ZU-leN" firstAttribute="trailing" secondItem="NBg-ag-gGd" secondAttribute="trailing" constant="18" id="elC-Sk-Rpp"/>
+                            <constraint firstItem="QBm-kc-lOF" firstAttribute="top" secondItem="NBg-ag-gGd" secondAttribute="bottom" constant="53" id="qKN-lF-f7k"/>
                             <constraint firstItem="EIR-eB-Yha" firstAttribute="centerX" secondItem="9fe-GU-jMz" secondAttribute="centerX" id="sWv-EG-5Vi"/>
                             <constraint firstItem="QBm-kc-lOF" firstAttribute="centerX" secondItem="9fe-GU-jMz" secondAttribute="centerX" id="vih-mT-z5s"/>
                         </constraints>
@@ -183,15 +191,20 @@
                     <connections>
                         <outlet property="collectionView" destination="GC9-wC-093" id="wue-fC-rJ7"/>
                         <outlet property="gameOverLabel" destination="QBm-kc-lOF" id="whX-CR-plM"/>
+                        <outlet property="monkeyImage" destination="NBg-ag-gGd" id="L0v-Rx-tAG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3P-bN-fNR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="GK0-SV-RSE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-66" y="-1370"/>
+            <point key="canvasLocation" x="-66.412213740458014" y="-1370.4225352112676"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Image" width="826" height="963"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
