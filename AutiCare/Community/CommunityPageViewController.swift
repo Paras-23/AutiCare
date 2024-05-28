@@ -10,6 +10,9 @@ import UIKit
 class CommunityPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    
+    
     var models = [AuticarePosts]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -29,9 +32,9 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        models.append(AuticarePosts( numberOfLikes: 200, username: "Madhav Verma", userImageName: "head", postImageName: "post_1", postCaption: "Enter a #Caption"))
-        models.append(AuticarePosts(numberOfLikes: 120, username: "Paras singhal", userImageName: "head", postImageName: "post_2", postCaption: "Enter a #Caption"))
-        models.append(AuticarePosts(numberOfLikes: 687, username: "Sudhanshu kumar", userImageName: "head", postImageName: "post_3", postCaption: "Enter a #Caption"))
+        models.append(AuticarePosts( numberOfLikes: 200, username: "Madhav Verma", userImageName: "head", postImageName: "post_1", postCaption: "Playing with amigos is always a moment worth capturing📸😎"))
+        models.append(AuticarePosts(numberOfLikes: 120, username: "Paras singhal", userImageName: "head", postImageName: "post_2", postCaption: "When she mocks me with a camera of her own.😓 It's a mother daughter love❤️"))
+        models.append(AuticarePosts(numberOfLikes: 687, username: "Sudhanshu kumar", userImageName: "head", postImageName: "post_3", postCaption: "Painting with hand or hand with painting. It's still a mystery to be solved.🤔"))
         
         collectionView.dataSource = self
         collectionView.delegate = self

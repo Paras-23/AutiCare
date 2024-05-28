@@ -16,24 +16,42 @@
                 <rect key="frame" x="0.0" y="0.0" width="350" height="330"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hga-X6-x72">
-                        <rect key="frame" x="5" y="301" width="340" height="24"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-cP-bTZ">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="294"/>
-                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ua3-Ql-U79">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="330"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-cP-bTZ">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="297"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbt-bd-gz7">
+                                <rect key="frame" x="0.0" y="297" width="350" height="33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hga-X6-x72">
+                                        <rect key="frame" x="0.0" y="0.0" width="259.33333333333331" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyV-JS-4Ul">
+                                        <rect key="frame" x="259.33333333333331" y="0.0" width="90.666666666666686" height="33"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GyV-JS-4Ul" firstAttribute="width" secondItem="hga-X6-x72" secondAttribute="width" multiplier="0.35" id="nF7-IP-Xo3"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="tYN-cP-bTZ" firstAttribute="height" secondItem="xbt-bd-gz7" secondAttribute="height" multiplier="9" id="2cp-q3-sV9"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="hga-X6-x72" secondAttribute="trailing" constant="5" id="Do2-Wo-LbZ"/>
-                    <constraint firstItem="tYN-cP-bTZ" firstAttribute="top" secondItem="UPP-rJ-Sll" secondAttribute="top" id="Ds5-EI-Ayj"/>
-                    <constraint firstAttribute="bottom" secondItem="hga-X6-x72" secondAttribute="bottom" constant="5" id="HZH-Oc-4Po"/>
-                    <constraint firstAttribute="trailing" secondItem="tYN-cP-bTZ" secondAttribute="trailing" id="ao7-eA-Ifx"/>
-                    <constraint firstAttribute="bottom" secondItem="tYN-cP-bTZ" secondAttribute="bottom" constant="36" id="oJt-ae-BT7"/>
-                    <constraint firstItem="hga-X6-x72" firstAttribute="leading" secondItem="UPP-rJ-Sll" secondAttribute="leading" constant="5" id="ref-7B-gdB"/>
-                    <constraint firstItem="tYN-cP-bTZ" firstAttribute="leading" secondItem="UPP-rJ-Sll" secondAttribute="leading" id="tyB-Ng-9Je"/>
+                    <constraint firstAttribute="trailing" secondItem="ua3-Ql-U79" secondAttribute="trailing" id="5Wb-fh-9ci"/>
+                    <constraint firstItem="ua3-Ql-U79" firstAttribute="leading" secondItem="UPP-rJ-Sll" secondAttribute="leading" id="BKL-R1-DyY"/>
+                    <constraint firstItem="ua3-Ql-U79" firstAttribute="top" secondItem="UPP-rJ-Sll" secondAttribute="top" id="lSZ-3q-pIE"/>
+                    <constraint firstAttribute="bottom" secondItem="ua3-Ql-U79" secondAttribute="bottom" id="uOs-7s-cGi"/>
                 </constraints>
             </collectionViewCellContentView>
             <connections>
@@ -43,4 +61,7 @@
             <point key="canvasLocation" x="175.57251908396947" y="-59.154929577464792"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="123"/>
+    </resources>
 </document>

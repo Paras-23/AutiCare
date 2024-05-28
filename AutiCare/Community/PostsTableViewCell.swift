@@ -21,6 +21,7 @@ class PostsTableViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        postImageView.layer.borderWidth = 0.5
        
     }
 
