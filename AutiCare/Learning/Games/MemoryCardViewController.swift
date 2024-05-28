@@ -27,7 +27,7 @@ class MemoryCardViewController: UIViewController {
         collectionView.delegate = self
 
         shuffledFruits = fruitImages.shuffled()
-
+        collectionView.isEditing = false
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         collectionView.isScrollEnabled = false
     }
@@ -42,26 +42,20 @@ class MemoryCardViewController: UIViewController {
         return UICollectionViewCompositionalLayout(section: section)
     }
     
+    func isGameOver() -> Bool{
+        for row in 0...11 {
+            let cell = collectionView.cellForItem(at: [0, row]) as! CardCollectionViewCell
+            if cell.imageView.isHidden == true {
+                return false
+            }
+        }
+        return true
+    }
 }
 
 extension MemoryCardViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shuffledFruits.count
-    }
-    
-    func isGameOver() -> Bool{
-        var visibleImages = 0
-        for row in 0...11 {
-            let cell = collectionView.cellForItem(at: [0, row]) as! CardCollectionViewCell
-            if cell.imageView.isHidden == false {
-                visibleImages += 1
-            }
-        }
-        if visibleImages == 12 {
-            return true
-        } else {
-            return false
-        }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -69,7 +63,7 @@ extension MemoryCardViewController: UICollectionViewDataSource, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FruitCell", for: indexPath) as! CardCollectionViewCell
         cell.imageView.isHidden = true
         cell.imageView.image = shuffledFruits[indexPath.item]
-        cell.backgroundColor = .white // Set background color for visibility
+        cell.backgroundColor = .white
 //        cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 15
         return cell
@@ -87,12 +81,9 @@ extension MemoryCardViewController: UICollectionViewDataSource, UICollectionView
             if firstIndexPath != indexPath {
                 if shuffledFruits[firstIndexPath.item] == shuffledFruits[indexPath.item] {
                     // Matched
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        if self.isGameOver() == true {
-//                            print("Game Over! You won")
-                            self.gameOverLabel.isHidden = false
-                            self.gameOverLabel.text = "YOU WON"
-                        }
+                    if self.isGameOver() == true {
+                        self.gameOverLabel.isHidden = false
+                        self.gameOverLabel.text = "YOU WON"
                     }
                 } else {
                     // Not matched
