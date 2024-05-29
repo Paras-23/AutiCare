@@ -16,7 +16,7 @@ struct Sessions{
 struct Worksheets{
     var imageName:String
 }
-
+var games:[Games] = [Games(imageName: "Designer-20"),Games(imageName: "Designer-12"),Games(imageName: "Designer-15")]
 class DataModel{
     static var games:[Games] = [Games(imageName: "Designer-20"),Games(imageName: "Designer-12"),Games(imageName: "Designer-15")]
     static var sessions:[Sessions] = [Sessions(imageName: "Designer-2"),Sessions(imageName: "Designer-4"),Sessions(imageName: "Designer-14")]

@@ -17,7 +17,6 @@
 		05262EA12BF7129800C2774C /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05262EA02BF7129800C2774C /* Progress.storyboard */; };
 		05262EA42BF712BE00C2774C /* ProgressPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EA32BF712BE00C2774C /* ProgressPageViewController.swift */; };
 		05262EA62BF712CD00C2774C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05262EA52BF712CD00C2774C /* Profile.storyboard */; };
-		05262EA92BF712EE00C2774C /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EA82BF712EE00C2774C /* ProfilePageViewController.swift */; };
 		05262EAB2BF7136A00C2774C /* ExploreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAA2BF7136A00C2774C /* ExploreDataModel.swift */; };
 		05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */; };
 		05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */; };
@@ -27,6 +26,11 @@
 		05E49F752C04954300699D09 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E49F742C04954300699D09 /* CardCollectionViewCell.swift */; };
 		440CA9CE2BFB09AE00FDFA89 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */; };
 		440CA9CF2BFB09AE00FDFA89 /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */; };
+		C420EE662C05CEA100FA15AD /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C420EE652C05CEA100FA15AD /* ProfilePageViewController.swift */; };
+		C420EE682C05CF4D00FA15AD /* ProfilePageSection1.xib in Resources */ = {isa = PBXBuildFile; fileRef = C420EE672C05CF4D00FA15AD /* ProfilePageSection1.xib */; };
+		C420EE6A2C05D60700FA15AD /* ProfilePageSection1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C420EE692C05D60700FA15AD /* ProfilePageSection1CollectionViewCell.swift */; };
+		C420EE6C2C05E91100FA15AD /* ProfilePageSection2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C420EE6B2C05E91100FA15AD /* ProfilePageSection2.xib */; };
+		C420EE702C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C420EE6F2C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift */; };
 		C45DB4962C042E5600CD37F8 /* LearningPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */; };
 		C45DB4982C042ED800CD37F8 /* Games.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45DB4972C042ED800CD37F8 /* Games.xib */; };
 		C45DB49A2C042EE700CD37F8 /* Sessions.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45DB4992C042EE700CD37F8 /* Sessions.xib */; };
@@ -56,7 +60,6 @@
 		05262EA02BF7129800C2774C /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
 		05262EA32BF712BE00C2774C /* ProgressPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPageViewController.swift; sourceTree = "<group>"; };
 		05262EA52BF712CD00C2774C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		05262EA82BF712EE00C2774C /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		05262EAA2BF7136A00C2774C /* ExploreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDataModel.swift; sourceTree = "<group>"; };
 		05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentDataModel.swift; sourceTree = "<group>"; };
 		05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataModel.swift; sourceTree = "<group>"; };
@@ -66,6 +69,11 @@
 		05E49F742C04954300699D09 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
+		C420EE652C05CEA100FA15AD /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		C420EE672C05CF4D00FA15AD /* ProfilePageSection1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePageSection1.xib; sourceTree = "<group>"; };
+		C420EE692C05D60700FA15AD /* ProfilePageSection1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageSection1CollectionViewCell.swift; sourceTree = "<group>"; };
+		C420EE6B2C05E91100FA15AD /* ProfilePageSection2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePageSection2.xib; sourceTree = "<group>"; };
+		C420EE6F2C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageSection2CollectionViewCell.swift; sourceTree = "<group>"; };
 		C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningPageViewController.swift; sourceTree = "<group>"; };
 		C45DB4972C042ED800CD37F8 /* Games.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Games.xib; sourceTree = "<group>"; };
 		C45DB4992C042EE700CD37F8 /* Sessions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Sessions.xib; sourceTree = "<group>"; };
@@ -175,8 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				05262EA52BF712CD00C2774C /* Profile.storyboard */,
+				C420EE652C05CEA100FA15AD /* ProfilePageViewController.swift */,
+				C420EE6B2C05E91100FA15AD /* ProfilePageSection2.xib */,
+				C420EE6F2C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift */,
+				C420EE672C05CF4D00FA15AD /* ProfilePageSection1.xib */,
+				C420EE692C05D60700FA15AD /* ProfilePageSection1CollectionViewCell.swift */,
 				C4D875C82BFDBF0D003C1160 /* ProfileInfoTableViewController.swift */,
-				05262EA82BF712EE00C2774C /* ProfilePageViewController.swift */,
 				05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */,
 			);
 			path = Profile;
@@ -257,6 +269,8 @@
 				05262E912BF7112D00C2774C /* Base in Resources */,
 				05262EA12BF7129800C2774C /* Progress.storyboard in Resources */,
 				05262E8C2BF7112C00C2774C /* Base in Resources */,
+				C420EE682C05CF4D00FA15AD /* ProfilePageSection1.xib in Resources */,
+				C420EE6C2C05E91100FA15AD /* ProfilePageSection2.xib in Resources */,
 				440CA9CF2BFB09AE00FDFA89 /* PostsTableViewCell.xib in Resources */,
 				C45DB4982C042ED800CD37F8 /* Games.xib in Resources */,
 			);
@@ -272,7 +286,6 @@
 				C4AE96592BF71EDC00BEE963 /* QuestionTableViewCell.swift in Sources */,
 				05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */,
 				05262E892BF7112C00C2774C /* ViewController.swift in Sources */,
-				05262EA92BF712EE00C2774C /* ProfilePageViewController.swift in Sources */,
 				C45DB4962C042E5600CD37F8 /* LearningPageViewController.swift in Sources */,
 				C45DB4A02C0432BB00CD37F8 /* SessionsCollectionViewCell.swift in Sources */,
 				05262E852BF7112C00C2774C /* AppDelegate.swift in Sources */,
@@ -283,15 +296,18 @@
 				05262E872BF7112C00C2774C /* SceneDelegate.swift in Sources */,
 				C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */,
 				05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */,
+				C420EE702C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift in Sources */,
 				05E49F752C04954300699D09 /* CardCollectionViewCell.swift in Sources */,
 				C4AE965D2BF7270500BEE963 /* AssessmentTableViewController.swift in Sources */,
 				05262EAB2BF7136A00C2774C /* ExploreDataModel.swift in Sources */,
+				C420EE6A2C05D60700FA15AD /* ProfilePageSection1CollectionViewCell.swift in Sources */,
 				05162E202BFDA55D00DC5951 /* CommunityPageViewController.swift in Sources */,
 				05262EA42BF712BE00C2774C /* ProgressPageViewController.swift in Sources */,
 				C45DB49E2C0431FA00CD37F8 /* GamesCollectionViewCell.swift in Sources */,
 				0585EDA12C05CD2D002B9386 /* ResultPageViewController.swift in Sources */,
 				05262EB12BF713C200C2774C /* LearningDataModel.swift in Sources */,
 				C45DB4A22C04336500CD37F8 /* WorksheetsCollectionViewCell.swift in Sources */,
+				C420EE662C05CEA100FA15AD /* ProfilePageViewController.swift in Sources */,
 				05E49F722C0494AB00699D09 /* MemoryCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,7 +460,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DUPUNY4WFU;
+				DEVELOPMENT_TEAM = 7B924G2LP7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutiCare/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -473,7 +489,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DUPUNY4WFU;
+				DEVELOPMENT_TEAM = 7B924G2LP7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutiCare/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

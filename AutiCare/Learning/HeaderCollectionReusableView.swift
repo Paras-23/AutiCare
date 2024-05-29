@@ -15,7 +15,6 @@ class HeaderCollectionReusableView: UICollectionReusableView {
             return button
         }()
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupHeader()

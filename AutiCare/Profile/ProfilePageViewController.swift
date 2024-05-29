@@ -2,15 +2,15 @@
 //  ProfilePageViewController.swift
 //  AutiCare
 //
-//  Created by Batch-2 on 17/05/24.
+//  Created by Batch-1 on 28/05/24.
 //
 
 import UIKit
 
 extension UIImageView {
     public func maskCircle(anyImage: UIImage) {
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.init(red: 0.001, green: 0.301, blue: 0.500, alpha: 1).cgColor
         self.contentMode = UIView.ContentMode.scaleAspectFill
         self.layer.cornerRadius = self.frame.width/2.0
         self.layer.masksToBounds = false
@@ -18,59 +18,98 @@ extension UIImageView {
         self.image = anyImage
     }
 }
-class ProfilePageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        var content = cell.defaultContentConfiguration()
-        content.text = "\(profile[indexPath.row])"
-        if content.text == "Log Out" {
-            cell.accessoryType = .none
-            cell.tintColor = .red
-        }
-        cell.contentConfiguration = content
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return profile.count
-    }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0: performSegue(withIdentifier: "userinfoSegue", sender: nil)
-        case 1: performSegue(withIdentifier: "shareSegue", sender: nil)
-        default: print("Nothing")
-        }
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
 
-    // imageView outlet
+class ProfilePageViewController: UIViewController,UICollectionViewDataSource {
     
-    @IBOutlet weak var circularImageView: UIImageView!
-    //tableView Outlet
     
-    @IBOutlet weak var profileTableView: UITableView!
-    required init?(coder : NSCoder) {
+    required init?(coder:NSCoder){
         super.init(coder: coder)
         self.tabBarItem.title = "Profile"
-        self.tabBarItem.image = UIImage(systemName: "person.crop.circle")    }
+        self.tabBarItem.image = UIImage(systemName: "person.crop.circle")
+    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        2
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch section{
+        case 0:
+            return 1
+        case 1:
+            return 1
+        default:
+            return 1
+        }
+    }
     
-    var profile :[String] = ["User Info","Notifications","Share","Settings","About Us","Log Out"]
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch indexPath.section{
+        case 0:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePageSection1", for: indexPath) as! ProfilePageSection1CollectionViewCell
+            cell.imageView.maskCircle(anyImage: UIImage(named: "1")!)
+            cell.layer.cornerRadius = 20
+            cell.layer.borderWidth = 0.7
+            cell.backgroundColor = UIColor.init(red: 0.871, green: 1, blue: 0.982, alpha: 1)
+            return cell
+        case 1:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePageSection2", for: indexPath) as! ProfilePageSection2CollectionViewCell
+            cell.layer.cornerRadius = 20
+            cell.layer.borderWidth = 0.7
+            cell.backgroundColor = UIColor.init(red: 0.871, green: 1, blue: 0.982, alpha: 1)
+            
+            return cell
+            
+        default:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePageSection1", for: indexPath) as! ProfilePageSection1CollectionViewCell
+            cell.imageView.maskCircle(anyImage: UIImage(named: "1")!)
+            cell.layer.cornerRadius = 20
+            cell.layer.borderWidth = 0.7
+            cell.backgroundColor = UIColor.init(red: 0.871, green: 1, blue: 0.982, alpha: 1)
+            return cell
+        }
+       
+    }
     
+    
+    
+    @IBOutlet var collectionView: UICollectionView!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let profile = UIImage(named: "1")!
-        circularImageView.maskCircle(anyImage: profile)
-        profileTableView.delegate = self
-        profileTableView.dataSource = self
-        
+        let profilePageSection1 = UINib(nibName: "ProfilePageSection1", bundle: nil)
+        collectionView.register(profilePageSection1, forCellWithReuseIdentifier: "ProfilePageSection1")
+        let profilePageSection2 = UINib(nibName: "ProfilePageSection2", bundle: nil)
+        collectionView.register(profilePageSection2, forCellWithReuseIdentifier: "ProfilePageSection2")
+        collectionView.dataSource = self
+    
+        collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         
     }
-    @IBAction func unwindToProfilePageViewController(segue: UIStoryboardSegue) {
-        
-        // Use data from the view controller which initiated the unwind segue
+    
+    func generateLayout()->UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { (section, env)->NSCollectionLayoutSection? in switch section{
+        case 0:
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.29))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(1) , heightDimension: .absolute(300))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
+            group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8)
+            let section = NSCollectionLayoutSection(group: group)
+            return section
+        default:
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/2))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(0.90) , heightDimension: .fractionalHeight(1/2))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)
+            let section = NSCollectionLayoutSection(group: group)
+            return section
+            
+            }
+        }
+        return layout
     }
+
+
 }
