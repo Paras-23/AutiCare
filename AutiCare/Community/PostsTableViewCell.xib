@@ -32,23 +32,28 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="9dm-0D-61V">
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="9dm-0D-61V">
                                         <rect key="frame" x="353" y="0.0" width="40" height="40"/>
-                                        <menu key="menu" title="menu" id="kiI-BU-9Ou">
+                                        <menu key="menu" id="kiI-BU-9Ou">
                                             <children>
-                                                <command title="Item 1" id="ZaA-pa-6lV">
+                                                <command id="ZaA-pa-6lV">
                                                     <connections>
                                                         <action selector="infoButtonTapped:" destination="-2" id="MMg-8E-Uuq"/>
                                                     </connections>
                                                 </command>
-                                                <command title="Item 2" id="cLt-Bg-HvR">
+                                                <command id="SbG-Rt-AnF">
+                                                    <connections>
+                                                        <action selector="infoButtonTapped:" destination="-2" id="713-Tk-E6i"/>
+                                                    </connections>
+                                                </command>
+                                                <command id="cLt-Bg-HvR">
                                                     <connections>
                                                         <action selector="infoButtonTapped:" destination="-2" id="Y4Z-nj-m7r"/>
                                                     </connections>
                                                 </command>
                                             </children>
                                         </menu>
-                                        <state key="normal" title="Button" image="info.circle" catalog="system"/>
+                                        <state key="normal" image="info.circle" catalog="system"/>
                                         <connections>
                                             <action selector="infoButtonTapped:" destination="XlZ-2x-znQ" eventType="touchUpInside" id="GRg-a4-tpx"/>
                                         </connections>
@@ -169,6 +174,7 @@
             <size key="customSize" width="587" height="445"/>
             <connections>
                 <outlet property="captionLabel" destination="IwS-kA-cfq" id="eDf-Oy-o8J"/>
+                <outlet property="infoButton" destination="9dm-0D-61V" id="hel-oY-xtw"/>
                 <outlet property="postImageView" destination="b03-6V-7zJ" id="TEc-J4-Mqk"/>
                 <outlet property="userImageView" destination="J81-jU-u1Z" id="YJz-zt-nS8"/>
                 <outlet property="usernameLabel" destination="arZ-jP-seq" id="6k0-Ii-H5k"/>

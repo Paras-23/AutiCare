@@ -16,16 +16,12 @@ class PostsTableViewCell: UICollectionViewCell {
     @IBOutlet var infoButton: UIButton!
     
 
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         postImageView.layer.borderWidth = 0.5
+        setupPopUpButton()
        
     }
-
-   
     
     func configure(with model: AuticarePosts){
         
@@ -35,9 +31,32 @@ class PostsTableViewCell: UICollectionViewCell {
         self.captionLabel.text = model.postCaption
     }
     
-    @IBOutlet var options: UICommand!
+    func setupPopUpButton() {
+        let blockClosure = { (action: UIAction) in
+            print(action.title)
+        }
+        
+        let unfollowClosure = { (action: UIAction) in
+            print(action)
+        }
+        
+        let reportClosure = { (action: UIAction) in
+            print(action)
+        }
+                
+        infoButton.menu = UIMenu(children: [
+            UIAction(title: "Block Account", handler: blockClosure),
+            UIAction(title: "Unfollow Account", handler: unfollowClosure),
+            UIAction(title: "Report Post", handler: reportClosure)
+        ])
+        infoButton.showsMenuAsPrimaryAction = true
+    }
     
     @IBAction func infoButtonTapped(_ sender: UIButton) {
+
     }
+    
+   
+    
 }
 
