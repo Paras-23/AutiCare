@@ -28,14 +28,16 @@ class ProfilePageViewController: UIViewController,UICollectionViewDataSource {
         self.tabBarItem.image = UIImage(systemName: "person.crop.circle")
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+        3
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section{
         case 0:
             return 1
         case 1:
-            return 1
+            return 4
+        case 2:
+            return 2
         default:
             return 1
         }
@@ -48,13 +50,13 @@ class ProfilePageViewController: UIViewController,UICollectionViewDataSource {
             cell.imageView.maskCircle(anyImage: UIImage(named: "1")!)
             cell.layer.cornerRadius = 20
             cell.layer.borderWidth = 0.7
-            cell.backgroundColor = UIColor.init(red: 0.871, green: 1, blue: 0.982, alpha: 1)
+            cell.backgroundColor = UIColor.white
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePageSection2", for: indexPath) as! ProfilePageSection2CollectionViewCell
             cell.layer.cornerRadius = 20
             cell.layer.borderWidth = 0.7
-            cell.backgroundColor = UIColor.init(red: 0.871, green: 1, blue: 0.982, alpha: 1)
+            cell.backgroundColor = UIColor.white
             
             return cell
             
@@ -63,7 +65,7 @@ class ProfilePageViewController: UIViewController,UICollectionViewDataSource {
             cell.imageView.maskCircle(anyImage: UIImage(named: "1")!)
             cell.layer.cornerRadius = 20
             cell.layer.borderWidth = 0.7
-            cell.backgroundColor = UIColor.init(red: 0.871, green: 1, blue: 0.982, alpha: 1)
+            cell.backgroundColor = UIColor.white
             return cell
         }
        
@@ -89,12 +91,30 @@ class ProfilePageViewController: UIViewController,UICollectionViewDataSource {
     func generateLayout()->UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (section, env)->NSCollectionLayoutSection? in switch section{
         case 0:
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.29))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(1) , heightDimension: .absolute(300))
+            let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(1) , heightDimension: .absolute(90))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
             group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
-            group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8)
+            group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 15, trailing: 8)
+            let section = NSCollectionLayoutSection(group: group)
+            return section
+        case 1:
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(1) , heightDimension: .absolute(190))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
+            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 15, trailing: 15)
+            let section = NSCollectionLayoutSection(group: group)
+            return section
+        case 2:
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(1) , heightDimension: .absolute(70))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
+            group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
             let section = NSCollectionLayoutSection(group: group)
             return section
         default:
@@ -103,8 +123,10 @@ class ProfilePageViewController: UIViewController,UICollectionViewDataSource {
             let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(0.90) , heightDimension: .fractionalHeight(1/2))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
             group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)
+            
             let section = NSCollectionLayoutSection(group: group)
             return section
+            
             
             }
         }

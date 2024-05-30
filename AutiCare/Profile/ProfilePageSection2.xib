@@ -10,42 +10,41 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0Ul-qt-5D5" customClass="ProfilePageSection2CollectionViewCell" customModule="AutiCare" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="115"/>
+            <rect key="frame" x="0.0" y="0.0" width="200" height="125"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wrM-hu-Mtw">
-                <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="115"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="125"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vXF-Yt-2Ih">
-                        <rect key="frame" x="10" y="11" width="60" height="58.666666666666671"/>
+                        <rect key="frame" x="63" y="10" width="75" height="73.666666666666671"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="0mU-HK-qQA"/>
-                            <constraint firstAttribute="height" constant="60" id="9oT-sl-YY1"/>
+                            <constraint firstAttribute="width" constant="75" id="65W-gS-Abw"/>
+                            <constraint firstAttribute="height" constant="75" id="uXh-Yb-OKm"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZX8-FD-gNl">
-                        <rect key="frame" x="16" y="85" width="41.333333333333336" height="20.333333333333329"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZX8-FD-gNl">
+                        <rect key="frame" x="16" y="93" width="168" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="vXF-Yt-2Ih" secondAttribute="trailing" constant="80" id="KQW-JV-8cj"/>
-                    <constraint firstItem="vXF-Yt-2Ih" firstAttribute="top" secondItem="wrM-hu-Mtw" secondAttribute="top" constant="10" id="TLS-8g-G11"/>
-                    <constraint firstAttribute="bottom" secondItem="ZX8-FD-gNl" secondAttribute="bottom" constant="10" id="YM2-OZ-uE1"/>
-                    <constraint firstItem="ZX8-FD-gNl" firstAttribute="leading" secondItem="wrM-hu-Mtw" secondAttribute="leading" constant="10" id="avM-wC-9hq"/>
-                    <constraint firstItem="vXF-Yt-2Ih" firstAttribute="leading" secondItem="wrM-hu-Mtw" secondAttribute="leading" constant="10" id="hXs-j7-Uel"/>
-                    <constraint firstItem="ZX8-FD-gNl" firstAttribute="top" secondItem="vXF-Yt-2Ih" secondAttribute="bottom" constant="14.670000076293945" id="mXE-pO-wGL"/>
-                    <constraint firstAttribute="trailing" secondItem="ZX8-FD-gNl" secondAttribute="trailing" constant="10" id="zOP-Qk-oN1"/>
+                    <constraint firstItem="ZX8-FD-gNl" firstAttribute="leading" secondItem="wrM-hu-Mtw" secondAttribute="leading" constant="16" id="1HY-Jv-eG8"/>
+                    <constraint firstAttribute="trailing" secondItem="vXF-Yt-2Ih" secondAttribute="trailing" constant="62" id="Asg-DS-lFm"/>
+                    <constraint firstItem="vXF-Yt-2Ih" firstAttribute="leading" secondItem="wrM-hu-Mtw" secondAttribute="leading" constant="63" id="BUp-X3-B31"/>
+                    <constraint firstAttribute="trailing" secondItem="ZX8-FD-gNl" secondAttribute="trailing" constant="16" id="HKA-QJ-voV"/>
+                    <constraint firstItem="vXF-Yt-2Ih" firstAttribute="top" secondItem="wrM-hu-Mtw" secondAttribute="top" constant="9" id="lIN-II-k3t"/>
+                    <constraint firstItem="ZX8-FD-gNl" firstAttribute="top" secondItem="vXF-Yt-2Ih" secondAttribute="bottom" constant="9" id="zYf-ig-Rzd"/>
                 </constraints>
             </collectionViewCellContentView>
-            <size key="customSize" width="150" height="115"/>
+            <size key="customSize" width="150" height="120"/>
             <connections>
                 <outlet property="logoImageView" destination="vXF-Yt-2Ih" id="QzP-ba-s4Z"/>
                 <outlet property="logoName" destination="ZX8-FD-gNl" id="lpF-eD-Rrj"/>
             </connections>
-            <point key="canvasLocation" x="-515" y="-101"/>
+            <point key="canvasLocation" x="-235.11450381679387" y="-22.887323943661972"/>
         </collectionViewCell>
     </objects>
     <resources>
