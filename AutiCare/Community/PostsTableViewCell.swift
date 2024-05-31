@@ -11,9 +11,10 @@ class PostsTableViewCell: UICollectionViewCell {
 
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var postImageView: UIImageView!
-    @IBOutlet var userNameLabel: UILabel!
+    @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var captionLabel: UILabel!
     @IBOutlet var infoButton: UIButton!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,10 +23,9 @@ class PostsTableViewCell: UICollectionViewCell {
        
     }
     
-    func showPost(with post: Post){
-//        userImageView.image = UIImage(named: post.userImageName)
+    func showPost(with post : Post){
+        usernameLabel.text = post.userName
         userImageView.maskCircle(anyImage: UIImage(named: post.userImageName)!)
-        userNameLabel.text = post.userName
         postImageView.image = UIImage(named: post.imageName)
         captionLabel.text = post.caption
     }

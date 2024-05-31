@@ -13,8 +13,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet var segmentedControl: UISegmentedControl!
     
     var posts : [Post] = []
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         3
     }
@@ -32,7 +31,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
@@ -42,7 +41,8 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         
         if let onlinePosts = CommunityDataController.shared.onlinePosts() {
             posts = onlinePosts
-        } else {
+        }
+        else {
             posts = CommunityDataController.shared.getPosts()
         }
 
@@ -63,11 +63,6 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         
         return UICollectionViewCompositionalLayout(section: section)
     }
-    
-    @IBAction func addNewPostButton(_ sender: UIBarButtonItem) {
-        
-    }
-    
         
 
     /*
