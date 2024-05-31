@@ -12,9 +12,8 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
-    
-    var models = [AuticarePosts]()
-    
+    var posts : [Post] = []
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         3
     }
@@ -25,23 +24,27 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserPosts", for: indexPath) as! PostsTableViewCell
-        cell.configure(with: models[indexPath.row])
+        cell.showPost(with: posts[indexPath.row])
         return cell
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        models.append(AuticarePosts( numberOfLikes: 200, username: "Madhav Verma", userImageName: "head", postImageName: "post_1", postCaption: "Playing with amigos is always a moment worth capturing📸😎"))
-        models.append(AuticarePosts(numberOfLikes: 120, username: "Paras singhal", userImageName: "head", postImageName: "post_2", postCaption: "When she mocks me with a camera of her own.😓 It's a mother daughter love❤️"))
-        models.append(AuticarePosts(numberOfLikes: 687, username: "Sudhanshu kumar", userImageName: "head", postImageName: "post_3", postCaption: "Painting with hand or hand with painting. It's still a mystery to be solved.🤔"))
-        
+
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         
         let firstNib = UINib(nibName: "PostsTableViewCell", bundle: nil)
         collectionView.register(firstNib, forCellWithReuseIdentifier: "UserPosts")
+        
+        if let onlinePosts = CommunityDataController.shared.onlinePosts() {
+            posts = onlinePosts
+        }
+        else {
+            posts = CommunityDataController.shared.getPosts()
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -51,7 +54,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.8))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.75))
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count : 1)
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 10, trailing: 8)

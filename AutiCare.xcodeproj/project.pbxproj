@@ -31,6 +31,7 @@
 		C420EE6A2C05D60700FA15AD /* ProfilePageSection1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C420EE692C05D60700FA15AD /* ProfilePageSection1CollectionViewCell.swift */; };
 		C420EE6C2C05E91100FA15AD /* ProfilePageSection2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C420EE6B2C05E91100FA15AD /* ProfilePageSection2.xib */; };
 		C420EE702C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C420EE6F2C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift */; };
+		C43C95B42C09CB5400663096 /* CommunityDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C95B32C09CB5400663096 /* CommunityDataController.swift */; };
 		C45DB4962C042E5600CD37F8 /* LearningPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */; };
 		C45DB4982C042ED800CD37F8 /* Games.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45DB4972C042ED800CD37F8 /* Games.xib */; };
 		C45DB49A2C042EE700CD37F8 /* Sessions.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45DB4992C042EE700CD37F8 /* Sessions.xib */; };
@@ -74,6 +75,7 @@
 		C420EE692C05D60700FA15AD /* ProfilePageSection1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageSection1CollectionViewCell.swift; sourceTree = "<group>"; };
 		C420EE6B2C05E91100FA15AD /* ProfilePageSection2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePageSection2.xib; sourceTree = "<group>"; };
 		C420EE6F2C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageSection2CollectionViewCell.swift; sourceTree = "<group>"; };
+		C43C95B32C09CB5400663096 /* CommunityDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDataController.swift; sourceTree = "<group>"; };
 		C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningPageViewController.swift; sourceTree = "<group>"; };
 		C45DB4972C042ED800CD37F8 /* Games.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Games.xib; sourceTree = "<group>"; };
 		C45DB4992C042EE700CD37F8 /* Sessions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Sessions.xib; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */,
 				440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */,
 				05262EAA2BF7136A00C2774C /* ExploreDataModel.swift */,
+				C43C95B32C09CB5400663096 /* CommunityDataController.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				C4D875C92BFDBF0D003C1160 /* ProfileInfoTableViewController.swift in Sources */,
 				05262E872BF7112C00C2774C /* SceneDelegate.swift in Sources */,
 				C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */,
+				C43C95B42C09CB5400663096 /* CommunityDataController.swift in Sources */,
 				05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */,
 				C420EE702C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift in Sources */,
 				05E49F752C04954300699D09 /* CardCollectionViewCell.swift in Sources */,
