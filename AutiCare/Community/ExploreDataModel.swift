@@ -20,16 +20,14 @@ struct User {
     var gender : gender
     var age : Int
     var bio : String?
-    var friends : [Profiles]
-    var posts : [Post] = []
 }
 
 struct Post {
     let postID : UUID
     let userID : UUID // User who created the post
     let caption : String
+    let imageName : String
 //    let mediaType : mediaType
-    var imageName : String
     let timeStamp : Date = Date.now
     let likes : [Likes] = []
     let comments : [Comments] = []
@@ -58,13 +56,7 @@ enum mediaType {
 }
 
 enum gender {
-    case male, female, thirdGender
+    case male , female , thirdGender
 }
 
-struct Profiles {
-    var name : String
-    var userID : UUID
-    var profileImage : String
-}
 
-//blocks.jpg, animal.mp4, image.png

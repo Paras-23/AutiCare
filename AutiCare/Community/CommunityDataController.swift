@@ -20,9 +20,9 @@ class CommunityDataController {
     }
     
     func dummyUsers() {
-        users = [ User(UserID: UUID(), firstName: "David", lastName: "Beckham", userName: "iamdavid", emailAddress: "beckham@gmail.com", password: "miamidream", gender: .male, age: 35, friends: []),
-                  User(UserID: UUID(), firstName: "Khal", lastName: "Drogo", userName: "dothraki", emailAddress: "khaldrogo@gmail.com", password: "12345", gender: .male, age: 32, friends: []),
-                  User(UserID: UUID(), firstName: "Emma", lastName: "Watson", userName: "itsemma", emailAddress: "emmawatson@gmail.com", password: "hermoineiam", gender: .female, age: 20, friends: [])
+        users = [ User(UserID: UUID(), firstName: "David", lastName: "Beckham", userName: "iamdavid", emailAddress: "beckham@gmail.com", password: "miamidream", gender: .male, age: 35),
+                  User(UserID: UUID(), firstName: "Khal", lastName: "Drogo", userName: "dothraki", emailAddress: "khaldrogo@gmail.com", password: "12345", gender: .male, age: 32),
+                  User(UserID: UUID(), firstName: "Emma", lastName: "Watson", userName: "itsemma", emailAddress: "emmawatson@gmail.com", password: "hermoineiam", gender: .female, age: 20)
         ]
     }
     
