@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jVu-xF-4DJ">
+                    <stackView opaque="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jVu-xF-4DJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Nvu-KH-s24">
@@ -177,7 +177,7 @@
                 <outlet property="infoButton" destination="9dm-0D-61V" id="hel-oY-xtw"/>
                 <outlet property="postImageView" destination="b03-6V-7zJ" id="TEc-J4-Mqk"/>
                 <outlet property="userImageView" destination="J81-jU-u1Z" id="YJz-zt-nS8"/>
-                <outlet property="usernameLabel" destination="arZ-jP-seq" id="6k0-Ii-H5k"/>
+                <outlet property="userNameLabel" destination="arZ-jP-seq" id="6k0-Ii-H5k"/>
             </connections>
             <point key="canvasLocation" x="417.55725190839695" y="-153.16901408450704"/>
         </collectionViewCell>

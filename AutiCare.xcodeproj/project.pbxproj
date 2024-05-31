@@ -21,6 +21,7 @@
 		05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */; };
 		05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */; };
 		05262EB12BF713C200C2774C /* LearningDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EB02BF713C200C2774C /* LearningDataModel.swift */; };
+		053F49082C083F5700586424 /* CommunityDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F49072C083F5700586424 /* CommunityDataController.swift */; };
 		0585EDA12C05CD2D002B9386 /* ResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585EDA02C05CD2D002B9386 /* ResultPageViewController.swift */; };
 		05E49F722C0494AB00699D09 /* MemoryCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */; };
 		05E49F752C04954300699D09 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E49F742C04954300699D09 /* CardCollectionViewCell.swift */; };
@@ -44,7 +45,6 @@
 		C4AE96592BF71EDC00BEE963 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */; };
 		C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */; };
 		C4AE965D2BF7270500BEE963 /* AssessmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE965C2BF7270500BEE963 /* AssessmentTableViewController.swift */; };
-		C4D875C92BFDBF0D003C1160 /* ProfileInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D875C82BFDBF0D003C1160 /* ProfileInfoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +64,7 @@
 		05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentDataModel.swift; sourceTree = "<group>"; };
 		05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataModel.swift; sourceTree = "<group>"; };
 		05262EB02BF713C200C2774C /* LearningDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningDataModel.swift; sourceTree = "<group>"; };
+		053F49072C083F5700586424 /* CommunityDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDataController.swift; sourceTree = "<group>"; };
 		0585EDA02C05CD2D002B9386 /* ResultPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageViewController.swift; sourceTree = "<group>"; };
 		05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCardViewController.swift; sourceTree = "<group>"; };
 		05E49F742C04954300699D09 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		C4AE965C2BF7270500BEE963 /* AssessmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentTableViewController.swift; sourceTree = "<group>"; };
-		C4D875C82BFDBF0D003C1160 /* ProfileInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +142,7 @@
 				440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */,
 				440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */,
 				05262EAA2BF7136A00C2774C /* ExploreDataModel.swift */,
+				053F49072C083F5700586424 /* CommunityDataController.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -184,11 +185,10 @@
 			children = (
 				05262EA52BF712CD00C2774C /* Profile.storyboard */,
 				C420EE652C05CEA100FA15AD /* ProfilePageViewController.swift */,
-				C420EE6B2C05E91100FA15AD /* ProfilePageSection2.xib */,
-				C420EE6F2C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift */,
 				C420EE672C05CF4D00FA15AD /* ProfilePageSection1.xib */,
 				C420EE692C05D60700FA15AD /* ProfilePageSection1CollectionViewCell.swift */,
-				C4D875C82BFDBF0D003C1160 /* ProfileInfoTableViewController.swift */,
+				C420EE6B2C05E91100FA15AD /* ProfilePageSection2.xib */,
+				C420EE6F2C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift */,
 				05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */,
 			);
 			path = Profile;
@@ -292,13 +292,13 @@
 				C45DB4A62C0446F900CD37F8 /* HeaderCollectionReusableView.swift in Sources */,
 				440CA9CE2BFB09AE00FDFA89 /* PostsTableViewCell.swift in Sources */,
 				C45DB4AC2C04527E00CD37F8 /* SectionViewController.swift in Sources */,
-				C4D875C92BFDBF0D003C1160 /* ProfileInfoTableViewController.swift in Sources */,
 				05262E872BF7112C00C2774C /* SceneDelegate.swift in Sources */,
 				C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */,
 				05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */,
 				C420EE702C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift in Sources */,
 				05E49F752C04954300699D09 /* CardCollectionViewCell.swift in Sources */,
 				C4AE965D2BF7270500BEE963 /* AssessmentTableViewController.swift in Sources */,
+				053F49082C083F5700586424 /* CommunityDataController.swift in Sources */,
 				05262EAB2BF7136A00C2774C /* ExploreDataModel.swift in Sources */,
 				C420EE6A2C05D60700FA15AD /* ProfilePageSection1CollectionViewCell.swift in Sources */,
 				05162E202BFDA55D00DC5951 /* CommunityPageViewController.swift in Sources */,

@@ -17,20 +17,24 @@ struct User {
     var password : String
     var profilePicture : String?
     var location : String?
-    var gender : String
+    var gender : gender
     var age : Int
     var bio : String?
+    var friends : [Profiles]
+    var posts : [Post] = []
 }
 
-struct Posts {
+struct Post {
     let postID : UUID
     let userID : UUID // User who created the post
     let caption : String
-    let media : UIImage
 //    let mediaType : mediaType
-    let timeStamp : Date
-    let likes : [Likes]
-    let comments : [Comments]
+    var imageName : String
+    let timeStamp : Date = Date.now
+    let likes : [Likes] = []
+    let comments : [Comments] = []
+    let userImageName : String
+    let userName : String
 }
 
 struct Comments {
@@ -53,13 +57,14 @@ enum mediaType {
     case jpeg, mp4, png, jpg
 }
 
+enum gender {
+    case male, female, thirdGender
+}
 
-struct AuticarePosts {
-    var numberOfLikes : Int
-    var username : String
-    var userImageName : String
-    var postImageName : String
-    var postCaption : String
+struct Profiles {
+    var name : String
+    var userID : UUID
+    var profileImage : String
 }
 
 //blocks.jpg, animal.mp4, image.png

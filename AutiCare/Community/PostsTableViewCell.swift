@@ -11,10 +11,9 @@ class PostsTableViewCell: UICollectionViewCell {
 
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var postImageView: UIImageView!
-    @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var captionLabel: UILabel!
     @IBOutlet var infoButton: UIButton!
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,12 +22,12 @@ class PostsTableViewCell: UICollectionViewCell {
        
     }
     
-    func configure(with model: AuticarePosts){
-        
-        self.usernameLabel.text = model.username
-        userImageView.maskCircle(anyImage: UIImage(named: model.userImageName)!)
-        self.postImageView.image = UIImage(named: model.postImageName)
-        self.captionLabel.text = model.postCaption
+    func showPost(with post: Post){
+//        userImageView.image = UIImage(named: post.userImageName)
+        userImageView.maskCircle(anyImage: UIImage(named: post.userImageName)!)
+        userNameLabel.text = post.userName
+        postImageView.image = UIImage(named: post.imageName)
+        captionLabel.text = post.caption
     }
     
     func setupPopUpButton() {
