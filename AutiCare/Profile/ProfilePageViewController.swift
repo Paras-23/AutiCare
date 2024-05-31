@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIImageView {
-    
     public func maskCircle(anyImage: UIImage) {
         self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.init(red: 0.001, green: 0.301, blue: 0.500, alpha: 1).cgColor
@@ -45,14 +44,31 @@ class ProfilePageViewController: UIViewController,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section{
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePageSection2", for: indexPath) as! ProfilePageSection2CollectionViewCell
-            cell.layer.backgroundColor = UIColor.systemMint.cgColor
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePageSection1", for: indexPath) as! ProfilePageSection1CollectionViewCell
+            cell.imageView.maskCircle(anyImage: UIImage(named: "1")!)
+            cell.layer.cornerRadius = 20
+            cell.layer.borderWidth = 0.7
+            cell.backgroundColor = UIColor.white
             return cell
+        case 1:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePageSection2", for: indexPath) as! ProfilePageSection2CollectionViewCell
+            cell.layer.cornerRadius = 20
+            cell.layer.borderWidth = 0.7
+            cell.backgroundColor = UIColor.white
+            
+            return cell
+            
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePageSection1", for: indexPath) as! ProfilePageSection1CollectionViewCell
+            cell.imageView.maskCircle(anyImage: UIImage(named: "1")!)
+            cell.layer.cornerRadius = 20
+            cell.layer.borderWidth = 0.7
+            cell.backgroundColor = UIColor.white
             return cell
         }
+       
     }
+    
     
     
     @IBOutlet var collectionView: UICollectionView!
@@ -73,15 +89,6 @@ class ProfilePageViewController: UIViewController,UICollectionViewDataSource {
     func generateLayout()->UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (section, env)->NSCollectionLayoutSection? in switch section{
         case 0:
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(1) , heightDimension: .absolute(90))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
-            group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
-            group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 15, trailing: 8)
-            let section = NSCollectionLayoutSection(group: group)
-            return section
-        case 1:
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 5, trailing:8)
@@ -118,3 +125,4 @@ class ProfilePageViewController: UIViewController,UICollectionViewDataSource {
 
 
 }
+
