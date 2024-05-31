@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class PostsTableViewCell: UICollectionViewCell {
+class PostsTableViewCell: UICollectionViewCell, UINavigationControllerDelegate {
 
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var postImageView: UIImageView!
@@ -56,6 +57,20 @@ class PostsTableViewCell: UICollectionViewCell {
     }
     
    
+    @IBAction func likeButton(_ sender: UIButton) {
+        sender.isSelected.toggle()
+    }
+    
+    @IBAction func commentButton(_ sender: UIButton) {
+        
+    }
+    
+    
+    @IBAction func shareButton(_ sender: UIButton) {
+        guard let image = postImageView.image else {return}
+        let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceView = sender
+    }
     
 }
 

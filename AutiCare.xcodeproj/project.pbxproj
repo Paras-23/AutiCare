@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0506D9A82C09E7EE00844EF1 /* AddNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506D9A72C09E7EE00844EF1 /* AddNewPostViewController.swift */; };
 		05162E202BFDA55D00DC5951 /* CommunityPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05162E1F2BFDA55D00DC5951 /* CommunityPageViewController.swift */; };
 		05262E852BF7112C00C2774C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262E842BF7112C00C2774C /* AppDelegate.swift */; };
 		05262E872BF7112C00C2774C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262E862BF7112C00C2774C /* SceneDelegate.swift */; };
-		05262E892BF7112C00C2774C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262E882BF7112C00C2774C /* ViewController.swift */; };
 		05262E8C2BF7112C00C2774C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 05262E8B2BF7112C00C2774C /* Base */; };
 		05262E8E2BF7112D00C2774C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05262E8D2BF7112D00C2774C /* Assets.xcassets */; };
 		05262E912BF7112D00C2774C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 05262E902BF7112D00C2774C /* Base */; };
@@ -45,15 +45,14 @@
 		C4AE96592BF71EDC00BEE963 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */; };
 		C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */; };
 		C4AE965D2BF7270500BEE963 /* AssessmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE965C2BF7270500BEE963 /* AssessmentTableViewController.swift */; };
-		C4D875C92BFDBF0D003C1160 /* ProfileInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D875C82BFDBF0D003C1160 /* ProfileInfoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0506D9A72C09E7EE00844EF1 /* AddNewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPostViewController.swift; sourceTree = "<group>"; };
 		05162E1F2BFDA55D00DC5951 /* CommunityPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityPageViewController.swift; sourceTree = "<group>"; };
 		05262E812BF7112C00C2774C /* AutiCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutiCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05262E842BF7112C00C2774C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05262E862BF7112C00C2774C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		05262E882BF7112C00C2774C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05262E8B2BF7112C00C2774C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05262E8D2BF7112D00C2774C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05262E902BF7112D00C2774C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,7 +88,6 @@
 		C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		C4AE965C2BF7270500BEE963 /* AssessmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentTableViewController.swift; sourceTree = "<group>"; };
-		C4D875C82BFDBF0D003C1160 /* ProfileInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				05262E8A2BF7112C00C2774C /* Main.storyboard */,
-				05262E882BF7112C00C2774C /* ViewController.swift */,
+				0506D9A72C09E7EE00844EF1 /* AddNewPostViewController.swift */,
 				05162E1F2BFDA55D00DC5951 /* CommunityPageViewController.swift */,
 				440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */,
 				440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */,
@@ -191,7 +189,6 @@
 				C420EE6F2C05E94600FA15AD /* ProfilePageSection2CollectionViewCell.swift */,
 				C420EE672C05CF4D00FA15AD /* ProfilePageSection1.xib */,
 				C420EE692C05D60700FA15AD /* ProfilePageSection1CollectionViewCell.swift */,
-				C4D875C82BFDBF0D003C1160 /* ProfileInfoTableViewController.swift */,
 				05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */,
 			);
 			path = Profile;
@@ -288,14 +285,13 @@
 			files = (
 				C4AE96592BF71EDC00BEE963 /* QuestionTableViewCell.swift in Sources */,
 				05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */,
-				05262E892BF7112C00C2774C /* ViewController.swift in Sources */,
+				0506D9A82C09E7EE00844EF1 /* AddNewPostViewController.swift in Sources */,
 				C45DB4962C042E5600CD37F8 /* LearningPageViewController.swift in Sources */,
 				C45DB4A02C0432BB00CD37F8 /* SessionsCollectionViewCell.swift in Sources */,
 				05262E852BF7112C00C2774C /* AppDelegate.swift in Sources */,
 				C45DB4A62C0446F900CD37F8 /* HeaderCollectionReusableView.swift in Sources */,
 				440CA9CE2BFB09AE00FDFA89 /* PostsTableViewCell.swift in Sources */,
 				C45DB4AC2C04527E00CD37F8 /* SectionViewController.swift in Sources */,
-				C4D875C92BFDBF0D003C1160 /* ProfileInfoTableViewController.swift in Sources */,
 				05262E872BF7112C00C2774C /* SceneDelegate.swift in Sources */,
 				C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */,
 				C43C95B42C09CB5400663096 /* CommunityDataController.swift in Sources */,

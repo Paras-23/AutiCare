@@ -66,7 +66,7 @@
                             <barButtonItem systemItem="add" id="GEn-SD-38o">
                                 <connections>
                                     <action selector="addNewPostButton:" destination="jD2-xJ-08q" id="JW8-KD-66V"/>
-                                    <segue destination="4Hr-W8-l7S" kind="presentation" id="wGQ-2E-cNa"/>
+                                    <segue destination="DR7-Pi-V4l" kind="presentation" id="wGQ-2E-cNa"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -80,35 +80,51 @@
             </objects>
             <point key="canvasLocation" x="1790" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--Add New Post View Controller-->
         <scene sceneID="t6R-UZ-gIV">
             <objects>
-                <viewController id="4Hr-W8-l7S" sceneMemberID="viewController">
+                <viewController id="4Hr-W8-l7S" customClass="AddNewPostViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rtH-yI-ep4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OS7-5P-t65">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" id="OS7-5P-t65">
+                                <rect key="frame" x="0.0" y="66" width="393" height="766"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="clL-F9-gNU">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="421"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="312.33333333333331"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fX6-o5-Yub">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="421"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bsV-KY-ss8">
+                                                <rect key="frame" x="10" y="17" width="385" height="292"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="80"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="fX6-o5-Yub" firstAttribute="top" secondItem="clL-F9-gNU" secondAttribute="top" id="4G4-lS-pEr"/>
-                                            <constraint firstItem="fX6-o5-Yub" firstAttribute="leading" secondItem="clL-F9-gNU" secondAttribute="leading" id="CRX-wK-SpN"/>
-                                            <constraint firstAttribute="bottom" secondItem="fX6-o5-Yub" secondAttribute="bottom" id="gdI-BW-gdE"/>
-                                            <constraint firstAttribute="trailing" secondItem="fX6-o5-Yub" secondAttribute="trailing" id="ijb-1q-8wY"/>
+                                            <constraint firstAttribute="height" constant="312.32999999999998" id="9qs-4U-8zZ"/>
+                                            <constraint firstItem="bsV-KY-ss8" firstAttribute="leading" secondItem="clL-F9-gNU" secondAttribute="leading" constant="10" id="eQn-VQ-EDJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="bsV-KY-ss8" secondAttribute="trailing" constant="10" id="iFq-sy-Jzb"/>
+                                            <constraint firstItem="bsV-KY-ss8" firstAttribute="top" secondItem="clL-F9-gNU" secondAttribute="top" constant="10" id="p48-9b-tkD"/>
+                                            <constraint firstAttribute="bottom" secondItem="bsV-KY-ss8" secondAttribute="bottom" constant="10" id="tuN-hU-yNi"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyB-aV-HRU">
-                                        <rect key="frame" x="0.0" y="421" width="393" height="421"/>
+                                        <rect key="frame" x="0.0" y="332.33333333333326" width="393" height="433.66666666666674"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Write a Caption for your Post" adjustsFontSizeToFit="NO" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2pm-Jo-ydU">
+                                                <rect key="frame" x="10" y="10" width="373" height="173.66666666666666"/>
+                                                <nil key="textColor"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="2pm-Jo-ydU" secondAttribute="trailing" constant="10" id="F7N-2S-vQS"/>
+                                            <constraint firstItem="2pm-Jo-ydU" firstAttribute="leading" secondItem="hyB-aV-HRU" secondAttribute="leading" constant="10" id="HuY-EB-05G"/>
+                                            <constraint firstAttribute="bottom" secondItem="2pm-Jo-ydU" secondAttribute="bottom" constant="250" id="rMq-hg-Hyk"/>
+                                            <constraint firstItem="2pm-Jo-ydU" firstAttribute="top" secondItem="hyB-aV-HRU" secondAttribute="top" constant="10" id="rhb-aq-CyI"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -116,16 +132,26 @@
                         <viewLayoutGuide key="safeArea" id="Csq-u3-571"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Csq-u3-571" firstAttribute="trailing" secondItem="OS7-5P-t65" secondAttribute="trailing" id="OBD-qv-cjU"/>
-                            <constraint firstItem="Csq-u3-571" firstAttribute="bottom" secondItem="OS7-5P-t65" secondAttribute="bottom" id="Psc-1D-iNc"/>
-                            <constraint firstItem="OS7-5P-t65" firstAttribute="leading" secondItem="Csq-u3-571" secondAttribute="leading" id="TtI-3t-09t"/>
-                            <constraint firstItem="OS7-5P-t65" firstAttribute="top" secondItem="Csq-u3-571" secondAttribute="top" id="bes-u0-ITp"/>
+                            <constraint firstItem="OS7-5P-t65" firstAttribute="top" secondItem="Csq-u3-571" secondAttribute="top" constant="10" id="6K1-Hv-O7G"/>
+                            <constraint firstItem="OS7-5P-t65" firstAttribute="leading" secondItem="Csq-u3-571" secondAttribute="leading" constant="10" id="8rW-A4-L3M"/>
+                            <constraint firstItem="OS7-5P-t65" firstAttribute="trailing" secondItem="Csq-u3-571" secondAttribute="trailing" constant="10" id="cUE-Bd-bG9"/>
+                            <constraint firstAttribute="bottom" secondItem="OS7-5P-t65" secondAttribute="bottom" constant="10" id="ybU-To-tQJ"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="pot-ei-KFm">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bph-qt-TWd"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="5Ni-Dg-MbE"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="captionTextField" destination="2pm-Jo-ydU" id="b8Q-zj-tza"/>
+                        <outlet property="newPostImage" destination="bsV-KY-ss8" id="ffL-0M-oSU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvj-18-UCF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1789" y="795"/>
+            <point key="canvasLocation" x="2715.2671755725191" y="794.36619718309862"/>
         </scene>
         <!--Learning-->
         <scene sceneID="2CV-hX-5Pl">
@@ -198,9 +224,28 @@
             </objects>
             <point key="canvasLocation" x="964" y="-2"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ws8-4U-W3a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DR7-Pi-V4l" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sLY-cI-9y7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4Hr-W8-l7S" kind="relationship" relationship="rootViewController" id="eKn-Nv-zDy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6mD-K8-akF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788.5496183206105" y="794.36619718309862"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ellipsis.message" catalog="system" width="128" height="116"/>
+        <image name="photo.badge.plus" catalog="system" width="128" height="97"/>
         <image name="point.3.filled.connected.trianglepath.dotted" catalog="system" width="128" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

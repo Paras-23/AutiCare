@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -73,34 +74,47 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bfl-Sg-Fkj">
-                                <rect key="frame" x="0.0" y="342.33333333333331" width="393" height="35.666666666666686"/>
+                                <rect key="frame" x="0.0" y="342.33333333333331" width="393" height="34"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gdv-uW-j92">
-                                        <rect key="frame" x="0.0" y="0.0" width="147.33333333333334" height="35.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="147.33333333333334" height="34"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W6P-kd-uXb">
-                                                <rect key="frame" x="0.0" y="0.0" width="147.33333333333334" height="28.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="147.33333333333334" height="22"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fx0-Gd-a2b">
-                                                        <rect key="frame" x="0.0" y="0.0" width="49" height="28.333333333333332"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
-                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fx0-Gd-a2b">
+                                                        <rect key="frame" x="0.0" y="0.0" width="49" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="heart" catalog="system">
+                                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="16"/>
+                                                        </state>
+                                                        <state key="selected" image="heart.fill" catalog="system"/>
+                                                        <state key="highlighted" image="heart.fill" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="likeButton:" destination="XlZ-2x-znQ" eventType="touchUpInside" id="one-Cs-N47"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RND-DB-G2n">
-                                                        <rect key="frame" x="49" y="0.0" width="49.333333333333343" height="28.333333333333332"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="message" catalog="system">
-                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RND-DB-G2n">
+                                                        <rect key="frame" x="49" y="0.0" width="49.333333333333343" height="22"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="message" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="16"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="commentButton:" destination="XlZ-2x-znQ" eventType="touchUpInside" id="aUj-Sk-MVx"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vra-xy-M4a">
-                                                        <rect key="frame" x="98.333333333333329" y="0.0" width="48.999999999999986" height="28.333333333333332"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up.circle" catalog="system">
-                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
-                                                        </buttonConfiguration>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vra-xy-M4a">
+                                                        <rect key="frame" x="98.333333333333329" y="0.0" width="48.999999999999986" height="22"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="square.and.arrow.up.circle" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="16"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="shareButton:" destination="XlZ-2x-znQ" eventType="touchUpInside" id="yTv-wr-bAh"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -108,22 +122,22 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DJx-6N-JoR">
-                                                <rect key="frame" x="0.0" y="28.333333333333368" width="147.33333333333334" height="7.3333333333333321"/>
+                                                <rect key="frame" x="0.0" y="22" width="147.33333333333334" height="12"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPh-NM-RPK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="49" height="7.333333333333333"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="49" height="12"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucT-EN-vxd">
-                                                        <rect key="frame" x="49" y="0.0" width="49.333333333333343" height="7.333333333333333"/>
+                                                        <rect key="frame" x="49" y="0.0" width="49.333333333333343" height="12"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pV-OH-CBo">
-                                                        <rect key="frame" x="98.333333333333329" y="0.0" width="48.999999999999986" height="7.333333333333333"/>
+                                                        <rect key="frame" x="98.333333333333329" y="0.0" width="48.999999999999986" height="12"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -133,7 +147,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12h ago" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0J-zR-qOD">
-                                        <rect key="frame" x="147.33333333333337" y="0.0" width="245.66666666666663" height="35.666666666666664"/>
+                                        <rect key="frame" x="147.33333333333337" y="0.0" width="245.66666666666663" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -143,8 +157,8 @@
                                     <constraint firstItem="Gdv-uW-j92" firstAttribute="width" secondItem="H0J-zR-qOD" secondAttribute="width" multiplier="0.6" id="zN5-OC-saD"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwS-kA-cfq">
-                                <rect key="frame" x="0.0" y="383" width="393" height="10"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwS-kA-cfq">
+                                <rect key="frame" x="0.0" y="381.33333333333331" width="393" height="11.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="D1Q-Sv-JPy"/>
                                 </constraints>
@@ -177,15 +191,19 @@
                 <outlet property="infoButton" destination="9dm-0D-61V" id="hel-oY-xtw"/>
                 <outlet property="postImageView" destination="b03-6V-7zJ" id="TEc-J4-Mqk"/>
                 <outlet property="userImageView" destination="J81-jU-u1Z" id="YJz-zt-nS8"/>
-                <outlet property="userNameLabel" destination="arZ-jP-seq" id="6k0-Ii-H5k"/>
+                <outlet property="usernameLabel" destination="arZ-jP-seq" id="iQV-Tw-2yr"/>
             </connections>
             <point key="canvasLocation" x="417.55725190839695" y="-153.16901408450704"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
         <image name="message" catalog="system" width="128" height="116"/>
         <image name="square.and.arrow.up.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

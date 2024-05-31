@@ -9,8 +9,13 @@ import UIKit
 
 class AddNewPostViewController: UIViewController {
 
+    @IBOutlet var captionTextField: UITextField!
+    @IBOutlet var newPostImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        captionTextField.layer.borderColor = UIColor(named: "White")?.cgColor
+    
 
         // Do any additional setup after loading the view.
     }
