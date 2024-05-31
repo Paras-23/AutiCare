@@ -28,15 +28,13 @@ class ProfilePageViewController: UIViewController,UICollectionViewDataSource {
         self.tabBarItem.image = UIImage(systemName: "person.crop.circle")
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        3
+        2
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section{
         case 0:
-            return 1
-        case 1:
             return 4
-        case 2:
+        case 1:
             return 2
         default:
             return 1
@@ -91,24 +89,26 @@ class ProfilePageViewController: UIViewController,UICollectionViewDataSource {
     func generateLayout()->UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (section, env)->NSCollectionLayoutSection? in switch section{
         case 0:
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(1) , heightDimension: .absolute(90))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-            group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
-            group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 15, trailing: 8)
-            let section = NSCollectionLayoutSection(group: group)
-            return section
-        case 1:
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(1) , heightDimension: .absolute(190))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-            group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
-            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 15, trailing: 15)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 5, trailing:8)
+            let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(1) , heightDimension: .absolute(250))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count:  2)
+            group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8)
+            var section = NSCollectionLayoutSection(group: group)
+            return section
+    
+        case 1:
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 5, trailing: 8)
+            let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(1) , heightDimension: .absolute(60))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem:  item, count: 1)
+//            group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
+            group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom:0 , trailing: 8)
             let section = NSCollectionLayoutSection(group: group)
             return section
-        case 2:
+        default:
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(1) , heightDimension: .absolute(70))
@@ -117,16 +117,6 @@ class ProfilePageViewController: UIViewController,UICollectionViewDataSource {
             group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
             let section = NSCollectionLayoutSection(group: group)
             return section
-        default:
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/2))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension:.fractionalWidth(0.90) , heightDimension: .fractionalHeight(1/2))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-            group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)
-            
-            let section = NSCollectionLayoutSection(group: group)
-            return section
-            
             
             }
         }
