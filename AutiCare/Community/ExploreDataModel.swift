@@ -12,14 +12,18 @@ struct User {
     let UserID : UUID
     var firstName : String
     var lastName : String
+    var fullName : String {firstName + " " + lastName}
     let userName : String
     var emailAddress : String
     var password : String
     var profilePicture : String?
+    var coverPicture : String?
     var location : String?
     var gender : gender
     var age : Int
     var bio : String?
+    var following : [User] = []
+    var followers : [User] = []
 }
 
 struct Post {
@@ -49,7 +53,6 @@ struct Likes {
     let userID : UUID  //Which user liked the post
     let timeStamp : Date
 }
-
 
 enum mediaType {
     case jpeg, mp4, png, jpg

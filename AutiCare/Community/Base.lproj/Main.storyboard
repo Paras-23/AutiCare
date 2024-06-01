@@ -114,7 +114,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Write a Caption for your Post" adjustsFontSizeToFit="NO" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2pm-Jo-ydU">
                                                 <rect key="frame" x="10" y="10" width="373" height="173.66666666666666"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -140,8 +140,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="pot-ei-KFm">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bph-qt-TWd"/>
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="5Ni-Dg-MbE"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bph-qt-TWd">
+                            <connections>
+                                <segue destination="ifW-y3-QIx" kind="unwind" unwindAction="unwindToCommunityPageViewController:" id="f7c-Ny-Xsi"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="5Ni-Dg-MbE">
+                            <connections>
+                                <segue destination="ifW-y3-QIx" kind="unwind" unwindAction="unwindToCommunityPageViewController:" id="1fe-HM-TnV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -150,6 +158,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvj-18-UCF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ifW-y3-QIx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2715.2671755725191" y="794.36619718309862"/>
         </scene>
