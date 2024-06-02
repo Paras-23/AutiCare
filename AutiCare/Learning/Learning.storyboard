@@ -52,6 +52,7 @@
                         <outlet property="collectionView" destination="EZk-dA-mi2" id="oH2-kU-TDG"/>
                         <segue destination="1Q8-au-O5t" kind="show" identifier="memoryCardSegue" id="0uH-x8-IWq"/>
                         <segue destination="rAl-9s-ctK" kind="show" identifier="pictureRepresentingActionGameSegue" id="p2H-Hl-RHP"/>
+                        <segue destination="lbh-YO-3PD" kind="show" identifier="SaveTheDotSegue" id="wfn-OI-5mj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -194,7 +195,7 @@
         <!--Picture Representing Action View Controller-->
         <scene sceneID="6rL-XY-E4h">
             <objects>
-                <viewController id="rAl-9s-ctK" customClass="PictureRepresentingActionViewController" customModule="Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rAl-9s-ctK" customClass="PictureRepresentingActionViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zyz-tH-wyj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,9 +262,65 @@
             </objects>
             <point key="canvasLocation" x="888" y="-1370"/>
         </scene>
+        <!--Save The Dot Game View Controller-->
+        <scene sceneID="TUz-Cw-BNu">
+            <objects>
+                <viewController id="lbh-YO-3PD" customClass="SaveTheDotGameViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ujs-Tb-21M"/>
+                        <viewControllerLayoutGuide type="bottom" id="cS2-iA-bbX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bQp-pV-qsO">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYy-XV-jYU">
+                                <rect key="frame" x="284.66666666666669" y="155" width="92.333333333333314" height="20"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.2928375573" blue="0.94420737030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39K-ZZ-Frn">
+                                <rect key="frame" x="140" y="611.66666666666663" width="113" height="26.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <color key="textColor" systemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6y-u4-TCp">
+                                <rect key="frame" x="16" y="155" width="103" height="20"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <color key="textColor" red="0.0067355743920000004" green="0.12218582510000001" blue="0.94420737030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oxp-QM-bRh"/>
+                        <color key="backgroundColor" red="0.88235294119999996" green="0.90588235289999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NYy-XV-jYU" firstAttribute="trailing" secondItem="bQp-pV-qsO" secondAttribute="trailingMargin" id="33a-Ry-q0c"/>
+                            <constraint firstItem="NYy-XV-jYU" firstAttribute="top" secondItem="Ujs-Tb-21M" secondAttribute="bottom" id="Lyx-K7-Ni5"/>
+                            <constraint firstItem="39K-ZZ-Frn" firstAttribute="centerX" secondItem="bQp-pV-qsO" secondAttribute="centerX" id="Ocr-n0-3V6"/>
+                            <constraint firstItem="T6y-u4-TCp" firstAttribute="top" secondItem="Ujs-Tb-21M" secondAttribute="bottom" id="T9I-aj-8Cu"/>
+                            <constraint firstItem="T6y-u4-TCp" firstAttribute="leading" secondItem="bQp-pV-qsO" secondAttribute="leading" constant="16" id="b2P-nv-V12"/>
+                            <constraint firstItem="cS2-iA-bbX" firstAttribute="top" secondItem="39K-ZZ-Frn" secondAttribute="bottom" constant="180" id="wTU-Av-nGs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QvD-PF-yNm"/>
+                    <connections>
+                        <outlet property="bestTimeLabel" destination="T6y-u4-TCp" id="lRW-xN-sGf"/>
+                        <outlet property="clockLabel" destination="NYy-XV-jYU" id="1Nj-7i-Yyy"/>
+                        <outlet property="startLabel" destination="39K-ZZ-Frn" id="L8t-vq-Ynn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8T-Hk-iKe" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1935" y="-1370"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Image" width="826" height="963"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
