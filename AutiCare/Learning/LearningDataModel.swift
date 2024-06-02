@@ -17,6 +17,13 @@ struct Worksheets{
     var imageName:String
 }
 
+struct QuestionOfPictureRepresentingAction {
+    let text: String
+    let option1: String
+    let option2: String
+    let correctOption: Int
+}
+
 var games:[Games] = [Games(imageName: "Designer-20"),Games(imageName: "Designer-12"),Games(imageName: "Designer-15")]
 
 

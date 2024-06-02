@@ -19,8 +19,9 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
         switch indexPath.row {
         case 0: performSegue(withIdentifier: "memoryCardSegue", sender: nil)
             self.tabBarController?.tabBar.isHidden = true
-//            self.navigationController?.navigationBar.isHidden = true
-        case 1: print("Cell called \(indexPath.row)")
+        case 1: performSegue(withIdentifier: "pictureRepresentingActionGameSegue", sender: nil)
+            self.tabBarController?.tabBar.isHidden = true
+            
         default: return
         }
     }

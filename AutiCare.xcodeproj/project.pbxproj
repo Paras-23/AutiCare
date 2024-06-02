@@ -42,6 +42,7 @@
 		444E30922C0B195D002D647C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 444E30912C0B195D002D647C /* FirebaseDatabase */; };
 		444E30942C0B195D002D647C /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 444E30932C0B195D002D647C /* FirebaseDatabaseSwift */; };
 		444E30962C0B1A48002D647C /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444E30952C0B1A48002D647C /* extension.swift */; };
+		A968113B2C0C54C10091F87B /* PictureRepresentingActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A968113A2C0C54C10091F87B /* PictureRepresentingActionViewController.swift */; };
 		C43C95B42C09CB5400663096 /* CommunityDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C95B32C09CB5400663096 /* CommunityDataController.swift */; };
 		C45DB4962C042E5600CD37F8 /* LearningPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */; };
 		C45DB4982C042ED800CD37F8 /* Games.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45DB4972C042ED800CD37F8 /* Games.xib */; };
@@ -93,6 +94,7 @@
 		444E30892C0B150C002D647C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		444E308C2C0B18BA002D647C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		444E30952C0B1A48002D647C /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		A968113A2C0C54C10091F87B /* PictureRepresentingActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureRepresentingActionViewController.swift; sourceTree = "<group>"; };
 		C43C95B32C09CB5400663096 /* CommunityDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDataController.swift; sourceTree = "<group>"; };
 		C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningPageViewController.swift; sourceTree = "<group>"; };
 		C45DB4972C042ED800CD37F8 /* Games.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Games.xib; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		05E49F732C0494B500699D09 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				A968113C2C0C55920091F87B /* PictureRepresentingAction */,
 				05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */,
 				05E49F742C04954300699D09 /* CardCollectionViewCell.swift */,
 			);
@@ -255,6 +258,14 @@
 				444E307F2C0B143C002D647C /* Login */,
 			);
 			path = ChatSection;
+			sourceTree = "<group>";
+		};
+		A968113C2C0C55920091F87B /* PictureRepresentingAction */ = {
+			isa = PBXGroup;
+			children = (
+				A968113A2C0C54C10091F87B /* PictureRepresentingActionViewController.swift */,
+			);
+			path = PictureRepresentingAction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +384,7 @@
 				444E30962C0B1A48002D647C /* extension.swift in Sources */,
 				444E30862C0B14E8002D647C /* VideoPlayerViewController.swift in Sources */,
 				05262EA42BF712BE00C2774C /* ProgressPageViewController.swift in Sources */,
+				A968113B2C0C54C10091F87B /* PictureRepresentingActionViewController.swift in Sources */,
 				C45DB49E2C0431FA00CD37F8 /* GamesCollectionViewCell.swift in Sources */,
 				444E307E2C0B142E002D647C /* RegisterViewController.swift in Sources */,
 				0585EDA12C05CD2D002B9386 /* ResultPageViewController.swift in Sources */,

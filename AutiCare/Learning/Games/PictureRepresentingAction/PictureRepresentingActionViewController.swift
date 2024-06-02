@@ -18,7 +18,7 @@ class PictureRepresentingActionViewController: UIViewController {
     @IBOutlet var option2Button: UIButton!
     
     
-    var questions: [Question] = []
+    var questions: [QuestionOfPictureRepresentingAction] = []
     var currentQuestionIndex = 0
     
     override func viewDidLoad() {
@@ -26,7 +26,11 @@ class PictureRepresentingActionViewController: UIViewController {
         
         // Initialize the questions
         questions = [
-            Question(text: "Who is flying?", option1: "notFly", option2: "fly", correctOption: 2),Question(text: "Who is flying?", option1: "fly1", option2: "notFly1", correctOption: 1),Question(text: "Who is flying?", option1: "fly2", option2: "notFly2", correctOption: 1),Question(text: "Who is flying?", option1: "notFly3", option2: "fly3", correctOption: 2),Question(text: "Who is flying?", option1: "fly4", option2: "notFly4", correctOption: 1)
+            QuestionOfPictureRepresentingAction(text: "Who is flying?", option1: "notFly", option2: "fly", correctOption: 2),
+            QuestionOfPictureRepresentingAction(text: "Who is flying?", option1: "fly1", option2: "notFly1", correctOption: 1),
+            QuestionOfPictureRepresentingAction(text: "Who is flying?", option1: "fly2", option2: "notFly2", correctOption: 1),
+            QuestionOfPictureRepresentingAction(text: "Who is flying?", option1: "notFly3", option2: "fly3", correctOption: 2),
+            QuestionOfPictureRepresentingAction(text: "Who is flying?", option1: "fly4", option2: "notFly4", correctOption: 1)
         ]
         
         displayCurrentQuestion()
@@ -63,7 +67,7 @@ class PictureRepresentingActionViewController: UIViewController {
 //             Correct answer
             markAnswerCorrect(selectedOption: selectedOption)
             currentQuestionIndex += 1
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 if self.currentQuestionIndex < self.questions.count {
                     self.displayCurrentQuestion()
                 }
@@ -74,7 +78,7 @@ class PictureRepresentingActionViewController: UIViewController {
         } else {
             // Wrong answer
             self.markAnswerWrong(selectedOption: selectedOption)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.displayCurrentQuestion()
             }
         }
@@ -105,7 +109,7 @@ class PictureRepresentingActionViewController: UIViewController {
     func showGameFinishedAlert() {
         let alert = UIAlertController(title: "Game Over", message: "You've completed all the questions!", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
-                    self?.performSegue(withIdentifier: "cell", sender: nil)
+                    self?.performSegue(withIdentifier: "PictureRepresentingActionGameToLearningPageViewController", sender: nil)
                 }
                 alert.addAction(okAction)
                 present(alert, animated: true, completion: nil)
