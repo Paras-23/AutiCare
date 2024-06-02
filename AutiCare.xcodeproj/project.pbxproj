@@ -26,6 +26,8 @@
 		05936BC02C0AE22C00516BF9 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05936BBF2C0AE22C00516BF9 /* EditProfileTableViewController.swift */; };
 		05936BC42C0AF9C500516BF9 /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05936BC32C0AF9C500516BF9 /* FriendsTableViewCell.xib */; };
 		05936BC62C0AFA9F00516BF9 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05936BC52C0AFA9F00516BF9 /* FriendsTableViewCell.swift */; };
+		05DA58972C0C78B0001E9A50 /* GroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05DA58962C0C78B0001E9A50 /* GroupCollectionViewCell.xib */; };
+		05DA58992C0C78ED001E9A50 /* ExploreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05DA58982C0C78ED001E9A50 /* ExploreCollectionViewCell.xib */; };
 		05E49F722C0494AB00699D09 /* MemoryCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */; };
 		05E49F752C04954300699D09 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E49F742C04954300699D09 /* CardCollectionViewCell.swift */; };
 		440CA9CE2BFB09AE00FDFA89 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */; };
@@ -81,6 +83,8 @@
 		05936BBF2C0AE22C00516BF9 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		05936BC32C0AF9C500516BF9 /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
 		05936BC52C0AFA9F00516BF9 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		05DA58962C0C78B0001E9A50 /* GroupCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCollectionViewCell.xib; sourceTree = "<group>"; };
+		05DA58982C0C78ED001E9A50 /* ExploreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCollectionViewCell.xib; sourceTree = "<group>"; };
 		05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCardViewController.swift; sourceTree = "<group>"; };
 		05E49F742C04954300699D09 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				05262E8A2BF7112C00C2774C /* Main.storyboard */,
 				0506D9A72C09E7EE00844EF1 /* AddNewPostViewController.swift */,
 				05162E1F2BFDA55D00DC5951 /* CommunityPageViewController.swift */,
+				05DA58962C0C78B0001E9A50 /* GroupCollectionViewCell.xib */,
+				05DA58982C0C78ED001E9A50 /* ExploreCollectionViewCell.xib */,
 				440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */,
 				440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */,
 				05262EAA2BF7136A00C2774C /* ExploreDataModel.swift */,
@@ -340,11 +346,13 @@
 				C45DB49A2C042EE700CD37F8 /* Sessions.xib in Resources */,
 				05262EA62BF712CD00C2774C /* Profile.storyboard in Resources */,
 				05936BC42C0AF9C500516BF9 /* FriendsTableViewCell.xib in Resources */,
+				05DA58992C0C78ED001E9A50 /* ExploreCollectionViewCell.xib in Resources */,
 				05262E8E2BF7112D00C2774C /* Assets.xcassets in Resources */,
 				05262E912BF7112D00C2774C /* Base in Resources */,
 				05262EA12BF7129800C2774C /* Progress.storyboard in Resources */,
 				05262E8C2BF7112C00C2774C /* Base in Resources */,
 				440CA9CF2BFB09AE00FDFA89 /* PostsTableViewCell.xib in Resources */,
+				05DA58972C0C78B0001E9A50 /* GroupCollectionViewCell.xib in Resources */,
 				C45DB4982C042ED800CD37F8 /* Games.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
