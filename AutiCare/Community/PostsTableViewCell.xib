@@ -157,7 +157,7 @@
                                     <constraint firstItem="Gdv-uW-j92" firstAttribute="width" secondItem="H0J-zR-qOD" secondAttribute="width" multiplier="0.6" id="zN5-OC-saD"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwS-kA-cfq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwS-kA-cfq">
                                 <rect key="frame" x="0.0" y="381.33333333333331" width="393" height="11.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="D1Q-Sv-JPy"/>
@@ -203,7 +203,7 @@
         <image name="message" catalog="system" width="128" height="116"/>
         <image name="square.and.arrow.up.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

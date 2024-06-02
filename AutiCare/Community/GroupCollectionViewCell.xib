@@ -17,14 +17,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="260" height="309"/>
                 <autoresizingMask key="autoresizingMask"/>
             </collectionViewCellContentView>
-            <color key="backgroundColor" systemColor="systemPinkColor"/>
+            <color key="backgroundColor" systemColor="systemPurpleColor"/>
             <size key="customSize" width="260" height="309"/>
             <point key="canvasLocation" x="131.29770992366412" y="-8.0985915492957758"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

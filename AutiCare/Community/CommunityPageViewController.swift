@@ -27,7 +27,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         }
 //        3
     }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         switch collectionView {
         case feedCollectionView: return 1
@@ -95,8 +95,9 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
             print("Entering case 1")
             groupsCollectionView.dataSource = self
             groupsCollectionView.delegate = self
-            firstNib = UINib(nibName: "GroupcCollectionViewCell", bundle: nil)
+            firstNib = UINib(nibName: "GroupCollectionViewCell", bundle: nil)
             groupsCollectionView.register(firstNib, forCellWithReuseIdentifier: "UserGroups")
+            groupsCollectionView.setCollectionViewLayout(generateGroupsLayout(), animated: true)
         case 2:
             print("Entering case 2")
             exploreCollectionView.dataSource = self
@@ -131,12 +132,24 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     func generateExploreLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.32), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 10, trailing: 10)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.32))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)
         let section = NSCollectionLayoutSection(group: group)
         return UICollectionViewCompositionalLayout(section: section)
+    }
+    
+    func generateGroupsLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.32), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 10, trailing: 10)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.32))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)
+        let section = NSCollectionLayoutSection(group: group)
+        return UICollectionViewCompositionalLayout(section: section)
+
     }
         
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
