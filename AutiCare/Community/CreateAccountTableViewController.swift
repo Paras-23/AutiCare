@@ -1,89 +1,116 @@
-//
-//  CreateAccountTableViewController.swift
-//  AutiCare
-//
-//  Created by Sudhanshu Singh Rajput on 04/06/24.
-//
+
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
-class CreateAccountTableViewController: UITableViewController {
 
+class CreateAccountTableViewController: UITableViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    @IBOutlet weak var ProfileImageView: UIImageView!
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    @IBOutlet weak var genderButton: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 2
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        switch section{
+        case 0:
+            return 1
+        case 1:
+            return 5
+        default:
+            return 0
+        }
+        
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    
+    @IBAction func createButtonTapped(_ sender: Any) {
+        
+        guard let email = emailTextField.text else{return}
+        guard let password = passwordTextField.text else {return}
+        guard let name = nameTextField.text else {return}
+        guard let username = usernameTextField.text else{return}
+        guard let gender = genderButton.titleLabel?.text else{return}
+        
+        
+        
+        Auth.auth().createUser(withEmail: email, password: password) { firebaseResult, error in
+            if let e = error{
+                print("error")
+            }
+            else{
+                let usersRef = Database.database().reference().child("user")
+                let userData = ["email":self.emailTextField.text!,"password":self.passwordTextField.text!,"name":self.nameTextField.text!,"username":self.usernameTextField.text!,"Gender":self.genderButton.titleLabel?.text]
+                if let uid = Auth.auth().currentUser?.uid{
+                    //user is logged in
+                    usersRef.child(uid).updateChildValues(userData as [AnyHashable : Any]){error,ref in print("User data uploaded")}}
+                /*self.performSegue(withIdentifier: "createdAccount", sender: self)*/
+                self.dismiss(animated: true, completion: nil)
+                
+            }
+            
+        }
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    
+    @IBAction func genderButtonTapped(_ sender: Any) {
+        
+        
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    @IBAction func addImage(_ sender: Any) {
+        
+        let imagePicker = UIImagePickerController ()
+        imagePicker.delegate = self
+        let alertController = UIAlertController(title: "Choose Image Source", message: nil, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction (title: "Cancel" , style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction (title: "Camera", style: .default, handler: { action in imagePicker.sourceType = .camera
+                self.present (imagePicker, animated: true, completion: nil)
+            } )
+            alertController.addAction (cameraAction)
+        }
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default, handler: { action in
+                imagePicker.sourceType = .photoLibrary
+                self.present (imagePicker, animated: true, completion: nil)
+            })
+            alertController.addAction(photoLibraryAction)
+        }
+        alertController.popoverPresentationController?.sourceView = sender as? UIView
+        present(alertController, animated: true, completion: nil)
+        
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[.originalImage] as? UIImage else {return}
+        ProfileImageView.image = selectedImage
+        dismiss(animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
