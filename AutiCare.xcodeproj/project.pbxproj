@@ -26,6 +26,8 @@
 		05936BC02C0AE22C00516BF9 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05936BBF2C0AE22C00516BF9 /* EditProfileTableViewController.swift */; };
 		05936BC42C0AF9C500516BF9 /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05936BC32C0AF9C500516BF9 /* FriendsTableViewCell.xib */; };
 		05936BC62C0AFA9F00516BF9 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05936BC52C0AFA9F00516BF9 /* FriendsTableViewCell.swift */; };
+		05A87AF32C0D6D0200B6C13C /* ResultPageChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A87AF22C0D6D0200B6C13C /* ResultPageChart.swift */; };
+		05A87AF62C0D6F8600B6C13C /* SwiftPieChart in Frameworks */ = {isa = PBXBuildFile; productRef = 05A87AF52C0D6F8600B6C13C /* SwiftPieChart */; };
 		05DA58972C0C78B0001E9A50 /* GroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05DA58962C0C78B0001E9A50 /* GroupCollectionViewCell.xib */; };
 		05DA58992C0C78ED001E9A50 /* ExploreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05DA58982C0C78ED001E9A50 /* ExploreCollectionViewCell.xib */; };
 		05E49F722C0494AB00699D09 /* MemoryCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */; };
@@ -79,6 +81,7 @@
 		05936BBF2C0AE22C00516BF9 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		05936BC32C0AF9C500516BF9 /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
 		05936BC52C0AFA9F00516BF9 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		05A87AF22C0D6D0200B6C13C /* ResultPageChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageChart.swift; sourceTree = "<group>"; };
 		05DA58962C0C78B0001E9A50 /* GroupCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCollectionViewCell.xib; sourceTree = "<group>"; };
 		05DA58982C0C78ED001E9A50 /* ExploreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCollectionViewCell.xib; sourceTree = "<group>"; };
 		05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCardViewController.swift; sourceTree = "<group>"; };
@@ -112,9 +115,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				258805D42C0DB7E20009C19A /* FirebaseDatabaseSwift in Frameworks */,
-				258805D22C0DB7E20009C19A /* FirebaseDatabase in Frameworks */,
-				258805D02C0DB7E20009C19A /* FirebaseAuth in Frameworks */,
+				444E30942C0B195D002D647C /* FirebaseDatabaseSwift in Frameworks */,
+				444E30922C0B195D002D647C /* FirebaseDatabase in Frameworks */,
+				05A87AF62C0D6F8600B6C13C /* SwiftPieChart in Frameworks */,
+				444E30902C0B195D002D647C /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				05262EA02BF7129800C2774C /* Progress.storyboard */,
+				05A87AF22C0D6D0200B6C13C /* ResultPageChart.swift */,
 				0585EDA02C05CD2D002B9386 /* ResultPageViewController.swift */,
 				05262EA32BF712BE00C2774C /* ProgressPageViewController.swift */,
 				C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */,
@@ -247,9 +252,10 @@
 			);
 			name = AutiCare;
 			packageProductDependencies = (
-				258805CF2C0DB7E20009C19A /* FirebaseAuth */,
-				258805D12C0DB7E20009C19A /* FirebaseDatabase */,
-				258805D32C0DB7E20009C19A /* FirebaseDatabaseSwift */,
+				444E308F2C0B195D002D647C /* FirebaseAuth */,
+				444E30912C0B195D002D647C /* FirebaseDatabase */,
+				444E30932C0B195D002D647C /* FirebaseDatabaseSwift */,
+				05A87AF52C0D6F8600B6C13C /* SwiftPieChart */,
 			);
 			productName = AutiCare;
 			productReference = 05262E812BF7112C00C2774C /* AutiCare.app */;
@@ -280,7 +286,8 @@
 			);
 			mainGroup = 05262E782BF7112C00C2774C;
 			packageReferences = (
-				258805CE2C0DB7E20009C19A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				444E308E2C0B195C002D647C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				05A87AF42C0D6F8600B6C13C /* XCRemoteSwiftPackageReference "SwiftPieChart" */,
 			);
 			productRefGroup = 05262E822BF7112C00C2774C /* Products */;
 			projectDirPath = "";
@@ -348,6 +355,7 @@
 				A968113B2C0C54C10091F87B /* PictureRepresentingActionViewController.swift in Sources */,
 				C45DB49E2C0431FA00CD37F8 /* GamesCollectionViewCell.swift in Sources */,
 				0585EDA12C05CD2D002B9386 /* ResultPageViewController.swift in Sources */,
+				05A87AF32C0D6D0200B6C13C /* ResultPageChart.swift in Sources */,
 				05262EB12BF713C200C2774C /* LearningDataModel.swift in Sources */,
 				C45DB4A22C04336500CD37F8 /* WorksheetsCollectionViewCell.swift in Sources */,
 				05E49F722C0494AB00699D09 /* MemoryCardViewController.swift in Sources */,
@@ -577,7 +585,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		258805CE2C0DB7E20009C19A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		05A87AF42C0D6F8600B6C13C /* XCRemoteSwiftPackageReference "SwiftPieChart" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ilamanov/SwiftPieChart";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.61;
+			};
+		};
+		444E308E2C0B195C002D647C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -588,7 +604,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		258805CF2C0DB7E20009C19A /* FirebaseAuth */ = {
+		05A87AF52C0D6F8600B6C13C /* SwiftPieChart */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05A87AF42C0D6F8600B6C13C /* XCRemoteSwiftPackageReference "SwiftPieChart" */;
+			productName = SwiftPieChart;
+		};
+		444E308F2C0B195D002D647C /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 258805CE2C0DB7E20009C19A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;

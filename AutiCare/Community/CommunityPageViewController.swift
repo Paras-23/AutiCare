@@ -10,10 +10,11 @@ import UIKit
 class CommunityPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet var feedCollectionView: UICollectionView!
-    @IBOutlet var groupsCollectionView: UICollectionView!
     @IBOutlet var exploreCollectionView: UICollectionView!
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var searchBarStack: UIStackView!
+    
     var firstNib : UINib = UINib()
     
     var posts : [Post] = []
@@ -21,8 +22,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case feedCollectionView: return 3
-        case groupsCollectionView : return 0
-        case exploreCollectionView : return 9
+        case exploreCollectionView : return 18
         default: return 0
         }
 //        3
@@ -31,7 +31,6 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         switch collectionView {
         case feedCollectionView: return 1
-        case groupsCollectionView : return 1
         case exploreCollectionView : return 1
         default: return 0
         }
@@ -46,14 +45,9 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
             cell.showPost(with: posts[indexPath.row])
             return cell
             
-        case groupsCollectionView:
-            let cell = groupsCollectionView.dequeueReusableCell(withReuseIdentifier: "UserGroups", for: indexPath)
-            return cell
-            
         case exploreCollectionView:
             let cell = exploreCollectionView.dequeueReusableCell(withReuseIdentifier: "UserExplore", for: indexPath)
             return cell
-            
             
         default:
             let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "UserPost", for: indexPath) as! PostsTableViewCell
@@ -65,10 +59,9 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        groupsCollectionView.isHidden = true
         exploreCollectionView.isHidden = true
-        self.searchBar.backgroundImage = UIImage()
+        searchBar.backgroundImage = UIImage()
+        searchBarStack.isHidden = true
         
         selectingCollectionView()
         
@@ -91,15 +84,8 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
             firstNib = UINib(nibName: "PostsTableViewCell", bundle: nil)
             feedCollectionView.register(firstNib, forCellWithReuseIdentifier: "UserPost")
             feedCollectionView.setCollectionViewLayout(generateFeedLayout(), animated: true)
-        case 1:
+       case 1:
             print("Entering case 1")
-            groupsCollectionView.dataSource = self
-            groupsCollectionView.delegate = self
-            firstNib = UINib(nibName: "GroupCollectionViewCell", bundle: nil)
-            groupsCollectionView.register(firstNib, forCellWithReuseIdentifier: "UserGroups")
-            groupsCollectionView.setCollectionViewLayout(generateGroupsLayout(), animated: true)
-        case 2:
-            print("Entering case 2")
             exploreCollectionView.dataSource = self
             exploreCollectionView.delegate = self
             firstNib = UINib(nibName: "ExploreCollectionViewCell", bundle: nil)
@@ -130,26 +116,14 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     func generateExploreLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.32), heightDimension: .fractionalHeight(1))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 10, trailing: 10)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.32))
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 2.5, bottom: 0, trailing: 2.5)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.25))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 2.5, leading: 0, bottom: 2.5, trailing: 0)
         let section = NSCollectionLayoutSection(group: group)
         return UICollectionViewCompositionalLayout(section: section)
-    }
-    
-    func generateGroupsLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.32), heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 10, trailing: 10)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.32))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)
-        let section = NSCollectionLayoutSection(group: group)
-        return UICollectionViewCompositionalLayout(section: section)
-
     }
         
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
@@ -157,32 +131,21 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
             print("Feed Tab")
             feedCollectionView.isHidden = false
             exploreCollectionView.isHidden = true
-            groupsCollectionView.isHidden = true
-            searchBar.isHidden = true
+            searchBarStack.isHidden = true
             selectingCollectionView()
             
-        } else if (sender.selectedSegmentIndex == 1) {
-            print("Group Tabs")
-            feedCollectionView.isHidden = true
-            exploreCollectionView.isHidden = true
-            groupsCollectionView.isHidden = false
-            searchBar.isHidden = false
-            selectingCollectionView()
-            
-        } else {
+        } else if sender.selectedSegmentIndex == 1{
             print("Explore Page")
             feedCollectionView.isHidden = true
             exploreCollectionView.isHidden = false
-            groupsCollectionView.isHidden = true
-            searchBar.isHidden = false
+            searchBarStack.isHidden = false
             selectingCollectionView()
         }
     }
     
-    
-    
-    
-    
+    @IBAction func filterButtonTapped(_ sender: UIButton) {
+        
+    }
     
     
     @IBAction func unwindToCommunityPageViewController(_ unwindSegue: UIStoryboardSegue) {

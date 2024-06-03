@@ -11,20 +11,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserGroups" id="s0a-PB-iVZ">
-            <rect key="frame" x="0.0" y="0.0" width="260" height="309"/>
+            <rect key="frame" x="0.0" y="0.0" width="503" height="155"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VG0-hf-M4K">
-                <rect key="frame" x="0.0" y="0.0" width="260" height="309"/>
+                <rect key="frame" x="0.0" y="0.0" width="503" height="155"/>
                 <autoresizingMask key="autoresizingMask"/>
             </collectionViewCellContentView>
-            <color key="backgroundColor" systemColor="systemPurpleColor"/>
-            <size key="customSize" width="260" height="309"/>
-            <point key="canvasLocation" x="131.29770992366412" y="-8.0985915492957758"/>
+            <color key="backgroundColor" systemColor="systemGreenColor"/>
+            <size key="customSize" width="503" height="155"/>
+            <point key="canvasLocation" x="316.79389312977099" y="-62.323943661971832"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
