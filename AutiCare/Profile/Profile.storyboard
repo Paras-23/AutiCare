@@ -10,6 +10,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="oWc-VD-ZJf">
+            <objects>
+                <tableViewController id="swe-Je-ou0" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Y2Z-GI-15m">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RF0-m2-fuW">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RF0-m2-fuW" id="NaK-W5-imf">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="swe-Je-ou0" id="lvn-ln-LUC"/>
+                            <outlet property="delegate" destination="swe-Je-ou0" id="xNW-5s-Vw3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="V6S-SY-g1G"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M82-F7-PV0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2653" y="-784"/>
+        </scene>
         <!--Edit Profile-->
         <scene sceneID="1Gr-fB-vdQ">
             <objects>
@@ -531,6 +560,9 @@
                     <navigationItem key="navigationItem" title="Profile" id="C20-95-UPq">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="Cix-KG-H2v">
                             <color key="tintColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="swe-Je-ou0" kind="show" id="luG-u1-1KA"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
