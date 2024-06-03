@@ -7,7 +7,7 @@
 
 import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    var isloggedIn:Bool = false
     var window: UIWindow?
 
 
@@ -18,14 +18,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         UserDefaults.standard.register(defaults: ["isLoggedIn":false])
+        
         let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
         
         if isLoggedIn{
-            let storyboard = UIStoryboard(name: "auth", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateInitialViewController()
             window?.rootViewController = vc
+            
         }
-        else{
+        
+        else
+        {
             //load the storyboard file
             let storyboard = UIStoryboard(name: "auth", bundle: nil)
             //instantiate the login view controlller with loginVC storyboard

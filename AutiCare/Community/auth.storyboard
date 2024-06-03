@@ -39,7 +39,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uoO-Qc-jkp">
                                                     <rect key="frame" x="86.666666666666686" y="15" width="220" height="220"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="rp8-ZN-iIO">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="rp8-ZN-iIO">
                                                             <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="220" id="GzU-n2-aZg"/>
@@ -47,7 +47,7 @@
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <integer key="value" value="100"/>
+                                                                    <integer key="value" value="110"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
@@ -285,10 +285,10 @@
             </objects>
             <point key="canvasLocation" x="-266" y="199"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Page View Controller-->
         <scene sceneID="sI3-fm-a51">
             <objects>
-                <viewController id="xjy-zs-xL2" customClass="ViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="auth" id="xjy-zs-xL2" customClass="LoginPageViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gSb-08-D5s">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -319,7 +319,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Og4-xu-Lin">
                                                 <rect key="frame" x="0.0" y="0.0" width="267" height="50"/>
-                                                <color key="backgroundColor" red="0.91945684520000004" green="0.9520902564" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="266.67000000000002" id="M27-xd-lax"/>
                                                     <constraint firstAttribute="height" constant="50" id="g74-4m-Rm2"/>
@@ -378,13 +378,14 @@
                     <navigationItem key="navigationItem" id="T7F-DI-hFv"/>
                     <connections>
                         <outlet property="emailTextField" destination="Og4-xu-Lin" id="Qxu-LG-iis"/>
+                        <outlet property="loginButton" destination="h3p-J4-DbU" id="cNg-Bg-hoJ"/>
                         <outlet property="passwordTextField" destination="j9i-sv-JoU" id="KVq-mT-UfK"/>
-                        <segue destination="WGS-UH-Sbg" kind="show" identifier="loginDone" id="Jz5-cX-MbM"/>
+                        <segue destination="WGS-UH-Sbg" kind="show" identifier="mainApp" id="U6s-zm-sMI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VhS-mg-CkV" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1298" y="199"/>
+            <point key="canvasLocation" x="-1237" y="235"/>
         </scene>
         <!--Main-->
         <scene sceneID="oDo-ao-o4x">
@@ -399,7 +400,7 @@
     </scenes>
     <resources>
         <image name="AppImage" width="506" height="508"/>
-        <image name="image" width="506" height="508"/>
+        <image name="ProfileImage" width="900" height="600"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
