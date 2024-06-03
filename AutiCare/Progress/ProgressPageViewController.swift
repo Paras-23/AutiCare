@@ -33,11 +33,12 @@ class ProgressPageViewController: UIViewController {
     
     
     @IBAction func unwindToProgressPageViewController(segue: UIStoryboardSegue) {
-        let sourceViewController = segue.source as! AssessmentTableViewController
         
         assessmentStack.isHidden = true
         homeStack.isHidden = false
-        autismLevel.text = "Autism Score - \(sourceViewController.autismScore)/200"
+        autismLevel.text = "Autism Score - \((assessmentResults.last?.scores.reduce(0){$0 + $1})!)/200"
+        
+        tabBarController?.tabBar.isHidden = false
         // Use data from the view controller which initiated the unwind segue
     }
 }

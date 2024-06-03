@@ -33,24 +33,25 @@ class LegendView: UIView {
         
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.alignment = .leading
-        stackView.spacing = 10
+        stackView.alignment = .fill
+        stackView.spacing = 15
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         for (index, title) in titles.enumerated() {
             let colorView = UIView()
             colorView.backgroundColor = colors[index]
-            colorView.widthAnchor.constraint(equalToConstant: 20).isActive = true
-            colorView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            colorView.widthAnchor.constraint(equalToConstant: 10).isActive = true
+            colorView.heightAnchor.constraint(equalToConstant: 10).isActive = true
             
             let label = UILabel()
             label.text = title
-            label.font = UIFont.systemFont(ofSize: 14)
+            label.font = UIFont.systemFont(ofSize: 15)
             label.textColor = .black
             
             let horizontalStack = UIStackView(arrangedSubviews: [colorView, label])
             horizontalStack.axis = .horizontal
-            horizontalStack.spacing = 10
+            horizontalStack.alignment = .center
+            horizontalStack.spacing = 15
             
             stackView.addArrangedSubview(horizontalStack)
         }

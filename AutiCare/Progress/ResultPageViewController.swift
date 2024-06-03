@@ -19,22 +19,22 @@ class ResultPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        autismScore.text = "\((assessmentResults.last?.scores.reduce(0){$0 + $1})!)"
         pieChart()
         // Do any additional setup after loading the view.
     }
     
     func pieChart(){
-        let data: [CGFloat] = [10, 130 ,10, 30, 40]
-        let colors: [UIColor] = [.red, .blue, .purple , .green, .gray]
+        let data: [CGFloat] = (assessmentResults.last?.scores.map { CGFloat($0) })!
+        let colors: [UIColor] = [.red, .blue, .purple , .green, .gray , .cyan]
         
-        let titles: [String] = ["Red", "Blue", "Green", "Yellow" , "purple"]
+        let titles: [String] = ["Social" , "Emotional" , "Speech" , "Behaviour" , "Sensory" , "Cognitive"]
         
         pieChartView.data = data
         pieChartView.colors = colors
         pieChartView.titles = titles
-        pieChartView.innerRadiusRatio = 0.5 // Adjust this value to change the inner radius
+        pieChartView.innerRadiusRatio = 0.6 // Adjust this value to change the inner radius
         pieChartView.separationAngle = 2 * .pi / 180 // Adjust this value to change the separation angle
-        //pieChartView.cornerRadius = 10 // Adjust this value to change the corner radius
         pieChartView.setNeedsDisplay()
         
         let legendView = LegendView(frame: legendContainerView.bounds, titles: titles, colors: colors)

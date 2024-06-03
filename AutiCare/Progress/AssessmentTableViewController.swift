@@ -21,10 +21,17 @@ class AssessmentTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.tabBar.isHidden = true
         isCompletedCategory = Array(repeating: false, count: categoryWiseQuestions.AllQuestions.count)
         updateSubmitButtonState()
+        
     }
-
+    
+    
+    @IBAction func submitButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "segueToResultPageViewController", sender: nil)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
@@ -46,10 +53,7 @@ class AssessmentTableViewController: UITableViewController {
             questionsControl.navigationItem.title = categoryWiseQuestions.AllQuestions[indexPath.row].questionsCategory.description
         }
         else if segue.identifier == "segueToResultPageViewController" {
-            
-        }
-        else if segue.identifier == "unwindToProgressPageViewController"{
-            autismScore = categoryWiseQuestions.AllQuestions.reduce(0){$0 + $1.score}
+            assessmentResults.append(Result(scores: categoryWiseQuestions.AllQuestions.map{$0.score}, date: Date.now))
         }
         
     }
@@ -60,7 +64,7 @@ class AssessmentTableViewController: UITableViewController {
                 continue
             }
             else {
-                submitButtonPressed.isEnabled = false
+                submitButtonPressed.isEnabled = true
                 return
             }
         }

@@ -208,7 +208,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Submit"/>
                                                     <connections>
-                                                        <segue destination="IBL-zU-oAB" kind="unwind" identifier="unwindToProgressPageViewController" unwindAction="unwindToProgressPageViewControllerWithSegue:" id="HRn-cp-n8P"/>
+                                                        <action selector="submitButtonPressed:" destination="9bY-yP-InI" eventType="touchUpInside" id="CEE-hb-1lA"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -230,11 +230,10 @@
                     <connections>
                         <outlet property="submitButtonPressed" destination="Zk4-Gw-33g" id="tNT-kT-EqU"/>
                         <segue destination="L6D-QN-oNP" kind="show" identifier="segueToQuestionTableViewController" id="DJ4-bx-cEa"/>
-                        <segue destination="RdY-cB-pyX" kind="show" id="DxG-bI-SGa"/>
+                        <segue destination="RdY-cB-pyX" kind="show" identifier="segueToResultPageViewController" id="zMN-g0-YBh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vlL-S5-g0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="IBL-zU-oAB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1893.8931297709923" y="-2.1126760563380285"/>
         </scene>
@@ -298,7 +297,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="OaX-0a-KYT">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OaX-0a-KYT">
                                 <rect key="frame" x="10" y="289.66666666666669" width="373" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nJ-W9-TLF" customClass="PieChartUIView" customModule="AutiCare" customModuleProvider="target">
@@ -310,11 +309,20 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nux-JV-jas" customClass="LegendView" customModule="AutiCare" customModuleProvider="target">
-                                        <rect key="frame" x="200" y="22" width="173" height="178"/>
+                                        <rect key="frame" x="210" y="22" width="163" height="178"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ihq-dh-VgB">
+                                <rect key="frame" x="150" y="771" width="93" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Continue" cornerStyle="capsule"/>
+                                <connections>
+                                    <segue destination="C0Z-x6-h7w" kind="unwind" unwindAction="unwindToProgressPageViewControllerWithSegue:" id="n0K-WN-kWh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YA7-Pi-QAv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -337,8 +345,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTy-p8-jXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="C0Z-x6-h7w" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1894" y="697"/>
+            <point key="canvasLocation" x="1952" y="703"/>
         </scene>
         <!--Questions Table View Controller-->
         <scene sceneID="SnN-jy-K5Q">
