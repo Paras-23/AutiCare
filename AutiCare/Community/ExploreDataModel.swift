@@ -24,6 +24,7 @@ struct User {
     var bio : String?
     var following : [User] = []
     var followers : [User] = []
+    var posts : [Post] = []
 }
 
 struct Post {
