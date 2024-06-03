@@ -47,6 +47,7 @@
 		444E30942C0B195D002D647C /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 444E30932C0B195D002D647C /* FirebaseDatabaseSwift */; };
 		444E30962C0B1A48002D647C /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444E30952C0B1A48002D647C /* extension.swift */; };
 		A968113B2C0C54C10091F87B /* PictureRepresentingActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A968113A2C0C54C10091F87B /* PictureRepresentingActionViewController.swift */; };
+		C400BA352C0D727A0096D823 /* matchingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C400BA342C0D727A0096D823 /* matchingGameViewController.swift */; };
 		C43C95B42C09CB5400663096 /* CommunityDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C95B32C09CB5400663096 /* CommunityDataController.swift */; };
 		C45DB4962C042E5600CD37F8 /* LearningPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */; };
 		C45DB4982C042ED800CD37F8 /* Games.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45DB4972C042ED800CD37F8 /* Games.xib */; };
@@ -58,6 +59,8 @@
 		C45DB4A62C0446F900CD37F8 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DB4A52C0446F900CD37F8 /* HeaderCollectionReusableView.swift */; };
 		C45DB4AA2C0451C400CD37F8 /* Learning.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45DB4A92C0451C400CD37F8 /* Learning.storyboard */; };
 		C45DB4AC2C04527E00CD37F8 /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DB4AB2C04527E00CD37F8 /* SectionViewController.swift */; };
+		C472EE362C0D8DB500C97BE6 /* PieChartUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C472EE352C0D8DB500C97BE6 /* PieChartUIView.swift */; };
+		C472EE3A2C0D9AAD00C97BE6 /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C472EE392C0D9AAD00C97BE6 /* LegendView.swift */; };
 		C4AE96592BF71EDC00BEE963 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */; };
 		C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */; };
 		C4AE965D2BF7270500BEE963 /* AssessmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE965C2BF7270500BEE963 /* AssessmentTableViewController.swift */; };
@@ -103,6 +106,7 @@
 		444E308C2C0B18BA002D647C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		444E30952C0B1A48002D647C /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		A968113A2C0C54C10091F87B /* PictureRepresentingActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureRepresentingActionViewController.swift; sourceTree = "<group>"; };
+		C400BA342C0D727A0096D823 /* matchingGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matchingGameViewController.swift; sourceTree = "<group>"; };
 		C43C95B32C09CB5400663096 /* CommunityDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDataController.swift; sourceTree = "<group>"; };
 		C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningPageViewController.swift; sourceTree = "<group>"; };
 		C45DB4972C042ED800CD37F8 /* Games.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Games.xib; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 		C45DB4A52C0446F900CD37F8 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		C45DB4A92C0451C400CD37F8 /* Learning.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Learning.storyboard; sourceTree = "<group>"; };
 		C45DB4AB2C04527E00CD37F8 /* SectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
+		C472EE352C0D8DB500C97BE6 /* PieChartUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartUIView.swift; sourceTree = "<group>"; };
+		C472EE392C0D9AAD00C97BE6 /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		C4AE965C2BF7270500BEE963 /* AssessmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentTableViewController.swift; sourceTree = "<group>"; };
@@ -209,7 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				05262EA02BF7129800C2774C /* Progress.storyboard */,
-				05A87AF22C0D6D0200B6C13C /* ResultPageChart.swift */,
+				C472EE352C0D8DB500C97BE6 /* PieChartUIView.swift */,
+				C472EE392C0D9AAD00C97BE6 /* LegendView.swift */,
 				0585EDA02C05CD2D002B9386 /* ResultPageViewController.swift */,
 				05262EA32BF712BE00C2774C /* ProgressPageViewController.swift */,
 				C4AE965A2BF722B900BEE963 /* QuestionsTableViewController.swift */,
@@ -236,6 +243,7 @@
 		05E49F732C0494B500699D09 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				C400BA342C0D727A0096D823 /* matchingGameViewController.swift */,
 				A968113A2C0C54C10091F87B /* PictureRepresentingActionViewController.swift */,
 				EF6517A02C0CEE1F00CA7CCF /* SaveTheDotGameViewController.swift */,
 				05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */,
@@ -382,9 +390,11 @@
 				444E308A2C0B150C002D647C /* ChatViewController.swift in Sources */,
 				C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */,
 				C43C95B42C09CB5400663096 /* CommunityDataController.swift in Sources */,
+				C400BA352C0D727A0096D823 /* matchingGameViewController.swift in Sources */,
 				444E30822C0B14B0002D647C /* conversationViewController.swift in Sources */,
 				EF6517A12C0CEE1F00CA7CCF /* SaveTheDotGameViewController.swift in Sources */,
 				05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */,
+				C472EE3A2C0D9AAD00C97BE6 /* LegendView.swift in Sources */,
 				05E49F752C04954300699D09 /* CardCollectionViewCell.swift in Sources */,
 				444E30882C0B14FB002D647C /* NewConversationViewController.swift in Sources */,
 				C4AE965D2BF7270500BEE963 /* AssessmentTableViewController.swift in Sources */,
@@ -395,6 +405,7 @@
 				444E30962C0B1A48002D647C /* extension.swift in Sources */,
 				444E30862C0B14E8002D647C /* VideoPlayerViewController.swift in Sources */,
 				05262EA42BF712BE00C2774C /* ProgressPageViewController.swift in Sources */,
+				C472EE362C0D8DB500C97BE6 /* PieChartUIView.swift in Sources */,
 				A968113B2C0C54C10091F87B /* PictureRepresentingActionViewController.swift in Sources */,
 				C45DB49E2C0431FA00CD37F8 /* GamesCollectionViewCell.swift in Sources */,
 				444E307E2C0B142E002D647C /* RegisterViewController.swift in Sources */,

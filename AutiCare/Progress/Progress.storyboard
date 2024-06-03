@@ -298,16 +298,43 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="OaX-0a-KYT">
+                                <rect key="frame" x="10" y="289.66666666666669" width="373" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nJ-W9-TLF" customClass="PieChartUIView" customModule="AutiCare" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="gBk-NN-FiR"/>
+                                            <constraint firstAttribute="width" constant="200" id="iWA-iQ-eJk"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nux-JV-jas" customClass="LegendView" customModule="AutiCare" customModuleProvider="target">
+                                        <rect key="frame" x="200" y="22" width="173" height="178"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YA7-Pi-QAv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YA7-Pi-QAv" firstAttribute="trailing" secondItem="GZ6-yr-cvX" secondAttribute="trailing" constant="10" id="1w0-EE-CxF"/>
                             <constraint firstItem="GZ6-yr-cvX" firstAttribute="leading" secondItem="YA7-Pi-QAv" secondAttribute="leading" constant="10" id="Bp5-ww-HTF"/>
+                            <constraint firstAttribute="trailing" secondItem="OaX-0a-KYT" secondAttribute="trailing" constant="10" id="MWI-6M-QGW"/>
                             <constraint firstItem="GZ6-yr-cvX" firstAttribute="top" secondItem="YA7-Pi-QAv" secondAttribute="top" constant="10" id="QAv-BV-xdG"/>
+                            <constraint firstItem="OaX-0a-KYT" firstAttribute="top" secondItem="GZ6-yr-cvX" secondAttribute="bottom" constant="20" id="V67-QS-Y2u"/>
+                            <constraint firstItem="OaX-0a-KYT" firstAttribute="leading" secondItem="ZBk-As-uTU" secondAttribute="leading" constant="10" id="pBx-02-to0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Assessment Completed" largeTitleDisplayMode="never" id="35A-mS-RHc"/>
+                    <connections>
+                        <outlet property="autismLevel" destination="p42-sW-dj2" id="xWj-3z-kfP"/>
+                        <outlet property="autismLevelDescription" destination="QZd-hB-jHc" id="jWD-a9-BSH"/>
+                        <outlet property="autismScore" destination="Uo5-c9-kWY" id="HWz-sI-pcI"/>
+                        <outlet property="legendContainerView" destination="Nux-JV-jas" id="gKR-Za-fqJ"/>
+                        <outlet property="pieChartView" destination="9nJ-W9-TLF" id="d4p-Rd-eSa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTy-p8-jXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

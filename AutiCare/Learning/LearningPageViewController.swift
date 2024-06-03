@@ -23,6 +23,7 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
             self.tabBarController?.tabBar.isHidden = true
         case 2: performSegue(withIdentifier: "SaveTheDotSegue", sender: nil)
             self.tabBarController?.tabBar.isHidden = true
+            
         default: return
         }
     }

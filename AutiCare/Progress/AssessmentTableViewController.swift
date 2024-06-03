@@ -23,11 +23,6 @@ class AssessmentTableViewController: UITableViewController {
         super.viewDidLoad()
         isCompletedCategory = Array(repeating: false, count: categoryWiseQuestions.AllQuestions.count)
         updateSubmitButtonState()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -49,6 +44,9 @@ class AssessmentTableViewController: UITableViewController {
             let indexPath = sender as! IndexPath
             questionsControl.categoryWiseQuestion = categoryWiseQuestions.AllQuestions[indexPath.row]
             questionsControl.navigationItem.title = categoryWiseQuestions.AllQuestions[indexPath.row].questionsCategory.description
+        }
+        else if segue.identifier == "segueToResultPageViewController" {
+            
         }
         else if segue.identifier == "unwindToProgressPageViewController"{
             autismScore = categoryWiseQuestions.AllQuestions.reduce(0){$0 + $1.score}
