@@ -80,7 +80,7 @@ class QuestionsTableViewController: UITableViewController , QuestionTableViewCel
                 continue
             }
             else {
-                doneButton.isEnabled = false
+                doneButton.isEnabled = true
                 return
             }
         }

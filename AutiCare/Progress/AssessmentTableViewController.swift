@@ -21,15 +21,17 @@ class AssessmentTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.tabBar.isHidden = true
         isCompletedCategory = Array(repeating: false, count: categoryWiseQuestions.AllQuestions.count)
         updateSubmitButtonState()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
-
+    
+    
+    @IBAction func submitButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "segueToResultPageViewController", sender: nil)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
@@ -50,8 +52,8 @@ class AssessmentTableViewController: UITableViewController {
             questionsControl.categoryWiseQuestion = categoryWiseQuestions.AllQuestions[indexPath.row]
             questionsControl.navigationItem.title = categoryWiseQuestions.AllQuestions[indexPath.row].questionsCategory.description
         }
-        else if segue.identifier == "unwindToProgressPageViewController"{
-            autismScore = categoryWiseQuestions.AllQuestions.reduce(0){$0 + $1.score}
+        else if segue.identifier == "segueToResultPageViewController" {
+            assessmentResults.append(Result(scores: categoryWiseQuestions.AllQuestions.map{$0.score}, date: Date.now))
         }
         
     }
@@ -62,7 +64,7 @@ class AssessmentTableViewController: UITableViewController {
                 continue
             }
             else {
-                submitButtonPressed.isEnabled = false
+                submitButtonPressed.isEnabled = true
                 return
             }
         }

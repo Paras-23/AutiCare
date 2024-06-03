@@ -95,3 +95,11 @@ let cognitiveQuestions : [Question] = [Question(text: "Your child is inconsisten
                                        Question(text: "Your child shows delay in responding"),
                                        Question(text: "Your child has unusual memory of some kind"),
                                        Question(text: "Your child has 'savant' ability")]
+
+
+struct Result {
+    var scores : [Int]
+    var date : Date
+}
+
+var assessmentResults : [Result] = []
