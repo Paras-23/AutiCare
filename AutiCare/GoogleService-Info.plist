@@ -3,28 +3,30 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyD933JD_OlvQBM2v70EpE_5192036K4A5E</string>
+	<string>AIzaSyBBol_4rS7BpT4Sp0LD9qTENnsJsHfgF54</string>
 	<key>GCM_SENDER_ID</key>
-	<string>365174930265</string>
+	<string>1070099534757</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>AutiCare</string>
+	<string>com.example.CreateAccountOrLogin</string>
 	<key>PROJECT_ID</key>
-	<string>auticare-19efd</string>
+	<string>auticare-f63df</string>
 	<key>STORAGE_BUCKET</key>
-	<string>auticare-19efd.appspot.com</string>
+	<string>auticare-f63df.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:365174930265:ios:3aa43a57ec73ed15a1aa48</string>
+	<string>1:1070099534757:ios:99fceb890e4e84849f0e4c</string>
+	<key>DATABASE_URL</key>
+	<string>https://auticare-f63df-default-rtdb.asia-southeast1.firebasedatabase.app/</string>
 </dict>
 </plist>
