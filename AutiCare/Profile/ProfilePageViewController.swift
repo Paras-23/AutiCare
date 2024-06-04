@@ -26,6 +26,7 @@ class ProfilePageViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet var userCoverPhoto: UIImageView!
     @IBOutlet var userProfilePhoto: UIImageView!
     @IBOutlet var userFullName: UILabel!
+    @IBOutlet var segmentedControl: UISegmentedControl!
     
     
     
@@ -68,6 +69,17 @@ class ProfilePageViewController: UIViewController, UITableViewDataSource, UITabl
         let nib = UINib(nibName: "FriendsTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "UserInfo")
         
+    }
+    
+    
+    @IBAction func segmentedControlChanged(_ sender: Any) {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            print("Post")
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            print("Followers")
+        } else {
+            print("Following")
+        }
     }
     
     @IBAction func unwindToProfilePageViewController(_ unwindSegue: UIStoryboardSegue) {

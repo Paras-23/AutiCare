@@ -53,7 +53,7 @@ class AssessmentTableViewController: UITableViewController {
             questionsControl.navigationItem.title = categoryWiseQuestions.AllQuestions[indexPath.row].questionsCategory.description
         }
         else if segue.identifier == "segueToResultPageViewController" {
-            assessmentResults.append(Result(scores: categoryWiseQuestions.AllQuestions.map{$0.score}, date: Date.now))
+            assessmentResults.append(Result(scores: categoryWiseQuestions.AllQuestions.map{(($0.score)*100) / (($0.questions.count)*5)}, date: Date.now , totalScore: categoryWiseQuestions.AllQuestions.reduce(0){$0 + $1.score}))
         }
         
     }

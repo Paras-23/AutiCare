@@ -452,6 +452,9 @@
                                     <segment title="Followers"/>
                                     <segment title="Following"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="X9c-1m-6yL" eventType="valueChanged" id="Pkg-5L-wp9"/>
+                                </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGh-Fc-6RV">
                                 <rect key="frame" x="16" y="454" width="361" height="364"/>
@@ -566,6 +569,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="segmentedControl" destination="Odg-cY-TE3" id="vK2-PK-pAp"/>
                         <outlet property="tableView" destination="sj1-V9-IK2" id="TM9-MS-LMf"/>
                         <outlet property="userCoverPhoto" destination="fYw-Zg-zPP" id="bWc-qK-JQL"/>
                         <outlet property="userFullName" destination="e1L-gF-uNS" id="T1a-ec-Och"/>

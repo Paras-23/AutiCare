@@ -100,6 +100,17 @@ let cognitiveQuestions : [Question] = [Question(text: "Your child is inconsisten
 struct Result {
     var scores : [Int]
     var date : Date
+    var totalScore : Int
 }
 
 var assessmentResults : [Result] = []
+
+var results : [String] = [
+"Your child's assessment indicates typical development with no significant signs of autism. Children at this level generally exhibit age-appropriate social interactions, communication skills, and behaviors. They navigate daily activities and changes in routine with ease. While every child develops at their own pace, your child's current developmental profile is within the expected range for their age",
+
+"Your child's assessment indicates a mild level of autism. Children at this level may have some difficulties with social interactions and communication, and might exhibit repetitive behaviors. They often require minimal support and can manage many daily activities independently. With early intervention and appropriate support, children with mild autism can develop important skills to enhance their social and adaptive functioning",
+
+"Your child's assessment indicates a moderate level of autism. Children at this level often face more pronounced challenges with communication and social interactions. They may exhibit repetitive behaviors and have difficulty adapting to changes in routine. They typically require moderate support to assist with daily activities and benefit from targeted interventions to improve their social skills and adaptive functioning.",
+
+"Your child's assessment indicates a severe level of autism. Children at this level usually experience significant challenges with communication and social interactions. They may exhibit repetitive behaviors and have a strong preference for routines. They often require substantial support and specialized interventions to assist with daily functioning and to improve their quality of life. Early and intensive interventions can help in developing essential skills and enhancing their overall well-being."
+]

@@ -69,8 +69,6 @@ class QuestionsTableViewController: UITableViewController , QuestionTableViewCel
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        print("select")
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
