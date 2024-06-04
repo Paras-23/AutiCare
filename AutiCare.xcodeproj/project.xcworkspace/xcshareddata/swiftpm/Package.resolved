@@ -1,5 +1,5 @@
 {
-  "originHash" : "eb102a325aeff8db0d707d81609e0f083be8521e6b91851c8ed9d246c7b057af",
+  "originHash" : "c63c63846d9c539229e96de38d6af51417e28c0ee9a0bc48bd0f0f19d923c329",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -116,15 +116,6 @@
       "state" : {
         "revision" : "9f0c76544701845ad98716f3f6a774a892152bcb",
         "version" : "1.26.0"
-      }
-    },
-    {
-      "identity" : "swiftpiechart",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ilamanov/SwiftPieChart",
-      "state" : {
-        "revision" : "e6f67120c55e7402f67f3463994105ff6cfbcd10",
-        "version" : "1.0.61"
       }
     }
   ],

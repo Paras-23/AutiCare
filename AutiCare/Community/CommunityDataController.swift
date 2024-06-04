@@ -20,10 +20,10 @@ class CommunityDataController {
     }
     
     func dummyUsers() {
-        users = [ User(UserID: UUID(), firstName: "David", lastName: "Beckham", userName: "iamdavid", emailAddress: "beckham@gmail.com", password: "miamidream", profilePicture: "user_1" ,gender: .male, age: 35),
-                  User(UserID: UUID(), firstName: "Khal", lastName: "Drogo", userName: "dothraki", emailAddress: "khaldrogo@gmail.com", password: "12345", profilePicture: "user_2" ,gender: .male, age: 32)
+        users = [ User(UserID: UUID(), firstName: "David", lastName: "Beckham", userName: "iamdavid", emailAddress: "beckham@gmail.com", password: "miamidream", phone: "", profilePicture: "user_1" ,gender: "male", age: 35),
+                  User(UserID: UUID(), firstName: "Khal", lastName: "Drogo", userName: "dothraki", emailAddress: "khaldrogo@gmail.com", password: "12345", phone: "", profilePicture: "user_2" ,gender: "male", age: 32)
                   ,
-                  User(UserID: UUID(), firstName: "Emma", lastName: "Watson", userName: "itsemma", emailAddress: "emmawatson@gmail.com", password: "hermoineiam", profilePicture: "user_3" ,gender: .female, age: 20)
+                  User(UserID: UUID(), firstName: "Emma", lastName: "Watson", userName: "itsemma", emailAddress: "emmawatson@gmail.com", password: "hermoineiam", phone: "", profilePicture: "user_3" ,gender: "female", age: 20)
         ]
         users[0].followers = [users[1], users[2]]
         users[0].following = [users[2], users[1]]

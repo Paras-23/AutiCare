@@ -16,15 +16,39 @@ struct User {
     let userName : String
     var emailAddress : String
     var password : String
+    var phone : String
     var profilePicture : String?
     var coverPicture : String?
     var location : String?
-    var gender : gender
-    var age : Int
+    var gender : String
+    var age : Int?
     var bio : String?
-    var following : [User] = []
-    var followers : [User] = []
-    var posts : [Post] = []
+    var following : [User]?
+    var followers : [User]?
+    var posts : [Post]?
+    
+    func toDictionary() -> [String: Any] {
+        return [
+            "UserID": UserID.uuidString,
+            "firstName": firstName,
+            "lastName": lastName,
+            "fullName" : fullName,
+            "userName": userName,
+            "emailAddress": emailAddress,
+            "password": password,
+            "phone": phone,
+            "gender": gender,
+            "profilePicture" : profilePicture,
+            "coverPicture" : coverPicture,
+            "location" : location,
+            "age" : age,
+            "bio" : bio,
+            "following" : following,
+            "followers" : followers,
+            "posts" : posts
+            
+        ]
+    }
 }
 
 struct Post {
@@ -58,9 +82,4 @@ struct Likes {
 enum mediaType {
     case jpeg, mp4, png, jpg
 }
-
-enum gender {
-    case male , female , thirdGender
-}
-
 

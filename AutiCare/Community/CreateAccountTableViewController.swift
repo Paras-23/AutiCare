@@ -9,7 +9,9 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
     
     @IBOutlet weak var ProfileImageView: UIImageView!
     
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    
+    @IBOutlet var lastNameTextField: UITextField!
     
     @IBOutlet weak var usernameTextField: UITextField!
     
@@ -17,6 +19,8 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
+    @IBOutlet var phoneNumberTextField: UITextField!
     
     @IBOutlet weak var genderButton: UIButton!
     
@@ -40,7 +44,7 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
         case 0:
             return 1
         case 1:
-            return 5
+            return 7
         default:
             return 0
         }
@@ -52,9 +56,11 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
         
         guard let email = emailTextField.text else{return}
         guard let password = passwordTextField.text else {return}
-        guard let name = nameTextField.text else {return}
+        guard let firstName = firstNameTextField.text else {return}
+        guard let LastName = firstNameTextField.text else {return}
         guard let username = usernameTextField.text else{return}
         guard let gender = genderButton.titleLabel?.text else{return}
+        guard let phoneNo = phoneNumberTextField.text else {return}
         
         
         
@@ -64,11 +70,10 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
             }
             else{
                 let usersRef = Database.database().reference().child("user")
-                let userData = ["email":self.emailTextField.text!,"password":self.passwordTextField.text!,"name":self.nameTextField.text!,"username":self.usernameTextField.text!,"Gender":self.genderButton.titleLabel?.text]
+                let userData = User(UserID: UUID(), firstName: firstName, lastName: LastName, userName: username, emailAddress: email, password: password, phone: phoneNo, profilePicture: nil, coverPicture: nil, location: nil, gender: self.genderButton.currentTitle!, age: nil, bio: nil, following: nil, followers: nil, posts: nil)
                 if let uid = Auth.auth().currentUser?.uid{
                     //user is logged in
-                    usersRef.child(uid).updateChildValues(userData as [AnyHashable : Any]){error,ref in print("User data uploaded")}}
-                /*self.performSegue(withIdentifier: "createdAccount", sender: self)*/
+                    usersRef.child(uid).updateChildValues(userData.toDictionary()){error,ref in print("User data uploaded")}}
                 self.dismiss(animated: true, completion: nil)
                 
             }
