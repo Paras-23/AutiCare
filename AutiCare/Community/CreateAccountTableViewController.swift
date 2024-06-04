@@ -3,6 +3,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 
 class CreateAccountTableViewController: UITableViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
@@ -24,7 +25,9 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
     
     @IBOutlet weak var genderButton: UIButton!
     
-    
+    let storage = Storage.storage()
+    let database = Database.database().reference()
+    let uid = Auth.auth().currentUser?.uid // Make sure user is logged in and you have their UID
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +85,10 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
     }
     
     
+    @IBAction func createProfileButtonPressed(_ sender: Any) {
+        uploadImageToFirebase(image: ProfileImageView.image!)
+    }
+    
     @IBAction func genderButtonTapped(_ sender: Any) {
         
         
@@ -116,6 +123,39 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
         guard let selectedImage = info[.originalImage] as? UIImage else {return}
         ProfileImageView.image = selectedImage
         dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadImageToFirebase(image: UIImage) {
+        guard let imageData = image.jpegData(compressionQuality: 0.75), let uid = uid else { return }
+        
+        let storageRef = storage.reference().child("images/\(UUID().uuidString).jpg")
+        
+        storageRef.putData(imageData, metadata: nil) { metadata, error in
+            guard metadata != nil else {
+                print("Failed to upload")
+                return
+            }
+            
+            storageRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    print("Failed to retrieve download URL")
+                    return
+                }
+                
+                self.saveImageURLToDatabase(uid: uid, url: downloadURL.absoluteString)
+            }
+        }
+    }
+    
+    func saveImageURLToDatabase(uid: String, url: String) {
+        database.child("user").child(uid).child("profilePicture").setValue(url) { error, _ in
+            if let error = error {
+                print("Failed to save image URL to database: \(error)")
+                return
+            }
+            
+            print("Successfully saved image URL to database")
+        }
     }
 }
 

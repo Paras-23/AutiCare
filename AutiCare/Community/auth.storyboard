@@ -306,7 +306,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Create" id="g5Y-rd-B2d">
                             <color key="tintColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="createButtonTapped:" destination="O3W-Bd-bMJ" id="7bI-Sn-8cf"/>
+                                <action selector="createProfileButtonPressed:" destination="O3W-Bd-bMJ" id="F9i-cu-ijl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

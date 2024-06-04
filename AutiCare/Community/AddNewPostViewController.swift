@@ -17,8 +17,8 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
     @IBOutlet var viewForImageView: UIView!
     
     let storage = Storage.storage()
-   let database = Database.database().reference()
-   let uid = Auth.auth().currentUser?.uid // Make sure user is logged in and you have their UID
+    let database = Database.database().reference()
+    let uid = Auth.auth().currentUser?.uid // Make sure user is logged in and you have their UID
        
     
     override func viewDidLoad() {
@@ -107,7 +107,7 @@ extension AddNewPostViewController:  UIImagePickerControllerDelegate {
     }
     
     func saveImageURLToDatabase(uid: String, url: String) {
-        database.child("users").child(uid).child("fullName").setValue(url) { error, _ in
+        database.child("user").child(uid).child("fullName").setValue(url) { error, _ in
             if let error = error {
                 print("Failed to save image URL to database: \(error)")
                 return
