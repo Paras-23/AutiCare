@@ -163,7 +163,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Community" id="Abj-Ek-ScI">
                         <rightBarButtonItems>
-                            <barButtonItem image="ellipsis.message" catalog="system" id="RWx-Ez-VNf"/>
+                            <barButtonItem image="ellipsis.message" catalog="system" id="RWx-Ez-VNf">
+                                <connections>
+                                    <segue destination="uOe-wq-hTq" kind="show" id="2on-aH-Z9e"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="add" id="GEn-SD-38o">
                                 <connections>
                                     <action selector="addNewPostButton:" destination="jD2-xJ-08q" id="JW8-KD-66V"/>
@@ -350,6 +354,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mD-K8-akF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="741" y="842"/>
+        </scene>
+        <!--Chats Hosting View Controller-->
+        <scene sceneID="nHg-LL-JJT">
+            <objects>
+                <hostingController id="hf1-Mk-6pg" customClass="chatsHostingViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="WOc-zz-txT"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bAr-pX-v9O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3692.3664122137402" y="0.70422535211267612"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4cJ-mX-aZm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="currentContext" id="uOe-wq-hTq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FpY-av-gc7">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hf1-Mk-6pg" kind="relationship" relationship="rootViewController" id="NNg-Kx-thW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MYp-CQ-YZz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2765.6488549618321" y="0.70422535211267612"/>
         </scene>
     </scenes>
     <resources>
