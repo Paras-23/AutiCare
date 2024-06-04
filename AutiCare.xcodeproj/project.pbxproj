@@ -21,6 +21,11 @@
 		05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */; };
 		05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */; };
 		05262EB12BF713C200C2774C /* LearningDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EB02BF713C200C2774C /* LearningDataModel.swift */; };
+		057932F32C0F0ABB005EE028 /* ProfilePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057932F22C0F0ABB005EE028 /* ProfilePageTableViewController.swift */; };
+		057932F52C0F0ADC005EE028 /* ProfileInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057932F42C0F0ADC005EE028 /* ProfileInterface.xib */; };
+		057932F72C0F1438005EE028 /* ProfileInterfaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057932F62C0F1438005EE028 /* ProfileInterfaceTableViewCell.swift */; };
+		057932F92C0F2980005EE028 /* PostsInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057932F82C0F2980005EE028 /* PostsInterface.xib */; };
+		057932FB2C0F2B07005EE028 /* PostsInterfaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057932FA2C0F2B07005EE028 /* PostsInterfaceTableViewCell.swift */; };
 		0585EDA12C05CD2D002B9386 /* ResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585EDA02C05CD2D002B9386 /* ResultPageViewController.swift */; };
 		05936BBE2C0AE04000516BF9 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05936BBD2C0AE04000516BF9 /* ProfilePageViewController.swift */; };
 		05936BC02C0AE22C00516BF9 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05936BBF2C0AE22C00516BF9 /* EditProfileTableViewController.swift */; };
@@ -78,6 +83,11 @@
 		05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentDataModel.swift; sourceTree = "<group>"; };
 		05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataModel.swift; sourceTree = "<group>"; };
 		05262EB02BF713C200C2774C /* LearningDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningDataModel.swift; sourceTree = "<group>"; };
+		057932F22C0F0ABB005EE028 /* ProfilePageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageTableViewController.swift; sourceTree = "<group>"; };
+		057932F42C0F0ADC005EE028 /* ProfileInterface.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInterface.xib; sourceTree = "<group>"; };
+		057932F62C0F1438005EE028 /* ProfileInterfaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInterfaceTableViewCell.swift; sourceTree = "<group>"; };
+		057932F82C0F2980005EE028 /* PostsInterface.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsInterface.xib; sourceTree = "<group>"; };
+		057932FA2C0F2B07005EE028 /* PostsInterfaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsInterfaceTableViewCell.swift; sourceTree = "<group>"; };
 		0585EDA02C05CD2D002B9386 /* ResultPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageViewController.swift; sourceTree = "<group>"; };
 		05936BBD2C0AE04000516BF9 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		05936BBF2C0AE22C00516BF9 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +231,11 @@
 			isa = PBXGroup;
 			children = (
 				05262EA52BF712CD00C2774C /* Profile.storyboard */,
+				057932F42C0F0ADC005EE028 /* ProfileInterface.xib */,
+				057932F82C0F2980005EE028 /* PostsInterface.xib */,
+				057932FA2C0F2B07005EE028 /* PostsInterfaceTableViewCell.swift */,
+				057932F22C0F0ABB005EE028 /* ProfilePageTableViewController.swift */,
+				057932F62C0F1438005EE028 /* ProfileInterfaceTableViewCell.swift */,
 				05936BBD2C0AE04000516BF9 /* ProfilePageViewController.swift */,
 				05936BC32C0AF9C500516BF9 /* FriendsTableViewCell.xib */,
 				05936BC52C0AFA9F00516BF9 /* FriendsTableViewCell.swift */,
@@ -323,7 +338,9 @@
 				05262EA62BF712CD00C2774C /* Profile.storyboard in Resources */,
 				05936BC42C0AF9C500516BF9 /* FriendsTableViewCell.xib in Resources */,
 				05DA58992C0C78ED001E9A50 /* ExploreCollectionViewCell.xib in Resources */,
+				057932F52C0F0ADC005EE028 /* ProfileInterface.xib in Resources */,
 				05262E8E2BF7112D00C2774C /* Assets.xcassets in Resources */,
+				057932F92C0F2980005EE028 /* PostsInterface.xib in Resources */,
 				05262E912BF7112D00C2774C /* Base in Resources */,
 				05262EA12BF7129800C2774C /* Progress.storyboard in Resources */,
 				05262E8C2BF7112C00C2774C /* Base in Resources */,
@@ -341,14 +358,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				057932F72C0F1438005EE028 /* ProfileInterfaceTableViewCell.swift in Sources */,
 				C4AE96592BF71EDC00BEE963 /* QuestionTableViewCell.swift in Sources */,
 				05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */,
 				0506D9A82C09E7EE00844EF1 /* AddNewPostViewController.swift in Sources */,
 				C45DB4962C042E5600CD37F8 /* LearningPageViewController.swift in Sources */,
 				05936BBE2C0AE04000516BF9 /* ProfilePageViewController.swift in Sources */,
 				C45DB4A02C0432BB00CD37F8 /* SessionsCollectionViewCell.swift in Sources */,
+				057932FB2C0F2B07005EE028 /* PostsInterfaceTableViewCell.swift in Sources */,
 				05262E852BF7112C00C2774C /* AppDelegate.swift in Sources */,
 				C45DB4A62C0446F900CD37F8 /* HeaderCollectionReusableView.swift in Sources */,
+				057932F32C0F0ABB005EE028 /* ProfilePageTableViewController.swift in Sources */,
 				05936BC02C0AE22C00516BF9 /* EditProfileTableViewController.swift in Sources */,
 				2599DDFA2C0E496000D291C2 /* CreateAccountTableViewController.swift in Sources */,
 				440CA9CE2BFB09AE00FDFA89 /* PostsTableViewCell.swift in Sources */,

@@ -33,7 +33,7 @@ class ProfilePageViewController: UIViewController, UITableViewDataSource, UITabl
     var currentUsers = CommunityDataController.shared.getUsers()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        currentUsers[0].following.count
+        currentUsers[0].following!.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
