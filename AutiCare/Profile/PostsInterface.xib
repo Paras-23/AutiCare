@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="334" id="MJF-Vo-kgx" customClass="PostsInterfaceTableViewCell" customModule="AutiCare" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="334"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MJF-Vo-kgx" id="B44-rR-aFe">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="334"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="eOB-jG-g93">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="334"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6MY-hS-aNu">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="eOB-jG-g93" secondAttribute="trailing" id="07B-ce-icx"/>
+                    <constraint firstAttribute="bottom" secondItem="eOB-jG-g93" secondAttribute="bottom" id="7MR-Gs-CtE"/>
+                    <constraint firstItem="eOB-jG-g93" firstAttribute="leading" secondItem="B44-rR-aFe" secondAttribute="leading" id="LtX-bK-QfB"/>
+                    <constraint firstItem="eOB-jG-g93" firstAttribute="top" secondItem="B44-rR-aFe" secondAttribute="top" id="nG8-8N-tyW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="postCollectionView" destination="eOB-jG-g93" id="Z1u-Yd-BEe"/>
+            </connections>
+            <point key="canvasLocation" x="118" y="19"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
