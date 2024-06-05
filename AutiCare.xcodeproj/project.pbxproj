@@ -54,6 +54,7 @@
 		25E386FF2C0F63110045B548 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 25E386FE2C0F63110045B548 /* FirebaseFirestoreSwift */; };
 		440CA9CE2BFB09AE00FDFA89 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */; };
 		440CA9CF2BFB09AE00FDFA89 /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */; };
+		444E34532C10222C002D647C /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444E34522C10222C002D647C /* CalendarView.swift */; };
 		A968113B2C0C54C10091F87B /* PictureRepresentingActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A968113A2C0C54C10091F87B /* PictureRepresentingActionViewController.swift */; };
 		C400BA352C0D727A0096D823 /* matchingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C400BA342C0D727A0096D823 /* matchingGameViewController.swift */; };
 		C43C95B42C09CB5400663096 /* CommunityDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C95B32C09CB5400663096 /* CommunityDataController.swift */; };
@@ -127,6 +128,7 @@
 		25E386F22C0F62340045B548 /* MessagesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesManager.swift; sourceTree = "<group>"; };
 		440CA9CC2BFB09AE00FDFA89 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		440CA9CD2BFB09AE00FDFA89 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
+		444E34522C10222C002D647C /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		A968113A2C0C54C10091F87B /* PictureRepresentingActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureRepresentingActionViewController.swift; sourceTree = "<group>"; };
 		C400BA342C0D727A0096D823 /* matchingGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matchingGameViewController.swift; sourceTree = "<group>"; };
 		C43C95B32C09CB5400663096 /* CommunityDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDataController.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				C4AE965C2BF7270500BEE963 /* AssessmentTableViewController.swift */,
 				C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */,
 				05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */,
+				444E34522C10222C002D647C /* CalendarView.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				25E386F92C0F62340045B548 /* ContentView.swift in Sources */,
 				05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */,
 				0506D9A82C09E7EE00844EF1 /* AddNewPostViewController.swift in Sources */,
+				444E34532C10222C002D647C /* CalendarView.swift in Sources */,
 				C45DB4962C042E5600CD37F8 /* LearningPageViewController.swift in Sources */,
 				05936BBE2C0AE04000516BF9 /* ProfilePageViewController.swift in Sources */,
 				C45DB4A02C0432BB00CD37F8 /* SessionsCollectionViewCell.swift in Sources */,

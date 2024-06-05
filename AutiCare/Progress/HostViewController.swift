@@ -6,24 +6,30 @@
 //
 
 import UIKit
+import SwiftUI
 
 class HostViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var containerView: UIView!
 
-        // Do any additional setup after loading the view.
+        override func viewDidLoad() {
+            super.viewDidLoad()
+
+            let calendarView = CalendarView()
+            let hostingController = UIHostingController(rootView: calendarView)
+            
+            addChild(hostingController)
+            hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+            containerView.addSubview(hostingController.view)
+            
+            NSLayoutConstraint.activate([
+                hostingController.view.topAnchor.constraint(equalTo: containerView.topAnchor),
+                hostingController.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+                hostingController.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+                hostingController.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+            ])
+            
+            hostingController.didMove(toParent: self)
+        }
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
