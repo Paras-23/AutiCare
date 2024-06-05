@@ -26,7 +26,6 @@
 		05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */; };
 		05262EB12BF713C200C2774C /* LearningDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EB02BF713C200C2774C /* LearningDataModel.swift */; };
 		057932F52C0F0ADC005EE028 /* ProfileInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057932F42C0F0ADC005EE028 /* ProfileInterface.xib */; };
-		057FE7B92C1020940026E38E /* ChatSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FE7B72C1020940026E38E /* ChatSectionTableViewCell.swift */; };
 		057FE7BA2C1020940026E38E /* ChatSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057FE7B82C1020940026E38E /* ChatSectionTableViewCell.xib */; };
 		057FE7BC2C10225F0026E38E /* ChatsPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FE7BB2C10225F0026E38E /* ChatsPageTableViewController.swift */; };
 		0585EDA12C05CD2D002B9386 /* ResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585EDA02C05CD2D002B9386 /* ResultPageViewController.swift */; };
@@ -42,10 +41,8 @@
 		2599DDFA2C0E496000D291C2 /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2599DDF92C0E496000D291C2 /* CreateAccountTableViewController.swift */; };
 		2599DDFE2C0E4A0B00D291C2 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2599DDFD2C0E4A0B00D291C2 /* LoginPageViewController.swift */; };
 		25E386F42C0F62340045B548 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E386E82C0F62340045B548 /* MessageBubble.swift */; };
-		25E386F52C0F62340045B548 /* MessageField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E386E92C0F62340045B548 /* MessageField.swift */; };
 		25E386F62C0F62340045B548 /* TitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E386EA2C0F62340045B548 /* TitleRow.swift */; };
 		25E386F72C0F62340045B548 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E386EC2C0F62340045B548 /* Message.swift */; };
-		25E386F82C0F62340045B548 /* ChatAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E386EF2C0F62340045B548 /* ChatAppApp.swift */; };
 		25E386F92C0F62340045B548 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E386F02C0F62340045B548 /* ContentView.swift */; };
 		25E386FA2C0F62340045B548 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E386F12C0F62340045B548 /* Extensions.swift */; };
 		25E386FB2C0F62340045B548 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E386F22C0F62340045B548 /* MessagesManager.swift */; };
@@ -174,7 +171,6 @@
 			children = (
 				05262E832BF7112C00C2774C /* AutiCare */,
 				05262E822BF7112C00C2774C /* Products */,
-				C4F28D322C0F0FA00068578D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -322,13 +318,6 @@
 				25E386F22C0F62340045B548 /* MessagesManager.swift */,
 			);
 			path = ChatApp;
-			sourceTree = "<group>";
-		};
-		C4F28D322C0F0FA00068578D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
