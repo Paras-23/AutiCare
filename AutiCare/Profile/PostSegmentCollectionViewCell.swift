@@ -9,9 +9,15 @@ import UIKit
 
 class PostSegmentCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet var imageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func updatePostImage() {
+        imageView.image = UIImage(named: "DummyPost3")
     }
 
 }

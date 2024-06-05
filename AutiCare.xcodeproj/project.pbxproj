@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0506D9A82C09E7EE00844EF1 /* AddNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506D9A72C09E7EE00844EF1 /* AddNewPostViewController.swift */; };
 		05162E202BFDA55D00DC5951 /* CommunityPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05162E1F2BFDA55D00DC5951 /* CommunityPageViewController.swift */; };
+		051C592A2C1071CB00CB073D /* PostSegmentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051C59292C1071CB00CB073D /* PostSegmentCollectionViewCell.xib */; };
+		051C592B2C1071CB00CB073D /* PostSegmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051C59282C1071CB00CB073D /* PostSegmentCollectionViewCell.swift */; };
+		051C592E2C107E0B00CB073D /* FriendsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051C592D2C107E0B00CB073D /* FriendsCollectionViewCell.xib */; };
+		051C592F2C107E0B00CB073D /* FriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051C592C2C107E0B00CB073D /* FriendsCollectionViewCell.swift */; };
 		05262E852BF7112C00C2774C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262E842BF7112C00C2774C /* AppDelegate.swift */; };
 		05262E872BF7112C00C2774C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262E862BF7112C00C2774C /* SceneDelegate.swift */; };
 		05262E8C2BF7112C00C2774C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 05262E8B2BF7112C00C2774C /* Base */; };
@@ -21,23 +25,18 @@
 		05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */; };
 		05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */; };
 		05262EB12BF713C200C2774C /* LearningDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05262EB02BF713C200C2774C /* LearningDataModel.swift */; };
-		057932F32C0F0ABB005EE028 /* ProfilePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057932F22C0F0ABB005EE028 /* ProfilePageTableViewController.swift */; };
 		057932F52C0F0ADC005EE028 /* ProfileInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057932F42C0F0ADC005EE028 /* ProfileInterface.xib */; };
-		057932F72C0F1438005EE028 /* ProfileInterfaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057932F62C0F1438005EE028 /* ProfileInterfaceTableViewCell.swift */; };
-		057932F92C0F2980005EE028 /* PostsInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057932F82C0F2980005EE028 /* PostsInterface.xib */; };
-		057932FB2C0F2B07005EE028 /* PostsInterfaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057932FA2C0F2B07005EE028 /* PostsInterfaceTableViewCell.swift */; };
 		057FE7B92C1020940026E38E /* ChatSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FE7B72C1020940026E38E /* ChatSectionTableViewCell.swift */; };
 		057FE7BA2C1020940026E38E /* ChatSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057FE7B82C1020940026E38E /* ChatSectionTableViewCell.xib */; };
 		057FE7BC2C10225F0026E38E /* ChatsPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FE7BB2C10225F0026E38E /* ChatsPageTableViewController.swift */; };
 		0585EDA12C05CD2D002B9386 /* ResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585EDA02C05CD2D002B9386 /* ResultPageViewController.swift */; };
-		05936BBE2C0AE04000516BF9 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05936BBD2C0AE04000516BF9 /* ProfilePageViewController.swift */; };
 		05936BC02C0AE22C00516BF9 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05936BBF2C0AE22C00516BF9 /* EditProfileTableViewController.swift */; };
-		05936BC42C0AF9C500516BF9 /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05936BC32C0AF9C500516BF9 /* FriendsTableViewCell.xib */; };
-		05936BC62C0AFA9F00516BF9 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05936BC52C0AFA9F00516BF9 /* FriendsTableViewCell.swift */; };
 		05DA58972C0C78B0001E9A50 /* GroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05DA58962C0C78B0001E9A50 /* GroupCollectionViewCell.xib */; };
 		05DA58992C0C78ED001E9A50 /* ExploreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05DA58982C0C78ED001E9A50 /* ExploreCollectionViewCell.xib */; };
 		05E49F722C0494AB00699D09 /* MemoryCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */; };
 		05E49F752C04954300699D09 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E49F742C04954300699D09 /* CardCollectionViewCell.swift */; };
+		05E4A8342C104619007BF2D9 /* ProfileInterfaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4A8332C104619007BF2D9 /* ProfileInterfaceCollectionViewCell.swift */; };
+		05E4A8362C1048A5007BF2D9 /* ProfileTabMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4A8352C1048A5007BF2D9 /* ProfileTabMainViewController.swift */; };
 		258805CD2C0DB7AE0009C19A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 258805CC2C0DB7AE0009C19A /* GoogleService-Info.plist */; };
 		258805D62C0DBA620009C19A /* auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 258805D52C0DBA620009C19A /* auth.storyboard */; };
 		2599DDFA2C0E496000D291C2 /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2599DDF92C0E496000D291C2 /* CreateAccountTableViewController.swift */; };
@@ -83,6 +82,10 @@
 /* Begin PBXFileReference section */
 		0506D9A72C09E7EE00844EF1 /* AddNewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPostViewController.swift; sourceTree = "<group>"; };
 		05162E1F2BFDA55D00DC5951 /* CommunityPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityPageViewController.swift; sourceTree = "<group>"; };
+		051C59282C1071CB00CB073D /* PostSegmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSegmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		051C59292C1071CB00CB073D /* PostSegmentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSegmentCollectionViewCell.xib; sourceTree = "<group>"; };
+		051C592C2C107E0B00CB073D /* FriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewCell.swift; sourceTree = "<group>"; };
+		051C592D2C107E0B00CB073D /* FriendsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsCollectionViewCell.xib; sourceTree = "<group>"; };
 		05262E812BF7112C00C2774C /* AutiCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutiCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05262E842BF7112C00C2774C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05262E862BF7112C00C2774C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,23 +100,18 @@
 		05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentDataModel.swift; sourceTree = "<group>"; };
 		05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataModel.swift; sourceTree = "<group>"; };
 		05262EB02BF713C200C2774C /* LearningDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningDataModel.swift; sourceTree = "<group>"; };
-		057932F22C0F0ABB005EE028 /* ProfilePageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageTableViewController.swift; sourceTree = "<group>"; };
 		057932F42C0F0ADC005EE028 /* ProfileInterface.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInterface.xib; sourceTree = "<group>"; };
-		057932F62C0F1438005EE028 /* ProfileInterfaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInterfaceTableViewCell.swift; sourceTree = "<group>"; };
-		057932F82C0F2980005EE028 /* PostsInterface.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsInterface.xib; sourceTree = "<group>"; };
-		057932FA2C0F2B07005EE028 /* PostsInterfaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsInterfaceTableViewCell.swift; sourceTree = "<group>"; };
 		057FE7B72C1020940026E38E /* ChatSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSectionTableViewCell.swift; sourceTree = "<group>"; };
 		057FE7B82C1020940026E38E /* ChatSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatSectionTableViewCell.xib; sourceTree = "<group>"; };
 		057FE7BB2C10225F0026E38E /* ChatsPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsPageTableViewController.swift; sourceTree = "<group>"; };
 		0585EDA02C05CD2D002B9386 /* ResultPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageViewController.swift; sourceTree = "<group>"; };
-		05936BBD2C0AE04000516BF9 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		05936BBF2C0AE22C00516BF9 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
-		05936BC32C0AF9C500516BF9 /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
-		05936BC52C0AFA9F00516BF9 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		05DA58962C0C78B0001E9A50 /* GroupCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCollectionViewCell.xib; sourceTree = "<group>"; };
 		05DA58982C0C78ED001E9A50 /* ExploreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCollectionViewCell.xib; sourceTree = "<group>"; };
 		05E49F712C0494AB00699D09 /* MemoryCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCardViewController.swift; sourceTree = "<group>"; };
 		05E49F742C04954300699D09 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		05E4A8332C104619007BF2D9 /* ProfileInterfaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInterfaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		05E4A8352C1048A5007BF2D9 /* ProfileTabMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabMainViewController.swift; sourceTree = "<group>"; };
 		258805CC2C0DB7AE0009C19A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		258805D52C0DBA620009C19A /* auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = auth.storyboard; sourceTree = "<group>"; };
 		2599DDF92C0E496000D291C2 /* CreateAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewController.swift; sourceTree = "<group>"; };
@@ -264,14 +262,13 @@
 			isa = PBXGroup;
 			children = (
 				05262EA52BF712CD00C2774C /* Profile.storyboard */,
+				05E4A8352C1048A5007BF2D9 /* ProfileTabMainViewController.swift */,
 				057932F42C0F0ADC005EE028 /* ProfileInterface.xib */,
-				057932F82C0F2980005EE028 /* PostsInterface.xib */,
-				057932FA2C0F2B07005EE028 /* PostsInterfaceTableViewCell.swift */,
-				057932F22C0F0ABB005EE028 /* ProfilePageTableViewController.swift */,
-				057932F62C0F1438005EE028 /* ProfileInterfaceTableViewCell.swift */,
-				05936BBD2C0AE04000516BF9 /* ProfilePageViewController.swift */,
-				05936BC32C0AF9C500516BF9 /* FriendsTableViewCell.xib */,
-				05936BC52C0AFA9F00516BF9 /* FriendsTableViewCell.swift */,
+				05E4A8332C104619007BF2D9 /* ProfileInterfaceCollectionViewCell.swift */,
+				051C59282C1071CB00CB073D /* PostSegmentCollectionViewCell.swift */,
+				051C59292C1071CB00CB073D /* PostSegmentCollectionViewCell.xib */,
+				051C592C2C107E0B00CB073D /* FriendsCollectionViewCell.swift */,
+				051C592D2C107E0B00CB073D /* FriendsCollectionViewCell.xib */,
 				05936BBF2C0AE22C00516BF9 /* EditProfileTableViewController.swift */,
 				05262EAE2BF713AE00C2774C /* ProfileDataModel.swift */,
 			);
@@ -402,16 +399,16 @@
 				C45DB49C2C04302500CD37F8 /* Worksheets.xib in Resources */,
 				C45DB49A2C042EE700CD37F8 /* Sessions.xib in Resources */,
 				05262EA62BF712CD00C2774C /* Profile.storyboard in Resources */,
-				05936BC42C0AF9C500516BF9 /* FriendsTableViewCell.xib in Resources */,
 				05DA58992C0C78ED001E9A50 /* ExploreCollectionViewCell.xib in Resources */,
 				057932F52C0F0ADC005EE028 /* ProfileInterface.xib in Resources */,
 				05262E8E2BF7112D00C2774C /* Assets.xcassets in Resources */,
-				057932F92C0F2980005EE028 /* PostsInterface.xib in Resources */,
 				05262E912BF7112D00C2774C /* Base in Resources */,
 				05262EA12BF7129800C2774C /* Progress.storyboard in Resources */,
 				05262E8C2BF7112C00C2774C /* Base in Resources */,
 				057FE7BA2C1020940026E38E /* ChatSectionTableViewCell.xib in Resources */,
+				051C592A2C1071CB00CB073D /* PostSegmentCollectionViewCell.xib in Resources */,
 				440CA9CF2BFB09AE00FDFA89 /* PostsTableViewCell.xib in Resources */,
+				051C592E2C107E0B00CB073D /* FriendsCollectionViewCell.xib in Resources */,
 				05DA58972C0C78B0001E9A50 /* GroupCollectionViewCell.xib in Resources */,
 				C45DB4982C042ED800CD37F8 /* Games.xib in Resources */,
 				258805CD2C0DB7AE0009C19A /* GoogleService-Info.plist in Resources */,
@@ -425,20 +422,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				057932F72C0F1438005EE028 /* ProfileInterfaceTableViewCell.swift in Sources */,
 				C4AE96592BF71EDC00BEE963 /* QuestionTableViewCell.swift in Sources */,
 				25E386F92C0F62340045B548 /* ContentView.swift in Sources */,
 				05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */,
 				0506D9A82C09E7EE00844EF1 /* AddNewPostViewController.swift in Sources */,
 				444E34532C10222C002D647C /* CalendarView.swift in Sources */,
 				C45DB4962C042E5600CD37F8 /* LearningPageViewController.swift in Sources */,
-				05936BBE2C0AE04000516BF9 /* ProfilePageViewController.swift in Sources */,
 				C45DB4A02C0432BB00CD37F8 /* SessionsCollectionViewCell.swift in Sources */,
-				057932FB2C0F2B07005EE028 /* PostsInterfaceTableViewCell.swift in Sources */,
 				05262E852BF7112C00C2774C /* AppDelegate.swift in Sources */,
+				051C592F2C107E0B00CB073D /* FriendsCollectionViewCell.swift in Sources */,
 				25E386F42C0F62340045B548 /* MessageBubble.swift in Sources */,
+				05E4A8342C104619007BF2D9 /* ProfileInterfaceCollectionViewCell.swift in Sources */,
 				C45DB4A62C0446F900CD37F8 /* HeaderCollectionReusableView.swift in Sources */,
-				057932F32C0F0ABB005EE028 /* ProfilePageTableViewController.swift in Sources */,
 				05936BC02C0AE22C00516BF9 /* EditProfileTableViewController.swift in Sources */,
 				2599DDFA2C0E496000D291C2 /* CreateAccountTableViewController.swift in Sources */,
 				25E386F62C0F62340045B548 /* TitleRow.swift in Sources */,
@@ -452,10 +447,10 @@
 				C400BA352C0D727A0096D823 /* matchingGameViewController.swift in Sources */,
 				EF6517A12C0CEE1F00CA7CCF /* SaveTheDotGameViewController.swift in Sources */,
 				05262EAD2BF7137C00C2774C /* AssessmentDataModel.swift in Sources */,
+				05E4A8362C1048A5007BF2D9 /* ProfileTabMainViewController.swift in Sources */,
 				C472EE3A2C0D9AAD00C97BE6 /* LegendView.swift in Sources */,
 				05E49F752C04954300699D09 /* CardCollectionViewCell.swift in Sources */,
 				C4AE965D2BF7270500BEE963 /* AssessmentTableViewController.swift in Sources */,
-				05936BC62C0AFA9F00516BF9 /* FriendsTableViewCell.swift in Sources */,
 				05262EAB2BF7136A00C2774C /* ExploreDataModel.swift in Sources */,
 				05162E202BFDA55D00DC5951 /* CommunityPageViewController.swift in Sources */,
 				25E386F52C0F62340045B548 /* MessageField.swift in Sources */,
@@ -465,6 +460,7 @@
 				05262EA42BF712BE00C2774C /* ProgressPageViewController.swift in Sources */,
 				C472EE362C0D8DB500C97BE6 /* PieChartUIView.swift in Sources */,
 				057FE7BC2C10225F0026E38E /* ChatsPageTableViewController.swift in Sources */,
+				051C592B2C1071CB00CB073D /* PostSegmentCollectionViewCell.swift in Sources */,
 				A968113B2C0C54C10091F87B /* PictureRepresentingActionViewController.swift in Sources */,
 				C45DB49E2C0431FA00CD37F8 /* GamesCollectionViewCell.swift in Sources */,
 				0585EDA12C05CD2D002B9386 /* ResultPageViewController.swift in Sources */,
