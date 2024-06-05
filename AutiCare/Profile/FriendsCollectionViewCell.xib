@@ -4,25 +4,26 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FriendsCollectionViewCell" customModule="AutiCare" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AccountCell" id="gTV-IL-0wX" customClass="FriendsCollectionViewCell" customModule="AutiCare" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Zt5-MD-0DE">
-                        <rect key="frame" x="7" y="5" width="339" height="40"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Zt5-MD-0DE">
+                        <rect key="frame" x="10" y="5" width="347" height="40"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u1b-En-aZg">
                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WW0-K7-uhr">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WW0-K7-uhr">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="f9X-k6-S7Y"/>
@@ -32,7 +33,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kTi-Ib-lDo">
-                                <rect key="frame" x="47" y="0.0" width="292" height="40"/>
+                                <rect key="frame" x="55" y="0.0" width="292" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cV3-Gv-dsn">
                                         <rect key="frame" x="0.0" y="0.0" width="292" height="40"/>
@@ -51,13 +52,19 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Zt5-MD-0DE" secondAttribute="bottom" constant="5" id="4Cy-rz-H6d"/>
                 <constraint firstItem="Zt5-MD-0DE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="BJC-h1-s9P"/>
-                <constraint firstAttribute="trailing" secondItem="Zt5-MD-0DE" secondAttribute="trailing" constant="54" id="ZAD-ep-7yo"/>
-                <constraint firstItem="Zt5-MD-0DE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="mi5-f4-n4Z"/>
+                <constraint firstItem="Zt5-MD-0DE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="SbW-Ai-sgg"/>
+                <constraint firstAttribute="trailing" secondItem="Zt5-MD-0DE" secondAttribute="trailing" constant="43" id="YaM-vL-wJG"/>
             </constraints>
             <size key="customSize" width="400" height="50"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="profileImageView" destination="WW0-K7-uhr" id="6pA-FV-2f5"/>
                 <outlet property="userName" destination="cV3-Gv-dsn" id="09N-jy-2aE"/>
@@ -65,4 +72,9 @@
             <point key="canvasLocation" x="302.29007633587787" y="-6.3380281690140849"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

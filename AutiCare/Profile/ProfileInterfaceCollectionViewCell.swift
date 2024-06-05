@@ -8,7 +8,6 @@
 import UIKit
 
 protocol currentSegment {
-    
     func setSegmentedIndex(index : Int)
 }
 
@@ -30,5 +29,4 @@ class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         delegate?.setSegmentedIndex(index: segmentedControl.selectedSegmentIndex)
     }
-    
 }

@@ -12,7 +12,7 @@ class ChatsPageTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstCell = UINib(nibName: "ChatSectionTableViewCell", bundle: nil)
+        let firstCell = UINib(nibName: "ChatAccountsTableViewCell", bundle: nil)
         tableView.register(firstCell, forCellReuseIdentifier: "ChatAccount")
 
         // Uncomment the following line to preserve selection between presentations

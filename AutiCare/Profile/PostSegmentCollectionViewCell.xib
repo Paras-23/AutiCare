@@ -29,6 +29,11 @@
                 <constraint firstAttribute="bottom" secondItem="x0F-Hk-Gfp" secondAttribute="bottom" id="aPy-Qg-mJ7"/>
             </constraints>
             <size key="customSize" width="146" height="146"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="imageView" destination="x0F-Hk-Gfp" id="Xkc-wm-DDZ"/>
             </connections>

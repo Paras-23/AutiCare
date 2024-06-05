@@ -22,10 +22,17 @@ extension UIImageView {
 
 class ProfileTabMainViewController: UIViewController, currentSegment {
     
-    var selectedSegment : Int = -1
+    required init?(coder : NSCoder) {
+        super.init(coder: coder)
+        self.tabBarItem.title = "Profile"
+        self.tabBarItem.image = UIImage(systemName: "person.crop.circle.fill")
+    }
+    
+    var selectedSegment : Int = 0
     
     func setSegmentedIndex(index: Int) {
         selectedSegment = index
+        collectionView.reloadData()
     }
     
     
@@ -35,11 +42,15 @@ class ProfileTabMainViewController: UIViewController, currentSegment {
         super.viewDidLoad()
         
         
+        
         let firstSectionCell = UINib(nibName: "ProfileInterface", bundle: nil)
         collectionView.register(firstSectionCell, forCellWithReuseIdentifier: "ProfileHeader")
         
         let secondSectionCell = UINib(nibName: "PostSegmentCollectionViewCell", bundle: nil)
         collectionView.register(secondSectionCell, forCellWithReuseIdentifier: "PostSegmentCell")
+        
+        let thirdSectionCell = UINib(nibName: "FriendsCollectionViewCell", bundle: nil)
+        collectionView.register(thirdSectionCell, forCellWithReuseIdentifier: "AccountCell")
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -60,13 +71,34 @@ extension ProfileTabMainViewController : UICollectionViewDataSource, UICollectio
             cell.delegate = self
             return cell
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostSegmentCell", for: indexPath) as! PostSegmentCollectionViewCell
-            cell.updatePostImage()
-            return cell
+            switch selectedSegment {
+            case 0:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostSegmentCell", for: indexPath) as! PostSegmentCollectionViewCell
+                cell.updatePostImage()
+                return cell
+            default:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AccountCell", for: indexPath) as! FriendsCollectionViewCell
+                cell.updateInformation()
+                return cell
+            }
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileHeader", for: indexPath) as! ProfileInterfaceCollectionViewCell
             cell.updateCellConfiguration()
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 1:
+            switch selectedSegment {
+            case 1...2:
+                performSegue(withIdentifier: "VisitOtherProfile", sender: nil)
+            default:
+                print("Nothing")
+            }
+        default:
+            print("OK")
         }
     }
     
@@ -88,7 +120,12 @@ extension ProfileTabMainViewController : UICollectionViewDataSource, UICollectio
             case 0:
                 section = self.firstSectionLayout()
             case 1:
-                section = self.postSegmentLayout()
+                switch self.selectedSegment {
+                case 0:
+                    section = self.postSegmentLayout()
+                default:
+                    section = self.followsSegmentLayout()
+                }
             default:
                 section = self.firstSectionLayout()
             }
@@ -113,6 +150,17 @@ extension ProfileTabMainViewController : UICollectionViewDataSource, UICollectio
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.20))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
         group.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 0, bottom: 2, trailing: 0)
+        let section = NSCollectionLayoutSection(group: group)
+        return section
+    }
+    
+    func followsSegmentLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 7, bottom: 0, trailing: 7)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.085))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 0, bottom: 1, trailing: 0)
         let section = NSCollectionLayoutSection(group: group)
         return section
     }

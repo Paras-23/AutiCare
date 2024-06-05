@@ -27,13 +27,13 @@ class SplashScreenViewController: UIViewController {
     }
 
     private func navigateToMainScreen() {
-        print("madhav")
-        do {
-                    try Auth.auth().signOut()
-            print("out")
-                } catch let signOutError as NSError {
-                    print("Error signing out:")
-                }
+//        print("madhav")
+//        do {
+//                    try Auth.auth().signOut()
+//            print("out")
+//                } catch let signOutError as NSError {
+//                    print("Error signing out:")
+//                }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let mainVC = storyboard.instantiateViewController(withIdentifier: "mainPage") as? UITabBarController  {
             setRootViewController(mainVC)

@@ -10,6 +10,48 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Chats-->
+        <scene sceneID="mUr-st-7Q3">
+            <objects>
+                <tableViewController id="wzy-j4-vbZ" customClass="ChatsPageTableViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kJT-kO-FM1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="59" id="Hc2-dJ-vr2">
+                                <rect key="frame" x="0.0" y="50" width="393" height="59"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hc2-dJ-vr2" id="j5d-7g-PNp">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wzy-j4-vbZ" id="Cru-Wu-CEU"/>
+                            <outlet property="delegate" destination="wzy-j4-vbZ" id="TtW-Od-vGT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Chats" id="6We-Mg-f6L"/>
+                    <connections>
+                        <segue destination="owK-w9-cqZ" kind="show" identifier="InsideChats" id="jgo-nY-8fL"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yqt-sa-J1v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3660.3053435114502" y="-697.18309859154931"/>
+        </scene>
+        <!--Chats Hosting View Controller-->
+        <scene sceneID="FxF-bb-n2M">
+            <objects>
+                <hostingController id="owK-w9-cqZ" customClass="chatsHostingViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Z1z-w8-Fqb"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hhN-AY-ix1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4511" y="-697"/>
+        </scene>
         <!--Community-->
         <scene sceneID="NpG-Cu-zy5">
             <objects>
@@ -163,7 +205,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Community" id="Abj-Ek-ScI">
                         <rightBarButtonItems>
-                            <barButtonItem image="ellipsis.message" catalog="system" id="RWx-Ez-VNf"/>
+                            <barButtonItem image="ellipsis.message" catalog="system" id="RWx-Ez-VNf">
+                                <connections>
+                                    <segue destination="wzy-j4-vbZ" kind="show" id="L68-Km-aLX"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="add" id="GEn-SD-38o">
                                 <connections>
                                     <action selector="addNewPostButton:" destination="jD2-xJ-08q" id="JW8-KD-66V"/>
@@ -188,7 +234,7 @@
         <scene sceneID="t6R-UZ-gIV">
             <objects>
                 <viewController id="4Hr-W8-l7S" customClass="AddNewPostViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="rtH-yI-ep4">
+                    <view key="view" contentMode="scaleToFill" id="rtH-yI-ep4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

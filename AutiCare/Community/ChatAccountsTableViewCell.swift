@@ -9,8 +9,13 @@ import UIKit
 
 class ChatAccountsTableViewCell: UITableViewCell {
 
+    @IBOutlet var chatProfileImage: UIImageView!
+    @IBOutlet var userNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        chatProfileImage.maskCircle(anyImage: UIImage(named: "DummyPost10")!)
+        userNameLabel.text = "Lionel Andres Messi"
         // Initialization code
     }
 

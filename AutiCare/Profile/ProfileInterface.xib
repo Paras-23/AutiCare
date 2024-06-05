@@ -49,10 +49,10 @@
                         <rect key="frame" x="120" y="220" width="268" height="40"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DZ6-gz-mb9">
-                                <rect key="frame" x="0.0" y="0.0" width="201" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="268" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp5-97-ynm">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="268" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="HHn-X9-m7M"/>
                                             <constraint firstAttribute="width" constant="200" id="T5b-OG-Zv7"/>
@@ -61,19 +61,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hqi-hF-Iyv">
-                                <rect key="frame" x="208" y="0.0" width="60" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IA6-se-cl5">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="l9q-jB-wXU"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="person.crop.circle.fill.badge.checkmark" catalog="system"/>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -125,7 +112,4 @@
             <point key="canvasLocation" x="74.809160305343511" y="223.59154929577466"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="person.crop.circle.fill.badge.checkmark" catalog="system" width="128" height="114"/>
-    </resources>
 </document>

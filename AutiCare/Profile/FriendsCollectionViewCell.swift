@@ -19,7 +19,7 @@ class FriendsCollectionViewCell: UICollectionViewCell {
     }
     
     func updateInformation() {
-        profileImageView.image = UIImage(named: "DummyPost9")
+        profileImageView.maskCircle(anyImage: UIImage(named: "DummyPost9")!)
         userName.text = "Tommy Vercetti"
     }
 }
