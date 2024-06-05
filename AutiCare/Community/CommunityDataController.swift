@@ -34,9 +34,9 @@ class CommunityDataController {
     }
     
     func dummyPosts() {
-        posts = [ Post(postID: UUID(), userID: users[0].UserID, caption: "Playing with amigos is always a moment worth capturing📸😎", imageName: "post_1", userImageName: users[0].profilePicture!, userName: "David Beckham"),
-                  Post(postID: UUID(), userID: users[1].UserID, caption: "When she mocks me with a camera of her own.😓 It's a mother daughter love❤️", imageName: "post_2", userImageName: users[1].profilePicture!, userName: "Khal Drogo"),
-                  Post(postID: UUID(), userID: users[2].UserID, caption: "Painting with hand or hand with painting. It's still a mystery to be solved.🤔", imageName: "post_3", userImageName: users[2].profilePicture!, userName: "Emma Watson")
+        posts = [ Post(postID: "1", caption: "Playing with amigos is always a moment worth capturing📸😎", imageURL: "post_1", userImageName: users[0].profilePicture!, userName: "David Beckham"),
+                  Post(postID: "2", caption: "When she mocks me with a camera of her own.😓 It's a mother daughter love❤️", imageURL: "post_2", userImageName: users[1].profilePicture!, userName: "Khal Drogo"),
+                  Post(postID: "3", caption: "Painting with hand or hand with painting. It's still a mystery to be solved.🤔", imageURL: "post_3", userImageName: users[2].profilePicture!, userName: "Emma Watson")
         ]
     }
 

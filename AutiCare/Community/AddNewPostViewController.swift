@@ -35,7 +35,18 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
     }
     
     @IBAction func sharePostTapped(_ sender: Any) {
-        uploadImageToFirebase(image: newPostImage.image!)
+        
+        let exampleImage = newPostImage.image!
+        let caption = captionTextField.text!
+        
+        PostService.uploadPost(image: exampleImage, caption: caption) { success in
+            if success {
+                print("Post uploaded successfully")
+            } else {
+                print("Failed to upload post")
+            }
+        }
+        
     }
     
     
@@ -84,8 +95,8 @@ extension AddNewPostViewController:  UIImagePickerControllerDelegate {
             picker.dismiss(animated: true, completion: nil)
         }
     
-    func uploadImageToFirebase(image: UIImage) {
-        guard let imageData = image.jpegData(compressionQuality: 0.75), let uid = uid else { return }
+    func uploadPostImageToFirebase(image: UIImage) {
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
         
         let storageRef = storage.reference().child("images/\(UUID().uuidString).jpg")
         
@@ -101,13 +112,13 @@ extension AddNewPostViewController:  UIImagePickerControllerDelegate {
                     return
                 }
                 
-                self.saveImageURLToDatabase(uid: uid, url: downloadURL.absoluteString)
+                self.saveImageURLToDatabase(url: downloadURL.absoluteString)
             }
         }
     }
     
-    func saveImageURLToDatabase(uid: String, url: String) {
-        database.child("user").child(uid).child("fullName").setValue(url) { error, _ in
+    func saveImageURLToDatabase(url: String) {
+        database.child("Posts").child(uid!).child("fullName").setValue(url) { error, _ in
             if let error = error {
                 print("Failed to save image URL to database: \(error)")
                 return
@@ -117,3 +128,4 @@ extension AddNewPostViewController:  UIImagePickerControllerDelegate {
         }
     }
 }
+

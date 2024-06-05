@@ -27,7 +27,6 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
     
     let storage = Storage.storage()
     let database = Database.database().reference()
-    let uid = Auth.auth().currentUser?.uid // Make sure user is logged in and you have their UID
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,13 +61,13 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
         guard let firstName = firstNameTextField.text else {return}
         guard let LastName = firstNameTextField.text else {return}
         guard let username = usernameTextField.text else{return}
-        guard let gender = genderButton.titleLabel?.text else{return}
+        guard (genderButton.titleLabel?.text) != nil else{return}
         guard let phoneNo = phoneNumberTextField.text else {return}
         
         
         
         Auth.auth().createUser(withEmail: email, password: password) { firebaseResult, error in
-            if let e = error{
+            if let _ = error{
                 print("error")
             }
             else{
@@ -76,17 +75,23 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
                 let userData = User(UserID: UUID(), firstName: firstName, lastName: LastName, userName: username, emailAddress: email, password: password, phone: phoneNo, profilePicture: nil, coverPicture: nil, location: nil, gender: self.genderButton.currentTitle!, age: nil, bio: nil, following: nil, followers: nil, posts: nil)
                 if let uid = Auth.auth().currentUser?.uid{
                     //user is logged in
-                    usersRef.child(uid).updateChildValues(userData.toDictionary()){error,ref in print("User data uploaded")}}
+                    usersRef.child(uid).updateChildValues(userData.toDictionary()){error,ref in print("User data uploaded")}
+                    self.uploadImageToFirebase(image: self.ProfileImageView.image! , uid: uid)
+                }
                 self.dismiss(animated: true, completion: nil)
-                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let mainVC = storyboard.instantiateViewController(withIdentifier: "mainPage") as? UITabBarController  {
+                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                          let window = windowScene.windows.first else {
+                        return
+                    }
+                    window.rootViewController = mainVC
+                    window.makeKeyAndVisible()
+                }
+                                
             }
             
         }
-    }
-    
-    
-    @IBAction func createProfileButtonPressed(_ sender: Any) {
-        uploadImageToFirebase(image: ProfileImageView.image!)
     }
     
     @IBAction func genderButtonTapped(_ sender: Any) {
@@ -125,8 +130,8 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
         dismiss(animated: true, completion: nil)
     }
     
-    func uploadImageToFirebase(image: UIImage) {
-        guard let imageData = image.jpegData(compressionQuality: 0.75), let uid = uid else { return }
+    func uploadImageToFirebase(image: UIImage , uid : String) {
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
         
         let storageRef = storage.reference().child("images/\(UUID().uuidString).jpg")
         

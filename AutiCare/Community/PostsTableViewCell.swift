@@ -26,8 +26,8 @@ class PostsTableViewCell: UICollectionViewCell, UINavigationControllerDelegate {
     
     func showPost(with post : Post){
         usernameLabel.text = post.userName
-        userImageView.maskCircle(anyImage: UIImage(named: post.userImageName)!)
-        postImageView.image = UIImage(named: post.imageName)
+        userImageView.maskCircle(anyImage: UIImage(named: post.userImageName!)!)
+        postImageView.image = UIImage(named: post.imageURL)
         captionLabel.text = post.caption
     }
     

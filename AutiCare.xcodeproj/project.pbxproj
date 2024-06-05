@@ -56,7 +56,9 @@
 		444E34532C10222C002D647C /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444E34522C10222C002D647C /* CalendarView.swift */; };
 		A968113B2C0C54C10091F87B /* PictureRepresentingActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A968113A2C0C54C10091F87B /* PictureRepresentingActionViewController.swift */; };
 		C400BA352C0D727A0096D823 /* matchingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C400BA342C0D727A0096D823 /* matchingGameViewController.swift */; };
+		C41FB0542C1088010098F79C /* PostServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FB0532C1088010098F79C /* PostServices.swift */; };
 		C43C95B42C09CB5400663096 /* CommunityDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C95B32C09CB5400663096 /* CommunityDataController.swift */; };
+		C458D4DF2C10409200C48E25 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C458D4DE2C10409200C48E25 /* SplashScreenViewController.swift */; };
 		C45DB4962C042E5600CD37F8 /* LearningPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */; };
 		C45DB4982C042ED800CD37F8 /* Games.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45DB4972C042ED800CD37F8 /* Games.xib */; };
 		C45DB49A2C042EE700CD37F8 /* Sessions.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45DB4992C042EE700CD37F8 /* Sessions.xib */; };
@@ -129,7 +131,9 @@
 		444E34522C10222C002D647C /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		A968113A2C0C54C10091F87B /* PictureRepresentingActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureRepresentingActionViewController.swift; sourceTree = "<group>"; };
 		C400BA342C0D727A0096D823 /* matchingGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matchingGameViewController.swift; sourceTree = "<group>"; };
+		C41FB0532C1088010098F79C /* PostServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServices.swift; sourceTree = "<group>"; };
 		C43C95B32C09CB5400663096 /* CommunityDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDataController.swift; sourceTree = "<group>"; };
+		C458D4DE2C10409200C48E25 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		C45DB4952C042E5600CD37F8 /* LearningPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningPageViewController.swift; sourceTree = "<group>"; };
 		C45DB4972C042ED800CD37F8 /* Games.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Games.xib; sourceTree = "<group>"; };
 		C45DB4992C042EE700CD37F8 /* Sessions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Sessions.xib; sourceTree = "<group>"; };
@@ -186,8 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				258805CC2C0DB7AE0009C19A /* GoogleService-Info.plist */,
-				05262E842BF7112C00C2774C /* AppDelegate.swift */,
 				05262E862BF7112C00C2774C /* SceneDelegate.swift */,
+				05262E842BF7112C00C2774C /* AppDelegate.swift */,
 				05262E9C2BF7124B00C2774C /* Community */,
 				05262E9D2BF7125E00C2774C /* Learning */,
 				05262EA22BF7129F00C2774C /* Progress */,
@@ -207,9 +211,11 @@
 				057FE7B72C1020940026E38E /* ChatSectionTableViewCell.swift */,
 				057FE7B82C1020940026E38E /* ChatSectionTableViewCell.xib */,
 				258805D52C0DBA620009C19A /* auth.storyboard */,
+				C458D4DE2C10409200C48E25 /* SplashScreenViewController.swift */,
 				2599DDFD2C0E4A0B00D291C2 /* LoginPageViewController.swift */,
 				2599DDF92C0E496000D291C2 /* CreateAccountTableViewController.swift */,
 				0506D9A72C09E7EE00844EF1 /* AddNewPostViewController.swift */,
+				C41FB0532C1088010098F79C /* PostServices.swift */,
 				05162E1F2BFDA55D00DC5951 /* CommunityPageViewController.swift */,
 				05DA58962C0C78B0001E9A50 /* GroupCollectionViewCell.xib */,
 				05DA58982C0C78ED001E9A50 /* ExploreCollectionViewCell.xib */,

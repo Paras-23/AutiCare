@@ -7,10 +7,8 @@
 
 import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    var isloggedIn:Bool = false
     var window: UIWindow?
-
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -19,24 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         UserDefaults.standard.register(defaults: ["isLoggedIn":false])
         
-        let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
-        
-        if isLoggedIn{
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateInitialViewController()
-            window?.rootViewController = vc
-            
-        }
-        
-        else
-        {
-            //load the storyboard file
+//            load the storyboard file
             let storyboard = UIStoryboard(name: "auth", bundle: nil)
-            //instantiate the login view controlller with loginVC storyboard
-            let loginVC = storyboard.instantiateViewController(identifier: "auth")
-            //set the loginVC as the root viewController for the window
+            let loginVC = storyboard.instantiateViewController(identifier: "SplashScreenViewController")
             window?.rootViewController = loginVC
-        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

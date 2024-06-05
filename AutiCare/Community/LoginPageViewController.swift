@@ -10,6 +10,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+
 class LoginPageViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
@@ -23,10 +24,13 @@ class LoginPageViewController: UIViewController {
         super.viewDidLoad()
         loginButton.tintColor = UIColor.init(red: 0.001, green: 0.301, blue: 0.500, alpha: 1)
     }
-
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
+        print("a")
         guard let email = emailTextField.text else{return}
         guard let password = passwordTextField.text else {return}
+        
+        
         
             Auth.auth().signIn(withEmail: email, password: password) { firebaseResult, error in
             if let _ = error{
@@ -35,10 +39,16 @@ class LoginPageViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Try Again", style: .cancel, handler: nil))
                 self.present(alert, animated: true)
             }
-            else
-                {
-                UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
-                self.performSegue(withIdentifier: "mainApp", sender: nil)
+            else{
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let mainVC = storyboard.instantiateViewController(withIdentifier: "mainPage") as? UITabBarController {
+                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                          let window = windowScene.windows.first else {
+                        return
+                    }
+                    window.rootViewController = mainVC
+                    window.makeKeyAndVisible()
+                }
             }
                
         }

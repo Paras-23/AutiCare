@@ -52,16 +52,25 @@ struct User {
 }
 
 struct Post {
-    let postID : UUID
-    let userID : UUID // User who created the post
-    let caption : String
-    let imageName : String
+    let postID : String?
+    var userID : String? // User who created the post
+    var caption : String
+    var imageURL : String
 //    let mediaType : mediaType
-    let timeStamp : Date = Date.now
-    let likes : [Likes] = []
-    let comments : [Comments] = []
-    let userImageName : String
-    let userName : String
+    var timeStamp : Double?
+    var likes : [Likes] = []
+    var comments : [Comments] = []
+    var userImageName : String?
+    var userName : String?
+    
+    func toDictionary() -> [String: Any] {
+           return [
+               "userID": userID,
+               "caption": caption,
+               "imageURL": imageURL,
+               "timeStamp": timeStamp
+           ]
+       }
 }
 
 struct Comments {
