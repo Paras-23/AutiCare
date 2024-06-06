@@ -47,7 +47,6 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
             }
         }
         
-        dismiss(animated: true, completion: nil)
     }
     
     

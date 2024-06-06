@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 extension UIImageView {
     
@@ -29,6 +30,8 @@ class ProfileTabMainViewController: UIViewController, currentSegment {
     }
     
     var selectedSegment : Int = 0
+    
+    var posts : [Post] = []
     
     func setSegmentedIndex(index: Int) {
         selectedSegment = index
@@ -55,6 +58,15 @@ class ProfileTabMainViewController: UIViewController, currentSegment {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
+        
+        if let uid = Auth.auth().currentUser?.uid {
+            print("Inside")
+            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { [weak self] posts in
+                print("1")
+                self?.posts = posts
+                self?.collectionView.reloadData()
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -74,7 +86,7 @@ extension ProfileTabMainViewController : UICollectionViewDataSource, UICollectio
             switch selectedSegment {
             case 0:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostSegmentCell", for: indexPath) as! PostSegmentCollectionViewCell
-                cell.updatePostImage()
+                cell.updatePostImage(post: posts[indexPath.row])
                 return cell
             default:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AccountCell", for: indexPath) as! FriendsCollectionViewCell
@@ -111,7 +123,7 @@ extension ProfileTabMainViewController : UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0: return 1
-        case 1: return 15
+        case 1: return posts.count
         default: return 1
         }
     }

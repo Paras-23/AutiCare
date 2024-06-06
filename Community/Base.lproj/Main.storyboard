@@ -192,7 +192,7 @@
         <scene sceneID="t6R-UZ-gIV">
             <objects>
                 <viewController id="4Hr-W8-l7S" customClass="AddNewPostViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="rtH-yI-ep4">
+                    <view key="view" contentMode="scaleToFill" id="rtH-yI-ep4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -240,10 +240,8 @@
                         <viewLayoutGuide key="safeArea" id="Csq-u3-571"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OS7-5P-t65" firstAttribute="top" secondItem="Csq-u3-571" secondAttribute="top" constant="10" id="6K1-Hv-O7G"/>
                             <constraint firstItem="OS7-5P-t65" firstAttribute="leading" secondItem="Csq-u3-571" secondAttribute="leading" constant="10" id="8rW-A4-L3M"/>
                             <constraint firstItem="OS7-5P-t65" firstAttribute="trailing" secondItem="Csq-u3-571" secondAttribute="trailing" constant="10" id="cUE-Bd-bG9"/>
-                            <constraint firstAttribute="bottom" secondItem="OS7-5P-t65" secondAttribute="bottom" constant="10" id="ybU-To-tQJ"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -252,6 +250,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Share" id="5Ni-Dg-MbE">
                             <connections>
                                 <action selector="sharePostTapped:" destination="4Hr-W8-l7S" id="l9q-a4-B1S"/>
+                                <segue destination="EJu-TN-b94" kind="unwind" unwindAction="unwindToCommunityPageViewController:" id="7qB-4F-DEC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -263,6 +262,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvj-18-UCF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="EJu-TN-b94" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5634.3511450381675" y="7.746478873239437"/>
         </scene>

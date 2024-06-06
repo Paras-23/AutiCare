@@ -6,11 +6,9 @@
 //
 
 import Foundation
-import FirebaseAuth
 
 class CommunityDataController {
     
-    let uid = Auth.auth().currentUser?.uid 
     var posts : [Post] = []
     var users : [User] = []
     

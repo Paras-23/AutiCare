@@ -102,6 +102,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 //            }
 //        }
 //    
+    
     func selectingCollectionView() {
         switch segmentedControl.selectedSegmentIndex{
         case 0:

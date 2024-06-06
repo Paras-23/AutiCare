@@ -55,7 +55,7 @@ extension OtherAccountViewController : UICollectionViewDataSource, UICollectionV
             switch selectedSegment {
             case 0:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostSegmentCell", for: indexPath) as! PostSegmentCollectionViewCell
-                cell.updatePostImage()
+                cell.updateUserImage()
                 return cell
             default:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AboutSection", for: indexPath) as! AboutSectionCollectionViewCell

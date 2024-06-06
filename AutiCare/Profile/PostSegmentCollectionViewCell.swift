@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PostSegmentCollectionViewCell: UICollectionViewCell {
 
@@ -16,8 +17,14 @@ class PostSegmentCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func updatePostImage() {
-        imageView.image = UIImage(named: "DummyPost3")
+    func updatePostImage(post : Post) {
+        if let imageURL = URL(string: post.imageURL) {
+            imageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "reload"))
+                }
+    }
+    
+    func updateUserImage(){
+        imageView.image = UIImage(named: "user_1")
     }
 
 }
