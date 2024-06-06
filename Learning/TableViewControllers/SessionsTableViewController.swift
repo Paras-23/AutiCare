@@ -50,6 +50,22 @@ class SessionsTableViewController: UITableViewController {
             present(avController,animated: true){
                 avPlayer.play()
             }
+        case 1:
+            let url = Bundle.main.url(forResource: "howToTalkToFriends", withExtension: "mp4")
+                let avPlayer = AVPlayer(url: url!)
+                let avController = AVPlayerViewController()
+                avController.player = avPlayer
+                present(avController,animated: true){
+                    avPlayer.play()
+                }
+        case 2:
+            let url = Bundle.main.url(forResource: "howToBehaveWithGuests", withExtension: "mp4")
+                let avPlayer = AVPlayer(url: url!)
+                let avController = AVPlayerViewController()
+                avController.player = avPlayer
+                present(avController,animated: true){
+                    avPlayer.play()
+                }
         default:
             break
         }

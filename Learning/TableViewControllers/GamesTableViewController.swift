@@ -44,6 +44,7 @@ class GamesTableViewController: UITableViewController {
         case 0: performSegue(withIdentifier: "memoryCards", sender: nil)
         case 1: performSegue(withIdentifier: "flying", sender: nil)
         case 2: performSegue(withIdentifier: "ballDefend", sender: nil)
+        case 3: performSegue(withIdentifier: "colorMatching", sender: nil)
         default:
             break
         }

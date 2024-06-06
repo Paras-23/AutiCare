@@ -27,11 +27,6 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="yYt-uC-3hn" firstAttribute="leading" secondItem="Ruu-Q2-d7F" secondAttribute="leading" id="Yhw-8A-8Tc"/>
-                            <constraint firstAttribute="trailing" secondItem="yYt-uC-3hn" secondAttribute="trailing" id="i6c-hv-lmY"/>
-                            <constraint firstItem="yYt-uC-3hn" firstAttribute="top" secondItem="Ruu-Q2-d7F" secondAttribute="top" id="wmK-wR-08L"/>
-                        </constraints>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WAx-9F-XQs">
                         <rect key="frame" x="0.0" y="297" width="350" height="33"/>
@@ -51,10 +46,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="WAx-9F-XQs" secondAttribute="trailing" id="4L6-bF-isw"/>
+                    <constraint firstAttribute="trailing" secondItem="Ruu-Q2-d7F" secondAttribute="trailing" id="8Ac-U3-PPx"/>
                     <constraint firstItem="WAx-9F-XQs" firstAttribute="leading" secondItem="muc-5g-YEp" secondAttribute="leading" id="8lL-hc-gwK"/>
                     <constraint firstAttribute="bottom" secondItem="WAx-9F-XQs" secondAttribute="bottom" id="Fty-ps-KZu"/>
                     <constraint firstItem="WAx-9F-XQs" firstAttribute="top" secondItem="Ruu-Q2-d7F" secondAttribute="bottom" id="O8v-Ko-cNc"/>
-                    <constraint firstItem="Ruu-Q2-d7F" firstAttribute="leading" secondItem="WAx-9F-XQs" secondAttribute="leading" id="csU-g4-Xhl"/>
+                    <constraint firstItem="Ruu-Q2-d7F" firstAttribute="top" secondItem="muc-5g-YEp" secondAttribute="top" id="es2-Zi-HuA"/>
+                    <constraint firstItem="Ruu-Q2-d7F" firstAttribute="leading" secondItem="muc-5g-YEp" secondAttribute="leading" id="nwB-mk-QNt"/>
                 </constraints>
             </collectionViewCellContentView>
             <connections>

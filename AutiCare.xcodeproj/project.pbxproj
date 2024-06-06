@@ -36,7 +36,6 @@
 		257113652C118DEC00D4E239 /* Worksheets.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2571134C2C118DEC00D4E239 /* Worksheets.xib */; };
 		257113662C118DEC00D4E239 /* WorksheetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2571134D2C118DEC00D4E239 /* WorksheetsCollectionViewCell.swift */; };
 		257113672C118DEC00D4E239 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2571134F2C118DEC00D4E239 /* CardCollectionViewCell.swift */; };
-		257113682C118DEC00D4E239 /* matchingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257113502C118DEC00D4E239 /* matchingGameViewController.swift */; };
 		257113692C118DEC00D4E239 /* MemoryCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257113512C118DEC00D4E239 /* MemoryCardViewController.swift */; };
 		2571136A2C118DEC00D4E239 /* PictureRepresentingActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257113522C118DEC00D4E239 /* PictureRepresentingActionViewController.swift */; };
 		2571136B2C118DEC00D4E239 /* SaveTheDotGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257113532C118DEC00D4E239 /* SaveTheDotGameViewController.swift */; };
@@ -50,6 +49,9 @@
 		257113732C118DED00D4E239 /* LearningDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2571135E2C118DEC00D4E239 /* LearningDataModel.swift */; };
 		257113742C118DED00D4E239 /* LearningPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2571135F2C118DEC00D4E239 /* LearningPageViewController.swift */; };
 		258805CD2C0DB7AE0009C19A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 258805CC2C0DB7AE0009C19A /* GoogleService-Info.plist */; };
+		25CB813D2C120D440039B489 /* howToBehaveWithGuests.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 25CB813B2C120D430039B489 /* howToBehaveWithGuests.mp4 */; };
+		25CB813E2C120D440039B489 /* howToTalkToFriends.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 25CB813C2C120D440039B489 /* howToTalkToFriends.mp4 */; };
+		25CB81422C122A6A0039B489 /* ColorMatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CB81412C122A6A0039B489 /* ColorMatchingViewController.swift */; };
 		25E386FD2C0F63080045B548 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 25E386FC2C0F63080045B548 /* FirebaseFirestore */; };
 		25E386FF2C0F63110045B548 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 25E386FE2C0F63110045B548 /* FirebaseFirestoreSwift */; };
 		444E34532C10222C002D647C /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444E34522C10222C002D647C /* CalendarView.swift */; };
@@ -128,7 +130,6 @@
 		2571134C2C118DEC00D4E239 /* Worksheets.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Worksheets.xib; sourceTree = "<group>"; };
 		2571134D2C118DEC00D4E239 /* WorksheetsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorksheetsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2571134F2C118DEC00D4E239 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
-		257113502C118DEC00D4E239 /* matchingGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = matchingGameViewController.swift; sourceTree = "<group>"; };
 		257113512C118DEC00D4E239 /* MemoryCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryCardViewController.swift; sourceTree = "<group>"; };
 		257113522C118DEC00D4E239 /* PictureRepresentingActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureRepresentingActionViewController.swift; sourceTree = "<group>"; };
 		257113532C118DEC00D4E239 /* SaveTheDotGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTheDotGameViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +143,9 @@
 		2571135E2C118DEC00D4E239 /* LearningDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningDataModel.swift; sourceTree = "<group>"; };
 		2571135F2C118DEC00D4E239 /* LearningPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningPageViewController.swift; sourceTree = "<group>"; };
 		258805CC2C0DB7AE0009C19A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		25CB813B2C120D430039B489 /* howToBehaveWithGuests.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToBehaveWithGuests.mp4; sourceTree = "<group>"; };
+		25CB813C2C120D440039B489 /* howToTalkToFriends.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToTalkToFriends.mp4; sourceTree = "<group>"; };
+		25CB81412C122A6A0039B489 /* ColorMatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMatchingViewController.swift; sourceTree = "<group>"; };
 		444E34522C10222C002D647C /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		A99EE25B2C11C24D002FFD62 /* MessageBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		A99EE25C2C11C24D002FFD62 /* MessageField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageField.swift; sourceTree = "<group>"; };
@@ -287,10 +291,10 @@
 			isa = PBXGroup;
 			children = (
 				2571134F2C118DEC00D4E239 /* CardCollectionViewCell.swift */,
-				257113502C118DEC00D4E239 /* matchingGameViewController.swift */,
 				257113512C118DEC00D4E239 /* MemoryCardViewController.swift */,
 				257113522C118DEC00D4E239 /* PictureRepresentingActionViewController.swift */,
 				257113532C118DEC00D4E239 /* SaveTheDotGameViewController.swift */,
+				25CB81412C122A6A0039B489 /* ColorMatchingViewController.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -325,6 +329,8 @@
 				2571135D2C118DEC00D4E239 /* Learning.storyboard */,
 				2571135E2C118DEC00D4E239 /* LearningDataModel.swift */,
 				2571135F2C118DEC00D4E239 /* LearningPageViewController.swift */,
+				25CB813C2C120D440039B489 /* howToTalkToFriends.mp4 */,
+				25CB813B2C120D430039B489 /* howToBehaveWithGuests.mp4 */,
 				253490352C1195A100D898F2 /* playingWithFriends.mp4 */,
 			);
 			name = Learning;
@@ -474,6 +480,7 @@
 			files = (
 				257113632C118DEC00D4E239 /* Sessions.xib in Resources */,
 				A99EE2842C11C24D002FFD62 /* ChatSectionTableViewCell.xib in Resources */,
+				25CB813E2C120D440039B489 /* howToTalkToFriends.mp4 in Resources */,
 				257113702C118DED00D4E239 /* TableViewCell.xib in Resources */,
 				05262EA62BF712CD00C2774C /* Profile.storyboard in Resources */,
 				057932F52C0F0ADC005EE028 /* ProfileInterface.xib in Resources */,
@@ -491,6 +498,7 @@
 				A99EE2902C11C24D002FFD62 /* PostsTableViewCell.xib in Resources */,
 				EF853CD62C10F312004D0C7F /* HeaderSectionCollectionViewCell.xib in Resources */,
 				253490362C1195A100D898F2 /* playingWithFriends.mp4 in Resources */,
+				25CB813D2C120D440039B489 /* howToBehaveWithGuests.mp4 in Resources */,
 				257113612C118DEC00D4E239 /* Games.xib in Resources */,
 				257113722C118DED00D4E239 /* Learning.storyboard in Resources */,
 				EF853CDA2C10F8BD004D0C7F /* AboutSectionCollectionViewCell.xib in Resources */,
@@ -509,6 +517,7 @@
 				A99EE27D2C11C24D002FFD62 /* ChatAppApp.swift in Sources */,
 				A99EE2912C11C24D002FFD62 /* SplashScreenViewController.swift in Sources */,
 				A99EE27A2C11C24D002FFD62 /* MessageField.swift in Sources */,
+				25CB81422C122A6A0039B489 /* ColorMatchingViewController.swift in Sources */,
 				A99EE28A2C11C24D002FFD62 /* ExploreDataModel.swift in Sources */,
 				257113662C118DEC00D4E239 /* WorksheetsCollectionViewCell.swift in Sources */,
 				A99EE27B2C11C24D002FFD62 /* TitleRow.swift in Sources */,
@@ -526,7 +535,6 @@
 				A99EE28F2C11C24D002FFD62 /* PostsTableViewCell.swift in Sources */,
 				A99EE28C2C11C24D002FFD62 /* LoginPageViewController.swift in Sources */,
 				A99EE2802C11C24D002FFD62 /* MessagesManager.swift in Sources */,
-				257113682C118DEC00D4E239 /* matchingGameViewController.swift in Sources */,
 				05936BC02C0AE22C00516BF9 /* EditProfileTableViewController.swift in Sources */,
 				257113692C118DEC00D4E239 /* MemoryCardViewController.swift in Sources */,
 				A99EE2862C11C24D002FFD62 /* CommunityDataController.swift in Sources */,

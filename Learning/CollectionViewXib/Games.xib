@@ -48,8 +48,10 @@
                     <constraint firstItem="5KM-Dj-PdE" firstAttribute="top" secondItem="Ssj-Mh-R3X" secondAttribute="bottom" id="4Vp-0R-FUx"/>
                     <constraint firstAttribute="bottom" secondItem="5KM-Dj-PdE" secondAttribute="bottom" id="FSv-SM-8Tv"/>
                     <constraint firstItem="5KM-Dj-PdE" firstAttribute="leading" secondItem="UPP-rJ-Sll" secondAttribute="leading" id="Nv9-D9-M2w"/>
-                    <constraint firstItem="Ssj-Mh-R3X" firstAttribute="leading" secondItem="5KM-Dj-PdE" secondAttribute="leading" id="moV-fq-YAN"/>
+                    <constraint firstAttribute="trailing" secondItem="Ssj-Mh-R3X" secondAttribute="trailing" id="P9k-wN-NEz"/>
+                    <constraint firstItem="Ssj-Mh-R3X" firstAttribute="leading" secondItem="UPP-rJ-Sll" secondAttribute="leading" id="Sek-X6-3xU"/>
                     <constraint firstAttribute="trailing" secondItem="5KM-Dj-PdE" secondAttribute="trailing" id="pQM-8f-ds2"/>
+                    <constraint firstItem="Ssj-Mh-R3X" firstAttribute="top" secondItem="UPP-rJ-Sll" secondAttribute="top" id="s9n-Ek-sJm"/>
                 </constraints>
             </collectionViewCellContentView>
             <connections>
