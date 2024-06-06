@@ -32,6 +32,7 @@ class ProfileTabMainViewController: UIViewController, currentSegment {
     var selectedSegment : Int = 0
     
     var posts : [Post] = []
+    let refreshControl = UIRefreshControl()
     
     func setSegmentedIndex(index: Int) {
         selectedSegment = index
@@ -59,16 +60,31 @@ class ProfileTabMainViewController: UIViewController, currentSegment {
         collectionView.dataSource = self
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         
-        if let uid = Auth.auth().currentUser?.uid {
-            print("Inside")
-            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { [weak self] posts in
-                print("1")
-                self?.posts = posts
-                self?.collectionView.reloadData()
-            }
-        }
+        refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
+        
+        fetchPosts()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func refreshPosts() {
+            fetchPosts()
+        }
+
+    func fetchPosts() {
+        if let uid = Auth.auth().currentUser?.uid {
+            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { [weak self] posts in
+                guard let self = self else { return }
+                self.posts = posts
+                self.collectionView.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+        } else {
+            posts = CommunityDataController.shared.getPosts()
+            collectionView.reloadData()
+            refreshControl.endRefreshing()
+        }
     }
     
 }

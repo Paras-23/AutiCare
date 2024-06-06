@@ -20,7 +20,8 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     var firstNib : UINib = UINib()
     
     var posts : [Post] = []
-
+    let refreshControl = UIRefreshControl()
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case feedCollectionView: return posts.count
@@ -73,35 +74,33 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         
         selectingCollectionView()
         
-        if let uid = Auth.auth().currentUser?.uid {
-            print("Inside")
-                    CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { [weak self] posts in
-                        print("1")
-                        self?.posts = posts
-                        self?.feedCollectionView.reloadData()
-                    }
-                } else {
-                    posts = CommunityDataController.shared.getPosts()
-                }
+        refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
+        feedCollectionView.refreshControl = refreshControl
+        
+        fetchPosts()
 
         // Do any additional setup after loading the view.
     }
-//    @objc func segmentedControlChanged(_ sender: UISegmentedControl) {
-//            if sender.selectedSegmentIndex == 0 {
-//                print("Feed Tab")
-//                feedCollectionView.isHidden = false
-//                exploreCollectionView.isHidden = true
-//                searchBarStack.isHidden = true
-//                selectingCollectionView()
-//            } else if sender.selectedSegmentIndex == 1 {
-//                print("Explore Page")
-//                feedCollectionView.isHidden = true
-//                exploreCollectionView.isHidden = false
-//                searchBarStack.isHidden = false
-//                selectingCollectionView()
-//            }
-//        }
-//    
+    
+    @objc func refreshPosts() {
+        fetchPosts()
+    }
+
+    func fetchPosts() {
+        if let uid = Auth.auth().currentUser?.uid {
+            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { [weak self] posts in
+                guard let self = self else { return }
+                self.posts = posts
+                self.feedCollectionView.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+        } else {
+            posts = CommunityDataController.shared.getPosts()
+            feedCollectionView.reloadData()
+            refreshControl.endRefreshing()
+        }
+    }
+    
     
     func selectingCollectionView() {
         switch segmentedControl.selectedSegmentIndex{

@@ -30,7 +30,7 @@ class PostsTableViewCell: UICollectionViewCell, UINavigationControllerDelegate {
         userImageView.maskCircle(anyImage: UIImage(named: post.userImageName!)!)
         captionLabel.text = post.caption
         if let imageURL = URL(string: post.imageURL) {
-            postImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "user_1"))
+            postImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "reload"))
                 }
     }
     
