@@ -39,17 +39,17 @@
                                             <children>
                                                 <command id="ZaA-pa-6lV">
                                                     <connections>
-                                                        <action selector="infoButtonTapped:" destination="-2" id="MMg-8E-Uuq"/>
+                                                        <action selector="reportButtonTapped:" destination="-2" id="MMg-8E-Uuq"/>
                                                     </connections>
                                                 </command>
                                                 <command id="SbG-Rt-AnF">
                                                     <connections>
-                                                        <action selector="infoButtonTapped:" destination="-2" id="713-Tk-E6i"/>
+                                                        <action selector="reportButtonTapped:" destination="-2" id="713-Tk-E6i"/>
                                                     </connections>
                                                 </command>
                                                 <command id="cLt-Bg-HvR">
                                                     <connections>
-                                                        <action selector="infoButtonTapped:" destination="-2" id="Y4Z-nj-m7r"/>
+                                                        <action selector="reportButtonTapped:" destination="-2" id="Y4Z-nj-m7r"/>
                                                     </connections>
                                                 </command>
                                             </children>

@@ -19,12 +19,35 @@ class HeaderSectionCollectionViewCell: UICollectionViewCell {
     @IBOutlet var userName: UILabel!
     @IBOutlet var addRemoveFriendRequest: UIButton!
     @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBOutlet var messageButton: UIButton!
+    @IBOutlet var infoButton: UIButton!
+    
+    var buttonState : Bool = false
+    
+    
     
     var delegate2 : presentSegment?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupPopUpButton()
         // Initialization code
+    }
+    
+    func setupPopUpButton() {
+        let blockClosure = { (action: UIAction) in
+            print(action.title)
+        }
+        
+        let reportClosure = { (action: UIAction) in
+            print(action)
+        }
+                
+        infoButton.menu = UIMenu(children: [
+            UIAction(title: "Block Account", handler: blockClosure),
+            UIAction(title: "Report Account", handler: reportClosure)
+        ])
+        infoButton.showsMenuAsPrimaryAction = true
     }
     
     
@@ -36,5 +59,11 @@ class HeaderSectionCollectionViewCell: UICollectionViewCell {
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         delegate2?.presentSegment(index: segmentedControl.selectedSegmentIndex)
+    }
+    
+    @IBAction func followButtonTapped(_ sender: UIButton) {
+        
+    }
+    @IBAction func reportButtonTapped(_ sender: UIButton) {
     }
 }

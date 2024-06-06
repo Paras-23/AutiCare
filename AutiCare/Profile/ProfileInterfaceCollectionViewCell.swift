@@ -29,4 +29,7 @@ class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         delegate?.setSegmentedIndex(index: segmentedControl.selectedSegmentIndex)
     }
+    @IBAction func editButtonTapped(_ sender: UIButton) {
+        
+    }
 }

@@ -64,55 +64,81 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="K2p-xB-NJQ"/>
+                        </constraints>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kAd-4X-G92">
-                        <rect key="frame" x="13" y="269" width="375" height="40"/>
+                        <rect key="frame" x="13" y="267" width="375" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp5-97-ynm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="HHn-X9-m7M"/>
                                     <constraint firstAttribute="width" constant="375" id="aZB-cA-QKz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7p6-Qg-lRV">
-                        <rect key="frame" x="121" y="228" width="267" height="33"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="i3u-KR-kC0">
+                        <rect key="frame" x="154" y="228" width="227" height="35"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifD-bg-VxH">
-                                <rect key="frame" x="0.0" y="0.0" width="267" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="GUs-MF-DAt"/>
-                                    <constraint firstAttribute="width" constant="267" id="QIE-Nc-gBS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zWN-XN-nRi">
+                                <rect key="frame" x="0.0" y="0.0" width="227" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLS-2P-Xik">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="106" id="k2E-eD-B7d"/>
+                                            <constraint firstAttribute="height" constant="35" id="xy5-gc-DGz"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Share Profile">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="editButtonTapped:" destination="LZj-S8-RGQ" eventType="touchUpInside" id="VGg-8A-e59"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbA-mt-R0S">
+                                        <rect key="frame" x="121" y="0.0" width="106" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="106" id="EPv-OR-OWF"/>
+                                            <constraint firstAttribute="height" constant="35" id="hFg-zh-tl9"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Edit Profile">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="editButtonTapped:" destination="LZj-S8-RGQ" eventType="touchUpInside" id="SzI-YG-oyC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="iII-9J-aEL" firstAttribute="top" secondItem="cDZ-oW-2yF" secondAttribute="bottom" constant="50" id="41g-mm-9en"/>
                     <constraint firstItem="Ru0-Ig-vQn" firstAttribute="leading" secondItem="fC2-yQ-sMv" secondAttribute="leading" constant="8" id="5tn-hh-4mN"/>
                     <constraint firstAttribute="trailing" secondItem="Ru0-Ig-vQn" secondAttribute="trailing" constant="8" id="7cn-Iv-1HB"/>
                     <constraint firstItem="iII-9J-aEL" firstAttribute="leading" secondItem="fC2-yQ-sMv" secondAttribute="leading" constant="8" id="9bV-65-I5v"/>
+                    <constraint firstItem="kAd-4X-G92" firstAttribute="top" secondItem="fC2-yQ-sMv" secondAttribute="top" constant="267" id="A45-cE-QBf"/>
                     <constraint firstAttribute="trailing" secondItem="iII-9J-aEL" secondAttribute="trailing" constant="8" id="DdT-iR-h7s"/>
-                    <constraint firstItem="kAd-4X-G92" firstAttribute="top" secondItem="fC2-yQ-sMv" secondAttribute="top" constant="269" id="EWB-Q1-fQf"/>
                     <constraint firstItem="iII-9J-aEL" firstAttribute="top" secondItem="fC2-yQ-sMv" secondAttribute="top" constant="317" id="Eu7-Ly-cfp"/>
-                    <constraint firstItem="7p6-Qg-lRV" firstAttribute="top" secondItem="fC2-yQ-sMv" secondAttribute="top" constant="228" id="H2r-mc-pL8"/>
-                    <constraint firstItem="iII-9J-aEL" firstAttribute="top" secondItem="7p6-Qg-lRV" secondAttribute="bottom" constant="56" id="Mr4-aV-UoU"/>
+                    <constraint firstItem="i3u-KR-kC0" firstAttribute="leading" secondItem="cDZ-oW-2yF" secondAttribute="trailing" constant="41" id="KAB-5Z-rTL"/>
+                    <constraint firstItem="cDZ-oW-2yF" firstAttribute="leading" secondItem="kAd-4X-G92" secondAttribute="leading" id="VYZ-14-u0U"/>
                     <constraint firstItem="Ru0-Ig-vQn" firstAttribute="top" secondItem="fC2-yQ-sMv" secondAttribute="top" id="ZWk-tH-4nv"/>
-                    <constraint firstItem="kAd-4X-G92" firstAttribute="top" secondItem="cDZ-oW-2yF" secondAttribute="bottom" constant="2" id="b4b-gD-HA1"/>
+                    <constraint firstAttribute="trailing" secondItem="i3u-KR-kC0" secondAttribute="trailing" constant="15" id="fG5-60-nud"/>
                     <constraint firstAttribute="trailing" secondItem="kAd-4X-G92" secondAttribute="trailing" constant="8" id="hj2-aY-GBh"/>
-                    <constraint firstItem="iII-9J-aEL" firstAttribute="top" secondItem="cDZ-oW-2yF" secondAttribute="bottom" constant="50" id="kNA-Bq-6Eq"/>
-                    <constraint firstItem="7p6-Qg-lRV" firstAttribute="leading" secondItem="cDZ-oW-2yF" secondAttribute="trailing" constant="8" id="tc3-mX-Kag"/>
-                    <constraint firstAttribute="trailing" secondItem="7p6-Qg-lRV" secondAttribute="trailing" constant="8" id="tsQ-0S-6Q7"/>
+                    <constraint firstItem="i3u-KR-kC0" firstAttribute="top" secondItem="fC2-yQ-sMv" secondAttribute="top" constant="228" id="jcv-RY-YeJ"/>
+                    <constraint firstItem="kAd-4X-G92" firstAttribute="top" secondItem="cDZ-oW-2yF" secondAttribute="bottom" id="vKi-rj-N6K"/>
+                    <constraint firstItem="i3u-KR-kC0" firstAttribute="top" secondItem="Ru0-Ig-vQn" secondAttribute="bottom" constant="8" id="xak-Gf-i95"/>
                     <constraint firstItem="cDZ-oW-2yF" firstAttribute="top" secondItem="fC2-yQ-sMv" secondAttribute="top" constant="167" id="zPV-E0-QpX"/>
-                    <constraint firstItem="iII-9J-aEL" firstAttribute="top" secondItem="kAd-4X-G92" secondAttribute="bottom" constant="8" id="znf-fj-gAb"/>
+                    <constraint firstItem="iII-9J-aEL" firstAttribute="top" secondItem="kAd-4X-G92" secondAttribute="bottom" constant="6" id="znf-fj-gAb"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="396" height="369"/>

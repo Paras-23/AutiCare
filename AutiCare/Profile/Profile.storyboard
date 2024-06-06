@@ -450,16 +450,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Ddx-Ed-wjp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="aF2-3j-4ub">
-                            <connections>
-                                <segue destination="zfW-r3-I2V" kind="show" id="4b5-Qn-VFb"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="aF2-3j-4ub"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="BVU-eH-Q9S" id="1wW-ga-Q5n"/>
                         <segue destination="MOj-Fe-UgA" kind="show" identifier="VisitOtherProfile" id="HMi-MA-fuY"/>
                         <segue destination="aoI-xD-1aa" kind="presentation" identifier="openComments" id="J4U-6B-Ups"/>
+                        <segue destination="zfW-r3-I2V" kind="show" identifier="editProfileSegue" id="mHe-2q-SpV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPH-UO-RJs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
