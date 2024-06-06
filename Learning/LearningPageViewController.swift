@@ -25,6 +25,9 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
                 self.tabBarController?.tabBar.isHidden = true
             case 2: performSegue(withIdentifier: "SaveTheDotSegue", sender: nil)
                 self.tabBarController?.tabBar.isHidden = true
+            case 3:
+              performSegue(withIdentifier: "colorMatching", sender: nil)
+                self.tabBarController?.tabBar.isHidden = true
                 
             default: return
             }
@@ -33,6 +36,22 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
             switch indexPath.row{
             case 0:
                 let url = Bundle.main.url(forResource: "playingWithFriends", withExtension: "mp4")
+                let avPlayer = AVPlayer(url: url!)
+                let avController = AVPlayerViewController()
+                avController.player = avPlayer
+                present(avController,animated: true){
+                    avPlayer.play()
+                }
+            case 1:
+                let url = Bundle.main.url(forResource: "howToTalkToFriends", withExtension: "mp4")
+                let avPlayer = AVPlayer(url: url!)
+                let avController = AVPlayerViewController()
+                avController.player = avPlayer
+                present(avController,animated: true){
+                    avPlayer.play()
+                }
+            case 2:
+                let url = Bundle.main.url(forResource: "howToBehaveWithGuests", withExtension: "mp4")
                 let avPlayer = AVPlayer(url: url!)
                 let avController = AVPlayerViewController()
                 avController.player = avPlayer

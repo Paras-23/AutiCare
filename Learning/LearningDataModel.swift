@@ -31,9 +31,9 @@ struct QuestionOfPictureRepresentingAction {
 }
 
 
-    var games:[Games] = [Games(imageName: "Designer-20",gameName: "Memory Cards"),Games(imageName: "Designer-12",gameName: "Who's Flying"),Games(imageName: "Designer-15",gameName: "Defend The Ball")]
+    var games:[Games] = [Games(imageName: "MemoryCards",gameName: "Memory Cards"),Games(imageName: "WhoISFlying",gameName: "Who's Flying"),Games(imageName: "defendTheBall",gameName: "Defend The Ball"),Games(imageName: "MatchTheShapes", gameName: "Match The Shapes")]
 
-    var sessions:[Sessions] = [Sessions(imageName: "Designer-2",sessionName: ""),Sessions(imageName: "Designer-4", sessionName: ""),Sessions(imageName: "Designer-14", sessionName: "")]
+    var sessions:[Sessions] = [Sessions(imageName: "howToPlayWithFriends",sessionName: "Playing With Friends"),Sessions(imageName: "howToTalkToFriends", sessionName: "Talking With Friends"),Sessions(imageName: "howToBehaveWithGuests", sessionName: "How To Behave With Guests")]
 
     var worksheets:[Worksheets] = [Worksheets(imageName: "Designer-10", worksheetName: ""),Worksheets(imageName: "Designer-5", worksheetName: ""),Worksheets(imageName: "Designer-8", worksheetName: "")]
     
