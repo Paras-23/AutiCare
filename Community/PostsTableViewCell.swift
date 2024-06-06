@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import SDWebImage
 
 class PostsTableViewCell: UICollectionViewCell, UINavigationControllerDelegate {
 
@@ -27,8 +28,10 @@ class PostsTableViewCell: UICollectionViewCell, UINavigationControllerDelegate {
     func showPost(with post : Post){
         usernameLabel.text = post.userName
         userImageView.maskCircle(anyImage: UIImage(named: post.userImageName!)!)
-        postImageView.image = UIImage(named: post.imageURL)
         captionLabel.text = post.caption
+        if let imageURL = URL(string: post.imageURL) {
+            postImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "user_1"))
+                }
     }
     
     func setupPopUpButton() {

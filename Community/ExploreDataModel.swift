@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabaseInternal
 
 struct User {
     let UserID : UUID
@@ -57,20 +58,47 @@ struct Post {
     var caption : String
     var imageURL : String
 //    let mediaType : mediaType
-    var timeStamp : Double?
+    var timestamp : TimeInterval
     var likes : [Likes] = []
     var comments : [Comments] = []
-    var userImageName : String?
+    var userImageName : String? = "user_1"
     var userName : String?
     
     func toDictionary() -> [String: Any] {
-           return [
-               "userID": userID,
-               "caption": caption,
-               "imageURL": imageURL,
-               "timeStamp": timeStamp
-           ]
-       }
+       return [
+           "postID": postID,
+           "userID": userID,
+           "caption": caption,
+           "imageURL": imageURL,
+           "timeStamp": timestamp
+       ]
+    }
+    
+    init(postID: String, userID: String, caption: String, imageURL: String, timestamp: TimeInterval) {
+            self.postID = postID
+            self.userID = userID
+            self.caption = caption
+            self.imageURL = imageURL
+            self.timestamp = timestamp
+        }
+    
+    init?(dictionary: [String: Any]) {
+            guard let postID = dictionary["postID"] as? String,
+                  let userID = dictionary["userID"] as? String,
+                  let caption = dictionary["caption"] as? String,
+                  let imageURL = dictionary["imageURL"] as? String,
+                  let timestamp = dictionary["timeStamp"] as? Double else {
+                print("Failed to parse post: \(dictionary)")
+                return nil
+            }
+            
+            self.postID = postID
+            self.userID = userID
+            self.caption = caption
+            self.imageURL = imageURL
+            self.timestamp = timestamp
+        }
+
 }
 
 struct Comments {

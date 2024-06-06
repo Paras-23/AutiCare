@@ -36,10 +36,10 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
     
     @IBAction func sharePostTapped(_ sender: Any) {
         
-        let exampleImage = newPostImage.image!
+        let postImage = newPostImage.image!
         let caption = captionTextField.text!
         
-        PostService.uploadPost(image: exampleImage, caption: caption) { success in
+        uploadPost(image: postImage, caption: caption, userID: uid!){success in
             if success {
                 print("Post uploaded successfully")
             } else {
@@ -47,6 +47,7 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
             }
         }
         
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -95,37 +96,54 @@ extension AddNewPostViewController:  UIImagePickerControllerDelegate {
             picker.dismiss(animated: true, completion: nil)
         }
     
-    func uploadPostImageToFirebase(image: UIImage) {
-        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+    
+    func uploadPost(image: UIImage, caption: String, userID: String, completion: @escaping (Bool) -> Void) {
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else {
+            completion(false)
+            return
+        }
         
-        let storageRef = storage.reference().child("images/\(UUID().uuidString).jpg")
+        let postID = UUID().uuidString
+        let storageRef = Storage.storage().reference().child("posts").child(userID).child("\(postID).jpg")
         
-        storageRef.putData(imageData, metadata: nil) { metadata, error in
-            guard metadata != nil else {
-                print("Failed to upload")
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        storageRef.putData(imageData, metadata: metadata) { metadata, error in
+            if let error = error {
+                print("Error uploading image: \(error.localizedDescription)")
+                completion(false)
                 return
             }
             
-            storageRef.downloadURL { (url, error) in
-                guard let downloadURL = url else {
-                    print("Failed to retrieve download URL")
+            storageRef.downloadURL { url, error in
+                if let error = error {
+                    print("Error getting download URL: \(error.localizedDescription)")
+                    completion(false)
                     return
                 }
                 
-                self.saveImageURLToDatabase(url: downloadURL.absoluteString)
+                guard let downloadURL = url else {
+                    print("Download URL is nil")
+                    completion(false)
+                    return
+                }
+                
+                let post = Post(postID: postID, userID: userID, caption: caption, imageURL: downloadURL.absoluteString, timestamp: Date().timeIntervalSince1970)
+                
+                let postRef = Database.database().reference().child("user").child(userID).child("posts").child(postID)
+                postRef.setValue(post.toDictionary()) { error, ref in
+                    if let error = error {
+                        print("Error saving post: \(error.localizedDescription)")
+                        completion(false)
+                        return
+                    }
+                    completion(true)
+                }
             }
         }
     }
-    
-    func saveImageURLToDatabase(url: String) {
-        database.child("Posts").child(uid!).child("fullName").setValue(url) { error, _ in
-            if let error = error {
-                print("Failed to save image URL to database: \(error)")
-                return
-            }
-            
-            print("Successfully saved image URL to database")
-        }
-    }
+
+
 }
 

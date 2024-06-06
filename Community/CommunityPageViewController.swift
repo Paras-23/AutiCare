@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseDatabaseInternal
+import FirebaseAuth
 
 class CommunityPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -21,7 +23,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
-        case feedCollectionView: return 3
+        case feedCollectionView: return posts.count
         case exploreCollectionView : return 18
         default: return 0
         }
@@ -39,6 +41,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         switch collectionView {
         case feedCollectionView:
             let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "UserPost", for: indexPath) as! PostsTableViewCell
@@ -56,6 +59,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         }
     }
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,18 +67,41 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         searchBar.backgroundImage = UIImage()
         searchBarStack.isHidden = true
         
+        
+//        segmentedControl.addTarget(self, action: #selector(segmentedControlChanged(_:)), for: .valueChanged)
+
+        
         selectingCollectionView()
         
-        if let onlinePosts = CommunityDataController.shared.onlinePosts() {
-            posts = onlinePosts
-        }
-        else {
-            posts = CommunityDataController.shared.getPosts()
-        }
+        if let uid = Auth.auth().currentUser?.uid {
+            print("Inside")
+                    CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { [weak self] posts in
+                        print("1")
+                        self?.posts = posts
+                        self?.feedCollectionView.reloadData()
+                    }
+                } else {
+                    posts = CommunityDataController.shared.getPosts()
+                }
 
         // Do any additional setup after loading the view.
     }
-    
+//    @objc func segmentedControlChanged(_ sender: UISegmentedControl) {
+//            if sender.selectedSegmentIndex == 0 {
+//                print("Feed Tab")
+//                feedCollectionView.isHidden = false
+//                exploreCollectionView.isHidden = true
+//                searchBarStack.isHidden = true
+//                selectingCollectionView()
+//            } else if sender.selectedSegmentIndex == 1 {
+//                print("Explore Page")
+//                feedCollectionView.isHidden = true
+//                exploreCollectionView.isHidden = false
+//                searchBarStack.isHidden = false
+//                selectingCollectionView()
+//            }
+//        }
+//    
     func selectingCollectionView() {
         switch segmentedControl.selectedSegmentIndex{
         case 0:
@@ -151,14 +178,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     @IBAction func unwindToCommunityPageViewController(_ unwindSegue: UIStoryboardSegue) {
         // Use data from the view controller which initiated the unwind segue
     }
-
-}
-
-extension UIViewController : UITextFieldDelegate {
     
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
+
 }
 
