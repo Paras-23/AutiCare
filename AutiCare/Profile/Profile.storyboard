@@ -10,6 +10,53 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Comments-->
+        <scene sceneID="XpZ-Nx-DBV">
+            <objects>
+                <viewController id="qJe-it-F7C" customClass="CommentSectionViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ecj-fZ-bdL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Xp-pK-C9E">
+                                <rect key="frame" x="0.0" y="56" width="393" height="786"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T7h-DH-UAX">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wbK-vh-B6c">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="s0Z-wM-DJ7">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wQe-Bq-cEc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Xp-pK-C9E" firstAttribute="leading" secondItem="wQe-Bq-cEc" secondAttribute="leading" id="PZr-Kk-CmU"/>
+                            <constraint firstItem="3Xp-pK-C9E" firstAttribute="top" secondItem="wQe-Bq-cEc" secondAttribute="top" id="aWj-BL-64Z"/>
+                            <constraint firstItem="wQe-Bq-cEc" firstAttribute="bottom" secondItem="3Xp-pK-C9E" secondAttribute="bottom" id="rL3-5e-Una"/>
+                            <constraint firstItem="wQe-Bq-cEc" firstAttribute="trailing" secondItem="3Xp-pK-C9E" secondAttribute="trailing" id="zmt-bK-QzI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Comments" id="EZO-hW-PAg"/>
+                    <connections>
+                        <outlet property="collectionView" destination="3Xp-pK-C9E" id="r9G-9i-t0I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yc4-Ia-9P2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7770.2290076335876" y="-913.38028169014092"/>
+        </scene>
         <!--Edit Profile-->
         <scene sceneID="1Gr-fB-vdQ">
             <objects>
@@ -412,6 +459,7 @@
                     <connections>
                         <outlet property="collectionView" destination="BVU-eH-Q9S" id="1wW-ga-Q5n"/>
                         <segue destination="MOj-Fe-UgA" kind="show" identifier="VisitOtherProfile" id="HMi-MA-fuY"/>
+                        <segue destination="aoI-xD-1aa" kind="presentation" identifier="openComments" id="J4U-6B-Ups"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPH-UO-RJs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -484,6 +532,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxB-uM-aMS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5653" y="782"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eyf-Ny-9Kx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aoI-xD-1aa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZC0-KN-YCU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qJe-it-F7C" kind="relationship" relationship="rootViewController" id="ps2-wp-wP8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ipz-n9-wDI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6843.5114503816794" y="-913.38028169014092"/>
         </scene>
     </scenes>
     <resources>

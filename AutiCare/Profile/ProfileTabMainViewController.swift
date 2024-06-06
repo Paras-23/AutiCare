@@ -92,6 +92,8 @@ extension ProfileTabMainViewController : UICollectionViewDataSource, UICollectio
         switch indexPath.section {
         case 1:
             switch selectedSegment {
+            case 0:
+                performSegue(withIdentifier: "openComments", sender: nil)
             case 1...2:
                 performSegue(withIdentifier: "VisitOtherProfile", sender: nil)
             default:
@@ -137,7 +139,7 @@ extension ProfileTabMainViewController : UICollectionViewDataSource, UICollectio
     func firstSectionLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.53))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.51))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)
         let section = NSCollectionLayoutSection(group: group)
         return section

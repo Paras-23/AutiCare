@@ -31,6 +31,12 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        usernameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        phoneNumberTextField.delegate = self
     }
     
     // MARK: - Table view data source
@@ -92,6 +98,11 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
             }
             
         }
+    }
+    
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func genderButtonTapped(_ sender: Any) {

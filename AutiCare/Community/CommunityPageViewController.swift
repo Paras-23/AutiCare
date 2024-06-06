@@ -154,3 +154,11 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 
 }
 
+extension UIViewController : UITextFieldDelegate {
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+

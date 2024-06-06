@@ -51,7 +51,9 @@ class ChatsPageTableViewController: UITableViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        55
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -72,10 +74,6 @@ class ChatsPageTableViewController: UITableViewController {
         }    
     }
     */
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
 
     /*
     // Override to support rearranging the table view.
