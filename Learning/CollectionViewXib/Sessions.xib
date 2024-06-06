@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Sessions" id="Xtv-tn-hOn" customClass="SessionsCollectionViewCell" customModule="AutiCare" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="330"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2ph-0O-nYI">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="330"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Yg-PX-Eok">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="297"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V0t-34-Tdb">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="297"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="VR9-L9-UAQ"/>
+                                    <constraint firstAttribute="height" constant="297" id="bVu-Ah-sM2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="m7Q-hs-CNL">
+                        <rect key="frame" x="0.0" y="297" width="350" height="33"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhq-km-QeM">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="QZQ-RQ-LQV"/>
+                                    <constraint firstAttribute="width" constant="350" id="fFc-Bd-Kcf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="m7Q-hs-CNL" firstAttribute="leading" secondItem="2ph-0O-nYI" secondAttribute="leading" id="0Lo-mV-3KS"/>
+                    <constraint firstItem="m7Q-hs-CNL" firstAttribute="top" secondItem="4Yg-PX-Eok" secondAttribute="bottom" id="9cs-Of-pLc"/>
+                    <constraint firstAttribute="trailing" secondItem="4Yg-PX-Eok" secondAttribute="trailing" id="F92-u7-oQI"/>
+                    <constraint firstItem="4Yg-PX-Eok" firstAttribute="top" secondItem="2ph-0O-nYI" secondAttribute="top" id="N3Y-Fy-9RX"/>
+                    <constraint firstAttribute="bottom" secondItem="m7Q-hs-CNL" secondAttribute="bottom" id="UK4-kv-2vn"/>
+                    <constraint firstItem="4Yg-PX-Eok" firstAttribute="leading" secondItem="2ph-0O-nYI" secondAttribute="leading" id="twi-ZP-eE2"/>
+                    <constraint firstAttribute="trailing" secondItem="m7Q-hs-CNL" secondAttribute="trailing" id="wys-9M-5E1"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="imageView" destination="V0t-34-Tdb" id="55q-m5-GbR"/>
+                <outlet property="sessionTitle" destination="Vhq-km-QeM" id="GcO-hc-Kqm"/>
+            </connections>
+            <point key="canvasLocation" x="310" y="-19"/>
+        </collectionViewCell>
+    </objects>
+</document>
