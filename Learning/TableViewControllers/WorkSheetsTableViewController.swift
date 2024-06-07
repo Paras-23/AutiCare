@@ -41,7 +41,15 @@ class WorkSheetsTableViewController: UITableViewController {
 
         return cell
     }
-  
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row{
+        case 0: performSegue(withIdentifier: "selectMultipleObjects", sender: nil)
+        case 1: performSegue(withIdentifier: "matchIdenticalObjects", sender: nil)
+        case 2: performSegue(withIdentifier: "matchUpperCaseAlphabets", sender: nil)
+        default:
+            break
+        }
+    }
     
 
    

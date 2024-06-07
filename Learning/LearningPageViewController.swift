@@ -26,7 +26,7 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
             case 2: performSegue(withIdentifier: "SaveTheDotSegue", sender: nil)
                 self.tabBarController?.tabBar.isHidden = true
             case 3:
-              performSegue(withIdentifier: "colorMatching", sender: nil)
+                performSegue(withIdentifier: "colorMatching", sender: nil)
                 self.tabBarController?.tabBar.isHidden = true
                 
             default: return
@@ -58,6 +58,25 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
                 present(avController,animated: true){
                     avPlayer.play()
                 }
+                
+                
+            default:
+                break
+            }
+        }
+        if indexPath.section == 2{
+            switch indexPath.row{
+            case 0:
+                performSegue(withIdentifier: "selectMultipleObjects", sender: nil)
+                self.tabBarController?.tabBar.isHidden = true
+                
+            case 1:
+                performSegue(withIdentifier: "matchIdenticalObjects", sender: nil)
+                self.tabBarController?.tabBar.isHidden = true
+                
+            case 2:
+                performSegue(withIdentifier: "matchUpperCaseAlphabets", sender: nil)
+                self.tabBarController?.tabBar.isHidden = true
                 
             default:
                 break

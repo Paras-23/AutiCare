@@ -35,7 +35,7 @@ struct QuestionOfPictureRepresentingAction {
 
     var sessions:[Sessions] = [Sessions(imageName: "howToPlayWithFriends",sessionName: "Playing With Friends"),Sessions(imageName: "howToTalkToFriends", sessionName: "Talking With Friends"),Sessions(imageName: "howToBehaveWithGuests", sessionName: "How To Behave With Guests")]
 
-    var worksheets:[Worksheets] = [Worksheets(imageName: "Designer-10", worksheetName: ""),Worksheets(imageName: "Designer-5", worksheetName: ""),Worksheets(imageName: "Designer-8", worksheetName: "")]
+    var worksheets:[Worksheets] = [Worksheets(imageName: "Designer-10", worksheetName: "Select Multiple Objects"),Worksheets(imageName: "Designer-5", worksheetName: "Match Identical Objects"),Worksheets(imageName: "Upper case", worksheetName: "Match UpperCase Alphabets")]
     
     var sectionHeader:[String] = ["Games","Sessions","Worksheets"]
 
