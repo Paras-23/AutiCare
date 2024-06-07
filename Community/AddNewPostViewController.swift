@@ -39,7 +39,7 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
         let postImage = newPostImage.image!
         let caption = captionTextField.text!
         
-        uploadPost(image: postImage, caption: caption, userID: uid!){success in
+        PostService.uploadPost(image: postImage, caption: caption, userID: uid!){success in
             if success {
                 print("Post uploaded successfully")
             } else {
@@ -49,8 +49,6 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
         
         dismiss(animated: true, completion: nil)
     }
-    
-    
 }
 
 extension AddNewPostViewController:  UIImagePickerControllerDelegate {
@@ -95,54 +93,6 @@ extension AddNewPostViewController:  UIImagePickerControllerDelegate {
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             picker.dismiss(animated: true, completion: nil)
         }
-    
-    
-    func uploadPost(image: UIImage, caption: String, userID: String, completion: @escaping (Bool) -> Void) {
-        guard let imageData = image.jpegData(compressionQuality: 0.75) else {
-            completion(false)
-            return
-        }
-        
-        let postID = UUID().uuidString
-        let storageRef = Storage.storage().reference().child("posts").child(userID).child("\(postID).jpg")
-        
-        let metadata = StorageMetadata()
-        metadata.contentType = "image/jpeg"
-        
-        storageRef.putData(imageData, metadata: metadata) { metadata, error in
-            if let error = error {
-                print("Error uploading image: \(error.localizedDescription)")
-                completion(false)
-                return
-            }
-            
-            storageRef.downloadURL { url, error in
-                if let error = error {
-                    print("Error getting download URL: \(error.localizedDescription)")
-                    completion(false)
-                    return
-                }
-                
-                guard let downloadURL = url else {
-                    print("Download URL is nil")
-                    completion(false)
-                    return
-                }
-                
-                let post = Post(postID: postID, userID: userID, caption: caption, imageURL: downloadURL.absoluteString, timestamp: Date().timeIntervalSince1970)
-                
-                let postRef = Database.database().reference().child("user").child(userID).child("posts").child(postID)
-                postRef.setValue(post.toDictionary()) { error, ref in
-                    if let error = error {
-                        print("Error saving post: \(error.localizedDescription)")
-                        completion(false)
-                        return
-                    }
-                    completion(true)
-                }
-            }
-        }
-    }
 
 
 }

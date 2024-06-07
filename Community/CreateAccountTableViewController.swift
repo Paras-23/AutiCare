@@ -72,11 +72,13 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
             }
             else{
                 let usersRef = Database.database().reference().child("user")
-                let userData = User(UserID: UUID(), firstName: firstName, lastName: LastName, userName: username, emailAddress: email, password: password, phone: phoneNo, profilePicture: nil, coverPicture: nil, location: nil, gender: self.genderButton.currentTitle!, age: nil, bio: nil, following: nil, followers: nil, posts: nil)
                 if let uid = Auth.auth().currentUser?.uid{
+                    self.uploadUserDataToFirebase(image: self.ProfileImageView.image! , uid: uid)
+                    let userData = User(UserID: UUID(), firstName: firstName, lastName: LastName, userName: username, emailAddress: email, password: password, phone: phoneNo, profilePicture: nil , coverPicture: nil, location: nil, gender: self.genderButton.currentTitle!, age: nil, bio: nil, following: nil, followers: nil, posts: nil)
+                
                     //user is logged in
                     usersRef.child(uid).updateChildValues(userData.toDictionary()){error,ref in print("User data uploaded")}
-                    self.uploadImageToFirebase(image: self.ProfileImageView.image! , uid: uid)
+                    
                 }
                 self.dismiss(animated: true, completion: nil)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -88,9 +90,7 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
                     window.rootViewController = mainVC
                     window.makeKeyAndVisible()
                 }
-                                
             }
-            
         }
     }
     
@@ -130,8 +130,8 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
         dismiss(animated: true, completion: nil)
     }
     
-    func uploadImageToFirebase(image: UIImage , uid : String) {
-        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+    func uploadUserDataToFirebase(image: UIImage , uid : String) {
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return  }
         
         let storageRef = storage.reference().child("images/\(UUID().uuidString).jpg")
         
@@ -140,13 +140,11 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
                 print("Failed to upload")
                 return
             }
-            
             storageRef.downloadURL { (url, error) in
                 guard let downloadURL = url else {
                     print("Failed to retrieve download URL")
                     return
                 }
-                
                 self.saveImageURLToDatabase(uid: uid, url: downloadURL.absoluteString)
             }
         }

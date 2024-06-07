@@ -29,9 +29,10 @@ class PostsTableViewCell: UICollectionViewCell, UINavigationControllerDelegate {
         usernameLabel.text = post.userName
         userImageView.maskCircle(anyImage: UIImage(named: post.userImageName!)!)
         captionLabel.text = post.caption
-        if let imageURL = URL(string: post.imageURL) {
-            postImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "reload"))
-                }
+        postImageView.image = UIImage(named: post.imageURL)
+//        if let imageURL = URL(string: post.imageURL) {
+//            postImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "reload"))
+//                }
     }
     
     func setupPopUpButton() {

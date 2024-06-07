@@ -67,9 +67,6 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         exploreCollectionView.isHidden = true
         searchBar.backgroundImage = UIImage()
         searchBarStack.isHidden = true
-        
-        
-//        segmentedControl.addTarget(self, action: #selector(segmentedControlChanged(_:)), for: .valueChanged)
 
         
         selectingCollectionView()
@@ -87,18 +84,18 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     }
 
     func fetchPosts() {
-        if let uid = Auth.auth().currentUser?.uid {
-            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { [weak self] posts in
-                guard let self = self else { return }
-                self.posts = posts
-                self.feedCollectionView.reloadData()
-                self.refreshControl.endRefreshing()
-            }
-        } else {
-            posts = CommunityDataController.shared.getPosts()
+//        if let uid = Auth.auth().currentUser?.uid {
+//            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { [weak self] posts in
+//                guard let self = self else { return }
+//                self.posts = posts
+//                self.feedCollectionView.reloadData()
+//                self.refreshControl.endRefreshing()
+//            }
+//        } else {
+        posts = CommunityDataController.shared.getPosts()
             feedCollectionView.reloadData()
             refreshControl.endRefreshing()
-        }
+//        }
     }
     
     

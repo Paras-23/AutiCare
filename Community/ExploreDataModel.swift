@@ -39,15 +39,7 @@ struct User {
             "password": password,
             "phone": phone,
             "gender": gender,
-            "profilePicture" : profilePicture,
-            "coverPicture" : coverPicture,
-            "location" : location,
-            "age" : age,
-            "bio" : bio,
-            "following" : following,
-            "followers" : followers,
-            "posts" : posts
-            
+            "profilePicture" : profilePicture
         ]
     }
 }
@@ -61,7 +53,7 @@ struct Post {
     var timestamp : TimeInterval
     var likes : [Likes] = []
     var comments : [Comments] = []
-    var userImageName : String? = "user_1"
+    var userImageName : String?
     var userName : String?
     
     func toDictionary() -> [String: Any] {
@@ -73,6 +65,16 @@ struct Post {
            "timeStamp": timestamp
        ]
     }
+    init(postID: String, userID: String, caption: String, imageURL: String, timestamp: TimeInterval,userName : String, userImageName : String) {
+            self.postID = postID
+            self.userID = userID
+            self.caption = caption
+            self.imageURL = imageURL
+            self.timestamp = timestamp
+            self.userName = userName
+            self.userImageName = userImageName
+        }
+    
     
     init(postID: String, userID: String, caption: String, imageURL: String, timestamp: TimeInterval) {
             self.postID = postID

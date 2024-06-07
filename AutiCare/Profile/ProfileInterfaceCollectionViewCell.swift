@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 protocol currentSegment {
     func setSegmentedIndex(index : Int)
@@ -26,8 +28,18 @@ class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
     @IBOutlet var segmentedControl: UISegmentedControl!
     
     func updateCellConfiguration() {
+        let uid = Auth.auth().currentUser?.uid
+        let postsRef = Database.database().reference().child("user").child(uid!)
+        postsRef.observeSingleEvent(of: .value , with:{ [self] snapshot in
+            
+            if let value = snapshot.value as? [String: Any], let username = value["profilePicture"] as? String {
+                if let imageURL = URL(string: username) {
+                    self.profileImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "reload"))
+                    profileImageView.maskCircle(anyImage: profileImageView.image!)
+                        }
+            }})
         coverImageView.image = UIImage(named: "DummyPost10")
-        profileImageView.maskCircle(anyImage: UIImage(named: "DummyPost6")!)
+        
         userName.text = "Sudhanshu Singh Rajput"
     }
     

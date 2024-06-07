@@ -34,23 +34,18 @@ class CommunityDataController {
     }
     
     func dummyPosts() {
-        posts = [ Post(postID: "1", userID: "1", caption: "Playing with amigos is always a moment worth capturing📸😎", imageURL: "post_1", timestamp: 1),Post(postID: "2",userID: "2", caption: "When she mocks me with a camera of her own.😓 It's a mother daughter love❤️", imageURL: "post_2", timestamp: 2),
-                  Post(postID: "3",userID: "3", caption: "Painting with hand or hand with painting. It's still a mystery to be solved.🤔", imageURL: "post_3", timestamp: 3)
+        posts = [ Post(postID: "1", userID: "1", caption: "Playing with amigos is always a moment worth capturing📸😎", imageURL: "post_1", timestamp: 1, userName: "Aditya Gupta" , userImageName: "user_1"),Post(postID: "2",userID: "2", caption: "When she mocks me with a camera of her own.😓 It's a mother daughter love❤️", imageURL: "post_2", timestamp: 2, userName: "Sourabh kumar" , userImageName: "user_2"),
+                  Post(postID: "3",userID: "3", caption: "Painting with hand or hand with painting. It's still a mystery to be solved.🤔", imageURL: "post_3", timestamp: 3, userName: "Harender Singh",userImageName: "user_3")
         ]
     }
 
     func getPosts() -> [Post] { posts }
     func getUsers() -> [User] {users}
     func fetchOnlinePosts(forUserID userID: String, completion: @escaping ([Post]) -> Void) {
-            print("Fetching posts for user ID: \(userID)")
-            PostService.fetchPosts(forUserID: userID) { posts in
-                print("Fetched posts: \(posts)")
-                
-                self.posts = posts
-                completion(posts)
-            }
-        
+        PostService.fetchPosts(forUserID: userID) { posts in
+            completion(posts)
         }
+    }
 }
 
 
