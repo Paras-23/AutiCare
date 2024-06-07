@@ -11,9 +11,14 @@ protocol currentSegment {
     func setSegmentedIndex(index : Int)
 }
 
+protocol CollectionCellDelegate {
+    func didTapButton(in cell: ProfileInterfaceCollectionViewCell)
+}
+
 class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
     
     var delegate : currentSegment?
+    var secondDelegate : CollectionCellDelegate?
     
     @IBOutlet var coverImageView: UIImageView!
     @IBOutlet var profileImageView: UIImageView!
@@ -30,6 +35,7 @@ class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
         delegate?.setSegmentedIndex(index: segmentedControl.selectedSegmentIndex)
     }
     @IBAction func editButtonTapped(_ sender: UIButton) {
+        secondDelegate?.didTapButton(in: self)
         
     }
 }

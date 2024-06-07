@@ -207,7 +207,7 @@ class ColorMatchingViewController: UIViewController {
              } else {
                  showAlert(title: "Congratulations!", message: "You've completed all levels!") {
                      self.currentLevel = 1
-                     self.startLevel(self.currentLevel)
+                     self.performSegue(withIdentifier: "ColorMatchingGameUnwindToLearningPage", sender: nil)
                  }
              }
          }

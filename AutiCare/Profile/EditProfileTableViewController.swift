@@ -14,8 +14,6 @@ class EditProfileTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        profileImageView.maskCircle(anyImage: UIImage(named: "user_2")!)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,15 +26,16 @@ class EditProfileTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch section{
         case 0: return 1
-        case 1: return 5
-        case 2: return 3
+        case 1: return 1
+        case 2: return 5
+        case 3: return 3
         default: return 0
         }
     }

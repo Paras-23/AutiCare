@@ -41,7 +41,6 @@ class SplashScreenViewController: UIViewController {
     }
 
     private func navigateToLoginScreen() {
-        print("verma")
         let storyboard = UIStoryboard(name: "auth", bundle: nil)
         if let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginPage") as?  LoginPageViewController {
             setRootViewController(loginVC)

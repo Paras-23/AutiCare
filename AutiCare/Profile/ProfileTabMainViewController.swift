@@ -89,7 +89,14 @@ class ProfileTabMainViewController: UIViewController, currentSegment {
     
 }
 
-extension ProfileTabMainViewController : UICollectionViewDataSource, UICollectionViewDelegate {
+extension ProfileTabMainViewController : UICollectionViewDataSource, UICollectionViewDelegate, CollectionCellDelegate {
+    
+    func didTapButton(in cell: ProfileInterfaceCollectionViewCell) {
+        if let indexPath = collectionView.indexPath(for: cell) {
+            performSegue(withIdentifier: "editProfileSegue", sender: indexPath)
+        }
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
@@ -97,6 +104,7 @@ extension ProfileTabMainViewController : UICollectionViewDataSource, UICollectio
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileHeader", for: indexPath) as! ProfileInterfaceCollectionViewCell
             cell.updateCellConfiguration()
             cell.delegate = self
+            cell.secondDelegate = self
             return cell
         case 1:
             switch selectedSegment {

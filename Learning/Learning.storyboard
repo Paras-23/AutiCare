@@ -154,7 +154,6 @@
         <!--Color Matching View Controller-->
         <scene sceneID="NXi-yg-k2z">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bOy-0C-NYu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="tXt-Ww-wRv" customClass="ColorMatchingViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5bw-7Q-5Kd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -163,7 +162,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="H9f-j4-Yb8"/>
+                    <connections>
+                        <segue destination="PCU-0V-phR" kind="unwind" identifier="ColorMatchingGameUnwindToLearningPage" unwindAction="unwindToLearningPageViewController:" id="yZh-ew-wgc"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bOy-0C-NYu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="PCU-0V-phR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3505" y="-580"/>
         </scene>
@@ -292,53 +296,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="fbr-y5-pmY">
-                                <rect key="frame" x="91.666666666666686" y="255" width="210" height="186"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jw8-zS-c6x">
+                                <rect key="frame" x="41" y="164" width="311" height="36"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7A-j2-S4a">
-                                        <rect key="frame" x="69.333333333333329" y="0.0" width="70.999999999999986" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identify Who's Flying?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7A-j2-S4a">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="311" id="fgj-CN-2W5"/>
+                                            <constraint firstAttribute="height" constant="36" id="nG3-33-MRk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KTn-Yu-bEb">
-                                        <rect key="frame" x="0.0" y="86" width="210" height="100"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaF-my-Itn">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="HdO-xT-3vJ"/>
-                                                    <constraint firstAttribute="width" constant="100" id="oCk-gz-1vX"/>
-                                                </constraints>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <connections>
-                                                    <action selector="option1Tapped:" destination="rAl-9s-ctK" eventType="touchUpInside" id="jEe-qy-PzF"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9T-1d-1ur">
-                                                <rect key="frame" x="110" y="0.0" width="100" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="U5x-Pv-vh6"/>
-                                                    <constraint firstAttribute="height" constant="100" id="d6l-Yp-mwF"/>
-                                                </constraints>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="option2Tapped:" destination="rAl-9s-ctK" eventType="touchUpInside" id="54K-WL-UvO"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q7q-P6-Zzr">
+                                <rect key="frame" x="50" y="260" width="294" height="418"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaF-my-Itn">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="205"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="294" id="7ki-NX-cE1"/>
+                                            <constraint firstAttribute="height" constant="205" id="PQl-cw-LbS"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="option1Tapped:" destination="rAl-9s-ctK" eventType="touchUpInside" id="jEe-qy-PzF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9T-1d-1ur">
+                                        <rect key="frame" x="0.0" y="213" width="294" height="205"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="205" id="H1p-K8-a8Y"/>
+                                            <constraint firstAttribute="width" constant="294" id="nqX-ZN-XFo"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="option2Tapped:" destination="rAl-9s-ctK" eventType="touchUpInside" id="54K-WL-UvO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UaD-Tz-OTJ"/>
                         <color key="backgroundColor" red="0.95057132639999997" green="0.87209349960000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="fbr-y5-pmY" firstAttribute="top" secondItem="UaD-Tz-OTJ" secondAttribute="top" constant="100" id="XZV-32-vNf"/>
-                            <constraint firstItem="fbr-y5-pmY" firstAttribute="centerX" secondItem="zyz-tH-wyj" secondAttribute="centerX" id="ZUz-IA-6HH"/>
+                            <constraint firstItem="Jw8-zS-c6x" firstAttribute="leading" secondItem="UaD-Tz-OTJ" secondAttribute="leading" constant="41" id="0ib-2q-lcR"/>
+                            <constraint firstItem="UaD-Tz-OTJ" firstAttribute="trailing" secondItem="Q7q-P6-Zzr" secondAttribute="trailing" constant="49" id="4Ut-qI-xRE"/>
+                            <constraint firstItem="Q7q-P6-Zzr" firstAttribute="top" secondItem="Jw8-zS-c6x" secondAttribute="bottom" constant="60" id="PwD-hu-C3d"/>
+                            <constraint firstItem="Q7q-P6-Zzr" firstAttribute="leading" secondItem="UaD-Tz-OTJ" secondAttribute="leading" constant="50" id="TEl-g0-gBp"/>
+                            <constraint firstItem="Jw8-zS-c6x" firstAttribute="top" secondItem="UaD-Tz-OTJ" secondAttribute="top" constant="9" id="TkV-Th-ULd"/>
+                            <constraint firstItem="Q7q-P6-Zzr" firstAttribute="top" secondItem="Jw8-zS-c6x" secondAttribute="bottom" constant="60" id="ZeG-L1-vA7"/>
+                            <constraint firstItem="UaD-Tz-OTJ" firstAttribute="trailing" secondItem="Jw8-zS-c6x" secondAttribute="trailing" constant="41" id="dx3-ny-NSM"/>
+                            <constraint firstItem="UaD-Tz-OTJ" firstAttribute="bottom" secondItem="Q7q-P6-Zzr" secondAttribute="bottom" constant="140" id="olv-2D-SUb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4ZK-Ap-chL"/>
@@ -352,7 +366,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipd-DQ-4O1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="9bQ-BF-Apk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="888" y="-1370"/>
+            <point key="canvasLocation" x="887.78625954198469" y="-1370.4225352112676"/>
         </scene>
         <!--Save The Dot Game View Controller-->
         <scene sceneID="TUz-Cw-BNu">
