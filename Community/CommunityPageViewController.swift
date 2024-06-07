@@ -20,8 +20,8 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     var firstNib : UINib = UINib()
     
     var posts : [Post] = []
-    let refreshControl = UIRefreshControl()
-//    let exploreRefreshControl = UIRefreshControl()
+    let feedRefreshControl = UIRefreshControl()
+    let exploreRefreshControl = UIRefreshControl()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
@@ -70,11 +70,11 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         
         selectingCollectionView()
         
-        refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
-        feedCollectionView.refreshControl = refreshControl
+        feedRefreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
+        feedCollectionView.refreshControl = feedRefreshControl
         
-        refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
-        feedCollectionView.refreshControl = refreshControl
+        exploreRefreshControl.addTarget(self, action: #selector(refreshAllUsersPosts), for: .valueChanged)
+        exploreCollectionView.refreshControl = exploreRefreshControl
         
         fetchPosts()
 
@@ -96,7 +96,26 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 //        } else {
         posts = CommunityDataController.shared.getPosts()
             feedCollectionView.reloadData()
-            refreshControl.endRefreshing()
+            feedRefreshControl.endRefreshing()
+//        }
+    }
+    
+    @objc func refreshAllUsersPosts() {
+        fetchAllUsersPosts()
+    }
+
+    func fetchAllUsersPosts() {
+//        if let uid = Auth.auth().currentUser?.uid {
+//            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { [weak self] posts in
+//                guard let self = self else { return }
+//                self.posts = posts
+//                self.feedCollectionView.reloadData()
+//                self.refreshControl.endRefreshing()
+//            }
+//        } else {
+        posts = CommunityDataController.shared.getPosts()
+            exploreCollectionView.reloadData()
+            exploreRefreshControl.endRefreshing()
 //        }
     }
     
