@@ -9,12 +9,17 @@ import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+
+    
+    var showAssessmentOrNot : Bool?
+    
     required init?(coder : NSCoder) {
         super.init(coder: coder)
         self.tabBarItem.title = "Progress"
         self.tabBarItem.image = UIImage(systemName: "chart.line.uptrend.xyaxis.circle")
     }
 
+    @IBOutlet var assessmentStack: UIStackView!
     
     private var collectionView: UICollectionView!
         private let monthLabel = UILabel()
@@ -32,13 +37,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         override func viewDidLoad() {
             super.viewDidLoad()
             view.backgroundColor = .white
-            setupScrollView()
-            setupUI()
-            setupCollectionView()
-            setupProgressBars()
-            setupTodayGoals()
-            updateMonthLabel()
+            assessmentStack.isHidden = false
+//            setupScrollView()
+//            setupUI()
+//            setupCollectionView()
+//            setupProgressBars()
+//            setupTodayGoals()
+//            updateMonthLabel()
         }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
         
         private func setupScrollView() {
             scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -126,7 +136,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             videosLabel.translatesAutoresizingMaskIntoConstraints = false
             
             let booksLabel = UILabel()
-            booksLabel.text = "Books"
+            booksLabel.text = "Worksheets"
             booksLabel.translatesAutoresizingMaskIntoConstraints = false
             
             // Progress bars configuration
@@ -265,6 +275,17 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let itemWidth = availableWidth / 7
             return CGSize(width: itemWidth, height: itemWidth)
         }
+    
+    @IBAction func unwindToProgressViewController(_ unwindSegue: UIStoryboardSegue) {
+        assessmentStack.isHidden = true
+        setupScrollView()
+        setupUI()
+        setupCollectionView()
+        setupProgressBars()
+        setupTodayGoals()
+        updateMonthLabel()
+    }
+    
     }
 
     class CalendarDayCell: UICollectionViewCell {
@@ -299,7 +320,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         private var booksCompleted = false
         
         private let colors: [UIColor] = [.systemRed, .systemBlue, .systemGreen]
-        private let labels = ["Games", "Videos", "Books"]
+        private let labels = ["Games", "Videos", "Worksheets"]
         
         override init(frame: CGRect) {
             super.init(frame: frame)

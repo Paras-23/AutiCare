@@ -74,5 +74,7 @@ class ResultPageViewController: UIViewController {
     }
     
 
-
+    @IBAction func continueButtonTapped(_ sender: UIButton) {
+    }
+    
 }

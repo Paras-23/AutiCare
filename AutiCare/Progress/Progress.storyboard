@@ -11,7 +11,7 @@
         <!--Progress-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainPageProgress" modalPresentationStyle="currentContext" id="Y6W-OH-hqX" customClass="MainViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,15 +44,10 @@
                             <constraint firstItem="fu1-cz-xHI" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Vfw-1h-w85"/>
                             <constraint firstItem="fu1-cz-xHI" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="mMP-Xn-izD"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="fu1-cz-xHI"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Progress" id="Ifh-KE-gtT"/>
                     <connections>
-                        <outlet property="assessmentStack" destination="fu1-cz-xHI" id="G8B-Sk-iXn"/>
+                        <outlet property="assessmentStack" destination="fu1-cz-xHI" id="lHg-PU-pmv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -296,7 +291,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Continue" cornerStyle="dynamic"/>
                                 <connections>
-                                    <segue destination="C0Z-x6-h7w" kind="unwind" unwindAction="unwindToProgressPageViewControllerWithSegue:" id="n0K-WN-kWh"/>
+                                    <action selector="continueButtonTapped:" destination="RdY-cB-pyX" eventType="touchUpInside" id="6eh-xR-TH6"/>
+                                    <segue destination="C0Z-x6-h7w" kind="unwind" unwindAction="unwindToProgressViewController:" id="us9-Fp-pRc"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RjQ-WB-LIL">
@@ -352,7 +348,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTy-p8-jXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="C0Z-x6-h7w" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1951.9083969465648" y="702.11267605633805"/>
+            <point key="canvasLocation" x="1894" y="703"/>
         </scene>
         <!--Questions Table View Controller-->
         <scene sceneID="SnN-jy-K5Q">

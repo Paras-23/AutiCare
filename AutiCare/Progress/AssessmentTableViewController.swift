@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol MarksStoredDelegate {
+    func didTapSubmitButton(in submitTapped : Bool)
+}
+
 class AssessmentTableViewController: UITableViewController {
     
     var categoryWiseQuestions = CategoryWiseQuestions()
     var autismScore : Int = 0
+    
+    var submitButtonDelegate : MarksStoredDelegate?
     
     @IBOutlet var submitButtonPressed: UIButton!
     
@@ -29,7 +35,9 @@ class AssessmentTableViewController: UITableViewController {
     
     
     @IBAction func submitButtonPressed(_ sender: Any) {
+        submitButtonDelegate?.didTapSubmitButton(in: true)
         performSegue(withIdentifier: "segueToResultPageViewController", sender: nil)
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

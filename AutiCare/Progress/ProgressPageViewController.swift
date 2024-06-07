@@ -22,8 +22,6 @@ class ProgressPageViewController: UIViewController {
     
     @IBOutlet var homeStack: UIStackView!
     
-    @IBOutlet var autismLevel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //        if autismLevel.text == "Autism Level" {
@@ -41,7 +39,6 @@ class ProgressPageViewController: UIViewController {
         
         assessmentStack.isHidden = true
         homeStack.isHidden = false
-        autismLevel.text = "Autism Score - \((assessmentResults.last?.scores.reduce(0){$0 + $1})!)/200"
         // Use data from the view controller which initiated the unwind segue
     }
 }
