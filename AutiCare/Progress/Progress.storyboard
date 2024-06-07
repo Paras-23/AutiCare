@@ -11,7 +11,7 @@
         <!--Progress-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="ProgressPageViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,22 +37,12 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLs-Nk-G6a" customClass="Host">
-                                <rect key="frame" x="0.0" y="155" width="393" height="663"/>
-                                <connections>
-                                    <segue destination="Lin-Zy-PVe" kind="embed" id="mgX-a5-VzI"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SLs-Nk-G6a" secondAttribute="trailing" id="SCC-Mw-Gtw"/>
                             <constraint firstItem="fu1-cz-xHI" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Vfw-1h-w85"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SLs-Nk-G6a" secondAttribute="bottom" id="Y3a-40-4cs"/>
-                            <constraint firstItem="SLs-Nk-G6a" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="aP3-Y9-oBp"/>
                             <constraint firstItem="fu1-cz-xHI" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="mMP-Xn-izD"/>
-                            <constraint firstItem="SLs-Nk-G6a" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zF4-Ww-K1A"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -63,7 +53,6 @@
                     <navigationItem key="navigationItem" title="Progress" id="Ifh-KE-gtT"/>
                     <connections>
                         <outlet property="assessmentStack" destination="fu1-cz-xHI" id="G8B-Sk-iXn"/>
-                        <outlet property="containerView" destination="SLs-Nk-G6a" id="Gx8-KF-NsS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -519,8 +508,9 @@
             <objects>
                 <viewController id="Lin-Zy-PVe" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lqx-RZ-32B">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="663"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="K6J-9v-RKd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
