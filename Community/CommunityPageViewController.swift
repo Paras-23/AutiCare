@@ -21,6 +21,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     
     var posts : [Post] = []
     let refreshControl = UIRefreshControl()
+//    let exploreRefreshControl = UIRefreshControl()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
@@ -28,7 +29,6 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         case exploreCollectionView : return 18
         default: return 0
         }
-//        3
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -37,7 +37,6 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         case exploreCollectionView : return 1
         default: return 0
         }
-//        1
     }
     
     
@@ -70,6 +69,9 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 
         
         selectingCollectionView()
+        
+        refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
+        feedCollectionView.refreshControl = refreshControl
         
         refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
         feedCollectionView.refreshControl = refreshControl

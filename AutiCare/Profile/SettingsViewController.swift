@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
 
@@ -54,7 +55,33 @@ extension SettingsViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        logoutButtonTapped()
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
+    
+    func logoutButtonTapped() {
+       do {
+           try Auth.auth().signOut()
+           // Navigate to the login screen or update the UI
+           navigateToLoginScreen()
+       } catch let signOutError as NSError {
+           print("Error signing out: %@", signOutError)
+           // Show an alert to the user or handle the error as needed
+           showLogoutErrorAlert(error: signOutError)
+       }
+   }
+    
+    func navigateToLoginScreen() {
+            // Assuming you are using a storyboard, you can instantiate the login view controller
+            let storyboard = UIStoryboard(name: "auth", bundle: nil)
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginPage") as! LoginPageViewController
+            loginViewController.modalPresentationStyle = .fullScreen
+            self.present(loginViewController, animated: true, completion: nil)
+        }
+
+        func showLogoutErrorAlert(error: NSError) {
+            let alert = UIAlertController(title: "Logout Error", message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
 }
