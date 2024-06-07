@@ -80,6 +80,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         exploreCollectionView.refreshControl = exploreRefreshControl
         
         fetchPosts()
+        fetchAllUsersPosts()
 
         // Do any additional setup after loading the view.
     }
@@ -108,20 +109,11 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     }
 
     func fetchAllUsersPosts() {
-//        if let uid = Auth.auth().currentUser?.uid {
-//            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { [weak self] posts in
-//                guard let self = self else { return }
-//                self.posts = posts
-//                self.feedCollectionView.reloadData()
-//                self.refreshControl.endRefreshing()
-//            }
-//        } else {
         PostService.fetchAllUsersPosts() { posts in
             self.allPosts = posts
         }
-            exploreCollectionView.reloadData()
-            exploreRefreshControl.endRefreshing()
-//        }
+        exploreCollectionView.reloadData()
+        exploreRefreshControl.endRefreshing()
     }
     
     
