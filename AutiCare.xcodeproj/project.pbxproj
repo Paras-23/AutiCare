@@ -55,7 +55,7 @@
 		25CB81422C122A6A0039B489 /* ColorMatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CB81412C122A6A0039B489 /* ColorMatchingViewController.swift */; };
 		25E386FD2C0F63080045B548 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 25E386FC2C0F63080045B548 /* FirebaseFirestore */; };
 		25E386FF2C0F63110045B548 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 25E386FE2C0F63110045B548 /* FirebaseFirestoreSwift */; };
-		444E34532C10222C002D647C /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444E34522C10222C002D647C /* CalendarView.swift */; };
+		444E359B2C12C502002D647C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444E359A2C12C502002D647C /* MainViewController.swift */; };
 		A99EE2792C11C24D002FFD62 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99EE25B2C11C24D002FFD62 /* MessageBubble.swift */; };
 		A99EE27A2C11C24D002FFD62 /* MessageField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99EE25C2C11C24D002FFD62 /* MessageField.swift */; };
 		A99EE27B2C11C24D002FFD62 /* TitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99EE25D2C11C24D002FFD62 /* TitleRow.swift */; };
@@ -148,7 +148,7 @@
 		25CB813B2C120D430039B489 /* howToBehaveWithGuests.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToBehaveWithGuests.mp4; sourceTree = "<group>"; };
 		25CB813C2C120D440039B489 /* howToTalkToFriends.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToTalkToFriends.mp4; sourceTree = "<group>"; };
 		25CB81412C122A6A0039B489 /* ColorMatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMatchingViewController.swift; sourceTree = "<group>"; };
-		444E34522C10222C002D647C /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		444E359A2C12C502002D647C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A99EE25B2C11C24D002FFD62 /* MessageBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		A99EE25C2C11C24D002FFD62 /* MessageField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageField.swift; sourceTree = "<group>"; };
 		A99EE25D2C11C24D002FFD62 /* TitleRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleRow.swift; sourceTree = "<group>"; };
@@ -242,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				05262EA02BF7129800C2774C /* Progress.storyboard */,
+				444E359A2C12C502002D647C /* MainViewController.swift */,
 				C472EE352C0D8DB500C97BE6 /* PieChartUIView.swift */,
 				C472EE392C0D9AAD00C97BE6 /* LegendView.swift */,
 				0585EDA02C05CD2D002B9386 /* ResultPageViewController.swift */,
@@ -250,7 +251,6 @@
 				C4AE965C2BF7270500BEE963 /* AssessmentTableViewController.swift */,
 				C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */,
 				05262EAC2BF7137C00C2774C /* AssessmentDataModel.swift */,
-				444E34522C10222C002D647C /* CalendarView.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -524,13 +524,13 @@
 				0569A6D82C12BF730069435F /* SettingsViewController.swift in Sources */,
 				A99EE28A2C11C24D002FFD62 /* ExploreDataModel.swift in Sources */,
 				257113662C118DEC00D4E239 /* WorksheetsCollectionViewCell.swift in Sources */,
+				444E359B2C12C502002D647C /* MainViewController.swift in Sources */,
 				A99EE27B2C11C24D002FFD62 /* TitleRow.swift in Sources */,
 				A99EE2812C11C24D002FFD62 /* AddNewPostViewController.swift in Sources */,
 				EF853CD92C10F8BD004D0C7F /* AboutSectionCollectionViewCell.swift in Sources */,
 				05445E952C1173A000DB792B /* CommentSectionViewController.swift in Sources */,
 				05262EAF2BF713AE00C2774C /* ProfileDataModel.swift in Sources */,
 				2571136E2C118DEC00D4E239 /* WorkSheetsTableViewController.swift in Sources */,
-				444E34532C10222C002D647C /* CalendarView.swift in Sources */,
 				05262E852BF7112C00C2774C /* AppDelegate.swift in Sources */,
 				051C592F2C107E0B00CB073D /* FriendsCollectionViewCell.swift in Sources */,
 				05E4A8342C104619007BF2D9 /* ProfileInterfaceCollectionViewCell.swift in Sources */,
