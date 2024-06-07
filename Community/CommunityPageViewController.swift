@@ -20,13 +20,14 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     var firstNib : UINib = UINib()
     
     var posts : [Post] = []
+    var allPosts : [Post] = []
     let feedRefreshControl = UIRefreshControl()
     let exploreRefreshControl = UIRefreshControl()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case feedCollectionView: return posts.count
-        case exploreCollectionView : return 18
+        case exploreCollectionView : return allPosts.count
         default: return 0
         }
     }
@@ -49,7 +50,9 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
             return cell
             
         case exploreCollectionView:
-            let cell = exploreCollectionView.dequeueReusableCell(withReuseIdentifier: "UserExplore", for: indexPath)
+            let cell = exploreCollectionView.dequeueReusableCell(withReuseIdentifier: "UserExplore", for: indexPath) as! ExplorePostsCollectionViewCell
+            
+            cell.showPosts(post: allPosts[indexPath.row])
             return cell
             
         default:
@@ -113,7 +116,9 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 //                self.refreshControl.endRefreshing()
 //            }
 //        } else {
-        posts = CommunityDataController.shared.getPosts()
+        PostService.fetchAllUsersPosts() { posts in
+            self.allPosts = posts
+        }
             exploreCollectionView.reloadData()
             exploreRefreshControl.endRefreshing()
 //        }

@@ -53,7 +53,7 @@ class HeaderSectionCollectionViewCell: UICollectionViewCell {
     
     func updateCellConfiguration() {
         coverImageView.image = UIImage(named: "DummyPost8")
-        profileImageView.maskCircle(anyImage: UIImage(named: "DummyPost4")!)
+        profileImageView.maskWhiteCircle(anyImage: UIImage(named: "DummyPost4")!)
         userName.text = "Sudhanshu Singh Rajput"
     }
     

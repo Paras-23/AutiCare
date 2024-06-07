@@ -32,15 +32,15 @@ class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
         let postsRef = Database.database().reference().child("user").child(uid!)
         postsRef.observeSingleEvent(of: .value , with:{ [self] snapshot in
             
-            if let value = snapshot.value as? [String: Any], let username = value["profilePicture"] as? String {
-                if let imageURL = URL(string: username) {
+            if let value = snapshot.value as? [String: Any], let profileImage = value["profilePicture"] as? String , let username = value["userName"] as? String {
+                if let imageURL = URL(string: profileImage) {
                     self.profileImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "reload"))
-                    profileImageView.maskCircle(anyImage: profileImageView.image!)
-                        }
-            }})
+                    profileImageView.maskWhiteCircle(anyImage: profileImageView.image!)
+                }
+                userName.text = username
+            }
+        })
         coverImageView.image = UIImage(named: "DummyPost10")
-        
-        userName.text = "Sudhanshu Singh Rajput"
     }
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
@@ -50,4 +50,6 @@ class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
         secondDelegate?.didTapButton(in: self)
         
     }
+    
+    
 }

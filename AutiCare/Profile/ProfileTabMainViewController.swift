@@ -19,6 +19,16 @@ extension UIImageView {
         self.clipsToBounds = true
         self.image = anyImage
     }
+    
+    public func maskWhiteCircle(anyImage: UIImage) {
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.white.cgColor
+        self.contentMode = UIView.ContentMode.scaleAspectFill
+        self.layer.cornerRadius = self.frame.width/2.0
+        self.layer.masksToBounds = false
+        self.clipsToBounds = true
+        self.image = anyImage
+    }
 }
 
 class ProfileTabMainViewController: UIViewController, currentSegment {

@@ -13,33 +13,33 @@ import FirebaseStorage
 
 class PostService {
 
-//    static func fetchPosts1(forUserID userID: String, completion: @escaping ([Post]) -> Void) {
-//        print("again inside")
-//        let postsRef = Database.database().reference().child("user").child(userID).child("posts")
-//        postsRef.observeSingleEvent(of: .value) { (snapshot, _) in
-//            var posts = [Post]()
-//
-//            for child in snapshot.children {
-//                if let childSnapshot = child as? DataSnapshot,
-//                   let dict = childSnapshot.value as? [String: Any],
-//                   let postID = dict["postID"] as? String,
-//                   let userID = dict["userID"] as? String,
-//                   let imageURL = dict["imageURL"] as? String,
-//                   let caption = dict["caption"] as? String,
-//                   let timestamp = dict["timestamp"] as? TimeInterval {
-//                    
-//                    let post = Post(postID: postID, userID: userID, caption: caption, imageURL: imageURL, timestamp: timestamp)
-//                    posts.append(post)
-//                }
-//            }
-//            posts.sort(by: { $0.timestamp > $1.timestamp })
-//            print(posts)
-//            print("inside 3")
-//            completion(posts)
-//            print(posts)
-//            print("inside 4")
-//        }
-//    }
+    static func fetchPosts1(forUserID userID: String, completion: @escaping ([Post]) -> Void) {
+        print("again inside")
+        let postsRef = Database.database().reference().child("user").child(userID).child("posts")
+        postsRef.observeSingleEvent(of: .value) { (snapshot, _) in
+            var posts = [Post]()
+
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot,
+                   let dict = childSnapshot.value as? [String: Any],
+                   let postID = dict["postID"] as? String,
+                   let userID = dict["userID"] as? String,
+                   let imageURL = dict["imageURL"] as? String,
+                   let caption = dict["caption"] as? String,
+                   let timestamp = dict["timestamp"] as? TimeInterval {
+                    
+                    let post = Post(postID: postID, userID: userID, caption: caption, imageURL: imageURL, timestamp: timestamp)
+                    posts.append(post)
+                }
+            }
+            posts.sort(by: { $0.timestamp > $1.timestamp })
+            print(posts)
+            print("inside 3")
+            completion(posts)
+            print(posts)
+            print("inside 4")
+        }
+    }
 
     
  
@@ -63,6 +63,37 @@ class PostService {
                 }
             }
 
+            // Sort the posts by timestamp
+            posts.sort(by: { $0.timestamp > $1.timestamp })
+            
+            print("Fetched posts: \(posts)")
+            print(posts.isEmpty)
+            completion(posts)
+        }
+    }
+    
+    static func fetchAllUsersPosts(completion: @escaping ([Post]) -> Void) {
+        let usersRef = Database.database().reference().child("user")
+        usersRef.observeSingleEvent(of: .value) { snapshot in
+            var posts = [Post]()
+            
+            print("Snapshot exists: \(snapshot.exists())")
+            print("Snapshot value: \(snapshot.value ?? "No value")")
+            
+            for userSnapshot in snapshot.children {
+                if let userSnapshot = userSnapshot as? DataSnapshot{
+                   let postsSnapshot = userSnapshot.childSnapshot(forPath: "posts")
+                    for postSnapshot in postsSnapshot.children {
+                        if let postSnapshot = postSnapshot as? DataSnapshot,
+                           let postDict = postSnapshot.value as? [String: Any],
+                           let post = Post(dictionary: postDict) {
+                            posts.append(post)
+                        } else {
+                            print("Failed to create Post from snapshot: \(postSnapshot)")
+                        }
+                    }
+                }
+            }
             // Sort the posts by timestamp
             posts.sort(by: { $0.timestamp > $1.timestamp })
             
