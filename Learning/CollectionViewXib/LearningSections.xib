@@ -55,8 +55,8 @@
                 </constraints>
             </collectionViewCellContentView>
             <connections>
-                <outlet property="gameTitle" destination="BlD-gk-aQS" id="6Rg-5G-zrM"/>
                 <outlet property="imageView" destination="tYN-cP-bTZ" id="UXV-Se-rX4"/>
+                <outlet property="titleLabel" destination="BlD-gk-aQS" id="6Rg-5G-zrM"/>
             </connections>
             <point key="canvasLocation" x="175.57251908396947" y="-59.154929577464792"/>
         </collectionViewCell>
