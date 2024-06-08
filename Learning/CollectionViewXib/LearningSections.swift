@@ -13,8 +13,6 @@ class LearningSections: UICollectionViewCell {
    
     @IBOutlet weak var titleLabel: UILabel!
     
-    
-    
     func updateGames(with games:Games){
         imageView.image = UIImage(named: games.imageName)
         imageView.layer.borderWidth = 1

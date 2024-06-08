@@ -17,9 +17,10 @@ struct Sessions{
     var sessionName : String
     var watched : Bool?
 }
-struct Worksheets{
-    var imageName:String
+struct Worksheet{
+    var titleImage:String
     var worksheetName : String
+    var worksheetImage : String
     var completed : Bool?
 }
 
@@ -30,13 +31,12 @@ struct QuestionOfPictureRepresentingAction {
     let correctOption: Int
 }
 
+var games : [Games] = [Games(imageName: "MemoryCards",gameName: "Memory Cards"),Games(imageName: "WhoISFlying",gameName: "Who's Flying"),Games(imageName: "defendTheBall",gameName: "Defend The Ball"),Games(imageName: "MatchTheShapes", gameName: "Match The Shapes")]
 
-    var games:[Games] = [Games(imageName: "MemoryCards",gameName: "Memory Cards"),Games(imageName: "WhoISFlying",gameName: "Who's Flying"),Games(imageName: "defendTheBall",gameName: "Defend The Ball"),Games(imageName: "MatchTheShapes", gameName: "Match The Shapes")]
+var sessions : [Sessions] = [Sessions(imageName: "howToPlayWithFriends",sessionName: "Playing With Friends"),Sessions(imageName: "howToTalkToFriends", sessionName: "Talking With Friends"),Sessions(imageName: "howToBehaveWithGuests", sessionName: "How To Behave With Guests")]
 
-    var sessions:[Sessions] = [Sessions(imageName: "howToPlayWithFriends",sessionName: "Playing With Friends"),Sessions(imageName: "howToTalkToFriends", sessionName: "Talking With Friends"),Sessions(imageName: "howToBehaveWithGuests", sessionName: "How To Behave With Guests")]
+var worksheets : [Worksheet] = [Worksheet(titleImage: "Designer-10", worksheetName: "Select Multiple Objects", worksheetImage: "Workbook-0"), Worksheet(titleImage: "Designer-5", worksheetName: "Match Uppercase", worksheetImage: "Workbook-1"), Worksheet(titleImage: "Designer-9", worksheetName: "Uppcase Alphabets", worksheetImage: "Workbook-2")]
 
-    var worksheets:[Worksheets] = [Worksheets(imageName: "Designer-10", worksheetName: "Select Multiple Objects"),Worksheets(imageName: "Designer-5", worksheetName: "Match Identical Objects"),Worksheets(imageName: "Upper case", worksheetName: "Match UpperCase Alphabets")]
-    
-    var sectionHeader:[String] = ["Games","Sessions","Worksheets"]
+var sectionHeader:[String] = ["Games","Sessions","Worksheets"]
 
 

@@ -9,8 +9,16 @@ import UIKit
 
 class WorkSheetsViewController: UIViewController {
 
+    @IBOutlet var worksheetImageView: UIImageView!
+    @IBOutlet var worksheetTitle: UILabel!
+    
+    var selectedWorksheet : Worksheet?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        worksheetImageView.image = UIImage(named: selectedWorksheet!.worksheetImage)
+        worksheetTitle.text = selectedWorksheet?.worksheetName
 
         // Do any additional setup after loading the view.
     }

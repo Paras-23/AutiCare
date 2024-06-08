@@ -30,12 +30,8 @@
 		05E4A8342C104619007BF2D9 /* ProfileInterfaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4A8332C104619007BF2D9 /* ProfileInterfaceCollectionViewCell.swift */; };
 		05E4A8362C1048A5007BF2D9 /* ProfileTabMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4A8352C1048A5007BF2D9 /* ProfileTabMainViewController.swift */; };
 		253490362C1195A100D898F2 /* playingWithFriends.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 253490352C1195A100D898F2 /* playingWithFriends.mp4 */; };
-		257113612C118DEC00D4E239 /* Games.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257113482C118DEC00D4E239 /* Games.xib */; };
-		257113622C118DEC00D4E239 /* GamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257113492C118DEC00D4E239 /* GamesCollectionViewCell.swift */; };
-		257113632C118DEC00D4E239 /* Sessions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2571134A2C118DEC00D4E239 /* Sessions.xib */; };
-		257113642C118DEC00D4E239 /* SessionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2571134B2C118DEC00D4E239 /* SessionsCollectionViewCell.swift */; };
-		257113652C118DEC00D4E239 /* Worksheets.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2571134C2C118DEC00D4E239 /* Worksheets.xib */; };
-		257113662C118DEC00D4E239 /* WorksheetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2571134D2C118DEC00D4E239 /* WorksheetsCollectionViewCell.swift */; };
+		257113612C118DEC00D4E239 /* LearningSections.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257113482C118DEC00D4E239 /* LearningSections.xib */; };
+		257113622C118DEC00D4E239 /* LearningSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257113492C118DEC00D4E239 /* LearningSections.swift */; };
 		257113672C118DEC00D4E239 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2571134F2C118DEC00D4E239 /* CardCollectionViewCell.swift */; };
 		257113692C118DEC00D4E239 /* MemoryCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257113512C118DEC00D4E239 /* MemoryCardViewController.swift */; };
 		2571136A2C118DEC00D4E239 /* PictureRepresentingActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257113522C118DEC00D4E239 /* PictureRepresentingActionViewController.swift */; };
@@ -98,6 +94,7 @@
 		EF853CD62C10F312004D0C7F /* HeaderSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF853CD42C10F312004D0C7F /* HeaderSectionCollectionViewCell.xib */; };
 		EF853CD92C10F8BD004D0C7F /* AboutSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF853CD72C10F8BD004D0C7F /* AboutSectionCollectionViewCell.swift */; };
 		EF853CDA2C10F8BD004D0C7F /* AboutSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF853CD82C10F8BD004D0C7F /* AboutSectionCollectionViewCell.xib */; };
+		EFBE08892C145EA6006192EF /* WorkSheetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBE08882C145EA6006192EF /* WorkSheetsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,12 +123,8 @@
 		05E4A8332C104619007BF2D9 /* ProfileInterfaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInterfaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		05E4A8352C1048A5007BF2D9 /* ProfileTabMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabMainViewController.swift; sourceTree = "<group>"; };
 		253490352C1195A100D898F2 /* playingWithFriends.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = playingWithFriends.mp4; sourceTree = "<group>"; };
-		257113482C118DEC00D4E239 /* Games.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Games.xib; sourceTree = "<group>"; };
-		257113492C118DEC00D4E239 /* GamesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesCollectionViewCell.swift; sourceTree = "<group>"; };
-		2571134A2C118DEC00D4E239 /* Sessions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Sessions.xib; sourceTree = "<group>"; };
-		2571134B2C118DEC00D4E239 /* SessionsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsCollectionViewCell.swift; sourceTree = "<group>"; };
-		2571134C2C118DEC00D4E239 /* Worksheets.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Worksheets.xib; sourceTree = "<group>"; };
-		2571134D2C118DEC00D4E239 /* WorksheetsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorksheetsCollectionViewCell.swift; sourceTree = "<group>"; };
+		257113482C118DEC00D4E239 /* LearningSections.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LearningSections.xib; sourceTree = "<group>"; };
+		257113492C118DEC00D4E239 /* LearningSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningSections.swift; sourceTree = "<group>"; };
 		2571134F2C118DEC00D4E239 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		257113512C118DEC00D4E239 /* MemoryCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryCardViewController.swift; sourceTree = "<group>"; };
 		257113522C118DEC00D4E239 /* PictureRepresentingActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureRepresentingActionViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +179,7 @@
 		EF853CD42C10F312004D0C7F /* HeaderSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		EF853CD72C10F8BD004D0C7F /* AboutSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		EF853CD82C10F8BD004D0C7F /* AboutSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutSectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		EFBE08882C145EA6006192EF /* WorkSheetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSheetsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,12 +276,8 @@
 		2571134E2C118DEC00D4E239 /* CollectionViewXib */ = {
 			isa = PBXGroup;
 			children = (
-				257113482C118DEC00D4E239 /* Games.xib */,
-				257113492C118DEC00D4E239 /* GamesCollectionViewCell.swift */,
-				2571134A2C118DEC00D4E239 /* Sessions.xib */,
-				2571134B2C118DEC00D4E239 /* SessionsCollectionViewCell.swift */,
-				2571134C2C118DEC00D4E239 /* Worksheets.xib */,
-				2571134D2C118DEC00D4E239 /* WorksheetsCollectionViewCell.swift */,
+				257113482C118DEC00D4E239 /* LearningSections.xib */,
+				257113492C118DEC00D4E239 /* LearningSections.swift */,
 			);
 			path = CollectionViewXib;
 			sourceTree = "<group>";
@@ -332,6 +322,7 @@
 				2571135B2C118DEC00D4E239 /* TableViewXib */,
 				2571135C2C118DEC00D4E239 /* HeaderCollectionReusableView.swift */,
 				2571135D2C118DEC00D4E239 /* Learning.storyboard */,
+				EFBE08882C145EA6006192EF /* WorkSheetsViewController.swift */,
 				2571135E2C118DEC00D4E239 /* LearningDataModel.swift */,
 				2571135F2C118DEC00D4E239 /* LearningPageViewController.swift */,
 				25CB813C2C120D440039B489 /* howToTalkToFriends.mp4 */,
@@ -484,7 +475,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				257113632C118DEC00D4E239 /* Sessions.xib in Resources */,
 				A99EE2842C11C24D002FFD62 /* ChatSectionTableViewCell.xib in Resources */,
 				25CB813E2C120D440039B489 /* howToTalkToFriends.mp4 in Resources */,
 				257113702C118DED00D4E239 /* TableViewCell.xib in Resources */,
@@ -494,7 +484,6 @@
 				05262E8E2BF7112D00C2774C /* Assets.xcassets in Resources */,
 				05445E932C11737500DB792B /* CommentSectionCollectionViewCell.xib in Resources */,
 				05262E912BF7112D00C2774C /* Base in Resources */,
-				257113652C118DEC00D4E239 /* Worksheets.xib in Resources */,
 				A99EE28B2C11C24D002FFD62 /* GroupCollectionViewCell.xib in Resources */,
 				05262EA12BF7129800C2774C /* Progress.storyboard in Resources */,
 				051C592A2C1071CB00CB073D /* PostSegmentCollectionViewCell.xib in Resources */,
@@ -505,7 +494,7 @@
 				EF853CD62C10F312004D0C7F /* HeaderSectionCollectionViewCell.xib in Resources */,
 				253490362C1195A100D898F2 /* playingWithFriends.mp4 in Resources */,
 				25CB813D2C120D440039B489 /* howToBehaveWithGuests.mp4 in Resources */,
-				257113612C118DEC00D4E239 /* Games.xib in Resources */,
+				257113612C118DEC00D4E239 /* LearningSections.xib in Resources */,
 				257113722C118DED00D4E239 /* Learning.storyboard in Resources */,
 				EF853CDA2C10F8BD004D0C7F /* AboutSectionCollectionViewCell.xib in Resources */,
 				258805CD2C0DB7AE0009C19A /* GoogleService-Info.plist in Resources */,
@@ -526,7 +515,7 @@
 				25CB81422C122A6A0039B489 /* ColorMatchingViewController.swift in Sources */,
 				0569A6D82C12BF730069435F /* SettingsViewController.swift in Sources */,
 				A99EE28A2C11C24D002FFD62 /* ExploreDataModel.swift in Sources */,
-				257113662C118DEC00D4E239 /* WorksheetsCollectionViewCell.swift in Sources */,
+				EFBE08892C145EA6006192EF /* WorkSheetsViewController.swift in Sources */,
 				444E359B2C12C502002D647C /* MainViewController.swift in Sources */,
 				A99EE27B2C11C24D002FFD62 /* TitleRow.swift in Sources */,
 				A99EE2812C11C24D002FFD62 /* AddNewPostViewController.swift in Sources */,
@@ -559,14 +548,13 @@
 				A99EE2872C11C24D002FFD62 /* CommunityPageViewController.swift in Sources */,
 				A99EE27E2C11C24D002FFD62 /* ContentView.swift in Sources */,
 				EF853CD12C10F29D004D0C7F /* OtherAccountViewController.swift in Sources */,
-				257113642C118DEC00D4E239 /* SessionsCollectionViewCell.swift in Sources */,
 				2571136D2C118DEC00D4E239 /* SessionsTableViewController.swift in Sources */,
 				A99EE27F2C11C24D002FFD62 /* Extensions.swift in Sources */,
 				05E4A8362C1048A5007BF2D9 /* ProfileTabMainViewController.swift in Sources */,
 				A99EE2852C11C24D002FFD62 /* ChatsPageTableViewController.swift in Sources */,
 				C472EE3A2C0D9AAD00C97BE6 /* LegendView.swift in Sources */,
 				C4AE965D2BF7270500BEE963 /* AssessmentTableViewController.swift in Sources */,
-				257113622C118DEC00D4E239 /* GamesCollectionViewCell.swift in Sources */,
+				257113622C118DEC00D4E239 /* LearningSections.swift in Sources */,
 				05445E922C11737500DB792B /* CommentSectionCollectionViewCell.swift in Sources */,
 				A99EE2792C11C24D002FFD62 /* MessageBubble.swift in Sources */,
 				C4E78E7A2C1331220084B815 /* ExplorePostsCollectionViewCell.swift in Sources */,

@@ -28,9 +28,9 @@ class TableViewCell: UITableViewCell {
         categoryImageView.image = UIImage(named: game.imageName)
         categoryLabel.text = game.gameName
     }
-    func updateWorksheetsConfig(workSheet:Worksheets){
+    func updateWorksheetsConfig(workSheet : Worksheet){
         categoryLabel.text = workSheet.worksheetName
-        categoryImageView.image = UIImage(named: workSheet.imageName)
+        categoryImageView.image = UIImage(named: workSheet.titleImage)
         
     }
     func updateSessionsConfig(session:Sessions){

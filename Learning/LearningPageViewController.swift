@@ -16,6 +16,8 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
         self.tabBarItem.image = UIImage(systemName: "brain")
     }
     
+    var selectedWorksheetIndex : Int?
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (indexPath.section == 0){
             switch indexPath.row {
@@ -65,21 +67,15 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
             }
         }
         if indexPath.section == 2{
-            switch indexPath.row{
-            case 0:
-                performSegue(withIdentifier: "selectMultipleObjects", sender: nil)
-                self.tabBarController?.tabBar.isHidden = true
-                
-            case 1:
-                performSegue(withIdentifier: "matchIdenticalObjects", sender: nil)
-                self.tabBarController?.tabBar.isHidden = true
-                
-            case 2:
-                performSegue(withIdentifier: "matchUpperCaseAlphabets", sender: nil)
-                self.tabBarController?.tabBar.isHidden = true
-                
-            default:
-                break
+            selectedWorksheetIndex = indexPath.row
+            performSegue(withIdentifier: "WorkbookController", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "WorkbookController" {
+            if let destinationVC = segue.destination as? WorkSheetsViewController, let worksheetIndex = selectedWorksheetIndex {
+                destinationVC.selectedWorksheet = worksheets[worksheetIndex]
             }
         }
     }
@@ -102,36 +98,23 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LearningIcons", for: indexPath) as! LearningSections
+        cell.layer.cornerRadius = 35
+        cell.layer.borderWidth = 2.5
+        cell.layer.borderColor = UIColor.init(red: 0.001, green: 0.301, blue: 0.500, alpha: 1).cgColor
         switch indexPath.section{
         case 0 :
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Games", for: indexPath) as! GamesCollectionViewCell
             cell.updateGames(with: games[indexPath.item])
-            cell.layer.cornerRadius = 35
-            cell.layer.borderWidth = 2.5
-            cell.layer.borderColor = UIColor.init(red: 0.001, green: 0.301, blue: 0.500, alpha: 1).cgColor
             return cell
-            
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Sessions", for: indexPath) as! SessionsCollectionViewCell
             cell.updateSessions(with: sessions[indexPath.item])
-            cell.layer.cornerRadius = 35
-            cell.layer.borderWidth = 2.5
-            cell.layer.borderColor = UIColor.init(red: 0.001, green: 0.301, blue: 0.500, alpha: 1).cgColor
             return cell
         case 2:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Worksheets", for: indexPath) as! WorksheetsCollectionViewCell
             cell.updateWorksheets(with: worksheets[indexPath.item])
-            cell.layer.cornerRadius = 35
-            cell.layer.borderWidth = 2.5
-            cell.layer.borderColor = UIColor.init(red: 0.001, green: 0.301, blue: 0.500, alpha: 1).cgColor
             return cell
-            
         default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Games", for: indexPath) as! GamesCollectionViewCell
-            cell.updateGames(with: games[indexPath.item])
-            cell.layer.cornerRadius = 10
-            cell.layer.borderWidth = 2
-            cell.layer.borderColor = UIColor.black.cgColor
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LearningIcons", for: indexPath) as! LearningSections
             return cell
         }
     }
@@ -143,14 +126,8 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let gamesNib = UINib(nibName: "Games", bundle: nil)
-        collectionView.register(gamesNib, forCellWithReuseIdentifier: "Games")
-        
-        let sessionsNib = UINib(nibName: "Sessions", bundle: nil)
-        collectionView.register(sessionsNib, forCellWithReuseIdentifier: "Sessions")
-        
-        let worksheetsNib = UINib(nibName: "Worksheets", bundle: nil)
-        collectionView.register(worksheetsNib, forCellWithReuseIdentifier: "Worksheets")
+        let gamesNib = UINib(nibName: "LearningSections", bundle: nil)
+        collectionView.register(gamesNib, forCellWithReuseIdentifier: "LearningIcons")
         
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
         
