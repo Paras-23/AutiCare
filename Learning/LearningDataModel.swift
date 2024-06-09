@@ -11,11 +11,13 @@ struct Games{
     var imageName : String
     var gameName : String
     var isCompleted : Bool?
+    var storyboardID : String?
 }
 struct Sessions{
     var imageName:String
     var sessionName : String
     var watched : Bool?
+    var resourceURL : String?
 }
 struct Worksheet{
     var titleImage:String
@@ -31,12 +33,16 @@ struct QuestionOfPictureRepresentingAction {
     let correctOption: Int
 }
 
-var games : [Games] = [Games(imageName: "MemoryCards",gameName: "Memory Cards"),Games(imageName: "WhoISFlying",gameName: "Who's Flying"),Games(imageName: "defendTheBall",gameName: "Defend The Ball"),Games(imageName: "MatchTheShapes", gameName: "Match The Shapes")]
+var games : [Games] = [Games(imageName: "MemoryCards",gameName: "Memory Cards", storyboardID: "MemoryCardGame"),Games(imageName: "WhoISFlying",gameName: "Who's Flying", storyboardID: "IdentifyWhosFlyingGame"),Games(imageName: "defendTheBall",gameName: "Defend The Ball", storyboardID: "SaveTheDotGame"),Games(imageName: "MatchTheShapes", gameName: "Match The Shapes", storyboardID: "ColorMatchingGame")]
 
-var sessions : [Sessions] = [Sessions(imageName: "howToPlayWithFriends",sessionName: "Playing With Friends"),Sessions(imageName: "howToTalkToFriends", sessionName: "Talking With Friends"),Sessions(imageName: "howToBehaveWithGuests", sessionName: "How To Behave With Guests")]
+var sessions : [Sessions] = [Sessions(imageName: "howToPlayWithFriends",sessionName: "Playing With Friends", resourceURL: "playingWithFriends"),Sessions(imageName: "howToTalkToFriends", sessionName: "Talking With Friends", resourceURL: "howToTalkToFriends"),Sessions(imageName: "howToBehaveWithGuests", sessionName: "How To Behave With Guests", resourceURL: "howToBehaveWithGuests")]
 
 var worksheets : [Worksheet] = [Worksheet(titleImage: "Designer-10", worksheetName: "Select Multiple Objects", worksheetImage: "Workbook-0"), Worksheet(titleImage: "Designer-5", worksheetName: "Match Uppercase", worksheetImage: "Workbook-1"), Worksheet(titleImage: "Designer-9", worksheetName: "Uppcase Alphabets", worksheetImage: "Workbook-2")]
 
 var sectionHeader:[String] = ["Games","Sessions","Worksheets"]
+
+enum ContentType {
+    case game, session, worksheet
+}
 
 

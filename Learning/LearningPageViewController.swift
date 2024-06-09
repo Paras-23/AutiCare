@@ -17,55 +17,23 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
     }
     
     var selectedWorksheetIndex : Int?
+    var selectedSeeAllButton : ContentType?
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (indexPath.section == 0){
-            switch indexPath.row {
-            case 0: performSegue(withIdentifier: "memoryCardSegue", sender: nil)
-                self.tabBarController?.tabBar.isHidden = true
-            case 1: performSegue(withIdentifier: "pictureRepresentingActionGameSegue", sender: nil)
-                self.tabBarController?.tabBar.isHidden = true
-            case 2: performSegue(withIdentifier: "SaveTheDotSegue", sender: nil)
-                self.tabBarController?.tabBar.isHidden = true
-            case 3:
-                performSegue(withIdentifier: "colorMatching", sender: nil)
-                self.tabBarController?.tabBar.isHidden = true
-                
-            default: return
-            }
+            let nextVC = storyboard!.instantiateViewController(withIdentifier: games[indexPath.row].storyboardID!)
+            navigationController?.pushViewController(nextVC, animated: true)
         }
         if indexPath.section == 1{
-            switch indexPath.row{
-            case 0:
-                let url = Bundle.main.url(forResource: "playingWithFriends", withExtension: "mp4")
+                let url = Bundle.main.url(forResource: sessions[indexPath.row].resourceURL, withExtension: "mp4")
                 let avPlayer = AVPlayer(url: url!)
                 let avController = AVPlayerViewController()
                 avController.player = avPlayer
                 present(avController,animated: true){
                     avPlayer.play()
                 }
-            case 1:
-                let url = Bundle.main.url(forResource: "howToTalkToFriends", withExtension: "mp4")
-                let avPlayer = AVPlayer(url: url!)
-                let avController = AVPlayerViewController()
-                avController.player = avPlayer
-                present(avController,animated: true){
-                    avPlayer.play()
-                }
-            case 2:
-                let url = Bundle.main.url(forResource: "howToBehaveWithGuests", withExtension: "mp4")
-                let avPlayer = AVPlayer(url: url!)
-                let avController = AVPlayerViewController()
-                avController.player = avPlayer
-                present(avController,animated: true){
-                    avPlayer.play()
-                }
-                
-                
-            default:
-                break
-            }
         }
+        
         if indexPath.section == 2{
             selectedWorksheetIndex = indexPath.row
             performSegue(withIdentifier: "WorkbookController", sender: nil)
@@ -76,6 +44,12 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
         if segue.identifier == "WorkbookController" {
             if let destinationVC = segue.destination as? WorkSheetsViewController, let worksheetIndex = selectedWorksheetIndex {
                 destinationVC.selectedWorksheet = worksheets[worksheetIndex]
+            }
+        }
+        
+        if segue.identifier == "SeeAllSegue" {
+            if let destinationVC = segue.destination as? SeeAllTableViewController, let content = selectedSeeAllButton {
+                destinationVC.contentToShow = content
             }
         }
     }
@@ -152,20 +126,22 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
                 headerView.button.tag = indexPath.section
                 headerView.button.setTitle("See All", for: .normal)
                 headerView.button.tintColor = UIColor(.init(red: 0.001, green: 0.301, blue: 0.500))
-                headerView.button.addTarget(self, action: #selector(gamesHeaderButtonTapped(_:)), for: .touchUpInside)
-                
+                headerView.button.addTarget(self, action: #selector(seeAllHeaderButtonTapped(_:)), for: .touchUpInside)
+                selectedSeeAllButton = .game
             case 1:
                 headerView.headerLabel.text = sectionHeader[indexPath.section]
                 headerView.headerLabel.font = UIFont.boldSystemFont(ofSize: 20)
                 headerView.button.tintColor = UIColor(.init(red: 0.001, green: 0.301, blue: 0.500))
                 headerView.button.setTitle("See All", for: .normal)
-                headerView.button.addTarget(self, action: #selector(sessionsHeaderButtonTapped(_:)), for: .touchUpInside)
+                headerView.button.addTarget(self, action: #selector(seeAllHeaderButtonTapped(_:)), for: .touchUpInside)
+                selectedSeeAllButton = .session
             case 2:
                 headerView.headerLabel.text = sectionHeader[indexPath.section]
                 headerView.headerLabel.font = UIFont.boldSystemFont(ofSize: 20)
                 headerView.button.tintColor = UIColor(.init(red: 0.001, green: 0.301, blue: 0.500))
                 headerView.button.setTitle("See All", for: .normal)
-                headerView.button.addTarget(self, action: #selector(worksheetsHeaderButtonTapped(_:)), for: .touchUpInside)
+                headerView.button.addTarget(self, action: #selector(seeAllHeaderButtonTapped(_:)), for: .touchUpInside)
+                selectedSeeAllButton = .worksheet
             default:
                 headerView.headerLabel.text = "Default Header"
             }
@@ -232,22 +208,10 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
     }
     
     
-   @objc func gamesHeaderButtonTapped(_ sender:UIButton){
-        let storyboard = UIStoryboard(name: "Learning", bundle: nil)
-       let viewController = storyboard.instantiateViewController(withIdentifier: "GamesTableViewController") as! GamesTableViewController
-        navigationController?.pushViewController(viewController, animated: true)
-        
+    @objc func seeAllHeaderButtonTapped(_ sender:UIButton){
+        performSegue(withIdentifier: "SeeAllSegue", sender: nil)
     }
-    @objc func sessionsHeaderButtonTapped(_ sender:UIButton){
-        let storyboard = UIStoryboard(name: "Learning", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier:"SessionsTableViewController" ) as! SessionsTableViewController
-            navigationController?.pushViewController(viewController, animated: true)
-    }
-    @objc func worksheetsHeaderButtonTapped(_ sender:UIButton){
-        let storyboard = UIStoryboard(name: "Learning", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier:"WorkSheetsTableViewController" ) as! WorkSheetsTableViewController
-            navigationController?.pushViewController(viewController, animated: true)
-    }
+    
     @IBAction func unwindToLearningPageViewController(_ unwindSegue: UIStoryboardSegue) {
         self.tabBarController?.tabBar.isHidden = false
     }

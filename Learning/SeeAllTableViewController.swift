@@ -6,11 +6,18 @@
 //
 
 import UIKit
+import AVKit
 
 class SeeAllTableViewController: UITableViewController {
+    
+    var contentToShow : ContentType?
+    var selectedWorksheetIndex : Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tableCell = UINib(nibName: "TableViewCell", bundle: nil)
+        tableView.register(tableCell, forCellReuseIdentifier: "LearningTableViewCell")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -23,67 +30,74 @@ class SeeAllTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        switch contentToShow {
+        case .game:
+            return games.count
+        case .session:
+            return sessions.count
+        case .worksheet:
+            return worksheets.count
+        case nil:
+            return games.count
+        }
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LearningTableViewCell", for: indexPath) as! TableViewCell
+        
+        switch contentToShow {
+        case .game:
+            cell.updateGamesConfig(game: games[indexPath.row])
+            return cell
+        case .session:
+            cell.updateSessionsConfig(session: sessions[indexPath.row])
+            return cell
+        case .worksheet:
+            cell.updateWorksheetsConfig(workSheet: worksheets[indexPath.row])
+        case nil:
+            return cell
+        }
 
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Learning", bundle: nil)
+        switch contentToShow {
+        case .game:
+            let nextVC = storyboard.instantiateViewController(withIdentifier: games[indexPath.row].storyboardID!)
+            navigationController?.pushViewController(nextVC, animated: true)
+        case .session:
+            let url = Bundle.main.url(forResource: sessions[indexPath.row].resourceURL, withExtension: "mp4")
+            let avPlayer = AVPlayer(url: url!)
+            let avController = AVPlayerViewController()
+            avController.player = avPlayer
+            present(avController,animated: true){
+                avPlayer.play()
+            }
+        case .worksheet:
+            selectedWorksheetIndex = indexPath.row
+            performSegue(withIdentifier: "WorkSheetsView", sender: nil)
+        case nil:
+            print()
+        }
+        
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "WorkSheetsView" {
+            if let destinationVC = segue.destination as? WorkSheetsViewController, let selectedIndex = selectedWorksheetIndex {
+                destinationVC.selectedWorksheet = worksheets[selectedIndex]
+            }
+        }
     }
-    */
+
 
 }
