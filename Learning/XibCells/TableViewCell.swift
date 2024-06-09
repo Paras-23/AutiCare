@@ -22,18 +22,20 @@ class TableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        
     }
+    
     func updateGamesConfig(game:Games){
         categoryImageView.image = UIImage(named: game.imageName)
         categoryLabel.text = game.gameName
     }
+    
     func updateWorksheetsConfig(workSheet : Worksheet){
         categoryLabel.text = workSheet.worksheetName
         categoryImageView.image = UIImage(named: workSheet.titleImage)
         
     }
-    func updateSessionsConfig(session:Sessions){
+    
+    func updateSessionsConfig( session : Sessions){
         categoryLabel.text = session.sessionName
         categoryImageView.image = UIImage(named: session.imageName)
     }
