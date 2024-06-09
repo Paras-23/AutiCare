@@ -116,55 +116,29 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
-            
-            switch indexPath.section{
-            case 0:
+                let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
+                
                 headerView.headerLabel.text = sectionHeader[indexPath.section]
                 headerView.headerLabel.font = UIFont.boldSystemFont(ofSize: 20)
                 
                 headerView.button.tag = indexPath.section
                 headerView.button.setTitle("See All", for: .normal)
-                headerView.button.tintColor = UIColor(.init(red: 0.001, green: 0.301, blue: 0.500))
+                headerView.button.tintColor = UIColor(red: 0.001, green: 0.301, blue: 0.500, alpha: 1.0)
                 headerView.button.addTarget(self, action: #selector(seeAllHeaderButtonTapped(_:)), for: .touchUpInside)
-                selectedSeeAllButton = .game
-            case 1:
-                headerView.headerLabel.text = sectionHeader[indexPath.section]
-                headerView.headerLabel.font = UIFont.boldSystemFont(ofSize: 20)
-                headerView.button.tintColor = UIColor(.init(red: 0.001, green: 0.301, blue: 0.500))
-                headerView.button.setTitle("See All", for: .normal)
-                headerView.button.addTarget(self, action: #selector(seeAllHeaderButtonTapped(_:)), for: .touchUpInside)
-                selectedSeeAllButton = .session
-            case 2:
-                headerView.headerLabel.text = sectionHeader[indexPath.section]
-                headerView.headerLabel.font = UIFont.boldSystemFont(ofSize: 20)
-                headerView.button.tintColor = UIColor(.init(red: 0.001, green: 0.301, blue: 0.500))
-                headerView.button.setTitle("See All", for: .normal)
-                headerView.button.addTarget(self, action: #selector(seeAllHeaderButtonTapped(_:)), for: .touchUpInside)
-                selectedSeeAllButton = .worksheet
-            default:
-                headerView.headerLabel.text = "Default Header"
+                
+                return headerView
             }
-            return headerView
-        }
-        fatalError("Unexpected element kind")
+            fatalError("Unexpected element kind")
+        
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 44)
     }
     func generateLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, env)->NSCollectionLayoutSection? in let section: NSCollectionLayoutSection
-            
-            switch sectionIndex {
-            case 0:
-                section = self.generateGames()
-            case 1:
-                section = self.generateSessions()
-            case 2:
-                section = self.generateWorksheets()
-            default:
-                section = self.generateGames()
-            }
+
+            section = self.generateSectionLayout()
             
             let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44))
             let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment:  .top)
@@ -173,7 +147,7 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
         }
         return layout
     }
-    func generateGames() -> NSCollectionLayoutSection {
+    func generateSectionLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.90), heightDimension: .absolute(300))
@@ -184,32 +158,19 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
         section.orthogonalScrollingBehavior = .groupPagingCentered
         return section
     }
-    func generateSessions() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.90), heightDimension: .absolute(300))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 8)
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .groupPagingCentered
-        return section
-    }
-    func generateWorksheets() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.90), heightDimension: .absolute(300))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        group.interItemSpacing = NSCollectionLayoutSpacing.fixed(8.0)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 8)
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .groupPagingCentered
-        return section
-    }
-    
     
     @objc func seeAllHeaderButtonTapped(_ sender:UIButton){
-        performSegue(withIdentifier: "SeeAllSegue", sender: nil)
+        switch sender.tag {
+            case 0:
+                selectedSeeAllButton = .game
+            case 1:
+                selectedSeeAllButton = .session
+            case 2:
+                selectedSeeAllButton = .worksheet
+            default:
+                selectedSeeAllButton = nil
+            }
+            performSegue(withIdentifier: "SeeAllSegue", sender: nil)
     }
     
     @IBAction func unwindToLearningPageViewController(_ unwindSegue: UIStoryboardSegue) {

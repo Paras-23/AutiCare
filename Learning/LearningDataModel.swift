@@ -37,7 +37,7 @@ var games : [Games] = [Games(imageName: "MemoryCards",gameName: "Memory Cards", 
 
 var sessions : [Sessions] = [Sessions(imageName: "howToPlayWithFriends",sessionName: "Playing With Friends", resourceURL: "playingWithFriends"),Sessions(imageName: "howToTalkToFriends", sessionName: "Talking With Friends", resourceURL: "howToTalkToFriends"),Sessions(imageName: "howToBehaveWithGuests", sessionName: "How To Behave With Guests", resourceURL: "howToBehaveWithGuests")]
 
-var worksheets : [Worksheet] = [Worksheet(titleImage: "Designer-10", worksheetName: "Select Multiple Objects", worksheetImage: "Workbook-0"), Worksheet(titleImage: "Designer-5", worksheetName: "Match Uppercase", worksheetImage: "Workbook-1"), Worksheet(titleImage: "Designer-9", worksheetName: "Uppcase Alphabets", worksheetImage: "Workbook-2")]
+var worksheets : [Worksheet] = [Worksheet(titleImage: "Designer-10", worksheetName: "Select Multiple Objects", worksheetImage: "Workbook-0"), Worksheet(titleImage: "Designer-5", worksheetName: "Uppercase Alphabets", worksheetImage: "Workbook-1"), Worksheet(titleImage: "Designer-9", worksheetName: "Circle the Items", worksheetImage: "Workbook-2")]
 
 var sectionHeader:[String] = ["Games","Sessions","Worksheets"]
 
