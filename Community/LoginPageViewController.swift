@@ -23,6 +23,9 @@ class LoginPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.tintColor = UIColor.init(red: 0.001, green: 0.301, blue: 0.500, alpha: 1)
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
@@ -52,6 +55,12 @@ class LoginPageViewController: UIViewController {
             }
                
         }
+    }
+}
+
+extension LoginPageViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
 }
 

@@ -6,7 +6,7 @@ import FirebaseDatabase
 import FirebaseStorage
 
 
-class CreateAccountTableViewController: UITableViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class CreateAccountTableViewController: UITableViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var ProfileImageView: UIImageView!
     
@@ -30,7 +30,17 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        usernameTextField.delegate = self
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
     
     // MARK: - Table view data source
