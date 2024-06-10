@@ -78,7 +78,7 @@ class QuestionsTableViewController: UITableViewController , QuestionTableViewCel
                 continue
             }
             else {
-                doneButton.isEnabled = true
+                doneButton.isEnabled = false
                 return
             }
         }

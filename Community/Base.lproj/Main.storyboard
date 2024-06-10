@@ -48,6 +48,7 @@
                                             <constraint firstAttribute="height" constant="35" id="rs0-hZ-ljs"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="tintColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="slider.horizontal.3" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                         </state>
@@ -116,11 +117,13 @@
                     <navigationItem key="navigationItem" title="Community" id="Abj-Ek-ScI">
                         <rightBarButtonItems>
                             <barButtonItem image="ellipsis.message" catalog="system" id="RWx-Ez-VNf">
+                                <color key="tintColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="kXY-na-BDf" kind="show" id="Lgu-9G-8iq"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="add" id="GEn-SD-38o">
+                                <color key="tintColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="addNewPostButton:" destination="jD2-xJ-08q" id="JW8-KD-66V"/>
                                     <segue destination="ecT-Da-zPE" kind="show" id="GMg-Hf-scS"/>
@@ -135,6 +138,7 @@
                         <outlet property="searchBar" destination="Idj-xg-Sbb" id="e5S-ER-meu"/>
                         <outlet property="searchBarStack" destination="vXF-IL-QOP" id="ngF-Ji-67u"/>
                         <outlet property="segmentedControl" destination="9uT-di-SXz" id="hWE-Ig-Hsc"/>
+                        <segue destination="8RF-n5-HAa" kind="show" identifier="SegueToComments" id="Hnf-ou-L9H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nph-cV-ZZ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -158,8 +162,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GP5-US-6tz">
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="273"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5qH-8M-NaZ">
-                                                        <rect key="frame" x="0.0" y="7" width="385" height="272.66666666666663"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5qH-8M-NaZ">
+                                                        <rect key="frame" x="0.0" y="7" width="373" height="260"/>
+                                                        <color key="tintColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="80"/>
                                                     </imageView>
                                                 </subviews>
@@ -281,11 +286,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="pot-ei-KFm">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bph-qt-TWd">
+                            <color key="tintColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelButtonTapped:" destination="4Hr-W8-l7S" id="5Fz-DO-Fol"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="5Ni-Dg-MbE">
+                            <color key="tintColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="sharePostTapped:" destination="4Hr-W8-l7S" id="l9q-a4-B1S"/>
                             </connections>
@@ -368,6 +375,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="qjF-ga-tFe">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -378,7 +386,7 @@
             </objects>
             <point key="canvasLocation" x="2748.8549618320608" y="8.4507042253521139"/>
         </scene>
-        <!--Chats Page Table View Controller-->
+        <!--Chats-->
         <scene sceneID="9Ck-a7-Xb5">
             <objects>
                 <tableViewController id="kXY-na-BDf" customClass="ChatsPageTableViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
@@ -404,7 +412,7 @@
                             <outlet property="delegate" destination="kXY-na-BDf" id="QI6-Qv-ImS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vu6-7m-28S"/>
+                    <navigationItem key="navigationItem" title="Chats" id="vu6-7m-28S"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mcb-AL-T9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -439,10 +447,76 @@
             </objects>
             <point key="canvasLocation" x="4707.6335877862593" y="7.746478873239437"/>
         </scene>
+        <!--Comments-->
+        <scene sceneID="YOa-Fc-r9x">
+            <objects>
+                <viewController id="1d3-5W-syA" customClass="CommentSectionViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0sx-fr-khc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G6a-Ft-eUL">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IJz-Dl-ROS">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UZS-Lk-aAx">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cei-h5-9tP">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iRZ-vn-vdS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iRZ-vn-vdS" firstAttribute="bottom" secondItem="G6a-Ft-eUL" secondAttribute="bottom" id="0rm-VG-jWc"/>
+                            <constraint firstItem="iRZ-vn-vdS" firstAttribute="trailing" secondItem="G6a-Ft-eUL" secondAttribute="trailing" id="LRS-ul-VoW"/>
+                            <constraint firstItem="G6a-Ft-eUL" firstAttribute="top" secondItem="iRZ-vn-vdS" secondAttribute="top" id="riS-g4-MKq"/>
+                            <constraint firstItem="G6a-Ft-eUL" firstAttribute="leading" secondItem="iRZ-vn-vdS" secondAttribute="leading" id="wk0-Hy-1hu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Comments" id="LuJ-Zf-zLn"/>
+                    <connections>
+                        <outlet property="collectionView" destination="G6a-Ft-eUL" id="UmV-qs-H7N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c3I-FV-j7L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7770.2290076335876" y="-913.38028169014092"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sb9-nE-S02">
+            <objects>
+                <navigationController storyboardIdentifier="CommentsPage" automaticallyAdjustsScrollViewInsets="NO" id="8RF-n5-HAa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Z9F-wV-Upt"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bZh-Uu-d7W">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1d3-5W-syA" kind="relationship" relationship="rootViewController" id="OgG-1E-YeJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FpS-aA-cjm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6843.5114503816794" y="-913.38028169014092"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ellipsis.message" catalog="system" width="128" height="116"/>
-        <image name="photo.badge.plus" catalog="system" width="128" height="97"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <image name="point.3.filled.connected.trianglepath.dotted" catalog="system" width="128" height="96"/>
         <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
         <systemColor name="labelColor">

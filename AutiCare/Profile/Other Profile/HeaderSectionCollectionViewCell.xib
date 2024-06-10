@@ -97,6 +97,7 @@
                                 <state key="selected" title="Following"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Follow">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                    <color key="baseForegroundColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="followButtonTapped:" destination="mWS-wo-5zk" eventType="touchUpInside" id="H3M-Fi-dXj"/>
@@ -111,6 +112,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Message">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                    <color key="baseForegroundColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                             </button>
                         </subviews>
@@ -124,6 +126,7 @@
                                     <constraint firstAttribute="width" constant="20" id="eyP-fk-b8K"/>
                                     <constraint firstAttribute="height" constant="22" id="n1U-Sq-4QE"/>
                                 </constraints>
+                                <color key="tintColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <menu key="menu" id="OLj-zX-eg9">
                                     <children>
                                         <command title="Block Account" id="pq1-Hj-5bM">

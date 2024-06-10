@@ -43,6 +43,8 @@ class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
         coverImageView.image = UIImage(named: "DummyPost10")
     }
     
+    
+    
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         delegate?.setSegmentedIndex(index: segmentedControl.selectedSegmentIndex)
     }

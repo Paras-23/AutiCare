@@ -72,7 +72,7 @@ class AssessmentTableViewController: UITableViewController {
                 continue
             }
             else {
-                submitButtonPressed.isEnabled = true
+                submitButtonPressed.isEnabled = false
                 return
             }
         }

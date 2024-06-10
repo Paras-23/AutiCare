@@ -9,7 +9,14 @@ import UIKit
 import FirebaseDatabaseInternal
 import FirebaseAuth
 
-class CommunityPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class CommunityPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, commentsTapped {
+    
+    func didTapComments(in cell: PostsTableViewCell) {
+        if let indexPath = feedCollectionView.indexPath(for: cell) {
+            performSegue(withIdentifier: "SegueToComments", sender: indexPath)
+        }
+    }
+    
     
     @IBOutlet var feedCollectionView: UICollectionView!
     @IBOutlet var exploreCollectionView: UICollectionView!
@@ -49,6 +56,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         case feedCollectionView:
             let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "UserPost", for: indexPath) as! PostsTableViewCell
             cell.showPost(with: posts[indexPath.row])
+            cell.delegate = self
             return cell
             
         case exploreCollectionView:

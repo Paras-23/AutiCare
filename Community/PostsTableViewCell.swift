@@ -9,6 +9,10 @@ import UIKit
 import SafariServices
 import SDWebImage
 
+protocol commentsTapped {
+    func didTapComments(in cell : PostsTableViewCell)
+}
+
 class PostsTableViewCell: UICollectionViewCell, UINavigationControllerDelegate {
 
     @IBOutlet var userImageView: UIImageView!
@@ -17,6 +21,7 @@ class PostsTableViewCell: UICollectionViewCell, UINavigationControllerDelegate {
     @IBOutlet var captionLabel: UILabel!
     @IBOutlet var infoButton: UIButton!
     
+    var delegate : commentsTapped?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -76,5 +81,8 @@ class PostsTableViewCell: UICollectionViewCell, UINavigationControllerDelegate {
         activityController.popoverPresentationController?.sourceView = sender
     }
     
+    @IBAction func commentsTapped(_ sender: UIButton) {
+        delegate?.didTapComments(in: self)
+    }
 }
 

@@ -139,7 +139,7 @@ extension ProfileTabMainViewController : UICollectionViewDataSource, UICollectio
         case 1:
             switch selectedSegment {
             case 0:
-                performSegue(withIdentifier: "openComments", sender: nil)
+                print("HAHA")
             case 1...2:
                 performSegue(withIdentifier: "VisitOtherProfile", sender: nil)
             default:
