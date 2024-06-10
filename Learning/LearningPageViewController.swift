@@ -61,11 +61,11 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section{
         case 0 :
-            return games.count
+            return 3
         case 1:
-            return sessions.count
+            return 3
         case 2:
-            return worksheets.count
+            return 3
         default:
             return 0
         }

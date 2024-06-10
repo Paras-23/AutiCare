@@ -37,6 +37,9 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
             presentPhotoActionsheet()
     }
     
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func sharePostTapped(_ sender: Any) {
         
         let postImage = newPostImage.image!
