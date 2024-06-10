@@ -184,19 +184,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zk4-Gw-33g">
-                                                    <rect key="frame" x="137.66666666666666" y="4.3333333333333321" width="78" height="35"/>
-                                                    <color key="tintColor" systemColor="systemMintColor"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" title="Submit"/>
-                                                    <connections>
-                                                        <action selector="submitButtonPressed:" destination="9bY-yP-InI" eventType="touchUpInside" id="CEE-hb-1lA"/>
-                                                    </connections>
-                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qhc-V8-FEg">
+                                                    <rect key="frame" x="92" y="2" width="169" height="40"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zk4-Gw-33g">
+                                                            <rect key="frame" x="0.0" y="0.0" width="169" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="48f-ei-pkc"/>
+                                                                <constraint firstAttribute="width" constant="169" id="evF-y5-3XS"/>
+                                                            </constraints>
+                                                            <color key="tintColor" systemColor="systemMintColor"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                                            <connections>
+                                                                <action selector="submitButtonPressed:" destination="9bY-yP-InI" eventType="touchUpInside" id="CEE-hb-1lA"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Zk4-Gw-33g" firstAttribute="centerX" secondItem="CTe-P7-kJe" secondAttribute="centerX" id="QFb-BX-qrt"/>
-                                                <constraint firstItem="Zk4-Gw-33g" firstAttribute="centerY" secondItem="CTe-P7-kJe" secondAttribute="centerY" id="X0l-zB-odT"/>
+                                                <constraint firstItem="qhc-V8-FEg" firstAttribute="centerY" secondItem="CTe-P7-kJe" secondAttribute="centerY" id="Hci-UH-3Zc"/>
+                                                <constraint firstItem="qhc-V8-FEg" firstAttribute="centerX" secondItem="CTe-P7-kJe" secondAttribute="centerX" id="NlH-iy-cuf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -298,9 +307,10 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ihq-dh-VgB">
                                 <rect key="frame" x="150.33333333333334" y="771.66666666666663" width="92.666666666666657" height="34.333333333333371"/>
-                                <color key="tintColor" red="0.4196078479" green="0.89019608500000003" blue="0.81176471709999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Continue" cornerStyle="dynamic"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Continue" cornerStyle="dynamic">
+                                    <color key="baseBackgroundColor" systemColor="systemMintColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="continueButtonTapped:" destination="RdY-cB-pyX" eventType="touchUpInside" id="6eh-xR-TH6"/>
                                     <segue destination="C0Z-x6-h7w" kind="unwind" unwindAction="unwindToProgressViewController:" id="us9-Fp-pRc"/>
@@ -500,6 +510,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="pES-le-PPB">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.001" green="0.30099999999999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -527,12 +538,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Assessment" width="820" height="762"/>
+        <image name="Assessment" width="318" height="320"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

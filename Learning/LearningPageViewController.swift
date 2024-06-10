@@ -13,7 +13,7 @@ class LearningPageViewController: UIViewController,UICollectionViewDataSource, U
     required init?(coder : NSCoder) {
         super.init(coder: coder)
         self.tabBarItem.title = "Learning"
-        self.tabBarItem.image = UIImage(systemName: "brain")
+        self.tabBarItem.image = UIImage(systemName: "book.circle")
     }
     
     var selectedWorksheetIndex : Int?
