@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import FirebaseDatabaseInternal
 
 struct User {
     let UserID : UUID
@@ -18,7 +17,7 @@ struct User {
     var emailAddress : String
     var password : String
     var phone : String
-    var profilePicture : String?
+    var profilePictureURL : String?
     var coverPicture : String?
     var location : String?
     var gender : String
@@ -39,22 +38,26 @@ struct User {
             "password": password,
             "phone": phone,
             "gender": gender,
-            "profilePicture" : profilePicture
+            "profilePictureURL" : profilePictureURL
         ]
     }
 }
 
+//enum Category {
+//    case none , education , health , sports , creativity , motivation , achievemints
+//}
 struct Post {
-    let postID : String?
-    var userID : String? // User who created the post
+    let postID : String
+    var userID : String // User who created the post
     var caption : String
     var imageURL : String
 //    let mediaType : mediaType
-    var timestamp : TimeInterval
+    var timeStamp : TimeInterval
     var likes : [Likes] = []
     var comments : [Comments] = []
-    var userImageName : String?
     var userName : String?
+    var userImageName : String?
+    var category : String = ""
     
     func toDictionary() -> [String: Any] {
        return [
@@ -62,45 +65,39 @@ struct Post {
            "userID": userID,
            "caption": caption,
            "imageURL": imageURL,
-           "timeStamp": timestamp
+           "timeStamp": timeStamp,
+           "category" : category
        ]
     }
-    init(postID: String, userID: String, caption: String, imageURL: String, timestamp: TimeInterval,userName : String, userImageName : String) {
+    init(postID: String, userID: String, caption: String, imageURL: String, timeStamp : TimeInterval ,userName : String, userImageName : String , category : String) {
             self.postID = postID
             self.userID = userID
             self.caption = caption
             self.imageURL = imageURL
-            self.timestamp = timestamp
+            self.timeStamp = timeStamp
             self.userName = userName
             self.userImageName = userImageName
+            self.category = category
         }
     
     
-    init(postID: String, userID: String, caption: String, imageURL: String, timestamp: TimeInterval) {
-            self.postID = postID
-            self.userID = userID
-            self.caption = caption
-            self.imageURL = imageURL
-            self.timestamp = timestamp
-        }
+    init(postID: String, userID: String, caption: String, imageURL: String, timeStamp: TimeInterval, category : String) {
+        self.postID = postID
+        self.userID = userID
+        self.caption = caption
+        self.imageURL = imageURL
+        self.timeStamp = timeStamp
+        self.category = category
+    }
     
-    init?(dictionary: [String: Any]) {
-            guard let postID = dictionary["postID"] as? String,
-                  let userID = dictionary["userID"] as? String,
-                  let caption = dictionary["caption"] as? String,
-                  let imageURL = dictionary["imageURL"] as? String,
-                  let timestamp = dictionary["timeStamp"] as? Double else {
-                print("Failed to parse post: \(dictionary)")
-                return nil
-            }
-            
-            self.postID = postID
-            self.userID = userID
-            self.caption = caption
-            self.imageURL = imageURL
-            self.timestamp = timestamp
-        }
-
+    init(dictionary: [String: Any]) {
+        self.postID = dictionary["postID"] as! String
+        self.userID = dictionary["userID"] as! String
+        self.caption = dictionary["caption"] as! String
+        self.imageURL = dictionary["imageURL"] as! String
+        self.timeStamp = dictionary["timeStamp"] as! TimeInterval
+        self.caption = dictionary["category"] as! String
+    }
 }
 
 struct Comments {

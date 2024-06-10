@@ -15,6 +15,9 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
     @IBOutlet var captionTextField: UITextField!
     @IBOutlet var newPostImage: UIImageView!
     @IBOutlet var viewForImageView: UIView!
+    @IBOutlet var categoryButtons: [UIButton]!
+    
+    var category : String = ""
     
     let storage = Storage.storage()
     let database = Database.database().reference()
@@ -38,8 +41,7 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
         
         let postImage = newPostImage.image!
         let caption = captionTextField.text!
-        
-        PostService.uploadPost(image: postImage, caption: caption, userID: uid!){success in
+        PostService.uploadPost(image: postImage , caption: caption, category: category , userID: uid!){ success in
             if success {
                 print("Post uploaded successfully")
             } else {
@@ -49,6 +51,26 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
         
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func categoryButtonsPressed(_ sender: UIButton) {
+        if category == ""{
+            category = (sender.titleLabel?.text)!
+            sender.backgroundColor = .systemMint
+        }
+        else if category == (sender.titleLabel?.text)!{
+            category = ""
+            sender.backgroundColor = .systemGray6
+        }
+        else {
+            for button in categoryButtons {
+                button.backgroundColor = .systemGray6
+            }
+            sender.backgroundColor = .systemMint
+            category = (sender.titleLabel?.text)!
+        }
+    }
+    
+    
 }
 
 extension AddNewPostViewController:  UIImagePickerControllerDelegate {

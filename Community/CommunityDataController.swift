@@ -20,10 +20,10 @@ class CommunityDataController {
     }
     
     func dummyUsers() {
-        users = [ User(UserID: UUID(), firstName: "David", lastName: "Beckham", userName: "iamdavid", emailAddress: "beckham@gmail.com", password: "miamidream", phone: "", profilePicture: "user_1" ,gender: "male", age: 35),
-                  User(UserID: UUID(), firstName: "Khal", lastName: "Drogo", userName: "dothraki", emailAddress: "khaldrogo@gmail.com", password: "12345", phone: "", profilePicture: "user_2" ,gender: "male", age: 32)
+        users = [ User(UserID: UUID(), firstName: "David", lastName: "Beckham", userName: "iamdavid", emailAddress: "beckham@gmail.com", password: "miamidream", phone: "", profilePictureURL: "user_1" ,gender: "male", age: 35),
+                  User(UserID: UUID(), firstName: "Khal", lastName: "Drogo", userName: "dothraki", emailAddress: "khaldrogo@gmail.com", password: "12345", phone: "", profilePictureURL: "user_2" ,gender: "male", age: 32)
                   ,
-                  User(UserID: UUID(), firstName: "Emma", lastName: "Watson", userName: "itsemma", emailAddress: "emmawatson@gmail.com", password: "hermoineiam", phone: "", profilePicture: "user_3" ,gender: "female", age: 20)
+                  User(UserID: UUID(), firstName: "Emma", lastName: "Watson", userName: "itsemma", emailAddress: "emmawatson@gmail.com", password: "hermoineiam", phone: "", profilePictureURL: "user_3" ,gender: "female", age: 20)
         ]
         users[0].followers = [users[1], users[2]]
         users[0].following = [users[2], users[1]]
@@ -34,15 +34,15 @@ class CommunityDataController {
     }
     
     func dummyPosts() {
-        posts = [ Post(postID: "1", userID: "1", caption: "Playing with amigos is always a moment worth capturing📸😎", imageURL: "post_1", timestamp: 1, userName: "Aditya Gupta" , userImageName: "user_1"),Post(postID: "2",userID: "2", caption: "When she mocks me with a camera of her own.😓 It's a mother daughter love❤️", imageURL: "post_2", timestamp: 2, userName: "Sourabh kumar" , userImageName: "user_2"),
-                  Post(postID: "3",userID: "3", caption: "Painting with hand or hand with painting. It's still a mystery to be solved.🤔", imageURL: "post_3", timestamp: 3, userName: "Harender Singh",userImageName: "user_3")
+        posts = [ Post(postID: "1", userID: "1", caption: "Playing with amigos is always a moment worth capturing📸😎", imageURL: "post_1", timeStamp: 1, userName: "Aditya Gupta" , userImageName: "user_1", category: ""),Post(postID: "2",userID: "2", caption: "When she mocks me with a camera of her own.😓 It's a mother daughter love❤️", imageURL: "post_2", timeStamp: 2, userName: "Sourabh kumar" , userImageName: "user_2", category: ""),
+                  Post(postID: "3",userID: "3", caption: "Painting with hand or hand with painting. It's still a mystery to be solved.🤔", imageURL: "post_3", timeStamp: 3, userName: "Harender Singh",userImageName: "user_3" , category: "")
         ]
     }
 
     func getPosts() -> [Post] { posts }
     func getUsers() -> [User] {users}
     func fetchOnlinePosts(forUserID userID: String, completion: @escaping ([Post]) -> Void) {
-        PostService.fetchPosts(forUserID: userID) { posts in
+        PostService.fetchCurrentUserPosts(forUserID: userID) { posts in
             completion(posts)
         }
     }

@@ -74,7 +74,7 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
                 let usersRef = Database.database().reference().child("user")
                 if let uid = Auth.auth().currentUser?.uid{
                     self.uploadUserDataToFirebase(image: self.ProfileImageView.image! , uid: uid)
-                    let userData = User(UserID: UUID(), firstName: firstName, lastName: LastName, userName: username, emailAddress: email, password: password, phone: phoneNo, profilePicture: nil , coverPicture: nil, location: nil, gender: self.genderButton.currentTitle!, age: nil, bio: nil, following: nil, followers: nil, posts: nil)
+                    let userData = User(UserID: UUID(), firstName: firstName, lastName: LastName, userName: username, emailAddress: email, password: password, phone: phoneNo, profilePictureURL: nil , coverPicture: nil, location: nil, gender: self.genderButton.currentTitle!, age: nil, bio: nil, following: nil, followers: nil, posts: nil)
                 
                     //user is logged in
                     usersRef.child(uid).updateChildValues(userData.toDictionary()){error,ref in print("User data uploaded")}

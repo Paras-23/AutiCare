@@ -76,6 +76,7 @@
 		A99EE2912C11C24D002FFD62 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99EE2772C11C24D002FFD62 /* SplashScreenViewController.swift */; };
 		A99EE2942C11C409002FFD62 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A99EE2932C11C409002FFD62 /* SDWebImage */; };
 		A99EE2962C11C409002FFD62 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A99EE2952C11C409002FFD62 /* SDWebImageMapKit */; };
+		A9CEA01A2C155FA1002F7FDD /* extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEA0192C155FA1002F7FDD /* extra.swift */; };
 		C472EE362C0D8DB500C97BE6 /* PieChartUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C472EE352C0D8DB500C97BE6 /* PieChartUIView.swift */; };
 		C472EE3A2C0D9AAD00C97BE6 /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C472EE392C0D9AAD00C97BE6 /* LegendView.swift */; };
 		C4AE96592BF71EDC00BEE963 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */; };
@@ -163,6 +164,7 @@
 		A99EE2752C11C24D002FFD62 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		A99EE2762C11C24D002FFD62 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
 		A99EE2772C11C24D002FFD62 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		A9CEA0192C155FA1002F7FDD /* extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = extra.swift; path = ../../../extra.swift; sourceTree = "<group>"; };
 		C472EE352C0D8DB500C97BE6 /* PieChartUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartUIView.swift; sourceTree = "<group>"; };
 		C472EE392C0D9AAD00C97BE6 /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		C4AE96582BF71EDC00BEE963 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				A99EE2712C11C24D002FFD62 /* LoginPageViewController.swift */,
 				A99EE2732C11C24D002FFD62 /* Main.storyboard */,
 				A99EE2742C11C24D002FFD62 /* PostServices.swift */,
+				A9CEA0192C155FA1002F7FDD /* extra.swift */,
 				A99EE2752C11C24D002FFD62 /* PostsTableViewCell.swift */,
 				A99EE2762C11C24D002FFD62 /* PostsTableViewCell.xib */,
 				A99EE2772C11C24D002FFD62 /* SplashScreenViewController.swift */,
@@ -489,6 +492,7 @@
 				C4AE96592BF71EDC00BEE963 /* QuestionTableViewCell.swift in Sources */,
 				A99EE27D2C11C24D002FFD62 /* ChatAppApp.swift in Sources */,
 				A99EE2912C11C24D002FFD62 /* SplashScreenViewController.swift in Sources */,
+				A9CEA01A2C155FA1002F7FDD /* extra.swift in Sources */,
 				A99EE27A2C11C24D002FFD62 /* MessageField.swift in Sources */,
 				25CB81422C122A6A0039B489 /* ColorMatchingViewController.swift in Sources */,
 				0569A6D82C12BF730069435F /* SettingsViewController.swift in Sources */,

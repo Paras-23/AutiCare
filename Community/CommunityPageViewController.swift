@@ -17,17 +17,19 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var searchBarStack: UIStackView!
     
+    @IBOutlet var categoryButton: UIButton!
+    
     var firstNib : UINib = UINib()
     
     var posts : [Post] = []
-    var allPosts : [Post] = []
+    var allOrCategoryWisePosts : [Post] = []
     let feedRefreshControl = UIRefreshControl()
     let exploreRefreshControl = UIRefreshControl()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case feedCollectionView: return posts.count
-        case exploreCollectionView : return allPosts.count
+        case exploreCollectionView : return allOrCategoryWisePosts.count
         default: return 0
         }
     }
@@ -52,7 +54,7 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         case exploreCollectionView:
             let cell = exploreCollectionView.dequeueReusableCell(withReuseIdentifier: "UserExplore", for: indexPath) as! ExplorePostsCollectionViewCell
             
-            cell.showPosts(post: allPosts[indexPath.row])
+            cell.showPosts(post: allOrCategoryWisePosts[indexPath.row])
             return cell
             
         default:
@@ -66,23 +68,53 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        categoryButton.showsMenuAsPrimaryAction = true
+        categoryButton.menu = buttonMenu()
+        
         exploreCollectionView.isHidden = true
         searchBar.backgroundImage = UIImage()
         searchBarStack.isHidden = true
 
-        
         selectingCollectionView()
         
         feedRefreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
         feedCollectionView.refreshControl = feedRefreshControl
         
-        exploreRefreshControl.addTarget(self, action: #selector(refreshAllUsersPosts), for: .valueChanged)
+        exploreRefreshControl.addTarget(self, action: #selector(refreshAllOrCategoryWisePosts), for: .valueChanged)
         exploreCollectionView.refreshControl = exploreRefreshControl
         
         fetchPosts()
-        fetchAllUsersPosts()
+        fetchAllPosts()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    func buttonMenu() -> UIMenu {
+        
+        
+        let allAction = UIAction(title: "All", image: nil) { (_) in
+            self.fetchAllPosts()
+        }
+        let eduAction = UIAction(title: "Education", image: nil) { (_) in
+            self.fetchCategoryWisePosts(category: "Education")
+        }
+        let sportsAction = UIAction(title: "Sports", image: nil) { (_) in
+            self.fetchCategoryWisePosts(category: "Sports")
+        }
+        let healthAction = UIAction(title: "Health", image: nil) { (_) in
+            self.fetchCategoryWisePosts(category: "Health")
+        }
+        let achievementsAction = UIAction(title: "Achievements", image: nil) { (_) in
+            self.fetchCategoryWisePosts(category: "Achievements")
+        }
+        let motivationAction = UIAction(title: "Motivation", image: nil) { (_) in
+            self.fetchCategoryWisePosts(category: "Motivation")
+        }
+        let creativityAction = UIAction(title: "Creativity", image: nil) { (_) in
+            self.fetchCategoryWisePosts(category: "Creativity")
+        }
+
+        return UIMenu(title: "", options: .displayInline, children: [allAction, eduAction, sportsAction, healthAction, achievementsAction, motivationAction, creativityAction])
     }
     
     @objc func refreshPosts() {
@@ -104,18 +136,30 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 //        }
     }
     
-    @objc func refreshAllUsersPosts() {
-        fetchAllUsersPosts()
-    }
-
-    func fetchAllUsersPosts() {
-        PostService.fetchAllUsersPosts() { posts in
-            self.allPosts = posts
+    @objc func refreshAllOrCategoryWisePosts() {
+        var category = (categoryButton.menu?.selectedElements)![0].title
+        if category == "All" {
+            fetchAllPosts()
         }
-        exploreCollectionView.reloadData()
+        else {
+            fetchCategoryWisePosts(category: category)
+        }
         exploreRefreshControl.endRefreshing()
     }
+
+    func fetchAllPosts() {
+        PostService.fetchAllPosts(){ posts in
+            self.allOrCategoryWisePosts = posts
+            self.exploreCollectionView.reloadData()
+        }
+    }
     
+    func fetchCategoryWisePosts(category : String) {
+        PostService.fetchCategoryWisePosts(category: category){ posts in
+            self.allOrCategoryWisePosts = posts
+            self.exploreCollectionView.reloadData()
+        }
+    }
     
     func selectingCollectionView() {
         switch segmentedControl.selectedSegmentIndex{
@@ -184,11 +228,6 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
             selectingCollectionView()
         }
     }
-    
-    @IBAction func filterButtonTapped(_ sender: UIButton) {
-        
-    }
-    
     
     @IBAction func unwindToCommunityPageViewController(_ unwindSegue: UIStoryboardSegue) {
         // Use data from the view controller which initiated the unwind segue
