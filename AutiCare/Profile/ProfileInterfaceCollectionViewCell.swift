@@ -32,7 +32,7 @@ class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
         let postsRef = Database.database().reference().child("user").child(uid!)
         postsRef.observeSingleEvent(of: .value , with:{ [self] snapshot in
             
-            if let value = snapshot.value as? [String: Any], let profileImage = value["profilePicture"] as? String , let username = value["userName"] as? String {
+            if let value = snapshot.value as? [String: Any], let profileImage = value["profilePicture"] as? String , let username = value["fullName"] as? String {
                 if let imageURL = URL(string: profileImage) {
                     self.profileImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "reload"))
                     profileImageView.maskWhiteCircle(anyImage: profileImageView.image!)

@@ -59,19 +59,21 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
         if category == ""{
             category = (sender.titleLabel?.text)!
             sender.backgroundColor = UIColor.init(red: 0.001, green: 0.301, blue: 0.500, alpha: 1)
-            
+            sender.tintColor = .white
         }
         else if category == (sender.titleLabel?.text)!{
             category = ""
-            sender.backgroundColor = .systemGray3
+            sender.backgroundColor = .systemGray6
+            sender.tintColor = .black
                     }
         else {
             for button in categoryButtons {
-                button.backgroundColor = .systemGray3
+                button.backgroundColor = .systemGray6
+                button.tintColor = .black
             }
             sender.backgroundColor = UIColor.init(red: 0.001, green: 0.301, blue: 0.500, alpha: 1)
             category = (sender.titleLabel?.text)!
-            
+            sender.tintColor = .white
         }
     }
     
