@@ -29,7 +29,7 @@ class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
     
     func updateCellConfiguration() {
         let uid = Auth.auth().currentUser?.uid
-        let postsRef = Database.database().reference().child("user").child(uid!)
+        let postsRef = Database.database().reference().child("users").child(uid!)
         postsRef.observeSingleEvent(of: .value , with:{ [self] snapshot in
             
             if let value = snapshot.value as? [String: Any], let profileImage = value["profilePicture"] as? String , let username = value["fullName"] as? String {

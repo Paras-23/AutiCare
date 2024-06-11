@@ -9,7 +9,7 @@ import UIKit
 import FirebaseDatabaseInternal
 import FirebaseAuth
 
-class CommunityPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, commentsTapped {
+class CommunityPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, commentsTapped , UISearchBarDelegate{
     
     func didTapComments(in cell: PostsTableViewCell) {
         if let indexPath = feedCollectionView.indexPath(for: cell) {
@@ -76,6 +76,8 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.resignFirstResponder()
         
         categoryButton.showsMenuAsPrimaryAction = true
         categoryButton.menu = buttonMenu()

@@ -27,6 +27,8 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         captionTextField.layer.borderColor = UIColor(named: "White")?.cgColor
+        
+        captionTextField.delegate = self
     
 
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangePostImage))
@@ -80,7 +82,7 @@ class AddNewPostViewController: UIViewController, UINavigationControllerDelegate
     
 }
 
-extension AddNewPostViewController:  UIImagePickerControllerDelegate {
+extension AddNewPostViewController:  UIImagePickerControllerDelegate, UITextFieldDelegate {
     
     func presentPhotoActionsheet() {
         let actionSheet = UIAlertController(title: "New Post", message: "Select a photo", preferredStyle: .actionSheet)
@@ -122,6 +124,10 @@ extension AddNewPostViewController:  UIImagePickerControllerDelegate {
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             picker.dismiss(animated: true, completion: nil)
         }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
 
 
 }

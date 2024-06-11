@@ -69,7 +69,7 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
         guard let email = emailTextField.text else{return}
         guard let password = passwordTextField.text else {return}
         guard let firstName = firstNameTextField.text else {return}
-        guard let LastName = firstNameTextField.text else {return}
+        guard let LastName = lastNameTextField.text else {return}
         guard let username = usernameTextField.text else{return}
         guard (genderButton.titleLabel?.text) != nil else{return}
         guard let phoneNo = phoneNumberTextField.text else {return}
