@@ -8,12 +8,17 @@
 import UIKit
 
 class InstructionsViewController: UIViewController {
-
+    
+    @IBOutlet weak var instructions: UILabel!
+    var gameInfo : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        instructions.text = gameInfo
 
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*

@@ -58,7 +58,19 @@ class MemoryCardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
     }
+    @IBAction func memoryCardInstructions(_ sender: Any) {
+        performSegue(withIdentifier: "memoryCardsInstructions", sender: nil)
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "memoryCardsInstructions"{
+            if let destination = segue.destination as? InstructionsViewController , let info = gamesInstructions["MemoryCards"]{
+                destination.gameInfo = info as? String
+            }
+        }
+    }
 }
+
 
 extension MemoryCardViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -113,4 +125,6 @@ extension MemoryCardViewController: UICollectionViewDataSource, UICollectionView
             firstSelectedIndexPath = indexPath
         }
     }
+    
+    
 }

@@ -37,7 +37,7 @@ class QuestionTableViewCell: UITableViewCell {
         }
         delegate?.didSelectButton(cell: self, answer: sender.tag)
         sender.backgroundColor = .systemMint
-        
+        sender.layer.cornerRadius = 4
     }
     
 }

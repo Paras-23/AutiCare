@@ -58,7 +58,19 @@ class SaveTheDotGameViewController: UIViewController {
     setupPlayerView()
     prepareGame()
   }
-  
+    
+    @IBAction func defendtheBallInstructions(_ sender: Any) {
+        performSegue(withIdentifier: "defendTheBallInstructions", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "defendTheBallInstructions"{
+            if let destination = segue.destination as? InstructionsViewController , let info = gamesInstructions["SaveTheDot"]{
+                destination.gameInfo = info as? String
+            }
+        }
+    }
+
+    
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     // First touch to start the game
     if gameState == .ready {

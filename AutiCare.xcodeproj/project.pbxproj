@@ -44,6 +44,7 @@
 		257113722C118DED00D4E239 /* Learning.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2571135D2C118DEC00D4E239 /* Learning.storyboard */; };
 		257113732C118DED00D4E239 /* LearningDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2571135E2C118DEC00D4E239 /* LearningDataModel.swift */; };
 		257113742C118DED00D4E239 /* LearningPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2571135F2C118DEC00D4E239 /* LearningPageViewController.swift */; };
+		25847F182C18C6B800487DE4 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25847F172C18C6B800487DE4 /* InstructionsViewController.swift */; };
 		258805CD2C0DB7AE0009C19A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 258805CC2C0DB7AE0009C19A /* GoogleService-Info.plist */; };
 		25CB813D2C120D440039B489 /* howToBehaveWithGuests.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 25CB813B2C120D430039B489 /* howToBehaveWithGuests.mp4 */; };
 		25CB813E2C120D440039B489 /* howToTalkToFriends.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 25CB813C2C120D440039B489 /* howToTalkToFriends.mp4 */; };
@@ -137,6 +138,7 @@
 		2571135D2C118DEC00D4E239 /* Learning.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Learning.storyboard; sourceTree = "<group>"; };
 		2571135E2C118DEC00D4E239 /* LearningDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningDataModel.swift; sourceTree = "<group>"; };
 		2571135F2C118DEC00D4E239 /* LearningPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningPageViewController.swift; sourceTree = "<group>"; };
+		25847F172C18C6B800487DE4 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		258805CC2C0DB7AE0009C19A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		25CB813B2C120D430039B489 /* howToBehaveWithGuests.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToBehaveWithGuests.mp4; sourceTree = "<group>"; };
 		25CB813C2C120D440039B489 /* howToTalkToFriends.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = howToTalkToFriends.mp4; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			children = (
 				2571134E2C118DEC00D4E239 /* XibCells */,
 				2571135D2C118DEC00D4E239 /* Learning.storyboard */,
+				25847F172C18C6B800487DE4 /* InstructionsViewController.swift */,
 				2571135F2C118DEC00D4E239 /* LearningPageViewController.swift */,
 				EFBE088A2C156E46006192EF /* SeeAllTableViewController.swift */,
 				EFBE08882C145EA6006192EF /* WorkSheetsViewController.swift */,
@@ -526,6 +529,7 @@
 				A99EE28E2C11C24D002FFD62 /* PostServices.swift in Sources */,
 				05262E872BF7112C00C2774C /* SceneDelegate.swift in Sources */,
 				257113732C118DED00D4E239 /* LearningDataModel.swift in Sources */,
+				25847F182C18C6B800487DE4 /* InstructionsViewController.swift in Sources */,
 				C4AE965B2BF722B900BEE963 /* QuestionsTableViewController.swift in Sources */,
 				2571136B2C118DEC00D4E239 /* SaveTheDotGameViewController.swift in Sources */,
 				257113672C118DEC00D4E239 /* CardCollectionViewCell.swift in Sources */,

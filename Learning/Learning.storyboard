@@ -112,7 +112,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bOy-0C-NYu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="PCU-0V-phR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="131" y="-1370"/>
+            <point key="canvasLocation" x="169" y="-961"/>
         </scene>
         <!--Work Sheets View Controller-->
         <scene sceneID="HTT-Gw-XI9">
@@ -279,11 +279,18 @@
                             <constraint firstItem="QBm-kc-lOF" firstAttribute="centerX" secondItem="9fe-GU-jMz" secondAttribute="centerX" id="vih-mT-z5s"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="2Yp-Kj-hMg"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="2Yp-Kj-hMg">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="questionmark.app" catalog="system" id="khb-Q8-3MX">
+                            <connections>
+                                <action selector="memoryCardInstructions:" destination="1Q8-au-O5t" id="Ytk-yx-aTY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="GC9-wC-093" id="wue-fC-rJ7"/>
                         <outlet property="gameOverLabel" destination="QBm-kc-lOF" id="whX-CR-plM"/>
                         <outlet property="monkeyImage" destination="NBg-ag-gGd" id="L0v-Rx-tAG"/>
+                        <segue destination="K6l-3F-nBE" kind="presentation" identifier="memoryCardsInstructions" id="U6W-jy-eJn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3P-bN-fNR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -368,7 +375,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipd-DQ-4O1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="9bQ-BF-Apk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="131" y="-1370"/>
+            <point key="canvasLocation" x="-537" y="-1225"/>
         </scene>
         <!--Save The Dot Game View Controller-->
         <scene sceneID="TUz-Cw-BNu">
@@ -412,23 +419,65 @@
                             <constraint firstItem="cS2-iA-bbX" firstAttribute="top" secondItem="39K-ZZ-Frn" secondAttribute="bottom" constant="180" id="wTU-Av-nGs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QvD-PF-yNm"/>
+                    <navigationItem key="navigationItem" id="QvD-PF-yNm">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="questionmark.app" catalog="system" id="pBm-2a-a7q">
+                            <connections>
+                                <action selector="defendtheBallInstructions:" destination="lbh-YO-3PD" id="sw9-2n-zVE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bestTimeLabel" destination="T6y-u4-TCp" id="lRW-xN-sGf"/>
                         <outlet property="clockLabel" destination="NYy-XV-jYU" id="1Nj-7i-Yyy"/>
                         <outlet property="startLabel" destination="39K-ZZ-Frn" id="L8t-vq-Ynn"/>
+                        <segue destination="K6l-3F-nBE" kind="presentation" identifier="defendTheBallInstructions" id="Kpu-mx-Vif"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d8T-Hk-iKe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="-1370"/>
+            <point key="canvasLocation" x="857" y="-1370"/>
+        </scene>
+        <!--Instructions View Controller-->
+        <scene sceneID="gLQ-I1-mnR">
+            <objects>
+                <viewController id="K6l-3F-nBE" customClass="InstructionsViewController" customModule="AutiCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sRX-4f-SUr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99B-w2-tQh">
+                                <rect key="frame" x="32" y="0.0" width="329" height="842"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KjN-e4-ehN"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="99B-w2-tQh" secondAttribute="trailing" constant="16" id="3JE-J7-BIo"/>
+                            <constraint firstItem="99B-w2-tQh" firstAttribute="top" secondItem="sRX-4f-SUr" secondAttribute="topMargin" id="6oP-Mc-d72"/>
+                            <constraint firstItem="99B-w2-tQh" firstAttribute="leading" secondItem="sRX-4f-SUr" secondAttribute="leadingMargin" constant="16" id="9TU-4M-RcL"/>
+                            <constraint firstItem="99B-w2-tQh" firstAttribute="bottom" secondItem="sRX-4f-SUr" secondAttribute="bottomMargin" id="Ohx-kx-mz0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="instructions" destination="99B-w2-tQh" id="MX8-lx-xhy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFR-Bo-AHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1611.4503816793892" y="-1370.4225352112676"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Kpu-mx-Vif"/>
         <segue reference="v5M-dQ-Jli"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="826" height="963"/>
+        <image name="questionmark.app" catalog="system" width="128" height="114"/>
         <image name="square.and.arrow.down" catalog="system" width="112" height="128"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -438,6 +487,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
