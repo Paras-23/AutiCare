@@ -9,6 +9,8 @@ import UIKit
 
 class AddNewCommentCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet var newCommentTextField: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

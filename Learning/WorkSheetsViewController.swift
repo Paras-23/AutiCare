@@ -22,6 +22,10 @@ class WorkSheetsViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
     func saveImageToFileSystem(image: UIImage, as type: String) -> URL? {
         let fileManager = FileManager.default
         let tempDirectory = fileManager.temporaryDirectory

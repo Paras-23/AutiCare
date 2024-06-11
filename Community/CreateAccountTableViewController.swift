@@ -81,7 +81,7 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
                 print("error")
             }
             else{
-                let usersRef = Database.database().reference().child("user")
+                let usersRef = Database.database().reference().child("users")
                 if let uid = Auth.auth().currentUser?.uid{
                     self.uploadUserDataToFirebase(image: self.ProfileImageView.image! , uid: uid)
                     let userData = User(UserID: UUID(), firstName: firstName, lastName: LastName, userName: username, emailAddress: email, password: password, phone: phoneNo, profilePictureURL: nil , coverPicture: nil, location: nil, gender: self.genderButton.currentTitle!, age: nil, bio: nil, following: nil, followers: nil, posts: nil)
@@ -161,7 +161,7 @@ class CreateAccountTableViewController: UITableViewController, UIImagePickerCont
     }
     
     func saveImageURLToDatabase(uid: String, url: String) {
-        database.child("user").child(uid).child("profilePicture").setValue(url) { error, _ in
+        database.child("users").child(uid).child("profilePicture").setValue(url) { error, _ in
             if let error = error {
                 print("Failed to save image URL to database: \(error)")
                 return

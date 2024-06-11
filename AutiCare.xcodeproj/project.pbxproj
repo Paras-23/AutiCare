@@ -29,6 +29,8 @@
 		05936BC02C0AE22C00516BF9 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05936BBF2C0AE22C00516BF9 /* EditProfileTableViewController.swift */; };
 		05E4A8342C104619007BF2D9 /* ProfileInterfaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4A8332C104619007BF2D9 /* ProfileInterfaceCollectionViewCell.swift */; };
 		05E4A8362C1048A5007BF2D9 /* ProfileTabMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4A8352C1048A5007BF2D9 /* ProfileTabMainViewController.swift */; };
+		05EEA1C42C180CDE0090B7C8 /* AddNewCommentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05EEA1C32C180CDE0090B7C8 /* AddNewCommentCollectionViewCell.xib */; };
+		05EEA1C52C180CDE0090B7C8 /* AddNewCommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EEA1C22C180CDE0090B7C8 /* AddNewCommentCollectionViewCell.swift */; };
 		253490362C1195A100D898F2 /* playingWithFriends.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 253490352C1195A100D898F2 /* playingWithFriends.mp4 */; };
 		257113612C118DEC00D4E239 /* LearningSections.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257113482C118DEC00D4E239 /* LearningSections.xib */; };
 		257113622C118DEC00D4E239 /* LearningSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257113492C118DEC00D4E239 /* LearningSections.swift */; };
@@ -120,6 +122,8 @@
 		05936BBF2C0AE22C00516BF9 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		05E4A8332C104619007BF2D9 /* ProfileInterfaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInterfaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		05E4A8352C1048A5007BF2D9 /* ProfileTabMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabMainViewController.swift; sourceTree = "<group>"; };
+		05EEA1C22C180CDE0090B7C8 /* AddNewCommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCommentCollectionViewCell.swift; sourceTree = "<group>"; };
+		05EEA1C32C180CDE0090B7C8 /* AddNewCommentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewCommentCollectionViewCell.xib; sourceTree = "<group>"; };
 		253490352C1195A100D898F2 /* playingWithFriends.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = playingWithFriends.mp4; sourceTree = "<group>"; };
 		257113482C118DEC00D4E239 /* LearningSections.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LearningSections.xib; sourceTree = "<group>"; };
 		257113492C118DEC00D4E239 /* LearningSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningSections.swift; sourceTree = "<group>"; };
@@ -363,6 +367,8 @@
 				A99EE2772C11C24D002FFD62 /* SplashScreenViewController.swift */,
 				05445E902C11737500DB792B /* CommentSectionCollectionViewCell.swift */,
 				05445E912C11737500DB792B /* CommentSectionCollectionViewCell.xib */,
+				05EEA1C22C180CDE0090B7C8 /* AddNewCommentCollectionViewCell.swift */,
+				05EEA1C32C180CDE0090B7C8 /* AddNewCommentCollectionViewCell.xib */,
 				05445E942C1173A000DB792B /* CommentSectionViewController.swift */,
 			);
 			name = Community;
@@ -462,6 +468,7 @@
 				05262E8E2BF7112D00C2774C /* Assets.xcassets in Resources */,
 				05445E932C11737500DB792B /* CommentSectionCollectionViewCell.xib in Resources */,
 				05262E912BF7112D00C2774C /* Base in Resources */,
+				05EEA1C42C180CDE0090B7C8 /* AddNewCommentCollectionViewCell.xib in Resources */,
 				A99EE28B2C11C24D002FFD62 /* GroupCollectionViewCell.xib in Resources */,
 				05262EA12BF7129800C2774C /* Progress.storyboard in Resources */,
 				051C592A2C1071CB00CB073D /* PostSegmentCollectionViewCell.xib in Resources */,
@@ -507,6 +514,7 @@
 				A99EE2832C11C24D002FFD62 /* ChatSectionTableViewCell.swift in Sources */,
 				A99EE28F2C11C24D002FFD62 /* PostsTableViewCell.swift in Sources */,
 				A99EE28C2C11C24D002FFD62 /* LoginPageViewController.swift in Sources */,
+				05EEA1C52C180CDE0090B7C8 /* AddNewCommentCollectionViewCell.swift in Sources */,
 				A99EE2802C11C24D002FFD62 /* MessagesManager.swift in Sources */,
 				05936BC02C0AE22C00516BF9 /* EditProfileTableViewController.swift in Sources */,
 				257113692C118DEC00D4E239 /* MemoryCardViewController.swift in Sources */,
