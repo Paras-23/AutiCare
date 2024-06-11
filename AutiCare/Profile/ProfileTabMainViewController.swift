@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 extension UIImageView {
     
@@ -95,6 +96,10 @@ class ProfileTabMainViewController: UIViewController, currentSegment {
             collectionView.reloadData()
             refreshControl.endRefreshing()
         }
+    }
+    
+    @IBAction func unwindToProfileTabMainViewController(_ unwindSegue: UIStoryboardSegue) {
+        
     }
     
 }

@@ -40,7 +40,7 @@ class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
                 userName.text = username
             }
         })
-        coverImageView.image = UIImage(named: "DummyPost10")
+        coverImageView.image = UIImage(systemName: "photo")
     }
     
     
