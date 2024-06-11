@@ -54,6 +54,10 @@ class MemoryCardViewController: UIViewController {
         }
         return true
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
 }
 
 extension MemoryCardViewController: UICollectionViewDataSource, UICollectionViewDelegate {

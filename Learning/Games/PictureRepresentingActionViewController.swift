@@ -61,6 +61,10 @@ class PictureRepresentingActionViewController: UIViewController {
         checkAnswer(selectedOption: 2)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
     func checkAnswer(selectedOption: Int) {
         let currentQuestion = questions[currentQuestionIndex]
         if selectedOption == currentQuestion.correctOption {

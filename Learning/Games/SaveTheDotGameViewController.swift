@@ -8,6 +8,10 @@
 import UIKit
 
 class SaveTheDotGameViewController: UIViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
   
   // MARK: - enum
   fileprivate enum ScreenEdge: Int {
@@ -122,6 +126,7 @@ class SaveTheDotGameViewController: UIViewController {
     checkCollision()
   }
 }
+
 
 fileprivate extension SaveTheDotGameViewController {
     

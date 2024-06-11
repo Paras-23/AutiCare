@@ -8,6 +8,10 @@
 import UIKit
 
 class ColorMatchingViewController: UIViewController {
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
 
     
      var shapes: [UIView] = []
