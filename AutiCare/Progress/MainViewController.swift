@@ -33,7 +33,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         private let scrollView = UIScrollView()
         private let contentView = UIView()
         private let progressStackView = UIStackView()
+        private let takeAssessmentButton = UIButton(type: .system)
+        private let todayGoalsView = TodayGoalsView()
         
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             view.backgroundColor = .white
@@ -173,38 +176,57 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             ])
         }
         
-        private func setupTodayGoals() {
-            // Today's Goals Heading
-            let todayGoalsHeading = UILabel()
-            todayGoalsHeading.text = "Today's Target"
-            todayGoalsHeading.font = UIFont.boldSystemFont(ofSize: 18)
-            todayGoalsHeading.translatesAutoresizingMaskIntoConstraints = false
-            contentView.addSubview(todayGoalsHeading)
-            
-            NSLayoutConstraint.activate([
-                todayGoalsHeading.topAnchor.constraint(equalTo: progressStackView.bottomAnchor, constant: 32),
-                todayGoalsHeading.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
-            ])
-            
-            // Today's Goals Circular View
-            let todayGoalsView = TodayGoalsView()
-            todayGoalsView.translatesAutoresizingMaskIntoConstraints = false
-            contentView.addSubview(todayGoalsView)
-            
-            NSLayoutConstraint.activate([
-                todayGoalsView.topAnchor.constraint(equalTo: todayGoalsHeading.bottomAnchor, constant: 16),
-                todayGoalsView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-                todayGoalsView.widthAnchor.constraint(equalToConstant: 200),
-                todayGoalsView.heightAnchor.constraint(equalToConstant: 200),
-                todayGoalsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
-            ])
-            
-            // Add tap gesture recognizer to todayGoalsView
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(todayGoalsTapped(_:)))
-            todayGoalsView.addGestureRecognizer(tapGestureRecognizer)
-            todayGoalsView.isUserInteractionEnabled = true
-        }
+    private func setupTodayGoals() {
+        // Today's Goals Heading
+        let todayGoalsHeading = UILabel()
+        todayGoalsHeading.text = "Today's Target"
+        todayGoalsHeading.font = UIFont.boldSystemFont(ofSize: 18)
+        todayGoalsHeading.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(todayGoalsHeading)
         
+        NSLayoutConstraint.activate([
+            todayGoalsHeading.topAnchor.constraint(equalTo: progressStackView.bottomAnchor, constant: 32),
+            todayGoalsHeading.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+        ])
+        
+        // Today's Goals Circular View
+        todayGoalsView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(todayGoalsView)
+        
+        NSLayoutConstraint.activate([
+            todayGoalsView.topAnchor.constraint(equalTo: todayGoalsHeading.bottomAnchor, constant: 16),
+            todayGoalsView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            todayGoalsView.widthAnchor.constraint(equalToConstant: 200),
+            todayGoalsView.heightAnchor.constraint(equalToConstant: 200)
+        ])
+        
+        // Add tap gesture recognizer to todayGoalsView
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(todayGoalsTapped(_:)))
+        todayGoalsView.addGestureRecognizer(tapGestureRecognizer)
+        todayGoalsView.isUserInteractionEnabled = true
+    }
+    
+    private func setupTakeAssessmentButton() {
+        takeAssessmentButton.setTitle("Take Assessment", for: .normal)
+        takeAssessmentButton.backgroundColor = .systemMint
+        takeAssessmentButton.layer.cornerRadius = 10
+        takeAssessmentButton.addTarget(self, action: #selector(takeAssessmentTapped), for: .touchUpInside)
+        takeAssessmentButton.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(takeAssessmentButton)
+        
+        NSLayoutConstraint.activate([
+            takeAssessmentButton.topAnchor.constraint(equalTo: todayGoalsView.bottomAnchor, constant: 50), // Add spacing here
+            takeAssessmentButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            takeAssessmentButton.widthAnchor.constraint(equalToConstant: 250),
+            takeAssessmentButton.heightAnchor.constraint(equalToConstant: 50),
+            takeAssessmentButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16) // Bottom constraint
+        ])
+    }
+    
+    @objc private func takeAssessmentTapped() {
+        performSegue(withIdentifier: "AsessmentSegue", sender: nil)
+    }
+    
         @objc private func todayGoalsTapped(_ sender: UITapGestureRecognizer) {
             let todayGoalsView = sender.view as! TodayGoalsView
             todayGoalsView.updateCompletionState()
@@ -284,6 +306,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         setupProgressBars()
         setupTodayGoals()
         updateMonthLabel()
+        setupTakeAssessmentButton()
     }
     
     }
