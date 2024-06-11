@@ -14,7 +14,7 @@ class ChatSectionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        profileImageView.maskCircle(anyImage: UIImage(named: "DummyPost11")!)
+        profileImageView.maskCircle(anyImage: UIImage(named: "David Beckham")!)
         userName.text = "David Beckham"
         // Initialization code
     }

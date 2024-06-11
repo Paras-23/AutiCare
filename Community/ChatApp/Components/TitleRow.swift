@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TitleRow: View {
-    var imageUrl = URL(string: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8")
+    var imageUrl = URL(string: "https://img.businessoffashion.com/resizer/v2/https%3A%2F%2Fprod-bof-media.s3.eu-west-1.amazonaws.com%2Fimport%2Fprofiles%2Fasset%2F1715%2Fa1f88b4a3c5c5b6761438553fe38ab872d9f59cc.jpeg?auth=7b03563a00ad77e3cd71c6cf0492ac463b993d18a585b2f94fc08539c3f031a2&height=350")
     var name = "David Beckham"
     
     var body: some View {
