@@ -73,9 +73,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
             ])
         }
+    
+// calender UI section
         
         private func setupUI() {
-            // Month Label
+          
             monthLabel.textAlignment = .center
             monthLabel.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(monthLabel)
@@ -85,12 +87,16 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 monthLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
             ])
             
-            // Navigation Buttons
+// Previous button in calender section
+            
             let previousButton = UIButton(type: .system)
             previousButton.setTitle("Previous", for: .normal)
             previousButton.addTarget(self, action: #selector(previousMonth), for: .touchUpInside)
             previousButton.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(previousButton)
+            
+            
+// nextButton in calender section
             
             let nextButton = UIButton(type: .system)
             nextButton.setTitle("Next", for: .normal)
@@ -107,6 +113,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             ])
         }
         
+// collection View for calendar section
+    
         private func setupCollectionView() {
             let layout = UICollectionViewFlowLayout()
             layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
@@ -128,8 +136,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             ])
         }
         
+// progress ui section
+    
         private func setupProgressBars() {
-            // Labels for progress bars
+            
             let gamesLabel = UILabel()
             gamesLabel.text = "Games"
             gamesLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -142,22 +152,24 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             booksLabel.text = "Worksheets"
             booksLabel.translatesAutoresizingMaskIntoConstraints = false
             
-            // Progress bars configuration
+            
             gamesProgressView.progressTintColor = .systemRed
             videosProgressView.progressTintColor = .systemBlue
             booksProgressView.progressTintColor = .systemGreen
             
-            gamesProgressView.setProgress(0.5, animated: false) // Example progress value
-            videosProgressView.setProgress(0.7, animated: false) // Example progress value
-            booksProgressView.setProgress(0.3, animated: false) // Example progress value
+            gamesProgressView.setProgress(0.5, animated: false)
             
-            // Stack view for labels and progress bars
+            videosProgressView.setProgress(0.7, animated: false)
+            
+            booksProgressView.setProgress(0.3, animated: false)
+            
+            
             progressStackView.axis = .vertical
             progressStackView.spacing = 8
             progressStackView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(progressStackView)
             
-            // Add labels and progress bars to the stack view
+            
             progressStackView.addArrangedSubview(gamesLabel)
             progressStackView.addArrangedSubview(gamesProgressView)
             progressStackView.addArrangedSubview(videosLabel)
@@ -176,8 +188,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             ])
         }
         
+// Todays Goals Section
+    
     private func setupTodayGoals() {
-        // Today's Goals Heading
+        
         let todayGoalsHeading = UILabel()
         todayGoalsHeading.text = "Today's Target"
         todayGoalsHeading.font = UIFont.boldSystemFont(ofSize: 18)
@@ -188,6 +202,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             todayGoalsHeading.topAnchor.constraint(equalTo: progressStackView.bottomAnchor, constant: 32),
             todayGoalsHeading.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
+        
+// data is not set for todays goals ??
+// connect firebase for todaysGoalsView ??
         
         todayGoalsView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(todayGoalsView)
@@ -204,6 +221,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         todayGoalsView.addGestureRecognizer(tapGestureRecognizer)
         todayGoalsView.isUserInteractionEnabled = true
     }
+
+// take Assessment Button
     
     private func setupTakeAssessmentButton() {
         takeAssessmentButton.setTitle("Take Assessment", for: .normal)
@@ -214,21 +233,22 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         contentView.addSubview(takeAssessmentButton)
         
         NSLayoutConstraint.activate([
-            takeAssessmentButton.topAnchor.constraint(equalTo: todayGoalsView.bottomAnchor, constant: 50), // Add spacing here
+            takeAssessmentButton.topAnchor.constraint(equalTo: todayGoalsView.bottomAnchor, constant: 50),
             takeAssessmentButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             takeAssessmentButton.widthAnchor.constraint(equalToConstant: 250),
             takeAssessmentButton.heightAnchor.constraint(equalToConstant: 50),
-            takeAssessmentButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16) // Bottom constraint
+            takeAssessmentButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
     }
     
     
+// todays Goals Tapped function  ??
     
         @objc private func todayGoalsTapped(_ sender: UITapGestureRecognizer) {
             let todayGoalsView = sender.view as! TodayGoalsView
             todayGoalsView.updateCompletionState()
             
-            // Update the current date progress in the calendar
+            
             let currentComponents = Calendar.current.dateComponents([.year, .month, .day], from: currentDate)
             if let date = Calendar.current.date(from: currentComponents) {
                 if todayGoalsView.allGoalsCompleted() {
@@ -387,6 +407,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             context.setBlendMode(.normal)
         }
         
+        func allGoalsCompleted() -> Bool {
+            return gamesCompleted && videosCompleted && booksCompleted
+        }
+        
         func updateCompletionState() {
             gamesCompleted.toggle()
             videosCompleted.toggle()
@@ -394,9 +418,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             setNeedsDisplay()
         }
         
-        func allGoalsCompleted() -> Bool {
-            return gamesCompleted && videosCompleted && booksCompleted
-        }
+       
         
         private func currentColor(for index: Int) -> UIColor {
             switch index {
