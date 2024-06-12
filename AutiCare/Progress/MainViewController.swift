@@ -189,7 +189,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             todayGoalsHeading.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
         
-        // Today's Goals Circular View
         todayGoalsView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(todayGoalsView)
         
@@ -200,7 +199,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             todayGoalsView.heightAnchor.constraint(equalToConstant: 200)
         ])
         
-        // Add tap gesture recognizer to todayGoalsView
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(todayGoalsTapped(_:)))
         todayGoalsView.addGestureRecognizer(tapGestureRecognizer)
         todayGoalsView.isUserInteractionEnabled = true
@@ -223,9 +222,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         ])
     }
     
-    @objc private func takeAssessmentTapped() {
-        performSegue(withIdentifier: "AsessmentSegue", sender: nil)
-    }
+    
     
         @objc private func todayGoalsTapped(_ sender: UITapGestureRecognizer) {
             let todayGoalsView = sender.view as! TodayGoalsView
@@ -242,14 +239,20 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 collectionView.reloadData()
             }
         }
+    
+    @objc private func takeAssessmentTapped() {
+        performSegue(withIdentifier: "AsessmentSegue", sender: nil)
+    }
         
+    @objc private func nextMonth() {
+        changeMonth(by: 1)
+    }
+    
         @objc private func previousMonth() {
             changeMonth(by: -1)
         }
         
-        @objc private func nextMonth() {
-            changeMonth(by: 1)
-        }
+        
         
         private func changeMonth(by offset: Int) {
             var dateComponents = DateComponents()
