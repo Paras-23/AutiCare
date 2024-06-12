@@ -50,7 +50,6 @@ class PostService {
                     
                     userPostsRef.setValue(true) { error, _ in
                         if let error = error {
-                            print("Failed to update user posts: \(error.localizedDescription)")
                             completion(false)
                             return
                         }
@@ -61,7 +60,6 @@ class PostService {
                         let categoryWisePostsRef = Database.database().reference().child("categories").child(category).child(postID)
                         categoryWisePostsRef.setValue(true) { error , _ in
                             if let error = error {
-                                print("Failed to update categorywise  posts: \(error.localizedDescription)")
                                 completion(false)
                                 return
                             }
