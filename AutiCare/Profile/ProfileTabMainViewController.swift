@@ -85,16 +85,11 @@ class ProfileTabMainViewController: UIViewController, currentSegment {
 
     func fetchPosts() {
         if let uid = Auth.auth().currentUser?.uid {
-            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { [weak self] posts in
-                guard let self = self else { return }
+            PostService.fetchCurrentUserPosts(forUserID: uid) { posts in
                 self.posts = posts
                 self.collectionView.reloadData()
                 self.refreshControl.endRefreshing()
             }
-        } else {
-            posts = CommunityDataController.shared.getPosts()
-            collectionView.reloadData()
-            refreshControl.endRefreshing()
         }
     }
     

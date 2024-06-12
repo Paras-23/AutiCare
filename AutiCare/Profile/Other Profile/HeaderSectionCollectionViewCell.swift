@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 protocol presentSegment{
     func presentSegment(index : Int)
@@ -23,7 +25,7 @@ class HeaderSectionCollectionViewCell: UICollectionViewCell {
     @IBOutlet var infoButton: UIButton!
     
     var buttonState : Bool = false
-    
+    var userId = String()
     
     
     var delegate2 : presentSegment?
@@ -50,11 +52,19 @@ class HeaderSectionCollectionViewCell: UICollectionViewCell {
         infoButton.showsMenuAsPrimaryAction = true
     }
     
-    
-    func updateCellConfiguration() {
+    func updateCellConfiguration(userId : String) {
+        let postsRef = Database.database().reference().child("users").child(userId)
+        postsRef.observeSingleEvent(of: .value , with:{ [self] snapshot in
+            
+            if let value = snapshot.value as? [String: Any], let profileImage = value["profilePicture"] as? String , let username = value["fullName"] as? String {
+                if let imageURL = URL(string: profileImage) {
+                    self.profileImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "reload"))
+                    profileImageView.maskWhiteCircle(anyImage: profileImageView.image!)
+                }
+                userName.text = username
+            }
+        })
         coverImageView.image = UIImage(named: "DummyPost8")
-        profileImageView.maskWhiteCircle(anyImage: UIImage(named: "DummyPost4")!)
-        userName.text = "Sudhanshu Singh Rajput"
     }
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
@@ -62,7 +72,15 @@ class HeaderSectionCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func followButtonTapped(_ sender: UIButton) {
-        
+        let uid = Auth.auth().currentUser?.uid
+        let userPostsRef = Database.database().reference().child("users").child(uid!).child("following").child(userId)
+        userPostsRef.setValue(true) { error, _ in
+            if let error = error {
+                print("Failed to update user posts: \(error.localizedDescription)")
+                return
+            }
+        }
+        sender.titleLabel?.text = "following"
     }
     @IBAction func reportButtonTapped(_ sender: UIButton) {
     }

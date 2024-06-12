@@ -42,7 +42,9 @@ class CommunityDataController {
     func getPosts() -> [Post] { posts }
     func getUsers() -> [User] {users}
     func fetchOnlinePosts(forUserID userID: String, completion: @escaping ([Post]) -> Void) {
-        PostService.fetchCurrentUserPosts(forUserID: userID) { posts in
+        
+        PostService.fetchCurrentUserFollowingPosts(forUserID: userID) { posts in
+            print(posts.count)
             completion(posts)
         }
     }

@@ -73,7 +73,7 @@ class PostService {
         }
     }
 
-    static func fetchCurrentUserPosts(forUserID userID: String, completion: @escaping ([Post]) -> Void) {
+    static func fetchCurrentUserPosts1(forUserID userID: String, completion: @escaping ([Post]) -> Void) {
         let postsRef = Database.database().reference().child("users").child(userID).child("posts")
         postsRef.observeSingleEvent(of: .value ) { snapshot in
             guard let postIDs = snapshot.value as? [String: Bool] else {
@@ -97,6 +97,7 @@ class PostService {
                     }
                     dispatchGroup.leave()
                 }
+                
                 dispatchGroup.notify(queue: .main) {
                     userPosts.sort(by: { $0.timeStamp > $1.timeStamp }) // Sort posts by timestamp
                     completion(userPosts)
@@ -155,4 +156,91 @@ class PostService {
             completion(posts)
         }
     }
+    
+    static func fetchAllUsers(completion : @escaping ([String]) -> Void){
+        let usersRef = Database.database().reference().child("users")
+        usersRef.observeSingleEvent(of: .value) { snapshot in
+            var users : [String] = []
+            
+            for userId in snapshot.children {
+                let id = userId as! DataSnapshot
+                users.append(id.key)
+            }
+            
+            completion(users)
+        }
+    }
+    
+    static func fetchCurrentUserFollowingPosts(forUserID userID: String, completion: @escaping ([Post]) -> Void) {
+        let postsRef = Database.database().reference().child("users").child(userID).child("following")
+        postsRef.observeSingleEvent(of: .value) { snapshot in
+            guard let userIds = snapshot.value as? [String: Bool] else {
+                print("No following users found for userID: \(userID)")
+                completion([])
+                return
+            }
+
+            var userPosts: [Post] = []
+            let dispatchGroup = DispatchGroup()
+
+            for followedUserID in userIds.keys {
+                dispatchGroup.enter()
+                fetchCurrentUserPosts(forUserID: followedUserID) { posts in
+                    userPosts.append(contentsOf: posts)
+                    print(userPosts.count)
+                    dispatchGroup.leave()
+                }
+            }
+
+            dispatchGroup.notify(queue: .main) {
+                print("Fetched \(userPosts.count) posts from followed users.")
+                userPosts.sort(by: { $0.timeStamp > $1.timeStamp }) // Sort posts by timestamp
+                completion(userPosts)
+            }
+        } withCancel: { error in
+            print("Failed to fetch following users for userID: \(userID) with error: \(error.localizedDescription)")
+            completion([])
+        }
+    }
+
+    static func fetchCurrentUserPosts(forUserID userID: String, completion: @escaping ([Post]) -> Void) {
+        let postsRef = Database.database().reference().child("users").child(userID).child("posts")
+        postsRef.observeSingleEvent(of: .value) { snapshot in
+            guard let postIDs = snapshot.value as? [String: Bool] else {
+                print("No posts found for userID: \(userID)")
+                completion([])
+                return
+            }
+
+            var userPosts: [Post] = []
+            let dispatchGroup = DispatchGroup()
+
+            for postID in postIDs.keys {
+                dispatchGroup.enter()
+                let postRef = Database.database().reference().child("posts").child(postID)
+
+                postRef.observeSingleEvent(of: .value) { postSnapshot in
+                    if let postDict = postSnapshot.value as? [String: Any] {
+                        userPosts.append(Post(dictionary: postDict))
+                    } else {
+                        print("Failed to fetch Post of PostID: \(postID)")
+                    }
+                    dispatchGroup.leave()
+                } withCancel: { error in
+                    print("Failed to fetch post details for postID: \(postID) with error: \(error.localizedDescription)")
+                    dispatchGroup.leave()
+                }
+            }
+
+            dispatchGroup.notify(queue: .main) {
+                print("Fetched \(userPosts.count) posts for userID: \(userID)")
+                userPosts.sort(by: { $0.timeStamp > $1.timeStamp }) // Sort posts by timestamp
+                completion(userPosts)
+            }
+        } withCancel: { error in
+            print("Failed to fetch posts for userID: \(userID) with error: \(error.localizedDescription)")
+            completion([])
+        }
+    }
+
 }

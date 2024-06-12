@@ -8,8 +8,9 @@
 import UIKit
 import FirebaseDatabaseInternal
 import FirebaseAuth
+import SDWebImage
 
-class CommunityPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, commentsTapped , UISearchBarDelegate{
+class CommunityPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, commentsTapped{
     
     func didTapComments(in cell: PostsTableViewCell) {
         if let indexPath = feedCollectionView.indexPath(for: cell) {
@@ -26,12 +27,17 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     
     @IBOutlet var categoryButton: UIButton!
     
+    @IBOutlet var searchListTableView: UITableView!
+    
     var firstNib : UINib = UINib()
     
     var posts : [Post] = []
     var allOrCategoryWisePosts : [Post] = []
     let feedRefreshControl = UIRefreshControl()
     let exploreRefreshControl = UIRefreshControl()
+    
+    var allUsers: [String] = [] // Array to store all usernames
+    var filteredUsers: [String] = ["madhav" , "sourabh"]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
@@ -78,6 +84,11 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         super.viewDidLoad()
         
         searchBar.resignFirstResponder()
+        searchBar.delegate = self
+        searchListTableView.dataSource = self
+        searchListTableView.delegate = self
+        searchListTableView.isHidden = true
+
         
         categoryButton.showsMenuAsPrimaryAction = true
         categoryButton.menu = buttonMenu()
@@ -132,18 +143,19 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     }
 
     func fetchPosts() {
-//        if let uid = Auth.auth().currentUser?.uid {
-//            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { [weak self] posts in
-//                guard let self = self else { return }
-//                self.posts = posts
-//                self.feedCollectionView.reloadData()
-//                self.refreshControl.endRefreshing()
-//            }
-//        } else {
+        if let uid = Auth.auth().currentUser?.uid {
+            
+            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { posts in
+                self.posts = posts
+                self.feedCollectionView.reloadData()
+                self.feedRefreshControl.endRefreshing()
+            }
+        } else {
         posts = CommunityDataController.shared.getPosts()
             feedCollectionView.reloadData()
             feedRefreshControl.endRefreshing()
-//        }
+        }
+        
     }
     
     @objc func refreshAllOrCategoryWisePosts() {
@@ -227,7 +239,9 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
             print("Feed Tab")
             feedCollectionView.isHidden = false
             exploreCollectionView.isHidden = true
+            searchListTableView.isHidden = true
             searchBarStack.isHidden = true
+            searchBar.endEditing(true)
             selectingCollectionView()
             
         } else if sender.selectedSegmentIndex == 1{
@@ -243,6 +257,58 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
         // Use data from the view controller which initiated the unwind segue
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "otherProfile" {
+            let destination = segue.destination as! OtherAccountViewController
+            let indexPath = sender as! IndexPath
+            destination.userId = allUsers[indexPath.row]
+        }
+    }
 
+}
+
+extension CommunityPageViewController : UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allUsers.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "userProfile", for: indexPath)
+        let userRef = Database.database().reference().child("users").child(allUsers[indexPath.row]).child("userName")
+            userRef.observeSingleEvent(of: .value){snapshot in
+            let username = snapshot.value as! String
+            cell.textLabel?.text = username
+        }
+        
+        let imageRef = Database.database().reference().child("users").child(allUsers[indexPath.row]).child("profilePicture")
+            imageRef.observeSingleEvent(of: .value){snapshot in
+                let profileImageURL = URL(string: snapshot.value as! String)
+                cell.imageView?.sd_setImage(with: profileImageURL , placeholderImage: UIImage(named: "reload"))
+//                cell.imageView?.maskCircle(anyImage: (cell.imageView?.image)!)
+                
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "otherProfile", sender: indexPath)
+    }
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        PostService.fetchAllUsers() { users in
+            self.allUsers = users
+            
+            print(users)
+            
+            self.searchListTableView.reloadData()
+            
+        }
+        searchListTableView.isHidden = false
+        exploreCollectionView.isHidden = true
+        return true
+    }
+    
 }
 

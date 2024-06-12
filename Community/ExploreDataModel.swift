@@ -96,7 +96,7 @@ struct Post {
         self.caption = dictionary["caption"] as! String
         self.imageURL = dictionary["imageURL"] as! String
         self.timeStamp = dictionary["timeStamp"] as! TimeInterval
-        self.caption = dictionary["category"] as! String
+        self.category = dictionary["category"] as! String
     }
 }
 

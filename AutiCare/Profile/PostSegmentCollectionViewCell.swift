@@ -22,9 +22,5 @@ class PostSegmentCollectionViewCell: UICollectionViewCell {
             imageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "reload"))
                 }
     }
-    
-    func updateUserImage(){
-        imageView.image = UIImage(named: "user_1")
-    }
 
 }

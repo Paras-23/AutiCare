@@ -29,7 +29,6 @@ class LoginPageViewController: UIViewController {
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        print("a")
         guard let email = emailTextField.text else{return}
         guard let password = passwordTextField.text else {return}
         

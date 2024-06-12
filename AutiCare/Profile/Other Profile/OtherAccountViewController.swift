@@ -15,7 +15,8 @@ class OtherAccountViewController: UIViewController , presentSegment{
         selectedSegment = index
         collectionView.reloadData()
     }
-    
+    var posts : [Post] = []
+    var userId = String()
     
     @IBOutlet var collectionView : UICollectionView!
     
@@ -36,10 +37,24 @@ class OtherAccountViewController: UIViewController , presentSegment{
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.setCollectionViewLayout(generateLayout(), animated: true)
+        
+        fetchPosts()
 
         // Do any additional setup after loading the view.
     }
     
+    @objc func refreshPosts() {
+            fetchPosts()
+        }
+
+    func fetchPosts() {
+
+        PostService.fetchCurrentUserPosts(forUserID: userId){ posts in
+            self.posts = posts
+            self.collectionView.reloadData()
+            print(posts.count)
+        }
+    }
 }
 
 extension OtherAccountViewController : UICollectionViewDataSource, UICollectionViewDelegate {
@@ -48,14 +63,15 @@ extension OtherAccountViewController : UICollectionViewDataSource, UICollectionV
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HeaderCell", for: indexPath) as! HeaderSectionCollectionViewCell
-            cell.updateCellConfiguration()
+            cell.updateCellConfiguration(userId: userId)
+            cell.userId = userId
             cell.delegate2 = self
             return cell
         case 1:
             switch selectedSegment {
             case 0:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostSegmentCell", for: indexPath) as! PostSegmentCollectionViewCell
-                cell.updateUserImage()
+                cell.updatePostImage(post: self.posts[indexPath.row])
                 return cell
             default:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AboutSection", for: indexPath) as! AboutSectionCollectionViewCell
@@ -76,7 +92,7 @@ extension OtherAccountViewController : UICollectionViewDataSource, UICollectionV
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0: return 1
-        case 1: return 10
+        case 1: return posts.count
         default: return 1
         }
     }
