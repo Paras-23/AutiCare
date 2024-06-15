@@ -30,6 +30,33 @@ class PostsTableViewCell: UICollectionViewCell, UINavigationControllerDelegate {
        
     }
     
+    var dividerView: UIView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupDivider()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupDivider()
+    }
+    
+    private func setupDivider() {
+        dividerView = UIView()
+        dividerView.translatesAutoresizingMaskIntoConstraints = false
+        dividerView.backgroundColor = .lightGray
+        contentView.addSubview(dividerView)
+        
+        NSLayoutConstraint.activate([
+            dividerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            dividerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            dividerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            dividerView.heightAnchor.constraint(equalToConstant: 1) // Height of the divider
+        ])
+    }
+
+    
     func showPost(with post : Post){
         usernameLabel.text = post.userName
         userImageView.maskCircle(anyImage: UIImage(named: post.userImageName!)!)

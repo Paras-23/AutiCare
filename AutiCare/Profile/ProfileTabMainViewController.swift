@@ -50,6 +50,7 @@ class ProfileTabMainViewController: UIViewController, currentSegment {
         collectionView.reloadData()
     }
     
+    var userid = Auth.auth().currentUser?.uid
     
     @IBOutlet var collectionView : UICollectionView!
     
@@ -101,9 +102,19 @@ class ProfileTabMainViewController: UIViewController, currentSegment {
 
 extension ProfileTabMainViewController : UICollectionViewDataSource, UICollectionViewDelegate, CollectionCellDelegate {
     
-    func didTapButton(in cell: ProfileInterfaceCollectionViewCell) {
+    func didTapButton(in cell: ProfileInterfaceCollectionViewCell, tag : Int) {
         if let indexPath = collectionView.indexPath(for: cell) {
-            performSegue(withIdentifier: "editProfileSegue", sender: indexPath)
+            if tag == 801 {
+                performSegue(withIdentifier: "editProfileSegue", sender: indexPath)
+            } else if tag == 800 {
+                let ref = Database.database().reference().child("users").child(userid!).child("userName")
+                ref.observeSingleEvent(of: .value) { username in
+                    let username = username.value as! String
+                    let activityController = UIActivityViewController(activityItems: ["Check out my profile - \(username)"], applicationActivities: nil)
+                    activityController.popoverPresentationController?.sourceView = cell
+                    self.present(activityController, animated: true, completion: nil)
+                }
+            }
         }
     }
     

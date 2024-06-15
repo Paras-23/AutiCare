@@ -75,7 +75,7 @@ extension OtherAccountViewController : UICollectionViewDataSource, UICollectionV
                 return cell
             default:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AboutSection", for: indexPath) as! AboutSectionCollectionViewCell
-                cell.updateAbout()
+                cell.updateAbout(row : indexPath.row)
                 return cell
             }
         default:

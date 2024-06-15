@@ -73,7 +73,6 @@ class EditProfileTableViewController: UITableViewController, UINavigationControl
                let username = value["userName"] as? String,
                let email = value["emailAddress"] as? String,
                let password = value["password"] as? String {
-
                 if let imageURL = URL(string: profileImage) {
                     self.profileImage.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "reload")) { image, error, _, _ in
                         if let error = error {
@@ -90,6 +89,11 @@ class EditProfileTableViewController: UITableViewController, UINavigationControl
                 self.userNameTextField.text = username
             } else {
                 print("One or more fields are missing in the data")
+            }
+            if let coverImg = value["coverPicture"] as? String {
+                if let imageUrl = URL(string: coverImg) {
+                    self.coverImageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "reload"))
+                }
             }
         } withCancel: { error in
             print("Failed to fetch user data: \(error)")
@@ -130,6 +134,8 @@ class EditProfileTableViewController: UITableViewController, UINavigationControl
                 }
             }
         }
+        
+        
     }
 
     func uploadImage(image: UIImage, imageType: ImageType, completion: @escaping (String?) -> Void) {
@@ -179,7 +185,8 @@ class EditProfileTableViewController: UITableViewController, UINavigationControl
             "lastName": lastNameTextField.text ?? "",
             "userName": userNameTextField.text ?? "",
             "emailAddress": emailTextField.text ?? "",
-            "password": passwordTextField.text ?? ""
+            "password": passwordTextField.text ?? "",
+            "fullName" : firstNameTextField.text! + " " + lastNameTextField.text!
         ]
         if let profileImageUrl = profileImageUrl {
             updates["profilePicture"] = profileImageUrl

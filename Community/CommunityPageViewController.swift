@@ -143,18 +143,18 @@ class CommunityPageViewController: UIViewController, UICollectionViewDelegate, U
     }
 
     func fetchPosts() {
-        if let uid = Auth.auth().currentUser?.uid {
-            
-            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { posts in
-                self.posts = posts
-                self.feedCollectionView.reloadData()
-                self.feedRefreshControl.endRefreshing()
-            }
-        } else {
+//        if let uid = Auth.auth().currentUser?.uid {
+//            
+//            CommunityDataController.shared.fetchOnlinePosts(forUserID: uid) { posts in
+//                self.posts = posts
+//                self.feedCollectionView.reloadData()
+//                self.feedRefreshControl.endRefreshing()
+//            }
+//        } else {
         posts = CommunityDataController.shared.getPosts()
             feedCollectionView.reloadData()
             feedRefreshControl.endRefreshing()
-        }
+//        }
         
     }
     
@@ -285,7 +285,7 @@ extension CommunityPageViewController : UITableViewDelegate, UITableViewDataSour
             imageRef.observeSingleEvent(of: .value){snapshot in
                 let profileImageURL = URL(string: snapshot.value as! String)
                 cell.imageView?.sd_setImage(with: profileImageURL , placeholderImage: UIImage(named: "reload"))
-//                cell.imageView?.maskCircle(anyImage: (cell.imageView?.image)!)
+                cell.imageView?.contentMode = .scaleAspectFill
                 
         }
         

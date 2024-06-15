@@ -88,7 +88,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zWN-XN-nRi">
                                 <rect key="frame" x="0.0" y="0.0" width="227" height="35"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLS-2P-Xik">
+                                    <button opaque="NO" tag="800" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLS-2P-Xik">
                                         <rect key="frame" x="0.0" y="0.0" width="106" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="106" id="k2E-eD-B7d"/>
@@ -101,9 +101,10 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="editButtonTapped:" destination="LZj-S8-RGQ" eventType="touchUpInside" id="VGg-8A-e59"/>
+                                            <action selector="shareButtonTapped:" destination="LZj-S8-RGQ" eventType="touchUpInside" id="Cj5-QZ-DEK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbA-mt-R0S">
+                                    <button opaque="NO" tag="801" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbA-mt-R0S">
                                         <rect key="frame" x="121" y="0.0" width="106" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="106" id="EPv-OR-OWF"/>

@@ -14,7 +14,7 @@ protocol currentSegment {
 }
 
 protocol CollectionCellDelegate {
-    func didTapButton(in cell: ProfileInterfaceCollectionViewCell)
+    func didTapButton(in cell: ProfileInterfaceCollectionViewCell, tag : Int)
 }
 
 class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
@@ -32,16 +32,26 @@ class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
         let postsRef = Database.database().reference().child("users").child(uid!)
         postsRef.observeSingleEvent(of: .value , with:{ [self] snapshot in
             
-            if let value = snapshot.value as? [String: Any], let profileImage = value["profilePicture"] as? String , let username = value["fullName"] as? String {
+            if let value = snapshot.value as? [String: Any], let profileImage = value["profilePicture"] as? String , let fullName = value["fullName"] as? String {
                 if let imageURL = URL(string: profileImage) {
                     self.profileImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "reload"))
                     profileImageView.maskWhiteCircle(anyImage: profileImageView.image!)
                 }
-                userName.text = username
+                userName.text = fullName
+                
+            }
+            if let value = snapshot.value as? [String : Any], let cover = value["coverPicture"] as? String {
+                if let coverURl = URL(string: cover) {
+                    self.coverImageView.sd_setImage(with: coverURl, placeholderImage: UIImage(named: "reload"))
+                }
+            } else {
+                coverImageView.image = UIImage(systemName: "photo")
             }
         })
-        coverImageView.image = UIImage(systemName: "photo")
+//        coverImageView.image = UIImage(systemName: "photo")
     }
+    
+    
     
     
     
@@ -49,8 +59,11 @@ class ProfileInterfaceCollectionViewCell: UICollectionViewCell {
         delegate?.setSegmentedIndex(index: segmentedControl.selectedSegmentIndex)
     }
     @IBAction func editButtonTapped(_ sender: UIButton) {
-        secondDelegate?.didTapButton(in: self)
+        secondDelegate?.didTapButton(in: self, tag : sender.tag)
         
+    }
+    @IBAction func shareButtonTapped(_ sender: UIButton) {
+        secondDelegate?.didTapButton(in: self, tag : sender.tag)
     }
     
     
